@@ -1,23 +1,23 @@
-$(function(){
-	$('a.resize').on('click', (function(e) {
+jQuery(function(){
+	jQuery('a.resize').on('click', (function(e) {
 		e.preventDefault();
-		var myparent = $(this).parents('.block');
+		var myparent = jQuery(this).parents('.block');
 	
-		if ($(myparent).hasClass('col_1')) {
-			$(myparent).removeClass('col_1');
-			$(myparent).addClass('col_2');
+		if (jQuery(myparent).hasClass('col_1')) {
+			jQuery(myparent).removeClass('col_1');
+			jQuery(myparent).addClass('col_2');
 		}
-		else if ($(myparent).hasClass('col_2')) {
-			$(myparent).removeClass('col_2');
-			$(myparent).addClass('col_3');
+		else if (jQuery(myparent).hasClass('col_2')) {
+			jQuery(myparent).removeClass('col_2');
+			jQuery(myparent).addClass('col_3');
 		}
-		else if ($(myparent).hasClass('col_3')) {
-			$(myparent).removeClass('col_3');
-			$(myparent).addClass('col_4');
+		else if (jQuery(myparent).hasClass('col_3')) {
+			jQuery(myparent).removeClass('col_3');
+			jQuery(myparent).addClass('col_4');
 		}
 		else {
-			$(myparent).removeClass('col_4');
-			$(myparent).addClass('col_1');
+			jQuery(myparent).removeClass('col_4');
+			jQuery(myparent).addClass('col_1');
 		}
 	}));
 });
