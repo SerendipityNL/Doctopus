@@ -4,6 +4,10 @@ body{
 .show-grid [class*="span"] {
 	background-color: #eee;
 }
+
+.row > div > ul{
+	padding: 0;
+}
 .col_1,
 .col_2,
 .col_3,
@@ -18,7 +22,6 @@ body{
 	text-align: justify;
 */
 }
-
 .col_1 {
 	width: 23%;
 }
