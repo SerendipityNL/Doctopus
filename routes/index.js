@@ -1,5 +1,5 @@
 exports.index = function(req, res){
-	res.render('index.jade', {
+	res.render('document/edit.jade', {
 		pageTitle: 'Hello world!'
 	});
 };
