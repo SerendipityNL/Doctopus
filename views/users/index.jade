@@ -1,0 +1,23 @@
+p
+	input(type="text", placeholder="Filter results", ng-model="search")
+		
+table
+	thead
+		tr
+			th id
+			th Username
+			th Email Address
+			th Actions
+			
+	tbody
+		tr(ng-repeat="user in users | filter:search")
+			td {{user.id}}
+			td {{user.username}}
+			td {{user.email}}
+			td 
+				a.btn(href="/users/view/{{user.username}}")
+					i.icon-search
+				a.btn(href="/users/edit/{{user.username}}")
+					i.icon-search
+				a.btn.btn-danger(href="/users/delete/{{user.username}}")
+					i.icon-search
