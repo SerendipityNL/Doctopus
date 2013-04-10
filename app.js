@@ -1,7 +1,8 @@
 // Include the required modules
 var express = require('express'),
 	app = express(),
-	routes = require('./routes');
+	home = require('./routes/home'),
+	doc = require('./routes/doc');
 
 // Configure the application
 app.configure(function() {
@@ -29,7 +30,11 @@ app.configure(function() {
 });
 
 // Page routes
-app.get('/', routes.index);
+app.get('/', home.index);
+
+app.get('/document/:id', doc.index);
+
+app.get('/document/find/:id', doc.findOne);
 
 // Let the app listen op port 1337
 app.listen(1337);
