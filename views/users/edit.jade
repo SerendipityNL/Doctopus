@@ -1,0 +1,24 @@
+.control-group
+	label.control-label(for="username") Username
+	.controls
+		input(name="username", type="text", placeholder="Username", ng-model="user.username")
+.control-group
+	label.control-label(for="firstname") First name
+	.controls
+		input(name="firstname", type="text", placeholder="First name", ng-model="user.firstname")
+.control-group
+	label.control-label(for="lastname") Last name
+	.controls
+		input(name="lastname", type="text", placeholder="Last name", ng-model="user.lastname")
+.control-group
+	label.control-label(for="email") Email Address
+	.controls
+		input(name="email", type="email", placeholder="email@example.com", ng-model="user.email")
+.control-group
+	label.control-label(for="password") Password
+	.controls
+		input(name="password", type="password", placeholder="Password" ng-model="user.password")
+	.controls
+		input(name="confirmPassword", type="password", placeholder="Confirm Password", ng-model="user.confirmPassword")
+	.controls
+		button.btn.btn-primary(type='submit') Submit
