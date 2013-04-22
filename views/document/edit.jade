@@ -1,4 +1,27 @@
 extend ../layout
 
+block head
+	link(rel="stylesheet", type="text/css", href="/css/print.css")
+
 block content
-	h2 Document #{documentId} wijzigen
+	h2 Edit document ##{documentId}
+
+	div#blocks
+		div.col_2: p Textfield
+		div.col_2: p Textfield
+
+		div.col_3: p Textfield
+		div.col_1: p Textfield
+
+		div.col_1: p Textfield
+		div.col_1: p Textfield
+		div.col_1: p Textfield
+		div.col_1: p Textfield		
+
+		div.col_4: p Textfield
+
+		div.col_2: p Textfield
+		div.col_2: p Textfield
+
+block sidebar
+	h2 Properties

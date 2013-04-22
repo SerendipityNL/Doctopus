@@ -1,0 +1,96 @@
+body {
+	background-color: #CCC;
+}
+
+div#header {
+	background-color: #404040;
+	color: #CCC;
+	font-size: 2em;
+	line-height: 50px;
+}
+
+div#header-inner {
+	width: 978px;
+	margin: 0px auto;
+}
+
+div#header a {
+	padding: 0 10px;
+	color: #CCC;
+	text-decoration: none;
+}
+
+div#header a:hover,
+div#header a:active {
+	color: #FFF;
+}
+
+div#container {
+	width: 978px;
+	margin: 0px auto;
+	background-color: #FFF;
+	overflow: hidden;
+	border: 1px solid #B3B3B3;
+	border-top: none;
+}
+
+div#canvas {
+	width: 670px;
+	float: left;
+}
+
+div#canvas-inner {
+	padding: 10px;
+	overflow: hidden;
+}
+
+div#sidebar {
+	float: left;
+	width: 308px;
+}
+
+div#sidebar-inner {
+	padding: 10px;
+	overflow: hidden;
+}
+
+div#blocks {
+	overflow: hidden;
+}
+
+.col_1,
+.col_2,
+.col_3,
+.col_4 {
+	display: inline;
+	float: left;
+	position: relative;
+	margin: 4px 1% 4px 1%;
+	min-height: 40px;
+	outline: 1px solid #CCC;
+	background-color: #F2F2F2;
+}
+
+.col_1 > p,
+.col_2 > p,
+.col_3 > p,
+.col_4 > p {
+	margin: 0;
+	padding: 5px;
+}
+
+.col_1 {
+	width: 23%;
+}
+
+.col_2 {
+	width: 48%;
+}
+
+.col_3 {
+	width: 73%;
+}
+
+.col_4 {
+	width: 98%;
+}
