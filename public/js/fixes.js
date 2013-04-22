@@ -1,23 +1,32 @@
-jQuery(function(){
-	jQuery('a.resize').on('click', (function(e) {
-		e.preventDefault();
-		var myparent = jQuery(this).parents('.block');
-	
-		if (jQuery(myparent).hasClass('col_1')) {
-			jQuery(myparent).removeClass('col_1');
-			jQuery(myparent).addClass('col_2');
+
+$(document).ready(function() {
+	/*
+	$('#blocks > div').on('click', function(e) {
+		var col = $(this);		
+		if ($(col).hasClass('col-1')) {
+			$(col).switchClass('col-1', 'col-2', 250);
 		}
-		else if (jQuery(myparent).hasClass('col_2')) {
-			jQuery(myparent).removeClass('col_2');
-			jQuery(myparent).addClass('col_3');
+		else if ($(col).hasClass('col-2')) {
+			$(col).switchClass('col-2', 'col-3', 250);
 		}
-		else if (jQuery(myparent).hasClass('col_3')) {
-			jQuery(myparent).removeClass('col_3');
-			jQuery(myparent).addClass('col_4');
+		else if ($(col).hasClass('col-3')) {
+			$(col).switchClass('col-3', 'col-4', 250);
 		}
 		else {
-			jQuery(myparent).removeClass('col_4');
-			jQuery(myparent).addClass('col_1');
+			$(col).switchClass('col-4', 'col-1', 250);
 		}
-	}));
+	});
+*/
+
+	$('.col-actions a').on('click', function(e) {
+		e.preventDefault();
+		var parent = $(this).parents('div[class^=col-]');
+		var oldClass = parent.attr('class');
+		var newClass = 'col-' + $(this).attr('data-set-cols');
+
+		if (oldClass != newClass) {
+			parent.switchClass(oldClass, newClass, 250);
+		}	
+	});
+
 });

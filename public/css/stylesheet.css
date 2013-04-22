@@ -6,7 +6,8 @@ div#header {
 	background-color: #404040;
 	color: #CCC;
 	font-size: 2em;
-	line-height: 50px;
+	line-height: 45px;
+	border-bottom: 2px solid #5E5E5E;
 }
 
 div#header-inner {
@@ -54,14 +55,12 @@ div#sidebar-inner {
 	overflow: hidden;
 }
 
-div#blocks {
-	overflow: hidden;
-}
+div#blocks {}
 
-.col_1,
-.col_2,
-.col_3,
-.col_4 {
+.col-1,
+.col-2,
+.col-3,
+.col-4 {
 	display: inline;
 	float: left;
 	position: relative;
@@ -71,26 +70,51 @@ div#blocks {
 	background-color: #F2F2F2;
 }
 
-.col_1 > p,
-.col_2 > p,
-.col_3 > p,
-.col_4 > p {
+.col-1 {
+	width: 23%;
+}
+
+.col-2 {
+	width: 48%;
+}
+
+.col-3 {
+	width: 73%;
+}
+
+.col-4 {
+	width: 98%;
+}
+
+.col-content {
 	margin: 0;
 	padding: 5px;
 }
 
-.col_1 {
-	width: 23%;
+.col-1:hover .col-actions,
+.col-2:hover .col-actions,
+.col-3:hover .col-actions,
+.col-4:hover .col-actions {
+	display: block;
 }
 
-.col_2 {
-	width: 48%;
+ul.col-actions {
+	list-style: none;
+	margin: -25px 0 0 -1px;
+	padding: 0;
+	display: none;
 }
 
-.col_3 {
-	width: 73%;
+ul.col-actions li {
+	display: inline-block;
+	line-height: 24px;
+	border-left: 1px solid #CCC;
+	border-top: 1px solid #CCC;
+	background-color: #F2F2F2;
+	padding: 0 6px;
+	font-size: 0.9em;
 }
 
-.col_4 {
-	width: 98%;
+ul.col-actions li:last-child {
+	border-right: 1px solid #CCC;
 }
