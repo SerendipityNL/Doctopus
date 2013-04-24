@@ -18,7 +18,7 @@ $(document).ready(function() {
 	});
 */
 
-	$('.col-actions a').on('click', function(e) {
+	$('.col-resize').on('click', function(e) {
 		e.preventDefault();
 		var parent = $(this).parents('div[class^=col-]');
 		var oldClass = parent.attr('class');
