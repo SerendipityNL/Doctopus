@@ -51,12 +51,12 @@
 					}
 				}
 			}).disableSelection().sortable('refresh');
-		},	
-		resizePlaceholder: function(e, ui){
+		},
+		resizePlaceholder: function(e, ui) {
 			var placeholderOffset = $('.' + methods.settings.sortable.placeholder).position().left,
 				fieldOffset = $(methods.settings.sortable.selector).position().left,
 				fieldWidth = $(methods.settings.sortable.selector).width(),
-				percentage = Math.round((placeholderOffset - fieldOffset) / (0.01 * fieldWidth), 2));
+				percentage = Math.round((placeholderOffset - fieldOffset) / (0.01 * fieldWidth), 2);
 		}
 	};
 	$.fn.doctopus = function( method ) {
