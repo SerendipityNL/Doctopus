@@ -7,7 +7,7 @@ div#header {
 	color: #CCC;
 	font-size: 2em;
 	line-height: 45px;
-	border-bottom: 4px solid #F73;
+	border-bottom: 5px solid #808080;
 }
 
 div#header-inner {
@@ -32,7 +32,6 @@ div#container {
 	background-color: #FFF;
 	overflow: hidden;
 	border: 1px solid #B3B3B3;
-	border-top: none;
 }
 
 div#canvas {
@@ -140,6 +139,11 @@ ul.col-actions li a:active {
 	width: 250px;
 	height: 150px;
 }
+
 .col-placeholder {
 	background: #2ba2d3 !important;
+}
+
+.ui-sortable-helper ul.col-actions {
+	display: none !important;
 }

@@ -9,5 +9,4 @@ function BlocksCtrl($scope) {
 		{ text:'This is a textfield #7', cols: 2 },
 		{ text:'This is a textfield #8', cols: 4 }
 	];
-
 }
