@@ -89,6 +89,7 @@ div#blocks {}
 .col-content {
 	margin: 0;
 	padding: 5px;
+	word-wrap: break-word;
 }
 
 .col-1:hover .col-actions,

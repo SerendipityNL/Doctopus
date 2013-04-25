@@ -2,104 +2,20 @@ extend ../layout
 
 block head
 	link(rel="stylesheet", type="text/css", href="/css/print.css", media="print")
+	script(src='/js/document.js')
 
 block content
 	h2 Edit document ##{documentId}
 
-	div#blocks
-		div.col-2
+	div#blocks(ng-controller='BlocksCtrl')
+		div(ng-repeat='block in blocks', class='col-{{block.cols}}')
 			ul.col-actions
-				li: a(href='#') Edit
+				li: a(href='#', class='col-edit') Edit
 				li: a(href='#', data-set-cols='1', class='col-resize') 1
 				li: a(href='#', data-set-cols='2', class='col-resize') 2
 				li: a(href='#', data-set-cols='3', class='col-resize') 3
 				li: a(href='#', data-set-cols='4', class='col-resize') 4
-			p.col-content {{blaat}}
-
-		div.col-2
-			ul.col-actions
-				li: a(href='#') Edit
-				li: a(href='#', data-set-cols='1', class='col-resize') 1
-				li: a(href='#', data-set-cols='2', class='col-resize') 2
-				li: a(href='#', data-set-cols='3', class='col-resize') 3
-				li: a(href='#', data-set-cols='4', class='col-resize') 4
-			p.col-content Textfield
-
-		div.col-3
-			ul.col-actions
-				li: a(href='#') Edit
-				li: a(href='#', data-set-cols='1', class='col-resize') 1
-				li: a(href='#', data-set-cols='2', class='col-resize') 2
-				li: a(href='#', data-set-cols='3', class='col-resize') 3
-				li: a(href='#', data-set-cols='4', class='col-resize') 4
-			p.col-content Textfield
-		div.col-1
-			ul.col-actions
-				li: a(href='#') Edit
-				li: a(href='#', data-set-cols='1', class='col-resize') 1
-				li: a(href='#', data-set-cols='2', class='col-resize') 2
-				li: a(href='#', data-set-cols='3', class='col-resize') 3
-				li: a(href='#', data-set-cols='4', class='col-resize') 4
-			p.col-content Textfield
-
-		div.col-1
-			ul.col-actions
-				li: a(href='#') Edit
-				li: a(href='#', data-set-cols='1', class='col-resize') 1
-				li: a(href='#', data-set-cols='2', class='col-resize') 2
-				li: a(href='#', data-set-cols='3', class='col-resize') 3
-				li: a(href='#', data-set-cols='4', class='col-resize') 4
-			p.col-content Textfield
-		div.col-1
-			ul.col-actions
-				li: a(href='#') Edit
-				li: a(href='#', data-set-cols='1', class='col-resize') 1
-				li: a(href='#', data-set-cols='2', class='col-resize') 2
-				li: a(href='#', data-set-cols='3', class='col-resize') 3
-				li: a(href='#', data-set-cols='4', class='col-resize') 4
-			p.col-content Textfield
-		div.col-1
-			ul.col-actions
-				li: a(href='#') Edit
-				li: a(href='#', data-set-cols='1', class='col-resize') 1
-				li: a(href='#', data-set-cols='2', class='col-resize') 2
-				li: a(href='#', data-set-cols='3', class='col-resize') 3
-				li: a(href='#', data-set-cols='4', class='col-resize') 4
-			p.col-content Textfield
-		div.col-1
-			ul.col-actions
-				li: a(href='#') Edit
-				li: a(href='#', data-set-cols='1', class='col-resize') 1
-				li: a(href='#', data-set-cols='2', class='col-resize') 2
-				li: a(href='#', data-set-cols='3', class='col-resize') 3
-				li: a(href='#', data-set-cols='4', class='col-resize') 4
-			p.col-content Textfield		
-
-		div.col-4
-			ul.col-actions
-				li: a(href='#') Edit
-				li: a(href='#', data-set-cols='1', class='col-resize') 1
-				li: a(href='#', data-set-cols='2', class='col-resize') 2
-				li: a(href='#', data-set-cols='3', class='col-resize') 3
-				li: a(href='#', data-set-cols='4', class='col-resize') 4
-			p.col-content Textfield
-
-		div.col-2
-			ul.col-actions
-				li: a(href='#') Edit
-				li: a(href='#', data-set-cols='1', class='col-resize') 1
-				li: a(href='#', data-set-cols='2', class='col-resize') 2
-				li: a(href='#', data-set-cols='3', class='col-resize') 3
-				li: a(href='#', data-set-cols='4', class='col-resize') 4
-			p.col-content Textfield
-		div.col-2
-			ul.col-actions
-				li: a(href='#') Edit
-				li: a(href='#', data-set-cols='1', class='col-resize') 1
-				li: a(href='#', data-set-cols='2', class='col-resize') 2
-				li: a(href='#', data-set-cols='3', class='col-resize') 3
-				li: a(href='#', data-set-cols='4', class='col-resize') 4
-			p.col-content Textfield
+			p.col-content {{block.text}}
 
 		div(style='clear:both')
 
