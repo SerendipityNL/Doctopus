@@ -53,10 +53,37 @@
 			}).disableSelection().sortable('refresh');
 		},
 		resizePlaceholder: function(e, ui) {
-			var placeholderOffset = $('.' + methods.settings.sortable.placeholder).position().left,
-				fieldOffset = $(methods.settings.sortable.selector).position().left,
-				fieldWidth = $(methods.settings.sortable.selector).width(),
-				percentage = Math.round((placeholderOffset - fieldOffset) / (0.01 * fieldWidth), 2);
+			var placeholderSelect = '.' + methods.settings.sortable.placeholder,
+				sortableSelect = methods.settings.sortable.selector,
+				prevLeft = $(placeholderSelect).prev().position().left,
+				prevWidth = $(placeholderSelect).prev().width(),
+				fieldOffset = $(sortableSelect).position().left,
+				fieldWidth = $(sortableSelect).width();
+				positionLast = Math.round(((prevLeft + prevWidth) - fieldOffset) / (0.01 * fieldWidth), 2),
+				placeholderWidth = $(placeholderSelect).width(),
+				placeholderPercentage = Math.round((placeholderWidth / (0.01 * fieldWidth)), 2);
+			if ((placeholderPercentage > (100 - positionLast)) && (positionLast != 98)) {
+				console.log('hier1');
+			}
+			else {
+				console.log('hier2');
+			}
+				
+			
+			switch (positionLast) {
+				case 23:
+					prevTotalWidth = 1;
+					break;
+				case 48:
+					prevTotalWidth = 2;
+					break;
+				case 73:
+					prevTotalWidth = 3;
+					break;
+				case 98:
+					prevTotalWidth = 4;
+					break;
+			}
 		}
 	};
 	$.fn.doctopus = function( method ) {
