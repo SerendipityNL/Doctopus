@@ -28,5 +28,7 @@ $(document).ready(function() {
 			parent.switchClass(oldClass, newClass, 250);
 		}	
 	});
+	
+	$(document).doctopus();
 
 });

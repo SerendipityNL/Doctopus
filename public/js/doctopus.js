@@ -36,7 +36,7 @@
 				, delay					: sortVar.delay
 				, placeholder			: sortVar.placeholder
 				, start					: function(e, ui) {
-					$(sortVar.placeholder).width(ui.item.width()).height(ui.item.height());
+					$('.' + sortVar.placeholder).width(ui.item.width()).height(ui.item.height());
 				}
 				, change				: function(e, ui) {
 					if ($(sortVar.placeholder).prev().length > 0){
@@ -44,81 +44,21 @@
 							// Items are the same
 						}
 						else {
-							methods.placeholderResize(e, ui);
+							methods.resizePlaceholder(e, ui);
 						}
 					} else {
-						methods.placeholderResize(e, ui);
+						methods.resizePlaceholder(e, ui);
 					}
 				}
 			}).disableSelection().sortable('refresh');
-		},
-		placeholderResize: function(e, ui){
-			var placeholderSelector = '.' + methods.settings.sortable.placeholder;
-			// This stuff must be rewritten under $.fn.getSurroundingBlocks, which needs to be renamed to resizePlaceholder
-			var width = ui.item.width();
-			$(placeholderSelector).getSurroundingBlocks( function (first, data) {
-				if ( (first == false) && (data.returnData.prevTotalSize < 4) ) {
-					var restSize = 4 - data.returnData.prevTotalSize;
-					if (restSize < parseInt(ui.item.attr('data-colspan'))){
-						switch (restSize) {
-							case 1:
-								width = '23%';
-								break;
-							case 2:
-								width = '48%';
-								break;
-							case 3:
-								width = '73%';
-								break;
-							case 4:
-								width = '98%';
-								break;
-						}
-					}
-				}
-				$(placeholderSelector).width(width);
-			});
+		},	
+		resizePlaceholder: function(e, ui){
+			var placeholderOffset = $('.' + methods.settings.sortable.placeholder).position().left,
+				fieldOffset = $(methods.settings.sortable.selector).position().left,
+				fieldWidth = $(methods.settings.sortable.selector).width(),
+				percentage = Math.round((placeholderOffset - fieldOffset) / (0.01 * fieldWidth), 2));
 		}
 	};
-	
-	$.fn.getPrev = function (data){
-		var prevBlockOffset = prevBlockOffset;
-		if ($(this).prev().length > 0) {
-			if ($(this).prev().position().top == data.usableData.prevBlockOffset) {
-				data.returnData.prevBlocks++;
-				data.returnData.prevTotalSize += parseInt($(this).prev().attr('data-colspan'));
-				$(this).prev().getPrev(data);
-			}
-		}
-	};
-	$.fn.getSurroundingBlocks = function(callback){
-		var data = {
-			  returnData : {
-				  prevBlocks 		: 0
-				, prevTotalSize		: 0
-				, nextBlocks 		: 0
-				, nextTotalSize 	: 0
-				, first 			: false
-			}
-			, usableData : {
-				  prevBlockOffset	: $(this).prev().position().top
-				, placeholderOffset : $(this).position().top
-			}
-			
-		};
-		var first = false;
-		
-		if ($(this).prev().length > 0) {
-			data.usableData.prevBlockOffset = $(this).prev().position().top;
-			$(this).getPrev(data);
-		}
-		else {
-			first = true;
-		}
-		
-		callback(first, data)
-	};
-	
 	$.fn.doctopus = function( method ) {
 		return this.each( function() {
 			if (methods[method]) {
