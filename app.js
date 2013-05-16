@@ -31,6 +31,7 @@ app.configure(function() {
 
 // Page routes
 app.get('/document/:id/edit', document.edit);
+app.get('/document/upload-test', document.upload-test);
 
 // Let the app listen op port 1337
 server.listen(1337);
