@@ -1,8 +1,7 @@
 // Include the required modules
 var express = require('express'),
 	app = express(),
-	server = require('http').createServer(app),
-	document = require('./routes/document');
+	routes = require('./routes/index.njs');
 
 // Configure the application
 app.configure(function() {
@@ -30,11 +29,10 @@ app.configure(function() {
 });
 
 // Page routes
-app.get('/document/:id/edit', document.edit);
-app.get('/document/upload-test', document.upload-test);
+app.get('/', routes.index);
 
 // Let the app listen op port 1337
-server.listen(1337);
+app.listen(1337);
 
 // Set the console message
 console.log('Application accessible at http://localhost:1337');
