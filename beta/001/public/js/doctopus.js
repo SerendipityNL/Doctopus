@@ -35,22 +35,22 @@
 		},
 		startSortable: function() {
 
-			var sortVar = methods.settings.sortable;
+			var sortSettings = methods.settings.sortable;
 
-			jQuery(sortVar.selector).sortable({
-				  items					: sortVar.items
+			jQuery(sortSettings.selector).sortable({
+				  items					: sortSettings.items
 				, cursorAt				: {
-					  left					: sortVar.cursor.left
-					, top					: sortVar.cursor.top
+					  left					: sortSettings.cursor.left
+					, top					: sortSettings.cursor.top
 				}
-				, delay					: sortVar.delay
-				, placeholder			: sortVar.placeholder
+				, delay					: sortSettings.delay
+				, placeholder			: sortSettings.placeholder
 				, start					: function(e, ui) {
-					jQuery(sortVar.placeholder).width(ui.item.width()).height(ui.item.height());
+					jQuery(sortSettings.placeholder).width(ui.item.width()).height(ui.item.height());
 				}
 				, change				: function(e, ui) {
-					if (jQuery(sortVar.placeholder).prev().length > 0){
-						if (ui.item.position().top == jQuery(sortVar.placeholder).prev().position().top){
+					if (jQuery(sortSettings.placeholder).prev().length > 0){
+						if (ui.item.position().top == jQuery(sortSettings.placeholder).prev().position().top){
 							// Items are the same
 						}
 						else {
@@ -104,23 +104,18 @@
 				if(classes[1] == "block_more"){
 					console.log('more');
 	
-					jQuery(this).parent().hide();
-					jQuery(this).parent().parent().find('.more_icons').show();
-	
+					jQuery(this).parent().hide().parent().find('.more_icons').show();	
 					add_block = false;
 				}
 	
 				if(classes[1] == "block_undo"){
-					jQuery(this).parent().parent().find('.normal_icons').show();
-					jQuery(this).parent().hide();
-	
+					jQuery(this).parent().hide().parent().find('.normal_icons').show();
 					add_block = false;
 				}
 	
 				if(add_block == true){
 					//no more selected, add class to parent block and hide the menu
-					jQuery(this).parent().parent().parent().removeClass('emptyBlock');
-					jQuery(this).parent().parent().parent().addClass(classes[1]);
+					jQuery(this).parent().parent().parent().removeClass('emptyBlock').addClass(classes[1]);
 					
 					//removes the icon selector
 					jQuery(this).parent().parent().remove();
