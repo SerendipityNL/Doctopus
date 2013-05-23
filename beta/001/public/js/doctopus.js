@@ -1,9 +1,9 @@
-(function( $ ) {
+(function( jQuery ) {
 	var methods = {
 		init: function ( that, options ) {
 			methods.el = that;
 			
-			methods.settings = $.extend( {
+			methods.settings = jQuery.extend( {
 				sortable 		: {
 					  selector				: '#sortable1'
 					, items					: ' > div'
@@ -17,15 +17,27 @@
 				, texteditor	: {
 					  selector				: '#textarea'
 				}
+				, changeBlock	: {
+					  iconSet				: [	  'text'
+					  							, 'list'
+					  							, 'image'
+												, 'youtube'
+					  							, 'music'
+					  							, 'undo'
+					  						  ]
+					, 
+				}
 			}, options);
 			
 			methods.startSortable();
+			methods.changeBlock();
+			methods.changeBlockListener();
 		},
 		startSortable: function() {
 
 			var sortVar = methods.settings.sortable;
 
-			$(sortVar.selector).sortable({
+			jQuery(sortVar.selector).sortable({
 				  items					: sortVar.items
 				, cursorAt				: {
 					  left					: sortVar.cursor.left
@@ -34,11 +46,11 @@
 				, delay					: sortVar.delay
 				, placeholder			: sortVar.placeholder
 				, start					: function(e, ui) {
-					$(sortVar.placeholder).width(ui.item.width()).height(ui.item.height());
+					jQuery(sortVar.placeholder).width(ui.item.width()).height(ui.item.height());
 				}
 				, change				: function(e, ui) {
-					if ($(sortVar.placeholder).prev().length > 0){
-						if (ui.item.position().top == $(sortVar.placeholder).prev().position().top){
+					if (jQuery(sortVar.placeholder).prev().length > 0){
+						if (ui.item.position().top == jQuery(sortVar.placeholder).prev().position().top){
 							// Items are the same
 						}
 						else {
@@ -52,9 +64,9 @@
 		},
 		placeholderResize: function(e, ui){
 			var placeholderSelector = '.' + methods.settings.sortable.placeholder;
-			// This stuff must be rewritten under $.fn.getSurroundingBlocks, which needs to be renamed to resizePlaceholder
+			// This stuff must be rewritten under jQuery.fn.getSurroundingBlocks, which needs to be renamed to resizePlaceholder
 			var width = ui.item.width();
-			$(placeholderSelector).getSurroundingBlocks( function (first, data) {
+			jQuery(placeholderSelector).getSurroundingBlocks( function (first, data) {
 				if ( (first == false) && (data.returnData.prevTotalSize < 4) ) {
 					var restSize = 4 - data.returnData.prevTotalSize;
 					if (restSize < parseInt(ui.item.attr('data-colspan'))){
@@ -74,22 +86,94 @@
 						}
 					}
 				}
-				$(placeholderSelector).width(width);
+				jQuery(placeholderSelector).width(width);
 			});
+		},
+		changeBlock: function (){
+			jQuery(this).parent().find('.plus_icon').hide();
+			jQuery(this).parent().append(methods.buildChangeMenu(methods.settings.changeBlock.iconSet));
+			jQuery(this).parent().find('.icon_selector').show();
+	
+	
+			// once clicked on a icon, get the classname and add this block
+			jQuery(".icon").click(function() {
+	
+				var classes = jQuery(this).attr("class").split(/\s/);
+				var add_block = true;
+	
+				if(classes[1] == "block_more"){
+					console.log('more');
+	
+					jQuery(this).parent().hide();
+					jQuery(this).parent().parent().find('.more_icons').show();
+	
+					add_block = false;
+				}
+	
+				if(classes[1] == "block_undo"){
+					jQuery(this).parent().parent().find('.normal_icons').show();
+					jQuery(this).parent().hide();
+	
+					add_block = false;
+				}
+	
+				if(add_block == true){
+					//no more selected, add class to parent block and hide the menu
+					jQuery(this).parent().parent().parent().removeClass('emptyBlock');
+					jQuery(this).parent().parent().parent().addClass(classes[1]);
+					
+					//removes the icon selector
+					jQuery(this).parent().parent().remove();
+				}
+			});
+
+			// close the block selector
+			jQuery(".close_icon").click(function() {
+				jQuery(this).parent().parent().find('.plus_icon').show();
+				jQuery(this).parent().remove();
+
+			});
+		},
+		changeBlockListener: function (){
+			jQuery(".plus_icon").off('click.changeBlock');
+			jQuery(".plus_icon").on('click.changeBlock', methods.changeBlock());
+		},
+		buildChangeMenu : function(icons) {
+			var html = '';
+			var i = 0;
+			html .= '<div class="icon_selector"><div class="close_icon"></div><div class="normal_icons">';
+			var numberOfIcons = icons.length;
+			
+			jQuery.each(icons, function(icon, index){
+				i++
+				if (i == 4) {
+					html .= '</div><div class="icon block_more">';
+				}
+				
+				html .= '<div class="icon block_'+icon+'"></div>';
+				
+				if (i == numberOfIcons) {
+					html .= '</div>';
+				}
+			});
+			
+			html .= '</div>';
+			return html;
 		}
+		
 	};
 	
-	$.fn.getPrev = function (data){
+	jQuery.fn.getPrev = function (data){
 		var prevBlockOffset = data.usableData.prevBlockOffset;
-		if ($(this).prev().length > 0) {
-			if ($(this).prev().position().top == data.usableData.prevBlockOffset) {
+		if (jQuery(this).prev().length > 0) {
+			if (jQuery(this).prev().position().top == data.usableData.prevBlockOffset) {
 				data.returnData.prevBlocks++;
-				data.returnData.prevTotalSize += parseInt($(this).prev().attr('data-colspan'));
-				$(this).prev().getPrev(data);
+				data.returnData.prevTotalSize += parseInt(jQuery(this).prev().attr('data-colspan'));
+				jQuery(this).prev().getPrev(data);
 			}
 		}
 	};
-	$.fn.getSurroundingBlocks = function(callback){
+	jQuery.fn.getSurroundingBlocks = function(callback){
 		var data = {
 			  returnData : {
 				  prevBlocks 		: 0
@@ -104,12 +188,12 @@
 			}
 			
 		};
-		data.usableData.placeholderOffset = $(this).position().top;
+		data.usableData.placeholderOffset = jQuery(this).position().top;
 		var first = false;
 		
-		if ($(this).prev().length > 0) {
-			data.usableData.prevBlockOffset = $(this).prev().position().top;
-			$(this).getPrev(data);
+		if (jQuery(this).prev().length > 0) {
+			data.usableData.prevBlockOffset = jQuery(this).prev().position().top;
+			jQuery(this).getPrev(data);
 		}
 		else {
 			first = true;
@@ -127,7 +211,7 @@
 				return methods.init ( this, method );
 			}
 			else {
-				$.error( 'Method ' + method + ' does not exist on jQuery.doctopus' );
+				jQuery.error( 'Method ' + method + ' does not exist on jQuery.doctopus' );
 			}
 		});
 	};
