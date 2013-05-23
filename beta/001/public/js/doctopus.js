@@ -30,7 +30,6 @@
 			}, options);
 			
 			methods.startSortable();
-			methods.changeBlock();
 			methods.changeBlockListener();
 		},
 		startSortable: function() {
@@ -130,29 +129,29 @@
 			});
 		},
 		changeBlockListener: function (){
-			jQuery(".plus_icon").off('click.changeBlock');
-			jQuery(".plus_icon").on('click.changeBlock', methods.changeBlock());
+			// jQuery(".plus_icon").off('click.changeBlock');
+			jQuery(".plus_icon").on('click.changeblock', console.log('test'));
 		},
 		buildChangeMenu: function(icons) {
 			var html = '';
 			var i = 0;
-			html .= '<div class="icon_selector"><div class="close_icon"></div><div class="normal_icons">';
+			html += '<div class="icon_selector"><div class="close_icon"></div><div class="normal_icons">';
 			var numberOfIcons = icons.length;
 			
 			jQuery.each(icons, function(icon, index){
 				i++
 				if (i == 4) {
-					html .= '</div><div class="icon block_more">';
+					html += '</div><div class="icon block_more">';
 				}
 				
-				html .= '<div class="icon block_'+ icon +'"></div>';
+				html += '<div class="icon block_'+ icon +'"></div>';
 				
 				if (i == numberOfIcons) {
-					html .= '</div>';
+					html += '</div>';
 				}
 			});
 			
-			html .= '</div>';
+			html += '</div>';
 			return html;
 		}
 		
@@ -198,7 +197,7 @@
 	};
 	
 	doctopus = function( method ) {
-		return this.each( function() {
+		return jQuery.each( function() {
 			if (methods[method]) {
 				return methods[methods].apply( this, Array.prototype.slice.call( arguments, 1) );
 			}
@@ -211,3 +210,5 @@
 		});
 	};
 })( jQuery );
+
+doctopus();
