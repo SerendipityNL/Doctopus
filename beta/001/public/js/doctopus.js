@@ -29,12 +29,12 @@
 				}
 			}, options);
 			
-			alert('penis');
+			console.log('init has been loaded');
 			methods.startSortable();
 			methods.changeBlockListener();
 		},
 		startSortable: function() {
-			console.log('sortable');
+			console.log('sortable has been started');
 			var sortSettings = methods.settings.sortable;
 
 			jQuery(sortSettings.selector).sortable({
@@ -134,7 +134,7 @@
 			jQuery(".plus_icon").on('click', console.log('test'));
 
 			jQuery(".plus_icon").click(function(){
-				alert('this');
+				console.log('plus click');
 			});
 
 			alert('iam listening');
@@ -218,5 +218,7 @@
 		});
 	};
 })( jQuery );
-alert('penis');
+
 doctopus();
+
+console.log('doctopus.js has been loaded');
