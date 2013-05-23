@@ -25,15 +25,16 @@
 					  							, 'music'
 					  							, 'undo'
 					  						  ]
-					, 
+					 
 				}
 			}, options);
 			
+			alert('penis');
 			methods.startSortable();
 			methods.changeBlockListener();
 		},
 		startSortable: function() {
-
+			console.log('sortable');
 			var sortSettings = methods.settings.sortable;
 
 			jQuery(sortSettings.selector).sortable({
@@ -130,7 +131,13 @@
 		},
 		changeBlockListener: function (){
 			// jQuery(".plus_icon").off('click.changeBlock');
-			jQuery(".plus_icon").on('click.changeblock', console.log('test'));
+			jQuery(".plus_icon").on('click', console.log('test'));
+
+			jQuery(".plus_icon").click(function(){
+				alert('this');
+			});
+
+			alert('iam listening');
 		},
 		buildChangeMenu: function(icons) {
 			var html = '';
@@ -197,6 +204,7 @@
 	};
 	
 	doctopus = function( method ) {
+
 		return jQuery.each( function() {
 			if (methods[method]) {
 				return methods[methods].apply( this, Array.prototype.slice.call( arguments, 1) );
@@ -210,5 +218,5 @@
 		});
 	};
 })( jQuery );
-
+alert('penis');
 doctopus();
