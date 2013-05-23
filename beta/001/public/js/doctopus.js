@@ -133,7 +133,7 @@
 			jQuery(".plus_icon").off('click.changeBlock');
 			jQuery(".plus_icon").on('click.changeBlock', methods.changeBlock());
 		},
-		buildChangeMenu : function(icons) {
+		buildChangeMenu: function(icons) {
 			var html = '';
 			var i = 0;
 			html .= '<div class="icon_selector"><div class="close_icon"></div><div class="normal_icons">';
@@ -145,7 +145,7 @@
 					html .= '</div><div class="icon block_more">';
 				}
 				
-				html .= '<div class="icon block_'+icon+'"></div>';
+				html .= '<div class="icon block_'+ icon +'"></div>';
 				
 				if (i == numberOfIcons) {
 					html .= '</div>';

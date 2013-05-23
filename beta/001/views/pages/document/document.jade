@@ -1,0 +1,58 @@
+include ../../mixins/form
+doctype 5
+html(ng-app)
+	head
+		title= pageTitle
+		link(rel="stylesheet", type="text/css", href="/css/reset.css")
+		link(rel="stylesheet", type="text/css", href="/css/ui.css")
+		script(type="text/javascript", src="/js/jquery.min.js")
+		script(type="text/javascript", src="/js/jquery-ui.min.js")
+		script(type="text/javascript", src="/js/yellow_text.js")
+		script(type="text/javascript", src="/js/doctopus.js")
+	body
+	div#header 
+		h1.header-title
+			img(src="img/assets/logo.png")
+			| DOCTOPUS
+	div#wrapper
+		div#workfield-container
+			div#workfield
+
+				div.emptyBlock.col_1
+					div.plus_icon
+				div.emptyBlock.col_1
+					div.plus_icon
+				//- div.block
+				//- div.block-optionpanel
+				//- 	div.option-btn.firstchoice.text-icn Text
+				//- 	div.option-btn.secondchoice.image-icn Image
+				//- 	div.option-btn.thirdchoice.list-icn List
+				//- 	div.option-btn.more.more-icn More
+				//- 		div.more-menu
+				//- div.block
+				//- div.block
+				//- div.block
+				//- div.block
+				//- div.block-selected
+				//- 	div.drag-handle
+				//- 	div.buis-panel
+				//- 		div.buis-btn.b B
+				//- 		div.buis-btn.u U
+				//- 		div.buis-btn.i I
+				//- div.block
+
+	div#sidebar-container
+		div#block-definition.text-icn
+			h2 Text Block
+		div#block-definition-bottomline
+		div#option-wrapper
+			div.option-container 
+				div.option-definition Block type
+				div.option-definition Text
+			mixin select('Font:','font', items, '')
+			mixin text('Font-color:','fontcolor','')
+			div.option-container
+		div#trashcan-container
+		div#trashcan
+			div#trashcan-explanation "Double click to activate"
+		div#trashcan-topline
