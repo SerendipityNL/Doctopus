@@ -213,12 +213,13 @@
 		} else if( typeof(method) == 'object' || !method ) {
 			method = methods.init;
 		} else {
-			$.error( 'Method ' +  method + ' does not exist on jQuery.pluginName' );
+			Jquery.error( 'Method ' +  method + ' does not exist on jQuery.pluginName' );
 			return this;
 		}
  
 		return method.apply(this, arguments);
 
+		// dit werkt niet
 		// return jQuery.each( function() {
 		// 	if (methods[method]) {
 		// 		return methods[methods].apply( this, Array.prototype.slice.call( arguments, 1) );
