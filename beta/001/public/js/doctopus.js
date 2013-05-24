@@ -5,7 +5,7 @@
 			
 			methods.settings = jQuery.extend( {
 				sortable 		: {
-					  selector				: '#sortable1'
+					  selector				: '#workfield'
 					, items					: ' > div'
 					, delay					: 300
 					, placeholder			: 'col-placeholder'
