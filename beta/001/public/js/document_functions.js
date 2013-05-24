@@ -1,4 +1,6 @@
+
 jQuery(document).ready(function() {
+
 	// html divs for iconselector (dont want this inline);
 	var more_icon_set ='<div class="more_icons"><div class="icon block_youtube"></div><div class="icon block_music"></div><div class="icon block_undo"></div></div>';
 	var icon_set = '<div class="icon_selector">'+ more_icon_set +'<div class="close_icon"></div><div class="normal_icons"><div class="icon block_text"></div><div class="icon block_list"></div><div class="icon block_image"></div><div class="icon block_more"></div></div></div>';
