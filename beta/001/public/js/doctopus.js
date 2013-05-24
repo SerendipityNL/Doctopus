@@ -131,13 +131,13 @@
 		},
 		changeBlockListener: function (){
 			// jQuery(".plus_icon").off('click.changeBlock');
-			jQuery(".plus_icon").on('click', console.log('test'));
+			jQuery(".plus_icon").on('click.changeblock', console.log('change block'));
 
 			jQuery(".plus_icon").click(function(){
 				console.log('plus click');
 			});
 
-			alert('iam listening');
+			console.log('changeblock changeBlockListener');
 		},
 		buildChangeMenu: function(icons) {
 			var html = '';
@@ -205,17 +205,31 @@
 	
 	doctopus = function( method ) {
 
-		return jQuery.each( function() {
-			if (methods[method]) {
-				return methods[methods].apply( this, Array.prototype.slice.call( arguments, 1) );
-			}
-			else if ( typeof method === 'object' || ! method ) {
-				return methods.init ( this, method );
-			}
-			else {
-				jQuery.error( 'Method ' + method + ' does not exist on jQuery.doctopus' );
-			}
-		});
+		var method = arguments[0];
+ 
+		if(methods[method]) {
+			method = methods[method];
+			arguments = Array.prototype.slice.call(arguments, 1);
+		} else if( typeof(method) == 'object' || !method ) {
+			method = methods.init;
+		} else {
+			$.error( 'Method ' +  method + ' does not exist on jQuery.pluginName' );
+			return this;
+		}
+ 
+		return method.apply(this, arguments);
+
+		// return jQuery.each( function() {
+		// 	if (methods[method]) {
+		// 		return methods[methods].apply( this, Array.prototype.slice.call( arguments, 1) );
+		// 	}
+		// 	else if ( typeof method === 'object' || ! method ) {
+		// 		return methods.init ( this, method );
+		// 	}
+		// 	else {
+		// 		jQuery.error( 'Method ' + method + ' does not exist on jQuery.doctopus' );
+		// 	}
+		// });
 	};
 })( jQuery );
 
