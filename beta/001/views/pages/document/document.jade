@@ -10,6 +10,7 @@ html(ng-app)
 		script(type="text/javascript", src="/js/yellow_text.js")
 		script(type="text/javascript", src="/js/doctopus.js")
 		script(type="text/javascript", src="/js/document_functions.js")
+		script(type="text/javascript", src="/js/change-style.js")
 	body
 	div#header 
 		h1.header-title
@@ -24,6 +25,16 @@ html(ng-app)
 				div.emptyBlock.col_1
 					div.plus_icon
 
+				for block in blocks
+					div(class='col_#{block.cols} block-#{block.type}')
+						if block.type == 'text'
+							p.col-content #{block.content}
+						if block.type == 'list'
+							ul
+							for item in block.content
+								li= item
+				div(style='clear:both')
+
 
 	div#sidebar-container
 		div#block-definition.text-icn
@@ -33,8 +44,14 @@ html(ng-app)
 			div.option-container 
 				div.option-definition Block type
 				div.option-definition Text
-			mixin select('Font:','font', items, '')
-			mixin text('Font-color:','fontcolor','')
+
+			
+			mixin text_xs('Font size:', 'font_size', style.font_size) 
+			| px
+			mixin select('Color:', 'color', options.colors, style.color)
+			mixin select('Font family:', 'font_family', options.fonts, style.font_family)
+			mixin select('Font weight:', 'font_weight', options.weights, style.font_weight)
+
 			div.option-container
 		div#trashcan-container
 		div#trashcan
