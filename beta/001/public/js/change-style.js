@@ -65,15 +65,7 @@ jQuery.fn.setPx = function() {
 }
 
 jQuery(document).ready(function() {
-	jQuery.getJSON('/getstyle', function(data) {
-		for (var element in data) {
-			for (var key in data[element]) {
-				var value = data[element][key];
-				setStyle(element, key, value);
-			}
-		}
-	});
-
+	
 	jQuery('input').setPx();
 
 	jQuery('select').on('change', function() {

@@ -32,7 +32,7 @@ var style = {
 		'font_size': 14,
 		'color': '#000000',
 		'font_family': 'arial',
-		'font_weight	': 'normal'
+		'font_weight': 'normal'
 	},
 	'li': {
 		'margin_bottom': 5
@@ -94,15 +94,11 @@ exports.setstyle = function(req, res) {
 	res.send(style);
 }
 
-exports.getstyle = function(req, res) {
-	res.send(style);
-}
-
 exports.css = function(req, res) {
 	var css = '';
 
 	for (var element in style) {
-		css += element + ' {\n';
+		css += '#blocks ' + element + ' {\n';
 		
 		for (var key in style[element]) {
 			var name = key.replace('_', '-');
