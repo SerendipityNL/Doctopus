@@ -4,13 +4,13 @@
 			methods.el = that;
 			
 			methods.settings = jQuery.extend( {
-				sortable 		: {
+				  sortable 		: {
 					  selector				: '#blocks'
 					, items					: ' > div'
 					, delay					: 300
 					, placeholder			: 'col-placeholder'
 					, cursor				: {
-						  left 				: 5
+						  left				: 5
 						, top				: 5
 					}
 				  }
@@ -22,7 +22,8 @@
 					, defaultActions		: 'bold, underline, italic, strikethrough, align-left, align-center, align-right'
 				}
 				, changeBlock	: {
-					  iconSet				: [	  'text'
+					  iconSet				: [
+					  							  'text'
 					  							, 'list'
 					  							, 'image'
 												, 'youtube'
@@ -31,7 +32,7 @@
 					  						  ]
 				}
 			}, options);
-			methods.startTrashcan();			
+						
 			methods.startSortable();
 			methods.activateListeners();
 		},
@@ -50,6 +51,7 @@
 		},
 
 		startSortable: function() {
+			methods.startTrashcan();
 			
 			var sortSettings = methods.settings.sortable;
 
