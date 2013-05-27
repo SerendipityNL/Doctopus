@@ -5,7 +5,7 @@
 			
 			methods.settings = jQuery.extend( {
 				sortable 		: {
-					  selector				: '#workfield'
+					  selector				: '#blocks'
 					, items					: ' > div'
 					, delay					: 300
 					, placeholder			: 'col-placeholder'
@@ -29,12 +29,11 @@
 				}
 			}, options);
 			
-			console.log('init has been loaded');
 			methods.startSortable();
 			methods.changeBlockListener();
 		},
 		startSortable: function() {
-			console.log('sortable has been started');
+			
 			var sortSettings = methods.settings.sortable;
 
 			jQuery(sortSettings.selector).sortable({
@@ -89,55 +88,52 @@
 				jQuery(placeholderSelector).width(width);
 			});
 		},
-		changeBlock: function (){
-			jQuery(this).parent().find('.plus_icon').hide();
-			jQuery(this).parent().append(methods.buildChangeMenu(methods.settings.changeBlock.iconSet));
-			jQuery(this).parent().find('.icon_selector').show();
+		changeBlock: function (el){
+			console.log('bla die bla');
+			jQuery(el).parent().find('.plus_icon').hide();
+			jQuery(el).parent().append(methods.buildChangeMenu(methods.settings.changeBlock.iconSet));
+			jQuery(el).parent().find('.icon_selector').show();
 	
 	
 			// once clicked on a icon, get the classname and add this block
 			jQuery(".icon").click(function() {
 	
-				var classes = jQuery(this).attr("class").split(/\s/);
+				var classes = jQuery(el).attr("class").split(/\s/);
 				var add_block = true;
 	
 				if(classes[1] == "block_more"){
 					console.log('more');
 	
-					jQuery(this).parent().hide().parent().find('.more_icons').show();	
+					console.log(jQuery(el).parent().hide().parent().find('.more_icons'));	
 					add_block = false;
 				}
 	
 				if(classes[1] == "block_undo"){
-					jQuery(this).parent().hide().parent().find('.normal_icons').show();
+					jQuery(el).parent().hide().parent().find('.normal_icons').show();
 					add_block = false;
 				}
 	
 				if(add_block == true){
 					//no more selected, add class to parent block and hide the menu
-					jQuery(this).parent().parent().parent().removeClass('emptyBlock').addClass(classes[1]);
+					jQuery(el).parent().parent().parent().removeClass('emptyBlock').addClass(classes[1]);
 					
 					//removes the icon selector
-					jQuery(this).parent().parent().remove();
+					jQuery(el).parent().parent().remove();
 				}
 			});
 
 			// close the block selector
 			jQuery(".close_icon").click(function() {
-				jQuery(this).parent().parent().find('.plus_icon').show();
-				jQuery(this).parent().remove();
+				jQuery(el).parent().parent().find('.plus_icon').show();
+				jQuery(el).parent().remove();
 
 			});
 		},
 		changeBlockListener: function (){
 			// jQuery(".plus_icon").off('click.changeBlock');
-			jQuery(".plus_icon").on('click.changeblock', console.log('change block'));
-
-			jQuery(".plus_icon").click(function(){
-				console.log('plus click');
+			jQuery(".plus_icon").on('click.changeblock', function() {
+				methods.changeBlock(jQuery(this));
 			});
-
-			console.log('changeblock changeBlockListener');
 		},
 		buildChangeMenu: function(icons) {
 			var html = '';
@@ -145,10 +141,10 @@
 			html += '<div class="icon_selector"><div class="close_icon"></div><div class="normal_icons">';
 			var numberOfIcons = icons.length;
 			
-			jQuery.each(icons, function(icon, index){
+			jQuery.each(icons, function(index, icon){
 				i++
 				if (i == 4) {
-					html += '</div><div class="icon block_more">';
+					html += '<div class="icon block_more"></div></div><div class="more_icons">';
 				}
 				
 				html += '<div class="icon block_'+ icon +'"></div>';
@@ -203,37 +199,21 @@
 		callback(first, data)
 	};
 	
-	doctopus = function( method ) {
-
-		var method = arguments[0];
- 
-		if(methods[method]) {
-			method = methods[method];
-			arguments = Array.prototype.slice.call(arguments, 1);
-		} else if( typeof(method) == 'object' || !method ) {
-			method = methods.init;
-		} else {
-			Jquery.error( 'Method ' +  method + ' does not exist on jQuery.pluginName' );
-			return this;
-		}
- 
-		return method.apply(this, arguments);
-
-		// dit werkt niet
-		// return jQuery.each( function() {
-		// 	if (methods[method]) {
-		// 		return methods[methods].apply( this, Array.prototype.slice.call( arguments, 1) );
-		// 	}
-		// 	else if ( typeof method === 'object' || ! method ) {
-		// 		return methods.init ( this, method );
-		// 	}
-		// 	else {
-		// 		jQuery.error( 'Method ' + method + ' does not exist on jQuery.doctopus' );
-		// 	}
-		// });
+	jQuery.fn.doctopus = function( method ) {
+		return this.each( function() {
+			if (methods[method]) {
+				return methods[methods].apply( this, Array.prototype.slice.call( arguments, 1) );
+			}
+			else if ( typeof method === 'object' || ! method ) {
+				return methods.init ( this, method );
+			}
+			else {
+				jQuery.error( 'Method ' + method + ' does not exist on jQuery.doctopus' );
+			}
+		});
 	};
 })( jQuery );
 
-doctopus();
-
-console.log('doctopus.js has been loaded');
+jQuery(function() {
+	jQuery(document).doctopus();
+});
