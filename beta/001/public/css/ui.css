@@ -43,6 +43,12 @@
 	color:#999;
 	-webkit-appearance: none;
 }
+#option-wrapper select:focus{
+	outline:none;
+}
+#option-wrapper input[type="text"]:focus{
+	outline:none;
+}
 .select-arrow{
 	cursor:pointer;
 	width: 100%;
@@ -377,8 +383,14 @@ div.empty-block{
 
 .add_more_blocks_button{
 	position:fixed;
-	top:55px;
-	left:10px;
+	bottom:10px;
+	right:275px;
+	width:80px;
+	height:80px;
+	background:url('../img/ui/icons/new-block.png') no-repeat;
+}
+.add_more_blocks_button:hover{
+	background:url('../img/ui/icons/new-block-hover.png') no-repeat;
 }
 
 
