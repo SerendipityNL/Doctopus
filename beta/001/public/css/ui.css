@@ -21,13 +21,46 @@
     font-style:normal;
 }
 
-input[type="text"]{
-	background:#444;
+#option-wrapper input[type="text"]{
+	background: transparent;
+	color:#999;
 	border:0px;
 	font-size:1em;
+	width:100%;
+	padding:11px 0px 10px 0px;
+}
+#option-wrapper input[type="text"]:hover, #option-wrapper select:hover{
+	color:#fff;
 }
 
-*{ margin:0px; padding:0px; list-style:none; text-decoration:none; vertical-align:baseline; }
+#option-wrapper select{
+	cursor:pointer;
+	background:transparent;
+	width: 150%;
+	padding: 5px;
+	line-height: 1;
+	border: 0px;
+	color:#999;
+	-webkit-appearance: none;
+}
+.select-arrow{
+	cursor:pointer;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: url(../img/ui/icons/dropdown-arrow-icon.png) no-repeat center right 5px;
+}
+.select-arrow:hover{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: url(../img/ui/icons/dropdown-arrow-hover-icon.png) no-repeat center right 5px;
+}
+
+
+
+
+*{ margin:0px; padding:0px; list-style:none; text-decoration:none; vertical-align:baseline; border:0px; }
 
 body{
 	background:#444;
@@ -54,6 +87,7 @@ body{
 			padding:5px 0px;
 			height:35px; 
 		}
+
 	#wrapper{
 		width:960px;
 		height:768px;
@@ -170,10 +204,10 @@ body{
 					}
 						.option-definition{
 							float:left;
-							width:45%;
+							width:50%;
 							font-family:'RobotoSlabRegular';
-							font-size:1em;
-							line-height:2.6em;
+							font-size:0.8em;
+							line-height:3.2em;
 						}
 
 	#trashcan-container{

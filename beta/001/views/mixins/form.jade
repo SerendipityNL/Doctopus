@@ -13,10 +13,11 @@ mixin text_xs(label, element, name, value)
 mixin select(label, element, name, options, selected)
 	div.option-container
 		div.option-definition= label
-		div.option-definition 
-			select(name="#{name}", data-element="#{element}")
-				each key, value in options
-					if value == selected
-						option(value="#{value}", selected="selected")= key
-					else
-						option(value="#{value}")= key
+		div.option-definition
+			div.select-arrow 
+				select(name="#{name}", data-element="#{element}")
+					each key, value in options
+						if value == selected
+							option(value="#{value}", selected="selected")= key
+						else
+							option(value="#{value}")= key
