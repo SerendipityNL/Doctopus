@@ -14,6 +14,9 @@
 						, top				: 5
 					}
 				  }
+				, sortableTrash 				: {
+					  selector				: '#trashcan'
+				}
 				, texteditor	: {
 					  selector				: '#textarea'
 				}
@@ -25,13 +28,26 @@
 					  							, 'music'
 					  							, 'undo'
 					  						  ]
-					 
 				}
 			}, options);
-			
+			methods.startTrashcan();			
 			methods.startSortable();
 			methods.activateListeners();
 		},
+		startTrashcan : function() {
+			var trashSettings = methods.settings.sortableTrash;
+
+			jQuery(trashSettings.selector).sortable({
+				connectWith 			: methods.settings.sortable.selector
+				, update				: function (event, ui) {
+					console.log(ui.item);
+					ui.item.remove();
+					console.log('removed');
+					// Do what you need to to delete the item from the database
+				}
+			}).disableSelection().sortable('refresh');
+		},
+
 		startSortable: function() {
 			
 			var sortSettings = methods.settings.sortable;
@@ -42,8 +58,13 @@
 					  left					: sortSettings.cursor.left
 					, top					: sortSettings.cursor.top
 				}
+				, connectWith			: methods.settings.sortableTrash.selector
 				, delay					: sortSettings.delay
 				, placeholder			: sortSettings.placeholder
+
+				, beforeStop					:function (e, ui) {
+					console.log(ui.item[0].parentNode.classList);
+				}
 				, start					: function(e, ui) {
 					jQuery(sortSettings.placeholder).width(ui.item.width()).height(ui.item.height());
 				}

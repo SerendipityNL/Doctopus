@@ -43,6 +43,12 @@
 	color:#999;
 	-webkit-appearance: none;
 }
+#option-wrapper select:focus{
+	outline:none;
+}
+#option-wrapper input[type="text"]:focus{
+	outline:none;
+}
 .select-arrow{
 	cursor:pointer;
 	width: 100%;
@@ -91,13 +97,14 @@ body{
 	#wrapper{
 		width:960px;
 		height:auto;
-		margin:45px auto 0px auto;
+		margin:0px auto;
 	}
 		#workfield-container{
 			float:left;
 			width:710px;
-			height:auto;
+			min-height:300px;
 			background:#444;
+			margin:60px 0px;
 		}
 			#blocks {
 				background:#fff;
@@ -169,8 +176,8 @@ body{
 			#block-definition{
 				position:fixed;
 				top:45px;
-				right:0px;
-				width:265px;
+				right:16px;
+				width:249px;
 				height:65px;
 				background-color:#96bb49;
 				background-position:left 20px center;
@@ -187,12 +194,13 @@ body{
 
 				#block-definition-bottomline{
 					position:fixed;
-					top:112px;
-					right:0px;
+					top:110px;
+					right:16px;
 					background:#96bb49;
-					width:265px;
+					width:249px;
 					height:3px;
 					z-index:999;
+					border-top:2px solid #222;
 				}
 				#option-wrapper{
 					position:absolute;
@@ -375,8 +383,14 @@ div.empty-block{
 
 .add_more_blocks_button{
 	position:fixed;
-	top:55px;
-	left:10px;
+	bottom:10px;
+	right:275px;
+	width:80px;
+	height:80px;
+	background:url('../img/ui/icons/new-block.png') no-repeat;
+}
+.add_more_blocks_button:hover{
+	background:url('../img/ui/icons/new-block-hover.png') no-repeat;
 }
 
 
