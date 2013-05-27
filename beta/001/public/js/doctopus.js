@@ -266,7 +266,15 @@
 			});
 
 			jQuery('.increase, .decrease').on('click.resizeBlock', function() {
-				methods.resizeBlock();
+				selectedBlock = jQuery("#blocks [selectedBlock]");
+
+				console.log(selectedBlock);
+				if(selectedBlock){
+					methods.resizeBlock(selectedBlock);
+				}
+				else{
+					console.log('nothing selected');
+				}
 			});
 		}
 		
