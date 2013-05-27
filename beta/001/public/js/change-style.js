@@ -16,7 +16,7 @@ function updateStyle(name, value) {
 
 jQuery.fn.setPx = function() {
 	var name = jQuery(this).attr('name');
-	
+
 	// Set the initial value
 	// Get the value and strip all but numbers
 	var val = jQuery(this).val().replace(/\D/g, '');
@@ -28,6 +28,9 @@ jQuery.fn.setPx = function() {
 		var name = jQuery(this).attr('name');
 		// Get the value and strip all but numbers
 		var val = jQuery(this).val().replace(/\D/g, '');
+
+		var element = jQuery(this).attr('data-element');
+		console.log(name + ': ' + element);
 
 		if (val.length > 0) {
 			val = (val > 64 ? 64 : val);
@@ -69,6 +72,9 @@ jQuery(document).ready(function() {
 		var name = jQuery(this).attr('name');
 		var val = jQuery(this).val();
 		//var settingName = cssName.replace('-', '_');
+		
+		var element = jQuery(this).attr('data-element');
+		console.log(name + ': ' + element);
 
 		setStyle(name, val);
 		updateStyle(name, val)
