@@ -70,6 +70,7 @@
 
 body{
 	background:#444;
+	overflow-x:hidden;
 }
 	#header{
 		position:fixed;
