@@ -268,24 +268,13 @@ div#blocks .col-1,
 div#blocks .col-2,
 div#blocks .col-3,
 div#blocks .col-4 {
-    display:            inline;
-    float:              left;
-    position:           relative;
-    margin:             5px 1%;
-    min-height:         20px;
-    /*text-align:       justify;*/
+	display:            inline;
+	float:              left;
+	position:           relative;
+	margin:             5px 1%;
+	min-height:         20px;
+	/*text-align:       justify;*/
 }
-
-div.empty-block:hover, .empty-block:active{
-	outline:2px solid #96bb49;
-}
-
-div.empty-block{
-    outline:2px solid #ccc;
-	height:153.5px;
-	background:#fff;
-}
-
 
 .col-1 {
     width:              23%;
@@ -301,6 +290,23 @@ div.empty-block{
 
 .col-4 {
     width:              98%;
+}
+
+
+div.empty-block:hover, .empty-block:active{
+	outline:2px solid #CCC;
+}
+
+div.block-text p,
+div.block-list ul {
+	padding: 5px;
+	outline: 1px dashed #CCC;
+}
+
+div.empty-block{
+    outline:2px solid #ccc;
+	height:153.5px;
+	background:#fff;
 }
 
 
