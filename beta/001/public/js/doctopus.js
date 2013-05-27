@@ -30,7 +30,7 @@
 			}, options);
 			
 			methods.startSortable();
-			methods.changeBlockListener();
+			methods.activateListeners();
 		},
 		startSortable: function() {
 			
@@ -89,24 +89,23 @@
 			});
 		},
 		changeBlock: function (el){
-			console.log('bla die bla');
 			jQuery(el).parent().find('.plus_icon').hide();
 			jQuery(el).parent().append(methods.buildChangeMenu(methods.settings.changeBlock.iconSet));
 			jQuery(el).parent().find('.icon_selector').show();
 	
 	
 			// once clicked on a icon, get the classname and add this block
-			jQuery(".icon").click(function() {
+			jQuery('.icon').click(function() {
 	
-				var classes = jQuery(this).attr("class").split(/\s/);
+				var classes = jQuery(this).attr('class').split(/\s/);
 				var add_block = true;
 	
-				if(classes[1] == "block_more"){
+				if(classes[1] == 'block_more'){
 					jQuery(this).parent().hide().parent().find('.more_icons').show();	
 					add_block = false;
 				}
 	
-				if(classes[1] == "block_undo"){
+				if(classes[1] == 'block_undo'){
 					jQuery(this).parent().hide().parent().find('.normal_icons').show();
 					add_block = false;
 				}
@@ -121,15 +120,15 @@
 			});
 
 			// close the block selector
-			jQuery(".close_icon").click(function() {
+			jQuery('.close_icon').click(function() {
 				jQuery(this).parent().parent().find('.plus_icon').show();
 				jQuery(this).parent().remove();
 
 			});
 		},
-		changeBlockListener: function (){
-			// jQuery(".plus_icon").off('click.changeBlock');
-			jQuery(".plus_icon").on('click.changeblock', function() {
+		resetChangeBlockListener: function (){
+			jQuery('.plus_icon').off('click.changeBlock');
+			jQuery('.plus_icon').on('click.changeblock', function() {
 				methods.changeBlock(jQuery(this));
 			});
 		},
@@ -154,6 +153,20 @@
 			
 			html += '</div>';
 			return html;
+		},
+		addBlock: function() {
+			var blockHtml = '<div class="empty-block col-1"><div class="plus_icon"></div></div>';
+			jQuery(methods.settings.sortable.selector).append(blockHtml);
+			methods.resetChangeBlockListener();
+		},
+		
+		activateListeners: function (){
+			jQuery('.add_more_blocks_button').on('click.addMoreBlocks', function() {
+				methods.addBlock();
+			});
+			jQuery('.plus_icon').on('click.changeblock', function() {
+				methods.changeBlock(jQuery(this));
+			});
 		}
 		
 	};
@@ -200,7 +213,7 @@
 	jQuery.fn.doctopus = function( method ) {
 		return this.each( function() {
 			if (methods[method]) {
-				return methods[methods].apply( this, Array.prototype.slice.call( arguments, 1) );
+				return methods[method].apply( this, Array.prototype.slice.call( arguments, 1) );
 			}
 			else if ( typeof method === 'object' || ! method ) {
 				return methods.init ( this, method );
