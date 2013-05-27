@@ -1,12 +1,20 @@
-function setStyle(name, value) {
+function setStyle(element, name, value) {
 	var newName = name.replace('_', '-');
-	jQuery('#blocks p').css(newName, value);
+	var blaat = {
+		'element': element,
+		'name': name,
+		'value': value
+	}
+	console.log(blaat);
+	jQuery('#blocks ' + element).css(newName, value);
 }
 
-function updateStyle(name, value) {
-	var data = {};
-	data[name] = value;
-	
+function updateStyle(element, name, value) {
+	var data = {
+		'element': element,
+		'name': name,
+		'value': value
+	};
 	jQuery.ajax({
 		type: 'POST',
 		url: '/setstyle',
@@ -15,6 +23,7 @@ function updateStyle(name, value) {
 }
 
 jQuery.fn.setPx = function() {
+	var element = jQuery(this).attr('data-element');
 	var name = jQuery(this).attr('name');
 
 	// Set the initial value
@@ -25,12 +34,14 @@ jQuery.fn.setPx = function() {
 	jQuery(this).val(val);
 
 	jQuery.fn.updateVal = function() {
+		// Get the name of the field
 		var name = jQuery(this).attr('name');
+
+		// Get the element on which the style should be applied
+		var element = jQuery(this).attr('data-element');
+
 		// Get the value and strip all but numbers
 		var val = jQuery(this).val().replace(/\D/g, '');
-
-		var element = jQuery(this).attr('data-element');
-		console.log(name + ': ' + element);
 
 		if (val.length > 0) {
 			val = (val > 64 ? 64 : val);
@@ -41,10 +52,10 @@ jQuery.fn.setPx = function() {
 		jQuery(this).val(val);
 
 		// Apply the styling
-		setStyle(name, val + 'px');
+		setStyle(element, name, val + 'px');
 
 		// Update the database
-		updateStyle(name, val + 'px');
+		updateStyle(element, name, val + 'px');
 	}
 
 	// Update the field on focus out
@@ -61,22 +72,23 @@ jQuery.fn.setPx = function() {
 
 jQuery(document).ready(function() {
 	jQuery.getJSON('/getstyle', function(data) {
-		for (var key in data) {
-			setStyle(key, data[key]);
+		for (var element in data) {
+			for (var key in data[element]) {
+				var value = data[element][key];
+				setStyle(element, key, value);
+			}
 		}
 	});
 
 	jQuery('input').setPx();
 
 	jQuery('select').on('change', function() {
+		var element = jQuery(this).attr('data-element');
 		var name = jQuery(this).attr('name');
 		var val = jQuery(this).val();
 		//var settingName = cssName.replace('-', '_');
 		
-		var element = jQuery(this).attr('data-element');
-		console.log(name + ': ' + element);
-
-		setStyle(name, val);
-		updateStyle(name, val)
+		setStyle(element, name, val);
+		updateStyle(element, name, val)
 	});
 });
