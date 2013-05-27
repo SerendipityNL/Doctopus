@@ -23,19 +23,19 @@ var blocks = [
 
 var style = {
 	'p': {
-		'font_size': '14',
+		'font_size': 14,
 		'color': '#000000',
 		'font_family': 'arial',
 		'font_weight': 'normal'
 	},
 	'ul': {
-		'font_size': '14',
+		'font_size': 14,
 		'color': '#000000',
 		'font_family': 'arial',
-		'font_weight': 'normal'
+		'font_weight	': 'normal'
 	},
 	'li': {
-		'margin_bottom': '5px'
+		'margin_bottom': 5
 	}
 }
 
@@ -80,7 +80,7 @@ exports.index = function(req, res){
 // (until the server restarts)
 // ---------------------------------------------
 
-exports.setstyle = function (req, res) {
+exports.setstyle = function(req, res) {
 	var element = req.body.element;
 	var name = req.body.name;
 	var value = req.body.value;
@@ -94,7 +94,28 @@ exports.setstyle = function (req, res) {
 	res.send(style);
 }
 
-exports.getstyle = function (req, res) {
+exports.getstyle = function(req, res) {
 	res.send(style);
 }
 
+exports.css = function(req, res) {
+	var css = '';
+
+	for (var element in style) {
+		css += element + ' {\n';
+		
+		for (var key in style[element]) {
+			var name = key.replace('_', '-');
+			var value = style[element][key];
+
+			if (typeof(value) == 'number') {
+				value += 'px';
+			}
+			css += '\t' + name + ': ' + value + ';\n';
+		}
+		css += '}\n\n';
+	}
+
+	res.set('Content-Type', 'text/css');
+	res.send(css);
+}

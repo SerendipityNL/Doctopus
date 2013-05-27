@@ -30,6 +30,7 @@ app.configure(function() {
 
 // Page routes
 app.get('/', routes.index);
+app.get('/stylesheet.css', routes.css);
 app.get('/getstyle', routes.getstyle);
 app.post('/setstyle', routes.setstyle);
 
