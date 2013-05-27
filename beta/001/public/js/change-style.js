@@ -1,6 +1,6 @@
 function setStyle(name, value) {
 	var newName = name.replace('_', '-');
-	jQuery('#workfield p').css(newName, value);
+	jQuery('#blocks p').css(newName, value);
 }
 
 function updateStyle(name, value) {

@@ -18,15 +18,14 @@ html(ng-app)
 			| DOCTOPUS
 	div#wrapper
 		div#workfield-container
-			div#workfield
-
-				div.emptyBlock.col_1
+			div#blocks
+				div.empty-block.col-1
 					div.plus_icon
-				div.emptyBlock.col_1
+				div.empty-block.col-1
 					div.plus_icon
 
 				for block in blocks
-					div(class='col_#{block.cols} block-#{block.type}')
+					div(class='col-#{block.cols} block-#{block.type}')
 						if block.type == 'text'
 							p.col-content #{block.content}
 						if block.type == 'list'

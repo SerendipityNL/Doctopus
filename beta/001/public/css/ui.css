@@ -65,7 +65,7 @@ body{
 			height:768px;
 			background:#444;
 		}
-			#workfield{
+			#blocks {
 				background:#fff;
 				margin:40px 20px 0px 20px;
 				padding:10px 0px 10px 10px;
@@ -214,10 +214,10 @@ body{
 			background:#222;
 		}
 
-div#workfield .col_1,
-div#workfield .col_2,
-div#workfield .col_3,
-div#workfield .col_4 {
+div#blocks .col-1,
+div#blocks .col-2,
+div#blocks .col-3,
+div#blocks .col-4 {
     display:            inline;
     float:              left;
     position:           relative;
@@ -226,13 +226,30 @@ div#workfield .col_4 {
     /*text-align:       justify;*/
 }
 
-div.emptyBlock:hover, .emptyBlock:active{
+div.empty-block:hover, .empty-block:active{
 	border:2px solid #96bb49;
 }
 
-div.emptyBlock{
+div.empty-block{
     border:2px solid #ccc;
 	height:153.5px;
+}
+
+
+.col-1 {
+    width:              23%;
+}
+
+.col-2 {
+    width:              48%;
+}
+
+.col-3 {
+    width:              73%;
+}
+
+.col-4 {
+    width:              98%;
 }
 
 
@@ -318,20 +335,5 @@ div.emptyBlock{
 		 background:     url('../img/ui/icons/plus-icn-active.png') center no-repeat;
 	}
 
-.col_1 {
-    width:              23%;
-}
-
-.col_2 {
-    width:              48%;
-}
-
-.col_3 {
-    width:              73%;
-}
-
-.col_4 {
-    width:              98%;
-}
 
 		
