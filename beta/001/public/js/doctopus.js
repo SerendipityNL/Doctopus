@@ -19,6 +19,7 @@
 				}
 				, texteditor	: {
 					  selector				: '#textarea'
+					, defaultActions		: 'bold, underline, italic, strikethrough, align-left, align-center, align-right'
 				}
 				, changeBlock	: {
 					  iconSet				: [	  'text'
@@ -147,12 +148,6 @@
 
 			});
 		},
-		resetChangeBlockListener: function (){
-			jQuery('.plus_icon').off('click.changeBlock');
-			jQuery('.plus_icon').on('click.changeBlock', function() {
-				methods.changeBlock(jQuery(this));
-			});
-		},
 		buildChangeMenu: function(icons) {
 			var html = '';
 			var i = 0;
@@ -178,15 +173,49 @@
 		addBlock: function() {
 			var blockHtml = '<div class="empty-block col-1"><div class="plus_icon"></div></div>';
 			jQuery(methods.settings.sortable.selector).append(blockHtml);
-			methods.resetChangeBlockListener();
+			methods.reactivateListeners();
 		},
-		
+		createTexteditor: function(el) {
+			methods.destroyTexteditor();
+			jQuery(el).append('<textarea id="textarea"></textarea>');
+			var text = el.parents('[class^=col_]').addClass('isBeingEdited').find('p:first').text();
+			
+			jQuery('#textarea').text(''+text+'');
+			
+			jQuery('#textarea').texteditor({
+				defaultActions: methods.settings.texteditor.defaultActions
+			});
+			jQuery('.js-editor-container').append('<a id="js-save" class="btn btn-primary" href="javascript:;">Save</a>');
+		},
+		destroyTexteditor: function() {
+			jQuery('.isBeingEdited').removeClass('isBeingEdited');
+			jQuery('#textarea').remove();
+			jQuery('.js-editor-container').remove();
+		},
+		saveText: function() {
+			var text = jQuery('#textarea').text();
+			jQuery('.isBeingEdited').find('p:first').html(''+text+'');
+		},
+		reactivateListeners: function() {
+			jQuery('.add_more_blocks_button').off('click.addMoreBlocks');
+			jQuery('.plus_icon').off('click.changeBlock');
+			jQuery('.block_text').off('click.textEditor');
+			jQuery('#js-save').off('click.saveText');
+			
+			methods.activateListeners();
+		},
 		activateListeners: function (){
 			jQuery('.add_more_blocks_button').on('click.addMoreBlocks', function() {
 				methods.addBlock();
 			});
 			jQuery('.plus_icon').on('click.changeBlock', function() {
 				methods.changeBlock(jQuery(this));
+			});
+			jQuery('.block_text').on('click.textEditor', function() {
+				methods.editText(jQuery(this));
+			});
+			jQuery('#js-save').on('click.saveText', function() {
+				methods.saveText()
 			});
 		}
 		
