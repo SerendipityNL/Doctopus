@@ -33,6 +33,9 @@ var style = {
 		'color': '#000000',
 		'font_family': 'arial',
 		'font_weight': 'normal'
+	},
+	'li': {
+		'margin_bottom': '5px'
 	}
 }
 
