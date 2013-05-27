@@ -98,34 +98,32 @@
 			// once clicked on a icon, get the classname and add this block
 			jQuery(".icon").click(function() {
 	
-				var classes = jQuery(el).attr("class").split(/\s/);
+				var classes = jQuery(this).attr("class").split(/\s/);
 				var add_block = true;
 	
 				if(classes[1] == "block_more"){
-					console.log('more');
-	
-					console.log(jQuery(el).parent().hide().parent().find('.more_icons'));	
+					jQuery(this).parent().hide().parent().find('.more_icons').show();	
 					add_block = false;
 				}
 	
 				if(classes[1] == "block_undo"){
-					jQuery(el).parent().hide().parent().find('.normal_icons').show();
+					jQuery(this).parent().hide().parent().find('.normal_icons').show();
 					add_block = false;
 				}
 	
 				if(add_block == true){
 					//no more selected, add class to parent block and hide the menu
-					jQuery(el).parent().parent().parent().removeClass('emptyBlock').addClass(classes[1]);
+					jQuery(this).parent().parent().parent().removeClass('emptyBlock').addClass(classes[1]);
 					
 					//removes the icon selector
-					jQuery(el).parent().parent().remove();
+					jQuery(this).parent().parent().remove();
 				}
 			});
 
 			// close the block selector
 			jQuery(".close_icon").click(function() {
-				jQuery(el).parent().parent().find('.plus_icon').show();
-				jQuery(el).parent().remove();
+				jQuery(this).parent().parent().find('.plus_icon').show();
+				jQuery(this).parent().remove();
 
 			});
 		},
