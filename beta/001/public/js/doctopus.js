@@ -128,7 +128,7 @@
 		},
 		resetChangeBlockListener: function (){
 			jQuery('.plus_icon').off('click.changeBlock');
-			jQuery('.plus_icon').on('click.changeblock', function() {
+			jQuery('.plus_icon').on('click.changeBlock', function() {
 				methods.changeBlock(jQuery(this));
 			});
 		},
@@ -164,7 +164,7 @@
 			jQuery('.add_more_blocks_button').on('click.addMoreBlocks', function() {
 				methods.addBlock();
 			});
-			jQuery('.plus_icon').on('click.changeblock', function() {
+			jQuery('.plus_icon').on('click.changeBlock', function() {
 				methods.changeBlock(jQuery(this));
 			});
 		}
