@@ -392,5 +392,12 @@ div.empty-block:hover, .empty-block:active {
 	background:url('../img/ui/icons/new-block-hover.png') no-repeat;
 }
 
+.increase, .decrease{
+	width:50px;
+	height:50px;
+	background:#fff;
+	float:left;
+	margin-right:10px;
+}
 
 		

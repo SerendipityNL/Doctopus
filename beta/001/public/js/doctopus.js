@@ -196,6 +196,40 @@
 			var text = jQuery('#textarea').text();
 			jQuery('.isBeingEdited').find('p:first').html(''+text+'');
 		},
+		selectBlock: function (el){
+			console.log(el);
+			var classes = jQuery(el).attr('class').split(/\s/);
+			var col  	= parseInt(classes[0].charAt(classes[0].length-1));
+			var type	= classes[1];
+			
+			jQuery(el).data("selectedBlock", { col : 1, type: type } );
+
+			console.log(jQuery(el).data());
+
+			//console.log(type);
+			//console.log(col);
+		},
+		resizeBlock: function (el, type) {
+			var classes = jQuery(el).attr('class').split(/\s/);
+			var col  	= parseInt(classes[0].charAt(classes[0].length-1));
+
+			var resetCol = 1;
+
+			console.log('current_col ='+col);
+
+			if(type == "increase"){
+				newCol = col +1;
+			}
+			if(type == "decrease"){
+				if(col == 1){
+					die();
+				}
+				else{
+					newCol = col -1;
+				}			
+			}
+		},
+
 		reactivateListeners: function() {
 			jQuery('.add_more_blocks_button').off('click.addMoreBlocks');
 			jQuery('.plus_icon').off('click.changeBlock');
@@ -216,6 +250,14 @@
 			});
 			jQuery('#js-save').on('click.saveText', function() {
 				methods.saveText()
+			});
+
+			jQuery('#blocks > div').on('click.selectBlock', function(){
+				methods.selectBlock(jQuery(this));
+			});
+
+			jQuery('.increase, .decrease').on('click.resizeBlock', function() {
+				methods.resizeBlock();
 			});
 		}
 		
