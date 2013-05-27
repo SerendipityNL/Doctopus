@@ -30,8 +30,7 @@ app.configure(function() {
 
 // Page routes
 app.get('/', routes.index);
-app.get('/stylesheet.css', routes.css);
-app.get('/getstyle', routes.getstyle);
+app.get('/custom.css', routes.css);
 app.post('/setstyle', routes.setstyle);
 
 // Let the app listen op port 1337
