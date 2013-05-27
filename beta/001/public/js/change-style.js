@@ -1,11 +1,5 @@
 function setStyle(element, name, value) {
 	var newName = name.replace('_', '-');
-	var blaat = {
-		'element': element,
-		'name': name,
-		'value': value
-	}
-	console.log(blaat);
 	jQuery('#blocks ' + element).css(newName, value);
 }
 

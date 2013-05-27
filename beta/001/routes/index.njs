@@ -82,6 +82,10 @@ exports.setstyle = function (req, res) {
 	var name = req.body.name;
 	var value = req.body.value;
 
+	if (typeof(style[element]) === 'undefined') {
+		style[element] = {};
+	}
+
 	style[element][name] = value;
 
 	res.send(style);
