@@ -204,14 +204,10 @@
 			var col  	= parseInt(classes[0].charAt(classes[0].length-1));
 			var type	= classes[1];
 			
-			// there can only be one block selected at a time, if there is already one, remove all data
-			if(selectedBlock = jQuery("#blocks").find("[data-selectedBlock]")){
-				selectedBlock.removeData();
-			}
-			else{
-				// add data to selected block
-				jQuery(el).data("selectedBlock", { col : 1, type: type } );
-			}
+
+			// add data to selected block
+			jQuery(el).data("selectedBlock", { col : 1, type: type } );
+			
 
 			console.log(jQuery(el).data());
 
@@ -266,15 +262,7 @@
 			});
 
 			jQuery('.increase, .decrease').on('click.resizeBlock', function() {
-				selectedBlock = jQuery("#blocks [selectedBlock]");
-
-				console.log(selectedBlock);
-				if(selectedBlock){
-					methods.resizeBlock(selectedBlock);
-				}
-				else{
-					console.log('nothing selected');
-				}
+				console.log(jQuery('#blocks > div').find('[selectedBlock]'));
 			});
 		}
 		
