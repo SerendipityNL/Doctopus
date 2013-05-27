@@ -33,6 +33,9 @@ var style = {
 		'color': '#000000',
 		'font_family': 'arial',
 		'font_weight': 'normal'
+	},
+	'li': {
+		'margin_bottom': '5px'
 	}
 }
 
@@ -81,6 +84,10 @@ exports.setstyle = function (req, res) {
 	var element = req.body.element;
 	var name = req.body.name;
 	var value = req.body.value;
+
+	if (typeof(style[element]) === 'undefined') {
+		style[element] = {};
+	}
 
 	style[element][name] = value;
 
