@@ -146,10 +146,10 @@ body{
 
 		#sidebar-container{
 			position:fixed;
-			top:115px;
+			top:0px;
 			right:0px;
 			width:235px;
-			height:663px;
+			height:100%;
 			background:#222;
 			overflow-y:scroll;
 			overflow-x:hidden;
@@ -195,7 +195,7 @@ body{
 				}
 				#option-wrapper{
 					position:absolute;
-					top:20px;
+					top:135px;
 					width:250px;
 					height:768px;
 				}
@@ -226,7 +226,7 @@ body{
 		cursor:pointer;
 		position:fixed;
 		right:180px;
-		bottom:10px;
+		top:55px;
 		width:105px;
 		height:105px;
 	}	
@@ -234,7 +234,7 @@ body{
 			cursor:pointer;
 			position:fixed;
 			right:275px;
-			bottom:10px;
+			top:55px;
 			width:105px;
 			height:105px;
 			color:#999;
@@ -247,7 +247,7 @@ body{
 		}
 		#trashcan-explanation{
 			position:fixed;
-			bottom:10px;
+			top:125px;
 			width:105px;
 			text-align:center;
 			margin-bottom:5px;
