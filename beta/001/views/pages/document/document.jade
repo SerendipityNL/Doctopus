@@ -10,13 +10,13 @@ html(ng-app)
 		script(type="text/javascript", src="/js/jquery-ui.min.js")
 		script(type="text/javascript", src="/js/yellow_text.js")
 		script(type="text/javascript", src="/js/doctopus.js")
-		
+		script(type="text/javascript", src="/js/jscolor/jscolor.js")
 		script(type="text/javascript", src="/js/change-style.js")
 	body
 	div#header 
 		h1.header-title
 			img(src="img/assets/logo.png")
-			| DOCTOPUS
+			//| DOCTOPUS
 		<a class="add_more_blocks_button" href="javascript:;" >&nbsp;</a>
 	div#wrapper
 		div#workfield-container
@@ -46,17 +46,15 @@ html(ng-app)
 				div.option-definition Text
 
 			p Paragraph styling:
-			mixin text_xs('Font size:', 'p', 'font_size', style.p.font_size) 
+			mixin text_xs('Font size:', 'p', 'font_size', style.p.font_size)
 			mixin select('Color:', 'p', 'color', options.colors, style.p.color)
 			mixin select('Font family:', 'p', 'font_family', options.fonts, style.p.font_family)
-			mixin select('Font weight:', 'p', 'font_weight', options.weights, style.p.font_weight)
+			mixin color('Color:', 'p', 'color', style.p.color)
 
 			p List styling:
 			mixin text_xs('Font size:', 'ul', 'font_size', style.ul.font_size) 
 			mixin select('Color:', 'ul', 'color', options.colors, style.ul.color)
 			mixin select('Font family:', 'ul', 'font_family', options.fonts, style.ul.font_family)
-			mixin select('Font weight:', 'ul', 'font_weight', options.weights, style.ul.font_weight)
-			mixin select('Margin bottom:', 'li', 'margin_bottom', {'10px': '10px', '20px': '20px'}, style.li.margin_bottom)
 
 		div#trashcan-container
 		div#trashcan

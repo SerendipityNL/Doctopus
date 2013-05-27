@@ -10,6 +10,12 @@ mixin text_xs(label, element, name, value)
 		div.option-definition 
 			input(type="text", name='#{name}', value='#{value}', size='4', data-element="#{element}")
 
+mixin color(label, element, name, value)
+	div.option-container
+		div.option-definition= label
+		div.option-definition 
+			input(type="text", name='#{name}', value='#{value}', size='4', data-element="#{element}", class="color")
+
 mixin select(label, element, name, options, selected)
 	div.option-container
 		div.option-definition= label

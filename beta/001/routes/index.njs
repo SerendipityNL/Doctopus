@@ -4,8 +4,8 @@
 
 var blocks = [
 	{ "id": 1, "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam cursus mauris sed odio feugiat mattis. Pellentesque sodales augue vitae mi pellentesque lobortis. Praesent bibendum aliquet lectus, ut tempus nisi ultrices vitae. Nunc tincidunt ultrices mauris, adipiscing interdum velit cursus ut. Pellentesque quam mi, vulputate faucibus commodo non, vestibulum et dui. Donec laoreet mauris non neque mollis sagittis. Sed auctor faucibus ullamcorper. Nullam eget imperdiet odio. Morbi in augue ac est vestibulum bibendum quis vel felis.", "cols": 4, "type": "text" },
-	{ "id": 2, "content": "Nam mollis vehicula lobortis. Praesent gravida massa ut erat condimentum egestas. Morbi vestibulum molestie turpis vel ornare. Donec euismod, mi a ornare dignissim, mauris dui semper velit, sed bibendum eros arcu eu turpis.", "cols": 2, "type": "text" },
-	{ "id": 3, "content": ["List item #1", "List item #2", "List item #3"], "cols": 2, "type": "list" }
+	{ "id": 2, "content": "Nam mollis vehicula lobortis. Praesent gravida massa ut erat condimentum egestas. Morbi vestibulum molestie turpis vel ornare. Donec euismod, mi a ornare dignissim, mauris dui.", "cols": 2, "type": "text" },
+	{ "id": 3, "content": ["List item #1", "List item #2", "List item #3", "List item #4"], "cols": 2, "type": "list" }
 ];
 
 // ---------------------------------------------
@@ -18,17 +18,15 @@ var style = {
 	'p': {
 		'font_size': 14,
 		'color': '#000000',
-		'font_family': 'arial',
-		'font_weight': 'normal'
+		'font_family': 'arial'
 	},
 	'ul': {
 		'font_size': 14,
 		'color': '#000000',
-		'font_family': 'arial',
-		'font_weight': 'normal'
+		'font_family': 'arial'
 	},
 	'li': {
-		'margin_bottom': 5
+		'list-style-type': 'disc'
 	}
 }
 
@@ -50,10 +48,6 @@ var options = {
 		'monospace': 'Monospace',
 		'verdana': 'Verdana',
 		'ubuntu': 'Ubuntu'
-	},
-	'weights': {
-		'normal': 'Normal',
-		'bold': 'Bold'
 	}
 }
 

@@ -268,47 +268,39 @@ div#blocks .col-1,
 div#blocks .col-2,
 div#blocks .col-3,
 div#blocks .col-4 {
-	display:            inline;
-	float:              left;
-	position:           relative;
-	margin:             5px 1%;
-	min-height:         20px;
-	/*text-align:       justify;*/
+	display: inline;
+	float: left;
+	position: relative;
+	margin: 5px 1%;
+	min-height: 20px;
+	/*text-align: justify;*/
 }
 
-.col-1 {
-    width:              23%;
-}
-
-.col-2 {
-    width:              48%;
-}
-
-.col-3 {
-    width:              73%;
-}
-
-.col-4 {
-    width:              98%;
-}
-
-
-div.empty-block:hover, .empty-block:active{
-	outline:2px solid #CCC;
-}
+.col-1 { width: 23%; }
+.col-2 { width: 48%; }
+.col-3 { width: 73%; }
+.col-4 { width: 98%; }
 
 div.block-text p,
 div.block-list ul {
 	padding: 5px;
 	outline: 1px dashed #CCC;
+	line-height: 130%;
 }
 
-div.empty-block{
-    outline:2px solid #ccc;
-	height:153.5px;
-	background:#fff;
+div.block-list li {
+	margin: 0 0 0 25px;
 }
 
+div.empty-block {
+    outline: 2px solid #ccc;
+	height: 153.5px;
+	background: #fff;
+}
+
+div.empty-block:hover, .empty-block:active {
+	outline: 2px solid #CCC;
+}
 
 .icon_selector{
     width:      134px;
