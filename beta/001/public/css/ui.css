@@ -275,7 +275,7 @@ div#blocks .col-4 {
 }
 
 div.empty-block:hover, .empty-block:active{
-	border:2px solid #96bb49;
+	outline:2px solid #96bb49;
 }
 
 div.empty-block{
@@ -314,8 +314,8 @@ div.empty-block{
     }
     .close_icon{
         position:absolute;
-        right:-10px;
-        top:-10px;
+        right:2px;
+        top:2px;
         background:url('../img/ui/icons/close_icon.png') no-repeat;
         width:18px;
         height:18px;
