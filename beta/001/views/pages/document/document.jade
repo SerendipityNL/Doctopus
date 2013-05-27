@@ -30,8 +30,8 @@ html(ng-app)
 							p.col-content #{block.content}
 						if block.type == 'list'
 							ul
-							for item in block.content
-								li= item
+								for item in block.content
+									li= item
 				div(style='clear:both')
 
 
@@ -44,11 +44,20 @@ html(ng-app)
 				div.option-definition Block type
 				div.option-definition Text
 
-			mixin text_xs('Font size:', 'p', 'font_size', style.font_size) 
+			p Paragraph styling:
+			mixin text_xs('Font size:', 'p', 'font_size', style.p.font_size) 
 			| px
-			mixin select('Color:', 'p', 'color', options.colors, style.color)
-			mixin select('Font family:', 'p', 'font_family', options.fonts, style.font_family)
-			mixin select('Font weight:', 'p', 'font_weight', options.weights, style.font_weight)
+			mixin select('Color:', 'p', 'color', options.colors, style.p.color)
+			mixin select('Font family:', 'p', 'font_family', options.fonts, style.p.font_family)
+			mixin select('Font weight:', 'p', 'font_weight', options.weights, style.p.font_weight)
+
+			p List styling:
+			mixin text_xs('Font size:', 'ul', 'font_size', style.ul.font_size) 
+			| px
+			mixin select('Color:', 'ul', 'color', options.colors, style.ul.color)
+			mixin select('Font family:', 'ul', 'font_family', options.fonts, style.ul.font_family)
+			mixin select('Font weight:', 'ul', 'font_weight', options.weights, style.ul.font_weight)
+
 
 			div.option-container
 		div#trashcan-container

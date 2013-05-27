@@ -22,13 +22,20 @@ var blocks = [
 // ---------------------------------------------
 
 var style = {
-	'font_size': '14',
-	'color': '#000000',
-	'font_family': 'arial',
-	'font_weight': 'normal'
+	'p': {
+		'font_size': '14',
+		'color': '#000000',
+		'font_family': 'arial',
+		'font_weight': 'normal'
+	},
+	'ul': {
+		'font_size': '14',
+		'color': '#000000',
+		'font_family': 'arial',
+		'font_weight': 'normal'
+	}
 }
 
-//test voor edwin
 // ---------------------------------------------
 // Options for the select/input fields
 // ---------------------------------------------
@@ -71,12 +78,13 @@ exports.index = function(req, res){
 // ---------------------------------------------
 
 exports.setstyle = function (req, res) {
-	style[req.body]
-	var data = req.body;
-	for (var key in data) {
-		style[key] = data[key];
-	}
-	res.send(data);
+	var element = req.body.element;
+	var name = req.body.name;
+	var value = req.body.value;
+
+	style[element][name] = value;
+
+	res.send(style);
 }
 
 exports.getstyle = function (req, res) {
