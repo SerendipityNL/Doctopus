@@ -206,7 +206,7 @@
 			
 
 			// add data to selected block
-			jQuery(el).data("selectedBlock", { col : 1, type: type } );
+			jQuery(el).data("selectedBlock", { col : col, type: type } );
 			
 
 			console.log(jQuery(el).data());
