@@ -162,7 +162,7 @@
 					html += '<div class="icon block_more"></div></div><div class="more_icons">';
 				}
 				
-				html += '<div class="icon block_'+ icon +'"></div>';
+				html += '<div class="icon block-'+ icon +'"></div>';
 				
 				if (i == numberOfIcons) {
 					html += '</div>';
@@ -173,7 +173,7 @@
 			return html;
 		},
 		addBlock: function() {
-			var blockHtml = '<div class="empty-block col-1"><div class="plus_icon"></div></div>';
+			var blockHtml = '<div class="empty-block col-1" data-colspan="1"><div class="plus_icon"></div></div>';
 			jQuery(methods.settings.sortable.selector).append(blockHtml);
 			methods.reactivateListeners();
 		},
@@ -203,15 +203,8 @@
 			var classes = jQuery(el).attr('class').split(/\s/);
 			var col  	= parseInt(classes[0].charAt(classes[0].length-1));
 			var type	= classes[1];
-			
-
-			// add data to selected block
-			jQuery(el).data("selectedBlock", { col : col, type: type } );
-			
-
-			console.log(jQuery(el).data());
-
-			//console.log(type);
+			var id 		= jQuery(el).attr('data-id');
+			console.log(id);
 			//console.log(col);
 		},
 		resizeBlock: function (el, type) {

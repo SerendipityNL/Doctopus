@@ -275,6 +275,7 @@ div#blocks .col-placeholder {
 	position: relative;
 	margin: 5px 1%;
 	min-height: 20px;
+	outline: 1px dashed #CCC;
 	/*text-align: justify;*/
 }
 
@@ -290,7 +291,6 @@ div#blocks .col-placeholder {
 div.block-text p,
 div.block-list ul {
 	padding: 5px;
-	outline: 1px dashed #CCC;
 	line-height: 130%;
 }
 
@@ -299,7 +299,7 @@ div.block-list li {
 }
 
 div.empty-block {
-    outline: 2px solid #ccc;
+    outline: 2px solid #ccc !important;
 	height: 153.5px;
 	background: #fff;
 }
