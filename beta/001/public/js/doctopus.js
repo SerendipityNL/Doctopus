@@ -112,6 +112,7 @@
 			});
 		},
 		changeBlock: function (el){
+
 			jQuery(el).parent().find('.plus_icon').hide();
 			jQuery(el).parent().append(methods.buildChangeMenu(methods.settings.changeBlock.iconSet));
 			jQuery(el).parent().find('.icon_selector').show();
@@ -136,7 +137,7 @@
 				if(add_block == true){
 					//no more selected, add class to parent block and hide the menu
 					if (classes[1] === 'block-text') {
-						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html('<p class="col-content">This is a textblock.</p>');
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html('<div class="edit_bar"></div><p class="col-content">This is a textblock.</p>');
 					}
 					else {
 						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]);
@@ -186,6 +187,7 @@
 		},
 		createTexteditor: function(el) {
 			methods.destroyTexteditor();
+			jQuery('.edit_bar').text('Editing mode - not saved yet');
 			jQuery(el).append('<textarea id="textarea"></textarea>');
 			var text = el.addClass('isBeingEdited').find('p:first').hide().text();
 			
@@ -261,6 +263,24 @@
 //			jQuery('#js-save').on('click.saveText', function() {
 //				methods.saveText()
 //			});
+			
+
+			jQuery(".block-text, .add_more_blocks_button").hover(
+				function () {
+					if(jQuery(this).hasClass('add_more_blocks_button')){
+						var text = "Click to add empty block";
+					}
+					else{
+						var text = "Double click to edit";
+					}
+					jQuery('.edit_bar').show();
+					jQuery('.edit_bar').text(text)
+					console.log('hover');
+				},
+				function () {
+					jQuery('.edit_bar').hide();
+				}
+			);
 
 			jQuery('#blocks > div').on('click.selectBlock', function(){
 				methods.selectBlock(jQuery(this));
