@@ -299,7 +299,7 @@ div.empty-block {
 }
 
 div.empty-block:hover, .empty-block:active {
-	outline: 2px solid #CCC;
+	outline: 2px solid #96bb49;
 }
 
 .icon_selector{
