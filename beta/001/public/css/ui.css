@@ -106,7 +106,7 @@ body{
 			width:710px;
 			min-height:300px;
 			background:#444;
-			margin:60px 0px;
+			margin:60px 0px 140px 0px;
 		}
 			#blocks {
 				background:#fff;
@@ -237,7 +237,7 @@ body{
 		cursor:pointer;
 		position:fixed;
 		right:180px;
-		top:55px;
+		bottom:15px;
 		width:105px;
 		height:105px;
 	}	
@@ -245,20 +245,21 @@ body{
 			cursor:pointer;
 			position:fixed;
 			right:275px;
-			top:55px;
+			bottom:15px;
 			width:105px;
 			height:105px;
 			color:#999;
 			border-radius:6px;
-			background:url(../img/ui/icons/trashcan-icn-notactive.png) no-repeat top 20px center #333;
+			background:url(../img/ui/icons/trashcan-icn-notactive.png) no-repeat center center #333;
 		}
 		#trashcan:hover, #trashcan:active{
 			color:#fff;
-			background:url(../img/ui/icons/trashcan-icn-active.png) no-repeat top 15px center #e32d2d;
+			background:url(../img/ui/icons/trashcan-icn-active.png) no-repeat center center #e32d2d;
 		}
 		#trashcan-explanation{
+			display:none;
 			position:fixed;
-			top:125px;
+			bottom:15px;
 			width:105px;
 			text-align:center;
 			margin-bottom:5px;
@@ -368,8 +369,8 @@ div.empty-block:hover, .empty-block:active {
 
 .add_more_blocks_button{
 	position:fixed;
-	bottom:10px;
-	right:275px;
+	bottom:15px;
+	right:405px;
 	width:80px;
 	height:80px;
 	background:url('../img/ui/icons/new-block.png') no-repeat;
