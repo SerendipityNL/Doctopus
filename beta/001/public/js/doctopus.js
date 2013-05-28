@@ -87,7 +87,6 @@
 		},
 		placeholderResize: function(e, ui){
 			var placeholderSelector = '.' + methods.settings.sortable.placeholder;
-			// This stuff must be rewritten under jQuery.fn.getSurroundingBlocks, which needs to be renamed to resizePlaceholder
 			var width = ui.item.width();
 			jQuery(placeholderSelector).getSurroundingBlocks( function (first, data) {
 				if ( (first == false) && (data.returnData.prevTotalSize < 4) ) {
@@ -180,23 +179,26 @@
 		createTexteditor: function(el) {
 			methods.destroyTexteditor();
 			jQuery(el).append('<textarea id="textarea"></textarea>');
-			var text = el.parents('[class^=col_]').addClass('isBeingEdited').find('p:first').text();
+			var text = el.addClass('isBeingEdited').find('p:first').hide().text();
 			
 			jQuery('#textarea').text(''+text+'');
 			
 			jQuery('#textarea').texteditor({
 				defaultActions: methods.settings.texteditor.defaultActions
 			});
-			jQuery('.js-editor-container').append('<a id="js-save" class="btn btn-primary" href="javascript:;">Save</a>');
+			// jQuery('.js-editor-container').append('<a id="js-save" class="btn btn-primary" href="javascript:;">Save</a>');
+			methods.reactivateListeners();
 		},
 		destroyTexteditor: function() {
+			methods.saveText();
 			jQuery('.isBeingEdited').removeClass('isBeingEdited');
 			jQuery('#textarea').remove();
 			jQuery('.js-editor-container').remove();
 		},
 		saveText: function() {
 			var text = jQuery('#textarea').text();
-			jQuery('.isBeingEdited').find('p:first').html(''+text+'');
+			console.log(text);
+			jQuery('.isBeingEdited').find('p:first').html(''+text+'').show();
 		},
 		selectBlock: function (el){
 			var classes = jQuery(el).attr('class').split(/\s/);
@@ -207,8 +209,6 @@
 
 			jQuery('#selected-block .name').text(col);
 			jQuery('#selected-block .type').text(type);
-			console.log(id);
-			//console.log(col);
 		},
 		resizeBlock: function (el, type) {
 			var classes = jQuery(el).attr('class').split(/\s/);
@@ -247,11 +247,11 @@
 				methods.changeBlock(jQuery(this));
 			});
 			jQuery('.block-text').on('dblclick.textEditor', function() {
-				//methods.editText(jQuery(this));
+				methods.createTexteditor(jQuery(this));
 			});
-			jQuery('#js-save').on('click.saveText', function() {
-				methods.saveText()
-			});
+//			jQuery('#js-save').on('click.saveText', function() {
+//				methods.saveText()
+//			});
 
 			jQuery('#blocks > div').on('click.selectBlock', function(){
 				methods.selectBlock(jQuery(this));

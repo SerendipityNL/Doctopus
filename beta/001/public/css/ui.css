@@ -441,6 +441,14 @@ div.empty-block:hover, .empty-block:active {
 	background:url('../img/ui/icons/new-block-hover.png') no-repeat center center #96bb49;
 }
 
+.edit_bar{
+	display:none;
+	width:100%;
+	height:10px;
+	background:#96bb49 url('../img/ui/icons/edit-icon.png') no-repeat right;
+	opacity:0.7;
+}
+
 .increase, .decrease{
 	width:50px;
 	height:50px;

@@ -35,13 +35,6 @@ var style = {
 // ---------------------------------------------
 
 var options = {
-	'colors': {
-		'#000000': 'Black',
-		'#FF6A00': 'Orange',
-		'#0026FF': 'Blue',
-		'#FF0000': 'Red',
-		'#008000': 'Green'
-	},
 	'fonts': {
 		'arial': 'Arial',
 		'comic sans ms': 'Comic Sans MS',
@@ -77,6 +70,8 @@ exports.setstyle = function(req, res) {
 	}
 
 	style[element][name] = value;
+
+	console.log(style);
 
 	res.send(style);
 }

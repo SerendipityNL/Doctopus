@@ -6,6 +6,7 @@ html(ng-app)
 		link(rel="stylesheet", type="text/css", href="/css/reset.css")
 		link(rel="stylesheet", type="text/css", href="/css/ui.css")
 		link(rel="stylesheet", type="text/css", href="/custom.css")
+		link(rel="stylesheet", type="text/css", href="/css/yw-editor.css")
 		script(type="text/javascript", src="/js/jquery.min.js")
 		script(type="text/javascript", src="/js/jquery-ui.min.js")
 		script(type="text/javascript", src="/js/yellow_text.js")
@@ -43,9 +44,10 @@ html(ng-app)
 
 		div#option-wrapper
 			div#selected-block
-				div.name
-				div.type
-				div.col
+				div.hidden-options
+					div.type
+					div.col
+					div.block-id
 			div.option-container 
 				div.option-definition Block type
 				div.option-definition Text
@@ -67,7 +69,7 @@ html(ng-app)
 
 			p List styling:
 			mixin setpx('Font size:', 'ul', 'font_size', style.ul.font_size) 
-			mixin color('Color:', 'ul', 'color', style.ul.color)
+			mixin color('Color:', 'ul', 'color', 'style.ul.color')
 			mixin select('Font family:', 'ul', 'font_family', options.fonts, style.ul.font_family)
 
 			<a class="add_more_blocks_button" href="javascript:;" >&nbsp;</a>
