@@ -281,10 +281,15 @@ div#blocks .col-placeholder {
 	/*text-align: justify;*/
 }
 
-.col-placeholder {
+div#blocks .col-placeholder {
 	background:#ccc;
 }
-
+div#trashcan .col-placeholder{
+	width:80px !important;
+	height:80px !important;
+	border-radius:6px;
+	background:url(../img/ui/icons/trashcan-icn-active.png) no-repeat center center #e32d2d;
+}
 .col-1 { width: 23%; }
 .col-2 { width: 48%; }
 .col-3 { width: 73%; }
@@ -307,7 +312,7 @@ div.empty-block {
 }
 
 div.empty-block:hover, .empty-block:active {
-	outline: 2px solid #96bb49;
+	outline: 2px solid #96bb49 !important;
 }
 
 .icon_selector{
@@ -339,13 +344,13 @@ div.empty-block:hover, .empty-block:active {
         margin:     2px;
         cursor:     pointer;
     }
-    .icon.block_image{
+    .icon.block-image{
         background: url(../img/ui/icons/image-icn.png) top 10px center no-repeat #ccc;
     }
-    .icon.block_text{
+    .icon.block-text{
         background: url(../img/ui/icons/text-icn.png) top 10px center no-repeat #ccc;
     }
-    .icon.block_list{
+    .icon.block-list{
         background: url(../img/ui/icons/list-icn.png) top 10px center no-repeat #ccc;
     }
     .icon.block_more{
