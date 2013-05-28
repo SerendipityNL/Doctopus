@@ -199,36 +199,52 @@
 			jQuery('.isBeingEdited').find('p:first').html(''+text+'');
 		},
 		selectBlock: function (el){
+			// get block information
 			var classes = jQuery(el).attr('class').split(/\s/);
 			var col  	= parseInt(classes[0].charAt(classes[0].length-1));
 			var type	= classes[1];
 			var id 		= jQuery(el).attr('data-id');
 
+			//removes any other selected block classes before
+			jQuery('#blocks').find('.selected-block').removeClass('selected-block');
 
-			jQuery('#selected-block .name').text(col);
+			//add the selected block class to current selected block
+			jQuery(el).addClass('selected-block');
+			
+			// appends the data to sidebar
 			jQuery('#selected-block .type').text(type);
-			console.log(id);
-			//console.log(col);
+			jQuery('#selected-block .col').text(col);
+			jQuery('#selected-block .block-id').text(id)
+
 		},
-		resizeBlock: function (el, type) {
-			var classes = jQuery(el).attr('class').split(/\s/);
-			var col  	= parseInt(classes[0].charAt(classes[0].length-1));
+		resizeBlock: function (id) {
 
-			var resetCol = 1;
+			var block   = jQuery('#blocks').find('.selected-block');
 
-			console.log('current_col ='+col);
+			if(block){
+				var classes = jQuery(block).attr('class').split(/\s/);
+				var col  	= parseInt(classes[0].charAt(classes[0].length-1));
 
-			if(type == "increase"){
-				newCol = col +1;
-			}
-			if(type == "decrease"){
-				if(col == 1){
-					die();
+				var resetCol = 1;
+
+				console.log('current_col ='+col);
+
+				if(type == "increase"){
+					newCol = col +1;
 				}
-				else{
-					newCol = col -1;
-				}			
+				if(type == "decrease"){
+					if(col == 1){
+						die();
+					}
+					else{
+						newCol = col -1;
+					}			
+				}	
 			}
+			else{
+				alert('no block selected');
+			}
+
 		},
 
 		reactivateListeners: function() {
