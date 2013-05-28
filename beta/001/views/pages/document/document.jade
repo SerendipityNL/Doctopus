@@ -52,13 +52,12 @@ html(ng-app)
 
 			p Paragraph styling:
 			mixin setpx('Font size:', 'p', 'font_size', style.p.font_size)
-			mixin select('Color:', 'p', 'color', options.colors, style.p.color)
-			mixin select('Font family:', 'p', 'font_family', options.fonts, style.p.font_family)
 			mixin color('Color:', 'p', 'color', style.p.color)
+			mixin select('Font family:', 'p', 'font_family', options.fonts, style.p.font_family)
 
 			p List styling:
 			mixin setpx('Font size:', 'ul', 'font_size', style.ul.font_size) 
-			mixin select('Color:', 'ul', 'color', options.colors, style.ul.color)
+			mixin color('Color:', 'ul', 'color', style.ul.color)
 			mixin select('Font family:', 'ul', 'font_family', options.fonts, style.ul.font_family)
 
 		div#trashcan-container

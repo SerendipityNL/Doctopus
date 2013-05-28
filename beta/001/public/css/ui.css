@@ -63,6 +63,14 @@
 	background: url(../img/ui/icons/dropdown-arrow-hover-icon.png) no-repeat center right 5px;
 }
 
+#option-wrapper input.colorpicker {
+	padding: 2px 5px;
+	margin: 0;
+	width: 80%;
+	height: 20px;
+	cursor: pointer;
+}
+
 
 
 
