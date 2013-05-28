@@ -277,6 +277,10 @@ div#blocks .col-placeholder {
 	/*text-align: justify;*/
 }
 
+.col-placeholder {
+	background:#96bb49;
+}
+
 .col-1 { width: 23%; }
 .col-2 { width: 48%; }
 .col-3 { width: 73%; }
