@@ -136,7 +136,7 @@
 	
 				if(add_block == true){
 					//no more selected, add class to parent block and hide the menu
-					jQuery(this).parent().parent().parent().removeClass('emptyBlock').addClass(classes[1]);
+					jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]);
 					
 					//removes the icon selector
 					jQuery(this).parent().parent().remove();

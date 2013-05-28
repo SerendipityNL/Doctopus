@@ -347,26 +347,6 @@ div.empty-block:hover, .empty-block:active {
     	background-color:#96bb49;
     }
 
-
-.block_text{
-    background:#3c58e8;
-}
-.block_image{
-    background: #ff0000;
-}
-.block_youtube{
-    background: #ff0000;
-}
-.block_music{
-    background: #ee0e00;
-}
-.block_list{
-    background: #ffd200;
-}
-.block_more{
-    background: #efefef;
-}
-
 .plus_icon{
     display:        block;
     background:     url('../img/ui/icons/plus-icn.png') center center no-repeat;
