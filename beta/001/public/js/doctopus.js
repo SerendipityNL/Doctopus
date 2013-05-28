@@ -243,8 +243,8 @@
 			jQuery('.plus_icon').on('click.changeBlock', function() {
 				methods.changeBlock(jQuery(this));
 			});
-			jQuery('.block_text').on('click.textEditor', function() {
-				methods.editText(jQuery(this));
+			jQuery('.block-text').on('dblclick.textEditor', function() {
+				//methods.editText(jQuery(this));
 			});
 			jQuery('#js-save').on('click.saveText', function() {
 				methods.saveText()
@@ -253,10 +253,7 @@
 			jQuery('#blocks > div').on('click.selectBlock', function(){
 				methods.selectBlock(jQuery(this));
 			});
-
-			jQuery('.increase, .decrease').on('click.resizeBlock', function() {
-				console.log(jQuery('#blocks > div').find('[selectedBlock]'));
-			});
+			
 		}
 		
 	};
