@@ -146,6 +146,7 @@
 					//removes the icon selector
 					jQuery(this).parent().parent().remove();
 				}
+				methods.reactivateListeners();
 			});
 
 			// close the block selector
@@ -155,7 +156,6 @@
 
 			});
 
-			methods.reactivateListeners();
 		},
 		buildChangeMenu: function(icons) {
 			var html = '';
@@ -243,8 +243,7 @@
 		reactivateListeners: function() {
 			jQuery('.add_more_blocks_button').off('click.addMoreBlocks');
 			jQuery('.plus_icon').off('click.changeBlock');
-			jQuery('.block_text').off('click.textEditor');
-			jQuery('#js-save').off('click.saveText');
+//			jQuery('#js-save').off('click.saveText');
 			jQuery('#blocks > div').off('click.selectBlock');
 			jQuery('.block-text').off('dblclick.textEditor');
 			methods.activateListeners();
