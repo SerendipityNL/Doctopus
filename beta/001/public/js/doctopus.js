@@ -180,71 +180,56 @@
 		createTexteditor: function(el) {
 			methods.destroyTexteditor();
 			jQuery(el).append('<textarea id="textarea"></textarea>');
-			var text = el.parents('[class^=col_]').addClass('isBeingEdited').find('p:first').text();
+			var text = el.addClass('isBeingEdited').find('p:first').hide().text();
 			
 			jQuery('#textarea').text(''+text+'');
 			
 			jQuery('#textarea').texteditor({
 				defaultActions: methods.settings.texteditor.defaultActions
 			});
-			jQuery('.js-editor-container').append('<a id="js-save" class="btn btn-primary" href="javascript:;">Save</a>');
+			// jQuery('.js-editor-container').append('<a id="js-save" class="btn btn-primary" href="javascript:;">Save</a>');
+			methods.reactivateListeners();
 		},
 		destroyTexteditor: function() {
+			methods.saveText();
 			jQuery('.isBeingEdited').removeClass('isBeingEdited');
 			jQuery('#textarea').remove();
 			jQuery('.js-editor-container').remove();
 		},
 		saveText: function() {
 			var text = jQuery('#textarea').text();
-			jQuery('.isBeingEdited').find('p:first').html(''+text+'');
+			console.log(text);
+			jQuery('.isBeingEdited').find('p:first').html(''+text+'').show();
 		},
 		selectBlock: function (el){
-			// get block information
 			var classes = jQuery(el).attr('class').split(/\s/);
 			var col  	= parseInt(classes[0].charAt(classes[0].length-1));
 			var type	= classes[1];
 			var id 		= jQuery(el).attr('data-id');
 
-			//removes any other selected block classes before
-			jQuery('#blocks').find('.selected-block').removeClass('selected-block');
 
-			//add the selected block class to current selected block
-			jQuery(el).addClass('selected-block');
-			
-			// appends the data to sidebar
+			jQuery('#selected-block .name').text(col);
 			jQuery('#selected-block .type').text(type);
-			jQuery('#selected-block .col').text(col);
-			jQuery('#selected-block .block-id').text(id)
-
 		},
-		resizeBlock: function (id) {
+		resizeBlock: function (el, type) {
+			var classes = jQuery(el).attr('class').split(/\s/);
+			var col  	= parseInt(classes[0].charAt(classes[0].length-1));
 
-			var block   = jQuery('#blocks').find('.selected-block');
+			var resetCol = 1;
 
-			if(block){
-				var classes = jQuery(block).attr('class').split(/\s/);
-				var col  	= parseInt(classes[0].charAt(classes[0].length-1));
+			console.log('current_col ='+col);
 
-				var resetCol = 1;
-
-				console.log('current_col ='+col);
-
-				if(type == "increase"){
-					newCol = col +1;
+			if(type == "increase"){
+				newCol = col +1;
+			}
+			if(type == "decrease"){
+				if(col == 1){
+					die();
 				}
-				if(type == "decrease"){
-					if(col == 1){
-						die();
-					}
-					else{
-						newCol = col -1;
-					}			
-				}	
+				else{
+					newCol = col -1;
+				}			
 			}
-			else{
-				alert('no block selected');
-			}
-
 		},
 
 		reactivateListeners: function() {
@@ -263,11 +248,11 @@
 				methods.changeBlock(jQuery(this));
 			});
 			jQuery('.block-text').on('dblclick.textEditor', function() {
-				//methods.editText(jQuery(this));
+				methods.createTexteditor(jQuery(this));
 			});
-			jQuery('#js-save').on('click.saveText', function() {
-				methods.saveText()
-			});
+//			jQuery('#js-save').on('click.saveText', function() {
+//				methods.saveText()
+//			});
 
 			jQuery('#blocks > div').on('click.selectBlock', function(){
 				methods.selectBlock(jQuery(this));
