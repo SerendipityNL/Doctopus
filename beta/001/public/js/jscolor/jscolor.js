@@ -14,7 +14,7 @@ var jscolor = {
 
 
 	dir : '', // location of jscolor directory (leave empty to autodetect)
-	bindClass : 'color', // class name
+	bindClass : 'colorpicker', // class name
 	binding : true, // automatic binding via <input class="...">
 	preloading : true, // use image preloading?
 
@@ -352,11 +352,11 @@ var jscolor = {
 		this.pickerCloseText = 'Close';
 		this.pickerButtonColor = 'ButtonText'; // px
 		this.pickerFace = 10; // px
-		this.pickerFaceColor = 'ThreeDFace'; // CSS color
+		this.pickerFaceColor = '#444'; // CSS color
 		this.pickerBorder = 1; // px
-		this.pickerBorderColor = 'ThreeDHighlight ThreeDShadow ThreeDShadow ThreeDHighlight'; // CSS color
+		this.pickerBorderColor = '#222'; // CSS color
 		this.pickerInset = 1; // px
-		this.pickerInsetColor = 'ThreeDShadow ThreeDHighlight ThreeDHighlight ThreeDShadow'; // CSS color
+		this.pickerInsetColor = '#333'; // CSS color
 		this.pickerZIndex = 10000;
 
 
