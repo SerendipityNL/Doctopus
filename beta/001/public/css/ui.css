@@ -254,6 +254,40 @@ body{
 							font-size:0.8em;
 							line-height:3.2em;
 						}
+			.resize-block-container{
+				margin-top:13px;
+			}
+				.resize-block-btn{
+					float:left;
+					width:14px;
+					height:14px;
+					display:inline-block;
+					color:#fff;
+					background:#999;
+					line-height:1em;
+					text-align:center;
+					margin-right:1px;
+				}
+				.resize-block-btn-min{
+					float:left;
+					width:14px;
+					height:14px;
+					display:inline-block;
+					color:#fff;
+					line-height:1em;
+					text-align:center;
+					margin-right:1px;
+				}
+				.resize-block-btn-plus{
+					float:left;
+					width:14px;
+					height:14px;
+					display:inline-block;
+					color:#ccc;
+					line-height:1em;
+					text-align:center;
+					margin-right:1px;
+				}
 
 	#trashcan-container{
 		cursor:pointer;
