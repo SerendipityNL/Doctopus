@@ -189,8 +189,9 @@
 			jQuery('#textarea').texteditor({
 				defaultActions: methods.settings.texteditor.defaultActions
 			});
+
 			// jQuery('.js-editor-container').append('<a id="js-save" class="btn btn-primary" href="javascript:;">Save</a>');
-			methods.reactivateListeners();
+			//methods.reactivateListeners();
 		},
 		destroyTexteditor: function() {
 			methods.saveText();
@@ -240,6 +241,7 @@
 			jQuery('.block_text').off('click.textEditor');
 			jQuery('#js-save').off('click.saveText');
 			jQuery('#blocks > div').off('click.selectBlock');
+			jQuery('.block-text').off('dblclick.textEditor');
 			methods.activateListeners();
 		},
 		activateListeners: function (){
