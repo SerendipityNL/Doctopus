@@ -71,16 +71,17 @@
 body{
 	background:#444;
 	overflow-x:hidden;
+	font-family:'RobotoSlabRegular';
 }
 	#header{
 		position:fixed;
 		top:0px;
-		width:100%;
+		width:90%;
 		background:#222;
-		z-index:999;
 		color:#fff;
 		font-size:2em;
 		font-family:'BebasRegular';
+		z-index:999;
 
 		/*-webkit-box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.3);
 		box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.3);*/
@@ -176,10 +177,10 @@ body{
 		}
 			#block-definition{
 				position:fixed;
-				top:45px;
+				top:0px;
 				right:16px;
 				width:249px;
-				height:65px;
+				height:85px;
 				background-color:#96bb49;
 				background-position:left 20px center;
 				text-align:center;
@@ -189,11 +190,11 @@ body{
 					font-family:'Bebas';
 					font-size:1.6em;
 					color:#fff;
-					line-height:2.5em;
+					line-height:3em;
 					word-spacing:0.2em;					
 				}
 
-				#block-definition-bottomline{
+				/*#block-definition-bottomline{
 					position:fixed;
 					top:110px;
 					right:16px;
@@ -202,12 +203,12 @@ body{
 					height:3px;
 					z-index:999;
 					border-top:2px solid #222;
-				}
+				}*/
 				#option-wrapper{
 					position:absolute;
-					top:135px;
+					top:105px;
 					width:250px;
-					height:768px;
+					padding-bottom:20px;
 				}
 					.option-container{
 						cursor:pointer;
@@ -267,13 +268,19 @@ body{
 div#blocks .col-1,
 div#blocks .col-2,
 div#blocks .col-3,
-div#blocks .col-4 {
+div#blocks .col-4,
+div#blocks .col-placeholder {
 	display: inline;
 	float: left;
 	position: relative;
 	margin: 5px 1%;
 	min-height: 20px;
+	outline: 1px dashed #CCC;
 	/*text-align: justify;*/
+}
+
+.col-placeholder {
+	background:#ccc;
 }
 
 .col-1 { width: 23%; }
@@ -284,7 +291,6 @@ div#blocks .col-4 {
 div.block-text p,
 div.block-list ul {
 	padding: 5px;
-	outline: 1px dashed #CCC;
 	line-height: 130%;
 }
 
@@ -293,13 +299,13 @@ div.block-list li {
 }
 
 div.empty-block {
-    outline: 2px solid #ccc;
+    outline: 2px solid #ccc !important;
 	height: 153.5px;
 	background: #fff;
 }
 
 div.empty-block:hover, .empty-block:active {
-	outline: 2px solid #CCC;
+	outline: 2px solid #96bb49;
 }
 
 .icon_selector{

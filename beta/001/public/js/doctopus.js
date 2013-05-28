@@ -69,7 +69,7 @@
 					console.log(ui.item[0].parentNode.classList);
 				}
 				, start					: function(e, ui) {
-					jQuery(sortSettings.placeholder).width(ui.item.width()).height(ui.item.height());
+					jQuery('.'+sortSettings.placeholder).width(ui.item.width()).height(ui.item.height());
 				}
 				, change				: function(e, ui) {
 					if (jQuery(sortSettings.placeholder).prev().length > 0){
@@ -162,7 +162,7 @@
 					html += '<div class="icon block_more"></div></div><div class="more_icons">';
 				}
 				
-				html += '<div class="icon block_'+ icon +'"></div>';
+				html += '<div class="icon block-'+ icon +'"></div>';
 				
 				if (i == numberOfIcons) {
 					html += '</div>';
@@ -173,7 +173,7 @@
 			return html;
 		},
 		addBlock: function() {
-			var blockHtml = '<div class="empty-block col-1"><div class="plus_icon"></div></div>';
+			var blockHtml = '<div class="empty-block col-1" data-colspan="1"><div class="plus_icon"></div></div>';
 			jQuery(methods.settings.sortable.selector).append(blockHtml);
 			methods.reactivateListeners();
 		},
@@ -199,19 +199,14 @@
 			jQuery('.isBeingEdited').find('p:first').html(''+text+'');
 		},
 		selectBlock: function (el){
-			console.log(el);
 			var classes = jQuery(el).attr('class').split(/\s/);
 			var col  	= parseInt(classes[0].charAt(classes[0].length-1));
 			var type	= classes[1];
-			
+			var id 		= jQuery(el).attr('data-id');
 
-			// add data to selected block
-			jQuery(el).data("selectedBlock", { col : col, type: type } );
-			
 
-			console.log(jQuery(el).data());
-
-			//console.log(type);
+			jQuery('#selected-block .name').append('');
+			console.log(id);
 			//console.log(col);
 		},
 		resizeBlock: function (el, type) {
@@ -240,7 +235,7 @@
 			jQuery('.plus_icon').off('click.changeBlock');
 			jQuery('.block_text').off('click.textEditor');
 			jQuery('#js-save').off('click.saveText');
-			
+			jQuery('#blocks > div').off('click.selectBlock');
 			methods.activateListeners();
 		},
 		activateListeners: function (){
@@ -250,8 +245,8 @@
 			jQuery('.plus_icon').on('click.changeBlock', function() {
 				methods.changeBlock(jQuery(this));
 			});
-			jQuery('.block_text').on('click.textEditor', function() {
-				methods.editText(jQuery(this));
+			jQuery('.block-text').on('dblclick.textEditor', function() {
+				//methods.editText(jQuery(this));
 			});
 			jQuery('#js-save').on('click.saveText', function() {
 				methods.saveText()
@@ -260,10 +255,7 @@
 			jQuery('#blocks > div').on('click.selectBlock', function(){
 				methods.selectBlock(jQuery(this));
 			});
-
-			jQuery('.increase, .decrease').on('click.resizeBlock', function() {
-				console.log(jQuery('#blocks > div').find('[selectedBlock]'));
-			});
+			
 		}
 		
 	};
