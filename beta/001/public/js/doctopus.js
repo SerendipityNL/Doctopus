@@ -87,7 +87,6 @@
 		},
 		placeholderResize: function(e, ui){
 			var placeholderSelector = '.' + methods.settings.sortable.placeholder;
-			// This stuff must be rewritten under jQuery.fn.getSurroundingBlocks, which needs to be renamed to resizePlaceholder
 			var width = ui.item.width();
 			jQuery(placeholderSelector).getSurroundingBlocks( function (first, data) {
 				if ( (first == false) && (data.returnData.prevTotalSize < 4) ) {
