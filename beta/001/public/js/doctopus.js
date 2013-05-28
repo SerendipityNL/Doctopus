@@ -205,7 +205,8 @@
 			var id 		= jQuery(el).attr('data-id');
 
 
-			jQuery('#selected-block .name').append('');
+			jQuery('#selected-block .name').append(col);
+			jQuery('#selected-block .type').append(type);
 			console.log(id);
 			//console.log(col);
 		},
