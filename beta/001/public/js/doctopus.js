@@ -87,7 +87,6 @@
 		},
 		placeholderResize: function(e, ui){
 			var placeholderSelector = '.' + methods.settings.sortable.placeholder;
-			// This stuff must be rewritten under jQuery.fn.getSurroundingBlocks, which needs to be renamed to resizePlaceholder
 			var width = ui.item.width();
 			jQuery(placeholderSelector).getSurroundingBlocks( function (first, data) {
 				if ( (first == false) && (data.returnData.prevTotalSize < 4) ) {
@@ -128,7 +127,7 @@
 					jQuery(this).parent().hide().parent().find('.more_icons').show();	
 					add_block = false;
 				}
-	
+				
 				if(classes[1] == 'block_undo'){
 					jQuery(this).parent().hide().parent().find('.normal_icons').show();
 					add_block = false;
@@ -136,11 +135,18 @@
 	
 				if(add_block == true){
 					//no more selected, add class to parent block and hide the menu
-					jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]);
+					if (classes[1] === 'block-text') {
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html('<p class="col-content">This is a textblock.</p>');
+					}
+					else {
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]);
+					}
 					
+					//jQuery(this).parent().parent().parent().text('A textblock has been added');
 					//removes the icon selector
 					jQuery(this).parent().parent().remove();
 				}
+				methods.reactivateListeners();
 			});
 
 			// close the block selector
@@ -149,6 +155,7 @@
 				jQuery(this).parent().remove();
 
 			});
+
 		},
 		buildChangeMenu: function(icons) {
 			var html = '';
@@ -187,8 +194,9 @@
 			jQuery('#textarea').texteditor({
 				defaultActions: methods.settings.texteditor.defaultActions
 			});
+
 			// jQuery('.js-editor-container').append('<a id="js-save" class="btn btn-primary" href="javascript:;">Save</a>');
-			methods.reactivateListeners();
+			//methods.reactivateListeners();
 		},
 		destroyTexteditor: function() {
 			methods.saveText();
@@ -235,9 +243,9 @@
 		reactivateListeners: function() {
 			jQuery('.add_more_blocks_button').off('click.addMoreBlocks');
 			jQuery('.plus_icon').off('click.changeBlock');
-			jQuery('.block_text').off('click.textEditor');
-			jQuery('#js-save').off('click.saveText');
+//			jQuery('#js-save').off('click.saveText');
 			jQuery('#blocks > div').off('click.selectBlock');
+			jQuery('.block-text').off('dblclick.textEditor');
 			methods.activateListeners();
 		},
 		activateListeners: function (){
