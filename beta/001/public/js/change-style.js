@@ -34,6 +34,8 @@ jQuery.fn.setPx = function(minSize, maxSize) {
 
 		// Get the value and strip all but numbers
 		var val = jQuery(this).val().replace(/\D/g, '');
+
+		console.log(element + ':' + name + ':' + val);
 		
 		// Limit the max size
 		if (val.length > 0) {
@@ -109,6 +111,11 @@ jQuery.fn.selectVal = function() {
 
 jQuery(document).ready(function() {
 	jQuery('select').selectVal();
-	jQuery('.setpx').setPx();
+
+	jQuery('.setpx').each(function() {
+		$(this).setPx();
+	});
+
+	//jQuery('.setpx').setPx();
 	jQuery('.colorpicker').setText('#');
 });
