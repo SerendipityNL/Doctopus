@@ -135,7 +135,12 @@
 	
 				if(add_block == true){
 					//no more selected, add class to parent block and hide the menu
-					jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html('<p class="col-content"> bla die bla motherfucker</p>');
+					if (classes[1] === 'block-text') {
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html('<p class="col-content">This is a textblock.</p>');
+					}
+					else {
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]);
+					}
 					
 					//jQuery(this).parent().parent().parent().text('A textblock has been added');
 					//removes the icon selector
