@@ -16,16 +16,10 @@ function updateStyle(element, name, value) {
 	});	
 }
 
-jQuery.fn.setPx = function() {
-	var element = jQuery(this).attr('data-element');
-	var name = jQuery(this).attr('name');
-
-	// Set the initial value
-	// Get the value and strip all but numbers
-	var val = jQuery(this).val().replace(/\D/g, '');
-	
-	// Set the value
-	jQuery(this).val(val);
+jQuery.fn.setPx = function(minSize, maxSize) {
+	// Set the default values
+	minSize = minSize || 8;
+	maxSize = maxSize || 64;
 
 	jQuery.fn.updateVal = function() {
 		// Get the name of the field
@@ -37,9 +31,10 @@ jQuery.fn.setPx = function() {
 		// Get the value and strip all but numbers
 		var val = jQuery(this).val().replace(/\D/g, '');
 
+		// Limit the max size
 		if (val.length > 0) {
-			val = (val > 64 ? 64 : val);
-			val = (val < 8 ? 8 : val);
+			val = (val > maxSize ? maxSize : val);
+			val = (val < minSize ? minSize : val);
 		}	
 
 		// Set the value
@@ -51,6 +46,8 @@ jQuery.fn.setPx = function() {
 		// Update the database
 		updateStyle(element, name, val + 'px');
 	}
+
+	jQuery(this).updateVal();
 
 	// Update the field on focus out
 	jQuery(this).on('blur', function() {
@@ -64,11 +61,8 @@ jQuery.fn.setPx = function() {
 	})
 }
 
-jQuery(document).ready(function() {
-	
-	jQuery('input').setPx();
-
-	jQuery('select').on('change', function() {
+jQuery.fn.selectVal = function() {
+	jQuery(this).on('change', function() {
 		var element = jQuery(this).attr('data-element');
 		var name = jQuery(this).attr('name');
 		var val = jQuery(this).val();
@@ -77,4 +71,9 @@ jQuery(document).ready(function() {
 		setStyle(element, name, val);
 		updateStyle(element, name, val)
 	});
+}
+
+jQuery(document).ready(function() {
+	jQuery('select').selectVal();
+	jQuery('.setpx').setPx();
 });

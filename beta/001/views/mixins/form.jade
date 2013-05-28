@@ -2,13 +2,13 @@ mixin text(label, element, name, value)
 	div.option-container
 		div.option-definition= label
 		div.option-definition 
-			input(type="text", name='#{name}', value='#{value}', size='5', data-element="#{element}")
+			input(type="text", name='#{name}', value='#{value}', size='20', data-element="#{element}")
 
-mixin text_xs(label, element, name, value)
+mixin setpx(label, element, name, value)
 	div.option-container
 		div.option-definition= label
 		div.option-definition 
-			input(type="text", name='#{name}', value='#{value}', size='4', data-element="#{element}")
+			input(type="text", name='#{name}', value='#{value}', size='4', data-element="#{element}", class="setpx")
 
 mixin color(label, element, name, value)
 	div.option-container
