@@ -42,18 +42,22 @@ html(ng-app)
 		div#block-definition-bottomline
 
 		div#option-wrapper
+			div#selected-block
+				div.name
+				div.type
+				div.col
 			div.option-container 
 				div.option-definition Block type
 				div.option-definition Text
 
 			p Paragraph styling:
-			mixin text_xs('Font size:', 'p', 'font_size', style.p.font_size)
+			mixin setpx('Font size:', 'p', 'font_size', style.p.font_size)
 			mixin select('Color:', 'p', 'color', options.colors, style.p.color)
 			mixin select('Font family:', 'p', 'font_family', options.fonts, style.p.font_family)
 			mixin color('Color:', 'p', 'color', style.p.color)
 
 			p List styling:
-			mixin text_xs('Font size:', 'ul', 'font_size', style.ul.font_size) 
+			mixin setpx('Font size:', 'ul', 'font_size', style.ul.font_size) 
 			mixin select('Color:', 'ul', 'color', options.colors, style.ul.color)
 			mixin select('Font family:', 'ul', 'font_family', options.fonts, style.ul.font_family)
 
