@@ -15,9 +15,10 @@ html(ng-app)
 	body
 	div#header 
 		h1.header-title
-			img(src="img/assets/logo.png")
-			| DOCTOPUS
-		<a class="add_more_blocks_button" href="javascript:;" >&nbsp;</a>
+			a(href="/")
+				img(src="img/assets/logo.png")
+				| DOCTOPUS
+		
 	div#wrapper
 		div#workfield-container
 			div#blocks
@@ -61,6 +62,7 @@ html(ng-app)
 			mixin select('Color:', 'ul', 'color', options.colors, style.ul.color)
 			mixin select('Font family:', 'ul', 'font_family', options.fonts, style.ul.font_family)
 
+			<a class="add_more_blocks_button" href="javascript:;" >&nbsp;</a>
 		div#trashcan-container
 		div#trashcan
 			div#trashcan-explanation "Double click to activate"

@@ -244,7 +244,7 @@ body{
 		#trashcan{
 			cursor:pointer;
 			position:fixed;
-			right:275px;
+			right:280px;
 			bottom:15px;
 			width:105px;
 			height:105px;
@@ -370,13 +370,14 @@ div.empty-block:hover, .empty-block:active {
 .add_more_blocks_button{
 	position:fixed;
 	bottom:15px;
-	right:405px;
-	width:80px;
-	height:80px;
-	background:url('../img/ui/icons/new-block.png') no-repeat;
+	right:400px;
+	width:105px;
+	height:105px;
+	border-radius: 6px 6px 6px 6px;
+	background:url('../img/ui/icons/new-block.png') no-repeat center center #333;
 }
 .add_more_blocks_button:hover{
-	background:url('../img/ui/icons/new-block-hover.png') no-repeat;
+	background:url('../img/ui/icons/new-block-hover.png') no-repeat center center #96bb49;
 }
 
 .increase, .decrease{
