@@ -1,11 +1,11 @@
 
 jQuery(document).ready(function() {
-	$("#workfield-container").on('mouseover', 
+	$(".block-text").on('mouseover', 
 		function () {
-			//$(this).addClass("hover");
-			alert('penis');
+			$(this).append('<div class="edit_bar">Double click to edit</div>');
+			
 		}).on('mouseout',
 			function () {
-			//$(this).removeClass("hover");
-		});
+			$('.edit_bar').remove();
+			});
 });
