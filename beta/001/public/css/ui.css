@@ -238,16 +238,16 @@ body{
 		position:fixed;
 		right:180px;
 		bottom:15px;
-		width:105px;
-		height:105px;
+		width:80px;
+		height:80px;
 	}	
 		#trashcan{
 			cursor:pointer;
 			position:fixed;
 			right:280px;
-			bottom:15px;
-			width:105px;
-			height:105px;
+			top:155px;
+			width:80px;
+			height:80px;
 			color:#999;
 			border-radius:6px;
 			background:url(../img/ui/icons/trashcan-icn-notactive.png) no-repeat center center #333;
@@ -369,10 +369,10 @@ div.empty-block:hover, .empty-block:active {
 
 .add_more_blocks_button{
 	position:fixed;
-	bottom:15px;
-	right:400px;
-	width:105px;
-	height:105px;
+	top:60px;
+	right:280px;
+	width:80px;
+	height:80px;
 	border-radius: 6px 6px 6px 6px;
 	background:url('../img/ui/icons/new-block.png') no-repeat center center #333;
 }
