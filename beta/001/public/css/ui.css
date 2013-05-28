@@ -267,7 +267,8 @@ body{
 div#blocks .col-1,
 div#blocks .col-2,
 div#blocks .col-3,
-div#blocks .col-4 {
+div#blocks .col-4,
+div#blocks .col-placeholder {
 	display: inline;
 	float: left;
 	position: relative;

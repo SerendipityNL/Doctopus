@@ -69,7 +69,7 @@
 					console.log(ui.item[0].parentNode.classList);
 				}
 				, start					: function(e, ui) {
-					jQuery(sortSettings.placeholder).width(ui.item.width()).height(ui.item.height());
+					jQuery('.'+sortSettings.placeholder).width(ui.item.width()).height(ui.item.height());
 				}
 				, change				: function(e, ui) {
 					if (jQuery(sortSettings.placeholder).prev().length > 0){
@@ -240,7 +240,7 @@
 			jQuery('.plus_icon').off('click.changeBlock');
 			jQuery('.block_text').off('click.textEditor');
 			jQuery('#js-save').off('click.saveText');
-			
+			jQuery('#blocks > div').off('click.selectBlock');
 			methods.activateListeners();
 		},
 		activateListeners: function (){
