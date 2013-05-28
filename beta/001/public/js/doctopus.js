@@ -199,11 +199,13 @@
 			jQuery('.isBeingEdited').find('p:first').html(''+text+'');
 		},
 		selectBlock: function (el){
-			console.log(el);
 			var classes = jQuery(el).attr('class').split(/\s/);
 			var col  	= parseInt(classes[0].charAt(classes[0].length-1));
 			var type	= classes[1];
 			var id 		= jQuery(el).attr('data-id');
+
+
+			jQuery('#selected-block .name').append('');
 			console.log(id);
 			//console.log(col);
 		},
