@@ -291,12 +291,12 @@ div#blocks .col-placeholder {
 	position: relative;
 	margin: 5px 1%;
 	min-height: 20px;
-	outline: 1px dashed #CCC;
+	outline: 1px dashed #ccc;
 	/*text-align: justify;*/
 }
 
 div#blocks .col-placeholder {
-	background:#ccc;
+	background:#eee;
 }
 div#trashcan .col-placeholder{
 	width:80px !important;
