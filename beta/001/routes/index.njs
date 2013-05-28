@@ -71,8 +71,6 @@ exports.setstyle = function(req, res) {
 
 	style[element][name] = value;
 
-	console.log(style);
-
 	res.send(style);
 }
 

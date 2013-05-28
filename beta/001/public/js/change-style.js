@@ -3,8 +3,6 @@ var updateStyle = function (element, name, value) {
 	var newName = name.replace('_', '-');
 	jQuery('#blocks ' + element).css(newName, value);
 
-	//console.log(value);
-
 	// Set the data
 	var data = {
 		'element': element,
@@ -35,8 +33,6 @@ jQuery.fn.setPx = function(minSize, maxSize) {
 		// Get the value and strip all but numbers
 		var val = jQuery(this).val().replace(/\D/g, '');
 
-		console.log(element + ':' + name + ':' + val);
-		
 		// Limit the max size
 		if (val.length > 0) {
 			val = (val > maxSize ? maxSize : val);
@@ -50,7 +46,9 @@ jQuery.fn.setPx = function(minSize, maxSize) {
 		updateStyle(element, name, val + 'px');
 	}
 
-	jQuery(this).updatePx();
+	$(this).each(function() {
+		jQuery(this).updatePx();
+	});
 
 	// Update the field on focus out
 	jQuery(this).on('blur', function() {
@@ -111,11 +109,6 @@ jQuery.fn.selectVal = function() {
 
 jQuery(document).ready(function() {
 	jQuery('select').selectVal();
-
-	jQuery('.setpx').each(function() {
-		$(this).setPx();
-	});
-
-	//jQuery('.setpx').setPx();
+	jQuery('.setpx').setPx();
 	jQuery('.colorpicker').setText('#');
 });
