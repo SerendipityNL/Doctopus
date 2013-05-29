@@ -26,7 +26,7 @@ var style = {
 		'font_family': 'arial'
 	},
 	'li': {
-		'list-style-type': 'disc'
+		'list_style_type': 'disc'
 	}
 }
 
@@ -41,9 +41,14 @@ var options = {
 		'monospace': 'Monospace',
 		'verdana': 'Verdana',
 		'ubuntu': 'Ubuntu'
+	},
+	'list_style_types': {
+		'circle': 'Circle',
+		'disc': 'Disc',
+		'square': 'Square',
+		'none': 'None'
 	}
 }
-
 
 exports.index = function(req, res){
 	res.render('pages/document/document', {
@@ -71,17 +76,20 @@ exports.setstyle = function(req, res) {
 
 	style[element][name] = value;
 
-	res.send(style);
+	createCss(style, function(css) {
+		res.set('Content-Type', 'text/css');
+		res.send(css);
+	});	
 }
 
-exports.css = function(req, res) {
+var createCss = function(style, callback) {
 	var css = '';
 
 	for (var element in style) {
 		css += '#blocks ' + element + ' {\n';
-		
 		for (var key in style[element]) {
-			var name = key.replace('_', '-');
+			console.log(key);
+			var name = key.replace(/_/g, '-');
 			var value = style[element][key];
 
 			if (typeof(value) == 'number') {
@@ -91,7 +99,12 @@ exports.css = function(req, res) {
 		}
 		css += '}\n\n';
 	}
+	callback(css);
+}
 
-	res.set('Content-Type', 'text/css');
-	res.send(css);
+exports.css = function(req, res) {
+	createCss(style, function(css) {
+		res.set('Content-Type', 'text/css');
+		res.send(css);
+	});	
 }

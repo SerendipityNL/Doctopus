@@ -1,7 +1,22 @@
+/*
+var updateCss = function() {
+	// Save the data to the database
+	jQuery.ajax({
+		type: 'GET',
+		url: '/custom.css'
+	}).done(function(data) {
+		jQuery('#styling').html(data);
+	});
+}
+*/
+
 var updateStyle = function (element, name, value) {
+	
+	/*
 	// Apply the css styling
 	var newName = name.replace('_', '-');
 	jQuery('#blocks ' + element).css(newName, value);
+	*/
 
 	// Set the data
 	var data = {
@@ -15,6 +30,8 @@ var updateStyle = function (element, name, value) {
 		type: 'POST',
 		url: '/setstyle',
 		data: data
+	}).done(function(css) {
+		jQuery('#styling').html(css);
 	});	
 }
 
