@@ -137,7 +137,7 @@
 				if(add_block == true){
 					//no more selected, add class to parent block and hide the menu
 					if (classes[1] === 'block-text') {
-						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html('<div class="edit_bar"></div><p class="col-content">This is a textblock.</p>');
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html('<p class="col-content">This is a textblock.</p>');
 					}
 					else {
 						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]);
