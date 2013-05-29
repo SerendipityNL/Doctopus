@@ -12,7 +12,7 @@ var blocks = [
 		"4. Maak de door jou getypte tekst 'dik gedrukt en cursief'", 
 		"5. Vergroot het tekst blok naar een breedte van 3 kolommen.",
 		"6. Verander de kleur van de tekst naar blauw.",
-		"7. Sla jou wijzegingen op!",
+		"7. Sla jou wijzigingen op!",
 		"8. Verwijder de titel van dit document.",
 		"9. Zet de door jou getypte tekst rechts-boven aan de pagina.",
 		"10. Gefeliciteerd, de test zit er op! Bedankt voor het testen van Doctopus!",
