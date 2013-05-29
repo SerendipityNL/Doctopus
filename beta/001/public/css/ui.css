@@ -291,6 +291,9 @@ body{
 					text-align:center;
 					margin-right:1px;
 				}
+				.temp-hiding{
+					display:none;
+				}
 
 	#trashcan-container{
 		cursor:pointer;
