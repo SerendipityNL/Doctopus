@@ -197,19 +197,19 @@
 				defaultActions: methods.settings.texteditor.defaultActions
 			});
 
-			// jQuery('.js-editor-container').append('<a id="js-save" class="btn btn-primary" href="javascript:;">Save</a>');
-			//methods.reactivateListeners();
+			jQuery('.js-editor-container').append('<a id="js-save_and_close" class="save_and_close_text_button" href="javascript:;">Save and close</a> | ');
+			jQuery('.js-editor-container').append('<a id="js-save" class="save_text_button" href="javascript:;">Save</a> | ');
+			jQuery('.js-editor-container').append('<a id="js-close" class="close_text_button" href="javascript:;">Close</a>');
+			methods.reactivateListeners();
 		},
 		destroyTexteditor: function() {
-			methods.saveText();
+			jQuery('.isBeingEdited').find('p:first').show();
 			jQuery('.isBeingEdited').removeClass('isBeingEdited');
 			jQuery('#textarea').remove();
 			jQuery('.js-editor-container').remove();
 		},
 		saveText: function() {
-			var text = jQuery('#textarea').text();
-			console.log(text);
-			jQuery('.isBeingEdited').find('p:first').html(''+text+'').show();
+			jQuery(methods.settings.texteditor.selector).texteditor('returnText');
 		},
 		selectBlock: function (el){
 			var classes = jQuery(el).attr('class').split(/\s/);
@@ -251,6 +251,10 @@
 			jQuery('.plus_icon').off('click.changeBlock');
 			jQuery('#blocks > div').off('click.selectBlock');
 			jQuery('.block-text').off('dblclick.textEditor');
+			jQuery('#js-save_and_close').off('click.saveAndCloseText');
+			jQuery('#js-save').off('click.saveText');
+			jQuery('#js-close').off('click.closeText');
+			jQuery('.resize-block-btn-plus, .resize-block-btn-min').off('click.resizeBlock');
 			methods.activateListeners();
 		},
 		activateListeners: function (){
@@ -276,9 +280,17 @@
 
 				methods.resizeBlock();
 			});
-			//jQuery('#js-save').on('click.saveText', function() {
-			//methods.saveText()
-			//});
+
+			jQuery('#js-save').on('click.saveText', function() {
+				methods.saveText();
+			});
+			jQuery('#js-close').on('click.closeText', function() {
+				methods.destroyTexteditor();
+			});
+			jQuery('#js-save_and_close').on('click.saveAndCloseText', function() {
+				methods.saveText();
+				methods.destroyTexteditor();
+			});
 			
 			jQuery('#blocks > div').on('click.selectBlock', function(){
 				methods.selectBlock(jQuery(this));
@@ -295,7 +307,6 @@
 					}
 					jQuery('.edit_bar').show();
 					jQuery('.edit_bar').text(text)
-					console.log('hover');
 				},
 				function () {
 					jQuery('.edit_bar').hide();
