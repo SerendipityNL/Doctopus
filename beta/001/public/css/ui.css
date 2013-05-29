@@ -275,7 +275,8 @@ body{
 					height:14px;
 					display:inline-block;
 					color:#fff;
-					line-height:1em;
+					line-height:0.5em;
+					font-size: 2em;
 					text-align:center;
 					margin-right:1px;
 				}
@@ -285,7 +286,8 @@ body{
 					height:14px;
 					display:inline-block;
 					color:#ccc;
-					line-height:1em;
+					font-size: 2em;
+					line-height:0.5em;
 					text-align:center;
 					margin-right:1px;
 				}
