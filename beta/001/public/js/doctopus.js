@@ -221,7 +221,7 @@
 			jQuery('.selected-block').removeClass('selected-block');
 			jQuery(el).addClass('selected-block');
 
-
+			jQuery('.temp-hiding').show();
 			jQuery('#selected-block .name').text(col);
 			jQuery('#selected-block .type').text(type);
 		},
