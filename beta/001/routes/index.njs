@@ -61,6 +61,29 @@ exports.index = function(req, res){
 
 
 // ---------------------------------------------
+// Functions
+// ---------------------------------------------
+
+var createCss = function(style, callback) {
+	var css = '';
+	for (var element in style) {
+		css += '#blocks ' + element + ' {\n';
+		for (var key in style[element]) {
+			console.log(key);
+			var name = key.replace(/_/g, '-');
+			var value = style[element][key];
+
+			if (typeof(value) == 'number') {
+				value += 'px';
+			}
+			css += '\t' + name + ': ' + value + ';\n';
+		}
+		css += '}\n\n';
+	}
+	callback(css);
+}
+
+// ---------------------------------------------
 // Needed for temporary saving the style changes 
 // (until the server restarts)
 // ---------------------------------------------
@@ -80,26 +103,6 @@ exports.setstyle = function(req, res) {
 		res.set('Content-Type', 'text/css');
 		res.send(css);
 	});	
-}
-
-var createCss = function(style, callback) {
-	var css = '';
-
-	for (var element in style) {
-		css += '#blocks ' + element + ' {\n';
-		for (var key in style[element]) {
-			console.log(key);
-			var name = key.replace(/_/g, '-');
-			var value = style[element][key];
-
-			if (typeof(value) == 'number') {
-				value += 'px';
-			}
-			css += '\t' + name + ': ' + value + ';\n';
-		}
-		css += '}\n\n';
-	}
-	callback(css);
 }
 
 exports.css = function(req, res) {
