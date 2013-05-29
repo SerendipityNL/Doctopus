@@ -341,7 +341,7 @@ div#blocks .col-placeholder {
 }
 
 div#blocks .col-placeholder {
-	background:#eee;
+	background:#ccc;
 }
 div#trashcan .col-placeholder{
 	width:80px !important;
@@ -494,3 +494,7 @@ strike {
 i {
 	font-style: italic !important;
 }		
+
+.ui-sortable-helper{
+	background:#fff;
+}

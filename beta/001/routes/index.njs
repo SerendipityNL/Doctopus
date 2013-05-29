@@ -3,9 +3,40 @@
 // ---------------------------------------------
 
 var blocks = [
-	{ "id": 1, "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam cursus mauris sed odio feugiat mattis. Pellentesque sodales augue vitae mi pellentesque lobortis. Praesent bibendum aliquet lectus, ut tempus nisi ultrices vitae. Nunc tincidunt ultrices mauris, adipiscing interdum velit cursus ut. Pellentesque quam mi, vulputate faucibus commodo non, vestibulum et dui. Donec laoreet mauris non neque mollis sagittis. Sed auctor faucibus ullamcorper. Nullam eget imperdiet odio. Morbi in augue ac est vestibulum bibendum quis vel felis.", "cols": 4, "type": "text" },
-	{ "id": 2, "content": "Nam mollis vehicula lobortis. Praesent gravida massa ut erat condimentum egestas. Morbi vestibulum molestie turpis vel ornare. Donec euismod, mi a ornare dignissim, mauris dui.", "cols": 2, "type": "text" },
-	{ "id": 3, "content": ["List item #1", "List item #2", "List item #3", "List item #4"], "cols": 2, "type": "list" }
+	{ "id": 1, "content": "Welkom bij Doctopus.", "cols": 4, "type": "text" },
+	{ "id": 2, "content": "We hebben een paar kleine opdrachten voor jou. Deze staan hier onder beschreven.", "cols": 1, "type": "text" },
+	{ "id": 3, "content": [
+		"1. Maak een nieuw blok.",
+		"2. Verander het nieuwe blok in een tekst blok",
+		"3. Typ de tekst: 'De kat krabt de krullen van de trap.' in het tekst blok.",
+		"4. Maak de door jou getypte tekst 'dik gedrukt en cursief'", 
+		"5. Vergroot het tekst blok naar een breedte van 3 kolommen.",
+		"6. Verander de kleur van de tekst naar blauw.",
+		"7. Sla jou wijzigingen op!",
+		"8. Verwijder de titel van dit document.",
+		"9. Zet de door jou getypte tekst rechts-boven aan de pagina.",
+		"10. Gefeliciteerd, de test zit er op! Bedankt voor het testen van Doctopus!",
+	], "cols": 4, "type": "list" },
+	{"id": 4, "content": [
+		  "Sortable tolerance: pointer"
+		, "Label maken van sidebar opties"
+		, "Textarea"
+		, "Kleur wijzigen binnen texteditor"
+		, "Save- en Cancel-knop achter BUIS in YellowText"
+		, "Geselecteerd blok kunnen weggooien"
+		, "Title attributen toevoegen aan sidecar elementen"
+		, "Notification area weghalen"
+		, "Title attributen toevoegen waar nodig"
+		, "Sidebarcontent dynamisch op wat je hebt geselecteerd"
+		, "New events:"
+		, "Single click: Select + show handlebar:"
+		, "Edit"
+		, "Drag"
+		, "Double click: immediate edit"
+		, "Deselecteren van blokken"
+		, "Notification slide down onder de menu baren verwacht in het veld zelf"
+		, "tekstkleur nog wel updaten"
+	], "cols": 4, "type": "list"}
 ];
 
 // ---------------------------------------------
