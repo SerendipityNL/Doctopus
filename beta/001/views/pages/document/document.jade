@@ -23,11 +23,6 @@ html(ng-app)
 		div#workfield-container
 			div.edit_bar Double click to edit
 			div#blocks
-				div.empty-block.col-1(data-colspan='1')
-					div.plus_icon
-				div.empty-block.col-1(data-colspan='1')
-					div.plus_icon
-
 				for block in blocks
 					div(class='col-#{block.cols} block-#{block.type}', data-id='#{block.id}', data-colspan='#{block.cols}')
 						if block.type == 'text'
