@@ -464,7 +464,9 @@ div.empty-block:hover, .empty-block:active {
 	border-radius:6px;
 }
 
-
+.selected-block{
+	outline:2px #96bb49 solid !important;
+}
 
 #selected-block{
 
