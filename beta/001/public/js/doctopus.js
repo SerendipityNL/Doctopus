@@ -217,35 +217,38 @@
 			var type	= classes[1];
 			var id 		= jQuery(el).attr('data-id');
 
+				
+			jQuery('.selected-block').removeClass('selected-block');
+			jQuery(el).addClass('selected-block');
+
 
 			jQuery('#selected-block .name').text(col);
 			jQuery('#selected-block .type').text(type);
 		},
-		resizeBlock: function (el, type) {
-			var classes = jQuery(el).attr('class').split(/\s/);
-			var col  	= parseInt(classes[0].charAt(classes[0].length-1));
+		resizeBlock: function() {
 
-			var resetCol = 1;
+			var block = jQuery('.selected-block');
 
-			console.log('current_col ='+col);
-
-			if(type == "increase"){
-				newCol = col +1;
+			if (block.hasClass('col-1')) {
+				block.switchClass('col-1', 'col-2', 250);
+				console.log('hoi 1');
 			}
-			if(type == "decrease"){
-				if(col == 1){
-					die();
-				}
-				else{
-					newCol = col -1;
-				}			
+			else if (block.hasClass('col-2')) {
+				block.switchClass('col-2', 'col-3', 250);
+				console.log('hoi 2');
+			}
+			else if (block.hasClass('col-3')) {
+				block.switchClass('col-3', 'col-4', 250);
+				console.log('hoi 3');
+			}
+			else {
+				block.switchClass('col-4', 'col-1', 250);
+				console.log('hoi 4');
 			}
 		},
-
 		reactivateListeners: function() {
 			jQuery('.add_more_blocks_button').off('click.addMoreBlocks');
 			jQuery('.plus_icon').off('click.changeBlock');
-//			jQuery('#js-save').off('click.saveText');
 			jQuery('#blocks > div').off('click.selectBlock');
 			jQuery('.block-text').off('dblclick.textEditor');
 			methods.activateListeners();
@@ -260,11 +263,28 @@
 			jQuery('.block-text').on('dblclick.textEditor', function() {
 				methods.createTexteditor(jQuery(this));
 			});
-//			jQuery('#js-save').on('click.saveText', function() {
-//				methods.saveText()
-//			});
-			
 
+			jQuery('.resize-block-btn-plus, .resize-block-btn-min').on('click.resizeBlock', function(){
+
+				console.log('click');
+				if(jQuery(this).hasClass('resize-block-btn-min')){
+					var step = 'decrease';
+				}
+				else{
+					var step = 'increase';
+				}
+
+				methods.resizeBlock();
+			});
+			//jQuery('#js-save').on('click.saveText', function() {
+			//methods.saveText()
+			//});
+			
+			jQuery('#blocks > div').on('click.selectBlock', function(){
+				methods.selectBlock(jQuery(this));
+			});
+
+			// notification bar
 			jQuery(".block-text, .add_more_blocks_button").hover(
 				function () {
 					if(jQuery(this).hasClass('add_more_blocks_button')){
@@ -281,13 +301,7 @@
 					jQuery('.edit_bar').hide();
 				}
 			);
-
-			jQuery('#blocks > div').on('click.selectBlock', function(){
-				methods.selectBlock(jQuery(this));
-			});
-			
 		}
-		
 	};
 	
 	jQuery.fn.getPrev = function (data){

@@ -355,6 +355,7 @@ div.block-text p,
 div.block-list ul {
 	padding: 5px;
 	line-height: 130%;
+	 word-wrap:break-word;
 }
 
 div.block-list li {
