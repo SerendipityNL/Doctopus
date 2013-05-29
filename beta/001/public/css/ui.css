@@ -482,4 +482,15 @@ div.empty-block:hover, .empty-block:active {
 	margin-right:10px;
 }
 
-		
+b {
+	font-weight: bold !important;
+}
+u {
+	text-decoration: underline !important;
+}
+strike {
+	text-decoration: line-through !important;
+}
+i {
+	font-style: italic !important;
+}		
