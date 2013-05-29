@@ -16,7 +16,27 @@ var blocks = [
 		"8. Verwijder de titel van dit document.",
 		"9. Zet de door jou getypte tekst rechts-boven aan de pagina.",
 		"10. Gefeliciteerd, de test zit er op! Bedankt voor het testen van Doctopus!",
-	], "cols": 4, "type": "list" }
+	], "cols": 4, "type": "list" },
+	{"id": 4, "content": [
+		  "Sortable tolerance: pointer"
+		, "Label maken van sidebar opties"
+		, "Textarea"
+		, "Kleur wijzigen binnen texteditor"
+		, "Save- en Cancel-knop achter BUIS in YellowText"
+		, "Geselecteerd blok kunnen weggooien"
+		, "Title attributen toevoegen aan sidecar elementen"
+		, "Notification area weghalen"
+		, "Title attributen toevoegen waar nodig"
+		, "Sidebarcontent dynamisch op wat je hebt geselecteerd"
+		, "New events:"
+		, "Single click: Select + show handlebar:"
+		, "Edit"
+		, "Drag"
+		, "Double click: immediate edit"
+		, "Deselecteren van blokken"
+		, "Notification slide down onder de menu baren verwacht in het veld zelf"
+		, "tekstkleur nog wel updaten"
+	], "cols": 4, "type": "list"}
 ];
 
 // ---------------------------------------------

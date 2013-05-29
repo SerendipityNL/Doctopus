@@ -33,7 +33,7 @@
 			*/
 			methods.settings = jQuery.extend( {
 				width            : "100%",
-				height           : "300px",
+				height           : "250px",
 				containerClass   : "js-editor-container",
 				buttonsClass     : "js-editor-buttons",
 				iFrameClass      : "js-editor-iframe",
