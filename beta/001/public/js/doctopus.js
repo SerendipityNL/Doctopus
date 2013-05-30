@@ -19,7 +19,15 @@
 				}
 				, texteditor	: {
 					  selector				: '#textarea'
-					, defaultActions		: 'bold, underline, italic, strikethrough, align-left, align-center, align-right'
+					, defaultActions		: [
+												  'bold'
+												, 'underline'
+												, 'italic'
+												, 'strikethrough'
+												, 'align-left'
+												, 'align-center'
+												, 'align-right'
+											  ]
 				}
 				, changeBlock	: {
 					  iconSet				: [
@@ -64,7 +72,7 @@
 				, connectWith			: methods.settings.sortableTrash.selector
 				, delay					: sortSettings.delay
 				, placeholder			: sortSettings.placeholder
-
+				, tolerance				: 'pointer'
 				, beforeStop					:function (e, ui) {
 					console.log(ui.item[0].parentNode.classList);
 				}

@@ -62,7 +62,7 @@
 }
 
 .icon-sprite, .JustifyLeft, .JustifyCenter, .JustifyRight, .InsertUnorderedList, .InsertOrderedList, .image, .link {
-  background: url('../images/icon-s634930a1a1.png') no-repeat;
+  background: url('../img/icon-s634930a1a1.png') no-repeat;
 }
 
 .JustifyLeft,
@@ -103,7 +103,7 @@
 .link {
   background-position: 0 0;
 }
-
+/*
 .js-editor-buttons a:first-child {
   margin-left: 35px;
 }
@@ -119,7 +119,7 @@
 .js-editor-buttons a:nth-child(9) {
   margin-right: 35px;
 }
-
+*/
 .js-editor-iframe {
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.25);
 }
