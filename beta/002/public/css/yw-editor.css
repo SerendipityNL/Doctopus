@@ -44,6 +44,18 @@
   text-shadow: 0 1px white;
   cursor: pointer;
 }
+a.js-editor-save,
+a.js-editor-cancel {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #96BB49), color-stop(100%, #366314));
+  background-image: -webkit-linear-gradient(#96bb49, #366314 100%);
+  background-image: -moz-linear-gradient(#96BB49, #366314);
+  background-image: -o-linear-gradient(#96BB49, #366314);
+  background-image: linear-gradient(#96BB49, #366314);
+  width: auto;
+  text-shadow: none;
+  color: #FFFFFF;
+  outline: 1px solid #cdcdcd;
+}
 
 .bold {
   font-weight: bold;

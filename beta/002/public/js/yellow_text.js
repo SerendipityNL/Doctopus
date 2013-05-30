@@ -219,10 +219,10 @@
         // Build the buttons and add before the container
         $('<a />').addClass( button.command ).text( button.content ).data( 'command', button.command ).appendTo( methods.buttons );
         
-        if( methods.settings.nuSubmitButSave === true ) {
-	        $('<a />').addClass( methods.settings.saveButtonClass ).text( 'Save' ).appendTo( methods.buttons );
-	        $('<a />').addClass( methods.settings.cancelButtonClass ).text( 'Cancel' ).appendTo( methods.buttons );
-        }
+      }
+      if( methods.settings.noSubmitButSave === true ) {
+        $('<a />').addClass( methods.settings.saveButtonClass ).text( 'Save' ).appendTo( methods.buttons );
+        $('<a />').addClass( methods.settings.cancelButtonClass ).text( 'Cancel' ).appendTo( methods.buttons );
       }
     },
 
