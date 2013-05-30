@@ -36,17 +36,19 @@
       * For an example, see javascripts/demo.js
       */
       methods.settings = $.extend( {
-        width            : '100%',
-        height           : '300px',
-        containerClass   : 'js-editor-container',
-        buttonsClass     : 'js-editor-buttons',
-        iFrameClass      : 'js-editor-iframe',
-        cleanOnSubmit    : true,
-        defaultFont      : 'Helvetica Neue, Helvetica, arial, sans-serief',
-        defaultFontSize  : '1em',
-        defaultFontColor : '#000000',
-        defaultActions   : ['bold', 'underline', 'italic', 'strikethrough', 'align-left', 'align-center', 'align-right', 'unordered-list', 'ordered-list', 'link', 'image'],
-        noSubmitButSave	 : false,
+        width              : '100%',
+        height             : '300px',
+        containerClass     : 'js-editor-container',
+        buttonsClass       : 'js-editor-buttons',
+        iFrameClass        : 'js-editor-iframe',
+        cleanOnSubmit      : true,
+        defaultFont        : 'Helvetica Neue, Helvetica, arial, sans-serief',
+        defaultFontSize    : '1em',
+        defaultFontColor   : '#000000',
+        defaultActions     : ['bold', 'underline', 'italic', 'strikethrough', 'align-left', 'align-center', 'align-right', 'unordered-list', 'ordered-list', 'link', 'image'],
+        noSubmitButSave	   : false,
+        saveButtonClass    : 'js-editor-save',
+        cancelButtonClass  : 'js-editor-cancel',
 
         // Callbacks
         isContentChanged : noop,
@@ -216,6 +218,11 @@
 
         // Build the buttons and add before the container
         $('<a />').addClass( button.command ).text( button.content ).data( 'command', button.command ).appendTo( methods.buttons );
+        
+        if( methods.settings.nuSubmitButSave === true ) {
+	        $('<a />').addClass( methods.settings.saveButtonClass ).text( 'Save' ).appendTo( methods.buttons );
+	        $('<a />').addClass( methods.settings.saveButtonClass ).text( 'Save' ).appendTo( methods.buttons );
+        }
       }
     },
 
