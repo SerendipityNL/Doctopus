@@ -1,44 +1,54 @@
-var style = require('../modules/style.njs');
+var styledb = require('../modules/styledb.njs');
+
+function createCSS(style, callback) {
+	var css = '';
+	for (var element in style) {
+		css += '#blocks ' + element + ' {\n';
+		for (var key in style[element]) {
+			var name = key.replace(/_/g, '-');
+			var value = style[element][key];
+
+			if (typeof(value) == 'number') {
+				value += 'px';
+			}
+			css += '\t' + name + ': ' + value + ';\n';
+		}
+		css += '}\n\n';
+	}
+	callback(css);
+}
 
 
 exports.index = function(req, res){
 	res.render('pages/document/document', {
 		'pageTitle': 'Docbuilder - Beta 001',
-		'options': style.getOptions(),
-		'style': style.getStyle(),
-		'blocks': style.getBlocks()
+		'options': styledb.options,
+		'style': styledb.current,
+		'blocks': styledb.blocks
 	});
 };
 
+exports.css = function(req, res) {
+	createCSS(styledb.current, function(css) {
+		res.set('Content-Type', 'text/css');
+		res.send(css);
+	});	
+}
 
 
-// ---------------------------------------------
-// Needed for temporary saving the style changes 
-// (until the server restarts)
-// ---------------------------------------------
-
-/*
 exports.setstyle = function(req, res) {
 	var element = req.body.element;
 	var name = req.body.name;
 	var value = req.body.value;
 
-	if (typeof(style[element]) === 'undefined') {
-		style[element] = {};
+	if (typeof(styledb.current[element]) === 'undefined') {
+		styledb.current[element] = {};
 	}
 
-	style[element][name] = value;
+	styledb.current[element][name] = value;
 
-	createCss(style, function(css) {
+	createCSS(styledb.current, function(css) {
 		res.set('Content-Type', 'text/css');
 		res.send(css);
 	});	
 }
-
-exports.css = function(req, res) {
-	createCss(style, function(css) {
-		res.set('Content-Type', 'text/css');
-		res.send(css);
-	});	
-}
-*/

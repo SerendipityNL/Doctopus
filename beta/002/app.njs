@@ -32,10 +32,8 @@ app.configure(function() {
 
 // Page routes
 app.get('/', routes.index);
-/*
 app.get('/custom.css', routes.css);
 app.post('/setstyle', routes.setstyle);
-*/
 
 // Let the app listen on the defined port
 app.listen(port);

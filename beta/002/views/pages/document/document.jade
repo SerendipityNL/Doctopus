@@ -25,6 +25,10 @@ html(ng-app)
 			div#blocks
 				for block in blocks
 					div(class='col-#{block.cols} block-#{block.type}', data-id='#{block.id}', data-colspan='#{block.cols}')
+						div.block-actions
+							ul
+								li.move Move
+								li.edit Edit
 						if block.type == 'text'
 							p.col-content #{block.content}
 						if block.type == 'list'
