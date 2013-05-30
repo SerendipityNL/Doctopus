@@ -100,7 +100,6 @@ var createCss = function(style, callback) {
 	for (var element in style) {
 		css += '#blocks ' + element + ' {\n';
 		for (var key in style[element]) {
-			console.log(key);
 			var name = key.replace(/_/g, '-');
 			var value = style[element][key];
 
