@@ -47,6 +47,7 @@
         defaultFontColor : '#000000',
         defaultActions   : ['bold', 'underline', 'italic', 'strikethrough', 'align-left', 'align-center', 'align-right', 'unordered-list', 'ordered-list', 'link', 'image'],
         noSubmitButSave	 : false,
+        saveButtonClass  : 'js-editor-save',
 
         // Callbacks
         isContentChanged : noop,

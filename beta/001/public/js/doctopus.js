@@ -72,7 +72,7 @@
 				, connectWith			: methods.settings.sortableTrash.selector
 				, delay					: sortSettings.delay
 				, placeholder			: sortSettings.placeholder
-
+				, tolerance				: pointer
 				, beforeStop					:function (e, ui) {
 					console.log(ui.item[0].parentNode.classList);
 				}
