@@ -46,7 +46,7 @@
         defaultFontSize    : '1em',
         defaultFontColor   : '#000000',
         defaultActions     : ['bold', 'underline', 'italic', 'strikethrough', 'align-left', 'align-center', 'align-right', 'unordered-list', 'ordered-list', 'link', 'image'],
-        noSubmitButSave	   : false,
+        noSubmitButSave	   : true,
         saveButtonClass    : 'js-editor-save',
         cancelButtonClass  : 'js-editor-cancel',
 
@@ -221,7 +221,7 @@
         
         if( methods.settings.nuSubmitButSave === true ) {
 	        $('<a />').addClass( methods.settings.saveButtonClass ).text( 'Save' ).appendTo( methods.buttons );
-	        $('<a />').addClass( methods.settings.saveButtonClass ).text( 'Save' ).appendTo( methods.buttons );
+	        $('<a />').addClass( methods.settings.cancelButtonClass ).text( 'Cancel' ).appendTo( methods.buttons );
         }
       }
     },
