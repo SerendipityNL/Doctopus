@@ -3,7 +3,7 @@ var style = require('../modules/style.njs');
 
 exports.index = function(req, res){
 	res.render('pages/document/document', {
-		'pageTitle': 'Docbuilder - Beta 001',
+		'pageTitle': 'Docbuilder - Beta 002',
 		'options': style.getOptions(),
 		'style': style.getStyle(),
 		'blocks': style.getBlocks()
