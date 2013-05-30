@@ -19,7 +19,15 @@
 				}
 				, texteditor	: {
 					  selector				: '#textarea'
-					, defaultActions		: 'bold, underline, italic, strikethrough, align-left, align-center, align-right'
+					, defaultActions		: [
+												  'bold'
+												, 'underline'
+												, 'italic'
+												, 'strikethrough'
+												, 'align-left'
+												, 'align-center'
+												, 'align-right'
+											  ]
 				}
 				, changeBlock	: {
 					  iconSet				: [
