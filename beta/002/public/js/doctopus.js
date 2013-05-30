@@ -7,6 +7,7 @@
 				  sortable 		: {
 					  selector				: '#blocks'
 					, items					: ' > div'
+					, handle				: '.block-actions .move'
 					, delay					: 300
 					, placeholder			: 'col-placeholder'
 					, cursor				: {
@@ -65,6 +66,7 @@
 
 			jQuery(sortSettings.selector).sortable({
 				  items					: sortSettings.items
+				, handle				: sortSettings.handle
 				, cursorAt				: {
 					  left					: sortSettings.cursor.left
 					, top					: sortSettings.cursor.top
