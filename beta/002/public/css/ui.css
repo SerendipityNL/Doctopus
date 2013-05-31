@@ -210,7 +210,7 @@ body{
 				z-index:999;
 			}
 				#block-definition h2{
-					font-family:'Bebas';
+					font-family:'arial';
 					font-size:1.6em;
 					color:#fff;
 					line-height:3em;
@@ -543,4 +543,12 @@ i {
 
 .ui-sortable-helper{
 	background:#fff;
+}
+.standard-container{
+	color: #fff;
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+	font-size: 18px;
+	font-family: arial;
 }

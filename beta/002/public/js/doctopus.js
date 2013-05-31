@@ -74,7 +74,6 @@
 				, connectWith			: methods.settings.sortableTrash.selector
 				, delay					: sortSettings.delay
 				, placeholder			: sortSettings.placeholder
-				, tolerance				: 'pointer'
 				, beforeStop					:function (e, ui) {
 					console.log(ui.item[0].parentNode.classList);
 				}
@@ -192,7 +191,14 @@
 		},
 		addBlock: function() {
 			var blockHtml = '<div class="empty-block col-1" data-colspan="1"><div class="plus_icon"></div></div>';
-			jQuery(methods.settings.sortable.selector).append(blockHtml);
+			jQuery(methods.settings.sortable.selector).append(blockHtml).focus();
+
+			//scroll to new appended div
+			$('html, body').animate({
+				scrollTop: $(".empty-block:last").offset().top
+			}, 1000);
+
+
 			methods.reactivateListeners();
 		},
 		createTexteditor: function(el) {
@@ -232,8 +238,20 @@
 			jQuery(el).addClass('selected-block');
 
 			jQuery('.temp-hiding').show();
+			jQuery('.standard-container').hide();
 			jQuery('#selected-block .name').text(col);
 			jQuery('#selected-block .type').text(type);
+		},
+		deselect: function(el){
+			console.log(el);
+
+			if(!el == "block-action"){
+				console.log('remove');
+				jQuery('.selected-block').removeClass('.selected-block');
+			}
+		},
+		deleteBlock: function(){
+			jQuery('.selected-block').remove();
 		},
 		resizeBlock: function() {
 
@@ -265,6 +283,8 @@
 			jQuery('#js-save').off('click.saveText');
 			jQuery('#js-close').off('click.closeText');
 			jQuery('.resize-block-btn-plus, .resize-block-btn-min').off('click.resizeBlock');
+			jQuery('#trashcan').off('click.deleteBlock')
+			jQuery('body').off('click.deselect');
 			methods.activateListeners();
 		},
 		activateListeners: function (){
@@ -278,6 +298,14 @@
 				methods.createTexteditor(jQuery(this));
 			});
 
+			jQuery('#trashcan').on('click.deleteBlock', function() {
+				methods.deleteBlock();
+			});
+
+			jQuery(document).on('click.deselect', function (){
+				methods.deselect(event.target.className);
+			});	
+			  
 			jQuery('.resize-block-btn-plus, .resize-block-btn-min').on('click.resizeBlock', function(){
 
 				console.log('click');
@@ -306,22 +334,6 @@
 				methods.selectBlock(jQuery(this));
 			});
 
-			// notification bar
-			jQuery(".block-text, .add_more_blocks_button").hover(
-				function () {
-					if(jQuery(this).hasClass('add_more_blocks_button')){
-						var text = "Click to add empty block";
-					}
-					else{
-						var text = "Double click to edit";
-					}
-					jQuery('.edit_bar').show();
-					jQuery('.edit_bar').text(text)
-				},
-				function () {
-					jQuery('.edit_bar').hide();
-				}
-			);
 		}
 	};
 	
