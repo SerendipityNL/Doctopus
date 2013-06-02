@@ -552,3 +552,22 @@ i {
 	font-size: 18px;
 	font-family: arial;
 }
+.notice{
+	width:670px;
+	height:15px;
+	padding:10px;
+	background:#fff;
+	text-align: center;
+	font-size:18px;
+	color:#000;
+	float:left;
+	display: none;
+	margin-left:19px;
+	border-radius: 15px;
+}
+	.notice.succes{
+		background:#96bb49;
+	}
+	.notice.error{
+		background: #e32d2d;
+	}

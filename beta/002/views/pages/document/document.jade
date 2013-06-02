@@ -21,6 +21,7 @@ html(ng-app)
 				img(src="img/assets/logo.png")
 	div#wrapper
 		div#workfield-container
+			div.notice
 			div#blocks
 				for block in blocks
 					div(class='col-#{block.cols} block-#{block.type}', data-id='#{block.id}', data-colspan='#{block.cols}')

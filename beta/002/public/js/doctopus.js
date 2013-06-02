@@ -45,6 +45,10 @@
 			methods.startSortable();
 			methods.activateListeners();
 		},
+		// message is text, type is error, succes, warning and duration is int in ms
+		showNotice : function (message, type, duration){
+			$('.notice').fadeIn().text(message).addClass(type).delay(duration).fadeOut('slow'); 
+		},
 		startTrashcan : function() {
 			var trashSettings = methods.settings.sortableTrash;
 
@@ -58,7 +62,6 @@
 				}
 			}).disableSelection().sortable('refresh');
 		},
-
 		startSortable: function() {
 			methods.startTrashcan();
 			
@@ -198,7 +201,6 @@
 				scrollTop: $(".empty-block:last").offset().top
 			}, 1000);
 
-
 			methods.reactivateListeners();
 		},
 		createTexteditor: function(el) {
@@ -243,15 +245,19 @@
 			jQuery('#selected-block .type').text(type);
 		},
 		deselect: function(el){
-			console.log(el);
-
-			if(!el == "block-action"){
-				console.log('remove');
-				jQuery('.selected-block').removeClass('.selected-block');
+			if(el == ""){
+				jQuery('.selected-block').removeClass('selected-block')
 			}
+
 		},
 		deleteBlock: function(){
 			jQuery('.selected-block').remove();
+
+			msg 		= "Block has been removed";
+			msgtype  	= "succes";
+			duration	= 2000;
+
+			methods.showNotice(msg, msgtype, duration);
 		},
 		resizeBlock: function() {
 
