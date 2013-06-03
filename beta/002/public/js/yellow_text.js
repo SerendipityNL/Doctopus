@@ -47,6 +47,8 @@
         defaultFontColor   : '#000000',
         defaultActions     : ['bold', 'underline', 'italic', 'strikethrough', 'align-left', 'align-center', 'align-right', 'unordered-list', 'ordered-list', 'link', 'image'],
         noSubmitButSave	   : true,
+        targetSelector	   : '.isBeingEdited > p.col-content',
+        targetReplacement  : '#textarea',
         saveButtonClass    : 'js-editor-save',
         cancelButtonClass  : 'js-editor-cancel',
 
@@ -85,6 +87,7 @@
 
     // Set new content in the textarea
     setContentToTextarea: function( content ) {
+      console.log($(methods.el))
       $( methods.el ).val( content );
       return content;
     },
@@ -144,7 +147,7 @@
       });
 
       // Add a p tag to make sure browsers don't add div's
-      $( methods.editor ).contents().find('body').append('<p></p>');
+      // $( methods.editor ).contents().find('body').append('<p></p>');
 
       // Add some css to the iFrame
       var iFrameCSS = '<style type="text/css">body{padding:2%;}p{margin:0;}</style>';
@@ -271,25 +274,29 @@
       });
       
       if( methods.settings.noSubmitButSave === true ) {
-	      $( '.' + methods.settings.saveButtonClass + ' a').on('click', function( e ) {
-		    
-		    // First clean the code
-	        methods.cleanTheCode();
-	
-	        // Put the content back in the textfield
-	        methods.setContentToTextarea( methods.getContentFromEditor() );
-	      });
+      
+	    // Bind to the click event on the save button
+	    $( 'a.' + methods.settings.saveButtonClass).on('click', function( e ) {
+		  
+		  // Remove the editor from the DOM
+	      methods.saveText();
+	    });
+	    
+	    $( 'a.' + methods.settings.cancelButtonClass).on('click', function ( e ) {
+		  methods.destroyContainer(); 
+	    });
       }
       else {
-	      // Bind to the submit event of the form
-	      $( methods.el ).parents('form').on('submit', function() {
+      
+	    // Bind to the submit event of the form
+	    $( methods.el ).parents('form').on('submit', function() {
 	
-	        // First clean the code
-	        methods.cleanTheCode();
+	      // First clean the code
+	      methods.cleanTheCode();
 	
-	        // Put the content back in the textfield
-	        methods.setContentToTextarea( methods.getContentFromEditor() );
-	      });	      
+	      // Put the content back in the textfield
+	      methods.setContentToTextarea( methods.getContentFromEditor() );
+	    });	      
       }
       
     },
@@ -426,10 +433,31 @@
       $(methods.editor).contents().find('body').find('ol').removeAttr('class').unwrap();
 
       // Remove all div tags
-			$(methods.editor).contents().find('div').each( function( index ) {
-				console.log( this );
-				console.log( index );
-			});
+      $(methods.editor).contents().find('div').each( function( index ) {
+	    console.log( this );
+        console.log( index );
+	  });
+    },
+    saveText: function() {
+	  // First clean the code
+	  methods.cleanTheCode();
+	
+	  // Put the content back in the textfield
+	  $( methods.settings.targetSelector ).html(methods.getContentFromEditor());	
+	  
+	  methods.destroyContainer();  
+    },
+    
+    destroyContainer: function() {
+      
+      // Remove the editor from the DOM
+	  $( methods.editor ).remove();
+	  $( '.' + methods.settings.containerClass ).remove();
+	  
+	  // Remove the textarea and show the target again
+	  $( methods.settings.targetReplacement ).hide();
+	  $( methods.settings.targetSelector ).show();
+
     }
   };
 

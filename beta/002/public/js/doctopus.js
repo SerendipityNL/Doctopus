@@ -207,17 +207,14 @@
 			methods.destroyTexteditor();
 			jQuery('.edit_bar').text('Editing mode - not saved yet');
 			jQuery(el).append('<textarea id="textarea"></textarea>');
-			var text = el.addClass('isBeingEdited').find('p:first').hide().text();
+			var text = el.addClass('isBeingEdited').find('p:first').hide().html();
 			
 			jQuery('#textarea').text(''+text+'');
 			
 			jQuery('#textarea').texteditor({
 				defaultActions: methods.settings.texteditor.defaultActions
 			});
-
-			jQuery('.js-editor-container').append('<a id="js-save_and_close" class="save_and_close_text_button" href="javascript:;">Save and close</a> | ');
-			jQuery('.js-editor-container').append('<a id="js-save" class="save_text_button" href="javascript:;">Save</a> | ');
-			jQuery('.js-editor-container').append('<a id="js-close" class="close_text_button" href="javascript:;">Close</a>');
+			
 			methods.reactivateListeners();
 		},
 		destroyTexteditor: function() {
