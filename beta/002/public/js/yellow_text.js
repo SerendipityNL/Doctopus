@@ -455,7 +455,7 @@
 	  $( '.' + methods.settings.containerClass ).remove();
 	  
 	  // Remove the textarea and show the target again
-	  $( methods.settings.targetReplacement ).hide();
+	  $( methods.settings.targetReplacement ).remove();
 	  $( methods.settings.targetSelector ).show();
 
     }

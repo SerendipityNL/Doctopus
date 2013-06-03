@@ -204,7 +204,7 @@
 			methods.reactivateListeners();
 		},
 		createTexteditor: function(el) {
-			methods.destroyTexteditor();
+			jQuery('#textarea').texteditor('destroyContainer');
 			jQuery('.edit_bar').text('Editing mode - not saved yet');
 			jQuery(el).append('<textarea id="textarea"></textarea>');
 			var text = el.addClass('isBeingEdited').find('p:first').hide().html();
@@ -216,15 +216,6 @@
 			});
 			
 			methods.reactivateListeners();
-		},
-		destroyTexteditor: function() {
-			jQuery('.isBeingEdited').find('p:first').show();
-			jQuery('.isBeingEdited').removeClass('isBeingEdited');
-			jQuery('#textarea').remove();
-			jQuery('.js-editor-container').remove();
-		},
-		saveText: function() {
-			jQuery(methods.settings.texteditor.selector).texteditor('returnText');
 		},
 		selectBlock: function (el){
 			var classes = jQuery(el).attr('class').split(/\s/);
