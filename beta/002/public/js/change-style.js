@@ -1,30 +1,10 @@
-/*
-var updateCss = function() {
-	// Save the data to the database
-	jQuery.ajax({
-		type: 'GET',
-		url: '/custom.css'
-	}).done(function(data) {
-		jQuery('#styling').html(data);
-	});
-}
-*/
-
-var updateStyle = function (element, name, value) {
-	
-	/*
-	// Apply the css styling
-	var newName = name.replace('_', '-');
-	jQuery('#blocks ' + element).css(newName, value);
-	*/
-
+function updateStyle(element, name, value) {
 	// Set the data
 	var data = {
 		'element': element,
 		'name': name,
 		'value': value
 	};
-
 	// Save the data to the database
 	jQuery.ajax({
 		type: 'POST',

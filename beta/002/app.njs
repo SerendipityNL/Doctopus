@@ -28,6 +28,9 @@ app.configure(function() {
 
 	// Set the view engine
 	app.set('view engine', 'jade');
+
+	// Set the local vars/functions
+	app.locals(require('./modules/app.locals.njs'));
 });
 
 // Page routes
