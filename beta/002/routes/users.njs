@@ -1,6 +1,10 @@
-provider = require('../models/provider.njs'),
-load = new provider.getModel();
+var provider = require('../models/provider.njs'),
+	load = new provider.getModel();
 
-exports.index = function(req, res){
-	res.send('user index');
+module.exports = {
+	index: function(req, res) {
+		var User = new load.model('user');
+		console.log(User);
+		res.send('user index');
+	}
 }
