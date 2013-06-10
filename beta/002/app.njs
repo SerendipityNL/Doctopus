@@ -1,7 +1,8 @@
 // Include the required modules
 var express = require('express'),
 	app = express(),
-	routes = require('./routes/index.njs');
+	routes = require('./routes/index.njs'),
+	users = require('./routes/users.njs');
 
 var port = process.env.PORT || 1337;
 
@@ -37,6 +38,7 @@ app.configure(function() {
 app.get('/', routes.index);
 app.get('/custom.css', routes.css);
 app.post('/setstyle', routes.setstyle);
+app.get('/users', users.index);
 
 // Let the app listen on the defined port
 app.listen(port);
