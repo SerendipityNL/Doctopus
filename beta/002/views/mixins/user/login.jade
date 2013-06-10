@@ -1,0 +1,15 @@
+if (typeof(session.username) !== 'undefined')
+	.login.pull-right
+		a.btn.btn-success(href="/dashboard") Dashboard
+else
+	.login.pull-right
+		a.btn.btn-success(href="javascript:;") Login
+		#login-dropdown.well
+			form#login-form(method="post", action="/login")
+	
+				label.control-label(for="email") Email
+				input(name="email", type="email", placeholder="Email")
+				label.control-label(for="password") Password
+				input(name="password", type="password", placeholder="password")
+				br
+				button.btn.btn-success(type="submit") Login

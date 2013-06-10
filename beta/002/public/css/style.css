@@ -1,0 +1,71 @@
+@import 'fonts.css';
+
+body {
+	background: #444444;
+	padding-top: 50px;
+}
+header {
+	background: #222222;
+	width: 100%;
+}
+	
+#container {
+	margin: 0 auto;
+}
+.navbar{
+	
+}
+	.navbar-inner{
+		
+	}
+		.navbar .brand{
+			padding: 5px 0px;
+		}
+			.navbar .brand img {
+				margin-left: 15px;
+			}
+		.navbar .login{
+			margin: 3px 20px 0 0;
+		}
+			#login-dropdown {
+				padding: 5px;
+				display: none;
+				position: absolute;
+				right: 20px;
+				top: 40px;
+			}
+#actionBar {
+	margin: -40px 0 40px 0;
+}
+/*
+ *
+ *			Registration Form
+ *
+ ****************************************/
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'BebasRegular' !important;
+}
+
+#registration{
+	
+}
+	#registration h1 {
+		font-family: 'BebasRegular'; /* BebasRegular, RobotoSlabRegular */
+		font-size: 36px;
+		margin: 0 0 15px 40px;
+		padding-top: 20px;
+	}
+	#registration #container{
+		margin: 0 auto;
+		width: 600px;
+		background: #91BB5C;
+	}
+		#registration-form {
+			
+		}
+			#registration-form label {
+				display: block;
+				margin-left: 15px;
+				font-weight: bold;
+			}
