@@ -1,0 +1,116 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+	font: 13px Helvetica, Arial, freesans, sans-serif;
+	color: #404040;
+}
+
+h1, h2, h3, h4 {
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2.5em;
+	border-bottom: 1px solid #ddd;
+	margin: 1em 0 15px;
+	padding: 0 0 5px;
+}
+
+h2 {
+	font-size: 2em;
+	margin: 1em 0 15px;
+	padding: 0 0 5px;
+	border-bottom: 1px solid #eee;
+}
+
+h3 {
+	margin: 1em 0 10px;
+	font-size: 1.5em;
+}
+
+h4 {
+	margin: 1em 0 10px;
+	font-size: 1.2em;
+}
+
+p, table, ul, pre {
+	line-height: 1.7;
+	margin: 0 0 10px;
+}
+
+ul {}
+
+ul ul {
+	margin: 0;
+}
+
+li {
+	list-style-type: disc;
+	margin: 0 0 0 25px;
+}
+
+pre {
+	font-family: Consolas, "Liberation Mono", "Ubuntu mono", Courier, monospace;
+	font-size: 11px;
+	background-color: #F8F8F8;
+	border: 1px solid #DDD;
+	border-radius: 5px;
+	padding: 10px;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+}
+
+div#document {
+	margin: 20px auto;
+	max-width: 800px;
+}

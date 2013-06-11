@@ -4,13 +4,13 @@ var express = require('express'),
 var port = process.env.PORT || 1337;
 
 app.configure(function() {
-	app.use(express.static(__dirname + '/public'));
-	app.set('views', __dirname + '/views');
+	app.use(express.static(__dirname));
+	app.set('views', __dirname);
 	app.set('view engine', 'jade');
 });
 
-app.get('/', function{
-	res.send('hello!');
+app.get('/', function(req, res){
+	res.render('index');
 });
 
 // Let the app listen on the port
