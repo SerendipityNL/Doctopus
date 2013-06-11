@@ -1,6 +1,4 @@
-
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
-
+# Inhoudsopgave
 - [Plan van aanpak](#plan-van-aanpak)
 	- [Inleiding](#inleiding)
 	- [Achtergrond](#achtergrond)
@@ -413,50 +411,67 @@ Medestudenten binnen de minor The Next Web:
 Deze groep is niet direct betrokken bij het project zelf. Wel maken ze deel uit van een kennis bron waaruit informatie gehaald kan worden. Deze groep kan hulp nodig hebben van de Projectgroep en anders om kan natuurlijk ook.
 Projectgroep
 De project groep is samengesteld door de groep zelf. Het is een groep studenten die elkaar gevonden heeft in het beschikken over veel motivatie en verschillende expertises die op elkaar aansluiten.
-Douwe de Haan
-Taak binnen het project:  Programmeur.
+
+#### Douwe de Haan
+Taak binnen het project:  Programmeur.  
+Gegevens:
+
+<table>
+	<tr><td>Naam</td><td>Douwe</td></tr>
+	<tr><td>Achternaam</td><td>de Haan</td></tr>
+	<tr><td>Adres</td><td>van Nispensingel 1</td></tr>
+	<tr><td>Postcode</td><td>8016 LM</td></tr>
+	<tr><td>Woonplaats</td><td>Zwolle</td></tr>
+	<tr><td>Telefoonnummer</td><td>+316 25 14 64 23</td></tr>
+	<tr><td>E-mailadres</td><td>douwedehaan@live.nl</td></tr>
+	<tr><td>Geboortedatum</td><td>05-03-1990</td></tr>
+</table>
+
+#### Edwin ten Wolde
+Taak binnen het project:  Scrum master en front-end developer.  
 Gegevens:                          	
-Naam:                                   	Douwe
-Achternaam:                    	de Haan
-Adres:                                   	van Nispensingel 1
-Postcode                            	8016 LM
-Woonplaats:                    	Zwolle
-Telefoon:                            	+316 25 14 64 23
-E-mail:                                  	douwedehaan@live.nl
-Geboortedatum:          	05-03-1990
-Edwin ten Wolde
-Taak binnen het project:  Scrum master en front-end developer.
+
+<table>	
+	<tr><td>Naam</td><td>Edwin</td></tr>
+	<tr><td>Achternaam</td><td>ten Wolde</td></tr>
+	<tr><td>Adres</td><td>Johan Winklerwei 393</td></tr>
+	<tr><td>Postcode</td><td>8915 EW</td></tr>
+	<tr><td>Woonplaats</td><td>Leeuwarden</td></tr>
+	<tr><td>Telefoonnummer</td><td>+316 11 58 15 54</td></tr>
+	<tr><td>E-mailadres</td><td>ed.wolde@gmail.com</td></tr>
+	<tr><td>Geboortedatum</td><td>27-07-1990</td></tr>
+</table>
+
+#### Tjerk Jippe Dijkstra
+Taak binnen het project:  Project owner en programmeur.  
 Gegevens:                          	
-Naam:                                   	Edwin
-Achternaam:                    	ten Wolde
-Adres:                                   	Johan Winklerwei 393
-Postcode                            	8915 EW
-Woonplaats:                    	Leeuwarden
-Telefoon:                            	+ 316 11 58 15 54
-E-mail:                                  	ed.wolde@gmail.com  
-Geboortedatum:          	27-07-1990
-Tjerk Jippe Dijkstra
-Taak binnen het project:  Project owner en programmeur.
-Gegevens:                          	
-Naam:                                   	Tjerk Jippe
-Achternaam:                    	Dijkstra
-Adres:                                   	Zonstraat 9
-Postcode                            	9801 VW
-Woonplaats:                    	Zuidhorn
-Telefoon:                            	+316 15 50 25 30
-E-mail:                                  	tjerk.dijkstra@gmail.com        	
-Geboortedatum:          	09-07-1988
+
+
+<table>	
+	<tr><td>Naam</td><td>Tjerk Jippe</td></tr>
+	<tr><td>Achternaam</td><td>Dijkstra</td></tr>
+	<tr><td>Adres</td><td>Zonstraat 9</td></tr>
+	<tr><td>Postcode</td><td>9801 VW</td></tr>
+	<tr><td>Woonplaats</td><td>Zuidhorn</td></tr>
+	<tr><td>Telefoonnummer</td><td>+316 15 50 25 30</td></tr>
+	<tr><td>E-mailadres</td><td>tjerk.dijkstra@gmail.com</td></tr>
+	<tr><td>Geboortedatum</td><td>09-07-1988</td></tr>
+</table>
+
 Vincent Bremer
-Taak binnen het project:  Programmeur.
+Taak binnen het project:  Programmeur.  
 Gegevens:                    	
-Naam:                                   	Vincent
-Achternaam:                    	Bremer
-Adres:                                   	Valkstraat 33
-Postcode                            	8605 AV
-Woonplaats:                    	Sneek
-Telefoon:                            	+316 50 49 09 16
-E-mail:                                  	vbremer89@gmail.com             	
-Geboortedatum:          	09-02-1989
+
+<table>	
+	<tr><td>Naam</td><td>Vincent</td></tr>
+	<tr><td>Achternaam</td><td>Brmer</td></tr>
+	<tr><td>Adres</td><td>Valkstraat 33</td></tr>
+	<tr><td>Postcode</td><td>8605 AV</td></tr>
+	<tr><td>Woonplaats</td><td>Sneek</td></tr>
+	<tr><td>Telefoonnummer</td><td>+316 50 49 09 16</td></tr>
+	<tr><td>E-mailadres</td><td>vbremer89@gmail.com</td></tr>
+	<tr><td>Geboortedatum</td><td>09-02-1989</td></tr>
+</table>
 
 ## Project locatie
 Het project vind plaats op de NHL Hogeschool Leeuwarden, binnen de opleiding Communication Multimedia Design. Binnen deze opleiding wordt gewerkt met minors waarbij het project zal vallen onder de minor The Next Web. 
