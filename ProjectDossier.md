@@ -1450,21 +1450,21 @@ Voor de volgende testcase zijn deze punten van belang:
 
 ### Conclusie / Actielijst Prototype 1
 
-1. Probleem: Meerdere gebruikers hadden moeite met het vergroten en verkleinen van de elementen.
+	1. Probleem: Meerdere gebruikers hadden moeite met het vergroten en verkleinen van de elementen.
 
-1. Actie: Dit is op te lossen door de manier waarop de blokken vergroten duidelijker maken met knoppen voor elke maat dus 1 t/m 4. 
+	1. Actie: Dit is op te lossen door de manier waarop de blokken vergroten duidelijker maken met knoppen voor elke maat dus 1 t/m 4. 
 
-2. Probleem: Het icoon is niet duidelijk in het uitleggen van de functie ook het feit dat de elementen in stappen vergroot zorgt voor verwarring.
+	2. Probleem: Het icoon is niet duidelijk in het uitleggen van de functie ook het feit dat de elementen in stappen vergroot zorgt voor verwarring.
 
-2. Actie: Dit is op te lossen door het icoon opnieuw vorm te geven, zodat deze uitbeeld dat het blok vergroot.
+	2. Actie: Dit is op te lossen door het icoon opnieuw vorm te geven, zodat deze uitbeeld dat het blok vergroot.
 
-3. Probleem: Het slepen en plaatsen van nieuwe elementen werkt niet zoals de gebruiker verwacht, de positie van het nieuwe element is niet duidelijk.
+	3. Probleem: Het slepen en plaatsen van nieuwe elementen werkt niet zoals de gebruiker verwacht, de positie van het nieuwe element is niet duidelijk.
 
-3. Actie: Dit is op te lossen door een schaduw (placeholder) onder het nieuwe element te plaatsen zodat het duidelijk is waar deze gaat landen in het werkveld.
+	3. Actie: Dit is op te lossen door een schaduw (placeholder) onder het nieuwe element te plaatsen zodat het duidelijk is waar deze gaat landen in het werkveld.
 
-4. Probleem: Enkele gebruikers gaven aan dat het niet duidelijk was hoe groot het grid is ze zouden dit graag visueel willen zien.
+	4. Probleem: Enkele gebruikers gaven aan dat het niet duidelijk was hoe groot het grid is ze zouden dit graag visueel willen zien.
 
-4. Actie: De vormgeving van het grid zal worden aangepast zodat deze duidelijker wordt.
+	4. Actie: De vormgeving van het grid zal worden aangepast zodat deze duidelijker wordt.
 
 ## 5. Prototype 2
 
@@ -1494,17 +1494,18 @@ Dit prototype neemt de verbeteringen mee die aan de hand van de feedback op prot
 
 
 ### Conclusie / Actielijst Prototype 2
-1. Probleem: Veel gebruikers zijn op zoek naar opties van een element of een soort menu balk waarin alles samengevat staat, sommige proberen met rechtermuisknop zo’n soort menu naar voren te halen.
 
-1. Actie: Er moet meer informatie getoond worden over de blokken en de eigenschappen er van, het design is te minimalistisch op dit moment.
+	1. Probleem: Veel gebruikers zijn op zoek naar opties van een element of een soort menu balk waarin alles samengevat staat, sommige proberen met rechtermuisknop zo’n soort menu naar voren te halen.
 
-2. Probleem: Bij het wijzigen van tekst in het kleinste blok is er te weinig ruimte, ook missen de gebruikers tekstopmaak mogelijkheden zoals bold, italic, underline.
+	1. Actie: Er moet meer informatie getoond worden over de blokken en de eigenschappen er van, het design is te minimalistisch op dit moment.
 
-2. Actie: Dit valt op te lossen door een teksteditor te maken met deze opties, dit stond ook in de planning.
+	2. Probleem: Bij het wijzigen van tekst in het kleinste blok is er te weinig ruimte, ook missen de gebruikers tekstopmaak mogelijkheden zoals bold, italic, underline.
 
-3. Probleem: Gebruikers geven aan de het slepen om nieuwe elementen toe te voegen niet snel genoeg werkt op het moment dat er veel nieuwe elementen bij moeten, of meerdere tegelijk.
+	2. Actie: Dit valt op te lossen door een teksteditor te maken met deze opties, dit stond ook in de planning.
 
-3. Actie: Er moet een andere manier komen voor het toevoegen van elementen.
+	3. Probleem: Gebruikers geven aan de het slepen om nieuwe elementen toe te voegen niet snel genoeg werkt op het moment dat er veel nieuwe elementen bij moeten, of meerdere tegelijk.
+
+	3. Actie: Er moet een andere manier komen voor het toevoegen van elementen.
 
 
 ## Prototype 3
@@ -1535,17 +1536,18 @@ Het bewerken van een blok heeft bij deze test het meeste prioriteit, is dit een 
 3. Het indelen van blokken is duidelijker gemaakt door een schaduw toe te voegen aan het blok dat gesleept wordt, wij willen testen of dit daadwerkelijk zo is.
 
 ### Conclusie / Actielijst Prototype 3
-1. Probleem: De inhoud van het blok wijzigen door middel van de sidebar is niet bij iedereen direct duidelijk, meerdere gebruikers hebben eerst moeten zoeken naar waar de inhoud gewijzigd moet worden, een merendeel verwacht het in het blok zelf.
 
-1. Actie: Dit probleem herkennen wij en we gaan dit terugbrengen naar tekst wijzigen in het blok zelf i.p.v. de sidebar.
+	1. Probleem: De inhoud van het blok wijzigen door middel van de sidebar is niet bij iedereen direct duidelijk, meerdere gebruikers hebben eerst moeten zoeken naar waar de inhoud gewijzigd moet worden, een merendeel verwacht het in het blok zelf.
 
-2. Probleem: Het opmaken van de tekst gaat vrijwel vlekkeloos bij iedereen, sommige mensen geven aan dat ze de mogelijkheid missen om tekst uit te lijnen naar links en / of naar rechts, 3, 2. 
+	1. Actie: Dit probleem herkennen wij en we gaan dit terugbrengen naar tekst wijzigen in het blok zelf i.p.v. de sidebar.
 
-2. Actie: Deze mogelijkheid gaan wij toevoegen.
+	2. Probleem: Het opmaken van de tekst gaat vrijwel vlekkeloos bij iedereen, sommige mensen geven aan dat ze de mogelijkheid missen om tekst uit te lijnen naar links en / of naar rechts, 3, 2. 
 
-3. Probleem: Bij het toevoegen van het nieuwe element is het niet duidelijk wat voor element het wordt, een tekstblok, afbeelding of lijst op dit moment is er geen optie voor om dit te wijzigen ook net achteraf. Het toevoegen op zich werkt bij alle gebruikers prima.
+	2. Actie: Deze mogelijkheid gaan wij toevoegen.
 
-3. Actie: Wij gaan een manier bedenken waarop er een keuze gemaakt kan worden tussen wat voor element je toevoegt.
+	3. Probleem: Bij het toevoegen van het nieuwe element is het niet duidelijk wat voor element het wordt, een tekstblok, afbeelding of lijst op dit moment is er geen optie voor om dit te wijzigen ook net achteraf. Het toevoegen op zich werkt bij alle gebruikers prima.
+
+	3. Actie: Wij gaan een manier bedenken waarop er een keuze gemaakt kan worden tussen wat voor element je toevoegt.
 
 
 ## 7. Prototype 4 (beta 001)
@@ -1613,166 +1615,175 @@ Deze vraag stellen wij om een beeld te krijgen over de vraag die er is naar het 
 	9. Zet de door jou getypte tekst rechtsboven aan de pagina.
 	Het testen van de “drag and drop” voor het indelen van de blokken.
 
-Conclusie / Actielijst Prototype 4
+### Conclusie / Actielijst Prototype 4
 
-1. Probleem:
-Het wijzigen van de tekstkleur was onduidelijk en de sidebar waarin dit moet gebeuren wordt ook over het hoofd gezien.
+	1. Probleem:
+	Het wijzigen van de tekstkleur was onduidelijk en de sidebar waarin dit moet gebeuren wordt ook over het hoofd gezien.
 
-1. Actie:
-Dit gaan wij verhelpen door de sidebar duidelijk te laten inspringen op het moment dat er op een blok geklikt wordt. De opties die vervolgens verschijnen zijn ook direct gerelateerd aan het blok wat geselecteerd is, dit betekent als je bijvoorbeeld een tekstblok aanklikt dat er opties voor een tekstblok verschijnen.
+	1. Actie:
+	Dit gaan wij verhelpen door de sidebar duidelijk te laten inspringen op het moment dat er op een blok geklikt wordt. De opties die vervolgens verschijnen zijn ook direct gerelateerd aan het blok wat geselecteerd is, dit betekent als je bijvoorbeeld een tekstblok aanklikt dat er opties voor een tekstblok verschijnen.
 
-2. Probleem: De “drag and drop” was onduidelijk voor de gebruiker, de gebruiker verwacht eerst op een element te klikken en vervolgens op de prullenbak te klikken om te verwijderen. 
+	2. Probleem: De “drag and drop” was onduidelijk voor de gebruiker, de gebruiker verwacht eerst op een element te klikken en vervolgens op de prullenbak te klikken om te verwijderen. 
 
-2. Actie: Op het moment dat de gebruiker met de muis boven een blok hangt gaan er opties verschijnen die uitbeelden wat er met het blok kan gebeuren bijvoorbeeld het verslepen van een blok of bewerken van een blok.
+	2. Actie: Op het moment dat de gebruiker met de muis boven een blok hangt gaan er opties verschijnen die uitbeelden wat er met het blok kan gebeuren bijvoorbeeld het verslepen van een blok of bewerken van een blok.
 
-3. Probleem: De omgeving waar de notificaties naar de gebruiker worden gestuurd (de linkerbovenhoek) viel niet op bij de gebruiker, nadat de test was afgelopen kon niemand vertellen waar deze stond.
+	3. Probleem: De omgeving waar de notificaties naar de gebruiker worden gestuurd (de linkerbovenhoek) viel niet op bij de gebruiker, nadat de test was afgelopen kon niemand vertellen waar deze stond.
 
-3. Actie: Wij gaan de locatie van deze notificaties verplaatsen naar midden boven de pagina en er zal een animatie worden toegevoegd zodat deze meer de aandacht trekt.
+	3. Actie: Wij gaan de locatie van deze notificaties verplaatsen naar midden boven de pagina en er zal een animatie worden toegevoegd zodat deze meer de aandacht trekt.
 
-4. Probleem: De sidebar viel bij geen enkele gebruiker op, alle gebruikers legden de focus op het blok waarin ze bezig waren, pas na lang zoeken werd de opties in de sidebar gevonden.
+	4. Probleem: De sidebar viel bij geen enkele gebruiker op, alle gebruikers legden de focus op het blok waarin ze bezig waren, pas na lang zoeken werd de opties in de sidebar gevonden.
 
-4. Actie: De oplossing valt onder punt 1.
+	4. Actie: De oplossing valt onder punt 1.
 
-5. Probleem: Meerdere gebruikers konden de opslaan knop van het tekstveld niet vinden, deze stond op de verkeerde positie (onderaan het tekstvak).
+	5. Probleem: Meerdere gebruikers konden de opslaan knop van het tekstveld niet vinden, deze stond op de verkeerde positie (onderaan het tekstvak).
 
-5. Actie: De positie van deze knop zal worden gewijzigd naar de rechterbovenhoek van het blok.
+	5. Actie: De positie van deze knop zal worden gewijzigd naar de rechterbovenhoek van het blok.
 
-6. Probleem: De optie “Save and Cancel” werd door geen enkele gebruiker gebruikt.
+	6. Probleem: De optie “Save and Cancel” werd door geen enkele gebruiker gebruikt.
 
-6. Actie: Deze optie gaan wij verwijderen.
+	6. Actie: Deze optie gaan wij verwijderen.
 
-7. Probleem: Gebruikers klikken 1 maal op het tekst blok om vervolgens tekst in te voegen inplaats van twee keer.
+	7. Probleem: Gebruikers klikken 1 maal op het tekst blok om vervolgens tekst in te voegen inplaats van twee keer.
 
-7. Actie: Er komt een edit knop waar maar eenmaal op geklikt hoeft te worden om het blok te bewerken. De dubbelklik zal echter blijven bestaan.
+	7. Actie: Er komt een edit knop waar maar eenmaal op geklikt hoeft te worden om het blok te bewerken. De dubbelklik zal echter blijven bestaan.
 
-8. Probleem: De stijl die de gebruiker mee geeft aan de tekst wordt niet doorgevoerd binnen de tekst editor, dit zorgt voor veel verwarring bij de gebruiker.
+	8. Probleem: De stijl die de gebruiker mee geeft aan de tekst wordt niet doorgevoerd binnen de tekst editor, dit zorgt voor veel verwarring bij de gebruiker.
 
-8. Actie: Deze bug zullen wij oplossen door de editor aan te passen zodat deze de stijl ook overneemt.
+	8. Actie: Deze bug zullen wij oplossen door de editor aan te passen zodat deze de stijl ook overneemt.
 
-9. Probleem
-De iconen voor het uitlijnen van tekst binnen de tekst-editor niet meer aanwezig.
+	9. Probleem
+	De iconen voor het uitlijnen van tekst binnen de tekst-editor niet meer aanwezig.
 
-9. Actie
-Wij dachten dat deze niet nodig waren, dit blijkt niet zo te zijn, ze worden weer hersteld.
+	9. Actie
+	Wij dachten dat deze niet nodig waren, dit blijkt niet zo te zijn, ze worden weer hersteld.
 
-10. Probleem
-De knop voor het vergroten en verkleinen van blokken is zeer onlogisch weergegeven voor de gebruiker, ook was er veel moeite met het vinden en gebruiken van deze functie.
+	10. Probleem
+	De knop voor het vergroten en verkleinen van blokken is zeer onlogisch weergegeven voor de gebruiker, ook was er veel moeite met het vinden en gebruiken van deze functie.
 
-10.Actie
-Deze knop zal nu twee keer voorkomen, eenmaal in de sidebar en nogmaals in de opties van een blok op het moment dat deze bewerkt wordt. Dit zal verwarring moeten voorkomen.
-
-
-11. Probleem
-Er zijn bepaalde gebruikers die toetsenbord knoppen willen gebruiken om bepaalde acties uit te voeren die algemeen worden geïmplementeerd in veel software (zoals de enter knop, delete knop, snelkoppelingen voor het wijzigen van tekst dikte enzovoorts).
-
-11. Actie
-Deze functionaliteiten hebben geen prioriteit maar gaan op de lijst van could haves.
+	10.Actie
+	Deze knop zal nu twee keer voorkomen, eenmaal in de sidebar en nogmaals in de opties van een blok op het moment dat deze bewerkt wordt. Dit zal verwarring moeten voorkomen.
 
 
-12. Probleem
-Er is geen functie aanwezig waardoor de gebruiker op een logische manier blokken kan deselecteren.
+	11. Probleem
+	Er zijn bepaalde gebruikers die toetsenbord knoppen willen gebruiken om bepaalde acties uit te voeren die algemeen worden geïmplementeerd in veel software (zoals de enter knop, delete knop, snelkoppelingen voor het wijzigen van tekst dikte enzovoorts).
 
-12. Actie
-Deze functie gaat er komen.
-
-13. Probleem
-Het drag and drop systeem wordt pas gebruikt na dat de gebruiker hier over is geïnformeerd. Er is te weinig informatie richting de gebruiker dat dit systeem aanwezig binnen het product.
-
-13. Actie
-Zie punt 2.
-
-14. Probleem
-De cursor verandert niet altijd mee met de actie die door de gebruiker wordt uitgevoerd.
-
-14. Actie
-Dit gaan wij oplossen, dit hebben wij over het hoofd gezien.
-
-15. Probleem:
-De sidebar staat rechts in beeld en wordt vaak over het hoofd gezien.
-
-15. Actie:
-De positie van de sidebar zal op dezelfde plek blijven, maar hij zal de aandacht van de gebruiker meer gaan trekken door dat hij straks over de functie beschikt om nieuwe content in te laden op het moment dat een gebruiker een blok selecteert.
+	11. Actie
+	Deze functionaliteiten hebben geen prioriteit maar gaan op de lijst van could haves.
 
 
+	12. Probleem
+	Er is geen functie aanwezig waardoor de gebruiker op een logische manier blokken kan deselecteren.
 
-Bewijsmateriaal
+	12. Actie
+	Deze functie gaat er komen.
+
+	13. Probleem
+	Het drag and drop systeem wordt pas gebruikt na dat de gebruiker hier over is geïnformeerd. Er is te weinig informatie richting de gebruiker dat dit systeem aanwezig binnen het product.
+
+	13. Actie
+	Zie punt 2.
+
+	14. Probleem
+	De cursor verandert niet altijd mee met de actie die door de gebruiker wordt uitgevoerd.
+
+	14. Actie
+	Dit gaan wij oplossen, dit hebben wij over het hoofd gezien.
+
+	15. Probleem:
+	De sidebar staat rechts in beeld en wordt vaak over het hoofd gezien.
+
+	15. Actie:
+	De positie van de sidebar zal op dezelfde plek blijven, maar hij zal de aandacht van de gebruiker meer gaan trekken door dat hij straks over de functie beschikt om nieuwe content in te laden op het moment dat een gebruiker een blok selecteert.
+
+
+### Bewijsmateriaal
 Alle volledige notities / individuele testresultaten en Silverback opnamen zijn opgeslagen op onze gedeelde Dropbox, aangezien de omvang van al deze bestanden groot zijn, zijn deze niet meegestuurd met dit verslag, mocht het nodig zijn om deze in te willen zien dan kunnen wij dit alsnog opsturen.
 
 
-Multidisciplinary Teamwork
-Inleiding
+# Multidisciplinary Teamwork
+## Inleiding
 Om op elkaar te reflecteren hebben we als groep een feedback ronde gehouden. Hierbij hebben we een lijst op internet opgezocht met heel veel karakter eigenschappen. Deze lijst heeft Vincent door een kort scriptje gehaald waardoor er een lijst van 20 willekeurige eigenschappen uit rolde. Daarna mocht elk teamlid om de beurt een eigenschap kiezen uit de lijst waar op hij wilde dat gereflecteerd werd. Na het kiezen van een eigenschap mocht iedereen even na denken bij wie hij deze het beste vond passen en als iedereen er uit was werd er afgeteld. Op de laatste tel wees iedereen de persoon aan waarvan hij vond dat de eigenschap het meest van toepassing was. Daarna werd er door iedereen toegelicht waarom hij dit vond. Hierdoor ontstond vaak wel een discussie of gedeelde meningen over de uitkomst. Door dit spel te spelen heeft iedereen een beter beeld gekregen van hoe hij binnen de groep functioneert.
-Positieve punten
-Vincent
-Zelfopofferend
-Legt snel iets van zichzelf aan de kant om anderen te helpen.
-Gedisciplineerd
-Altijd aanwezig en structureel in dingen aanpassen.
-Geen half werk
-Kan beter, netter. Maakt dingen af totdat ze echt klaar zijn/
-Hoge tolerantie
-Krijg je niet snel boos. Als de rest aan het stuiteren is, blijft Vincent rustig. Blijft fatsoenlijk.
-Vindingrijk
-Zoekt snel dingen op en test ze om te kijken of het werkt.
-Trouw
-Reactie (lees met zwoele stem): ‘Ja!’. Verantwoordelijkheden kun je bij Vincent neerleggen.
-Edwin
-Gedisciplineerd
-Altijd aanwezig, duidelijk scrummen, rest van de groep wat losjes soms, misschien wel iets sterker worden met scrumboard. Onstuimig groepje, scrum wat lastig te hanteren.
-Ernstig
-Toen je de deadline hoorde ineens een beetje paniek. Houd je wel scherp. Je neemt dingen serieus waardoor de rest dat ook doet.
-Creatief
-Tjerk: ‘Ik denk dat ik soms creatief ben, maar dan kijk ik naar Edwin…’ Denkt snel aan zaken waar anderen niet aan denken.
-Waakzaam
-Je houdt in de gaten of we teveel afdwalen, wil de focus behouden.
-Vindingrijk
-Vaak ideeën terwijl je aan het designen bent. Nieuwe wegen die we in kunnen slaan.
 
-Douwe
-Nuchter
-Niet zo moeilijk doen, doen we wel. In vergaderingen als het moeilijk lijkt, snel van ‘Doen we even, zus en zo’.
-Geen half werk
-Optimaliserend en maakt efficiënt
-Pakt snel dingen op
-Leert snel hoe je binnen het project werkt en wat je moet doen.
-Het voortouw willen nemen
-Moet je wel mee oppassen, maar kan wel werken als het even kort stil ligt. Kun je wel anderen mee overrompelen.
-Zelfverzekerd
-Stapt snel op mensen af, zegt snel dingen. Maakt je niet zozeer uit wie het is tegen wie je praat.
-Vindingrijk
-Probleemoplossend denken, altijd de oplossing zoeken.
-Besluitvaardig
-‘We doen dit, bam, klaar, geen gezeur! Ff doorpakken!’ 
-Tjerk
-Nuchter
-Geen gedoe, beetje relativeren ‘zo is het, punt klaar!’ maak je niet zo druk. Kan wel doorslaan naar laksheid.
-Geen half werk
-Maakt je werk af en zorgt dat het het goed doet.
-Pakt snel dingen op
-Leert snel hoe je je code in de rest moet laten passen.
-Besluitvaardig
-Knoopdoorhakkend.
-Wil graag verder en test iets liever dan er te lang over te discussiëren.
+## Vincent
+### Positieve punten
+- Zelfopofferend
+	- Legt snel iets van zichzelf aan de kant om anderen te helpen.
+- Gedisciplineerd
+	- Altijd aanwezig en structureel in dingen aanpassen.
+- Geen half werk
+	- Kan beter, netter. Maakt dingen af totdat ze echt klaar zijn/
+- Hoge tolerantie
+	- Krijg je niet snel boos. Als de rest aan het stuiteren is, blijft Vincent rustig. Blijft fatsoenlijk.
+- Vindingrijk
+	- Zoekt snel dingen op en test ze om te kijken of het werkt.
+- Trouw
+	- Reactie (lees met zwoele stem): ‘Ja!’. Verantwoordelijkheden kun je bij Vincent neerleggen.
 
-Negatieve punten
-Vincent
-Te stel / afstandelijk
-Mag wel wat vaker roepen waar het op staat, je mening meer naar voren brengen. Je bent soms wat te stil
-Ontwijkend
-Soms iets te snel niet de confrontatie aan willen gaan.
-Edwin
-Te vasthoudend
-Als je een idee hebt dan kan je dat moeilijk loslaten. Moet overtuigd zijn, misschien iets meer ballen om toch het onbekende te kiezen.
+### Negatieve punten
 
-Douwe
-Te snel afgeleid
-Kan beide kanten op, snel switchen, wat soms een negatieve uitwerking heeft. Qua timing soms wat switchen betreft wat onhandig.
-Tjerk
-Eigenwijs
-Doet soms z’n eigen wil, kan blijven hangen in z’n idee.
-Onrustig
-Kan een druk dagje hebben, op de bank liggen, rondlopen etc.
+- Te stil / afstandelijk
+	- Mag wel wat vaker roepen waar het op staat, je mening meer naar voren brengen. Je bent soms wat te stil
+- Ontwijkend
+	- Soms iets te snel niet de confrontatie aan willen gaan.
+
+
+
+## Edwin
+### Positieve punten
+- Gedisciplineerd
+	-Altijd aanwezig, duidelijk scrummen, rest van de groep wat losjes soms, misschien wel iets sterker worden met scrumboard. Onstuimig groepje, scrum wat lastig te hanteren.
+- Ernstig
+	- Toen je de deadline hoorde ineens een beetje paniek. Houd je wel scherp. Je neemt dingen serieus waardoor de rest dat ook doet.
+- Creatief
+	- Tjerk: ‘Ik denk dat ik soms creatief ben, maar dan kijk ik naar Edwin…’ Denkt snel aan zaken waar anderen niet aan denken.
+- Waakzaam
+	- Je houdt in de gaten of we teveel afdwalen, wil de focus behouden.
+- Vindingrijk
+	- Vaak ideeën terwijl je aan het designen bent. Nieuwe wegen die we in kunnen slaan.
+
+### Negatieve punten
+- Te vasthoudend
+	- Als je een idee hebt dan kan je dat moeilijk loslaten. Moet overtuigd zijn, misschien iets meer ballen om toch het onbekende te kiezen.
+
+## Douwe
+### Positieve punten
+- Nuchter
+	- Niet zo moeilijk doen, doen we wel. In vergaderingen als het moeilijk lijkt, snel van ‘Doen we even, zus en zo’.
+- Geen half werk
+	- Optimaliserend en maakt efficiënt
+- Pakt snel dingen op
+	- Leert snel hoe je binnen het project werkt en wat je moet doen.
+- Het voortouw willen nemen
+	- Moet je wel mee oppassen, maar kan wel werken als het even kort stil ligt. Kun je wel anderen mee overrompelen.
+- Zelfverzekerd
+	- Stapt snel op mensen af, zegt snel dingen. Maakt je niet zozeer uit wie het is tegen wie je praat.
+- Vindingrijk
+	- Probleemoplossend denken, altijd de oplossing zoeken.
+- Besluitvaardig
+	-‘We doen dit, bam, klaar, geen gezeur! Ff doorpakken!’
+
+### Negatieve punten
+- Te snel afgeleid
+	- Kan beide kanten op, snel switchen, wat soms een negatieve uitwerking heeft. Qua timing soms wat switchen betreft wat onhandig.
+
+## Tjerk
+### Positieve punten
+- Nuchter
+	- Geen gedoe, beetje relativeren ‘zo is het, punt klaar!’ maak je niet zo druk. Kan wel doorslaan naar laksheid.
+- Geen half werk
+	- Maakt je werk af en zorgt dat het het goed doet.
+- Pakt snel dingen op
+	- Leert snel hoe je je code in de rest moet laten passen.
+- Besluitvaardig
+- Knoopdoorhakkend.
+	- Wil graag verder en test iets liever dan er te lang over te discussiëren.
+
+### Negatieve punten
+- Eigenwijs
+	- Doet soms z’n eigen wil, kan blijven hangen in z’n idee.
+- Onrustig
+	- Kan een druk dagje hebben, op de bank liggen, rondlopen etc.
  
- 
+[afbeelding]
 
 Foto door  Edwin ten Wolde. (v.l.n.r.) Douwe de Haan, Tjerk Dijkstra en Vincent Bremer.
