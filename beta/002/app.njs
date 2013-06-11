@@ -1,7 +1,14 @@
 // Include the required modules
 var express = require('express'),
 	app = express(),
-	routes = require('./routes/index.njs');
+	
+	server = require('http').createServer(app),
+	io = require('socket.io').listen(server),
+	routes = require('./routes/index.njs'),
+	user = require('./routes/user.njs');
+	
+	
+	
 
 var port = process.env.PORT || 1337;
 
@@ -28,15 +35,47 @@ app.configure(function() {
 
 	// Set the view engine
 	app.set('view engine', 'jade');
+
+	// Set the local vars/functions
+	app.locals(require('./modules/app.locals.njs'));
 });
 
 // Page routes
-app.get('/', routes.index);
+app.get('/', user.register);
+app.get('/document', routes.index);
 app.get('/custom.css', routes.css);
+app.get('/register', user.register);
+app.get('/login', user.loginView);
+app.get('/logout', user.logout);
+
 app.post('/setstyle', routes.setstyle);
+app.post('/register', user.create);
+app.post('/login', user.login);
+
+app.all('*', function(req,res,next) {
+	if (req.session.logged_in) {
+		global.session = req.session;
+	    next();
+	}
+	else {
+		res.redirect('/login');
+	}
+});
+
+app.get('/dashboard', user.index);
 
 // Let the app listen on the defined port
-app.listen(port);
+app = app.listen(port);
+
+server.listen(app);
+
+io.sockets.on('connection', function(socket){
+	console.log('connection made');
+	socket.on('new document', function(data) {
+		console.log('New document created, titled ' + data.title + ' with the visibility setting on ' + data.visibility);
+	});
+});
+
 
 // Set the console message
 console.log('Application accessible at http://localhost:1337');

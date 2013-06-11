@@ -11,6 +11,12 @@
   "license": "BSD",
   "dependencies": {
 		"express": "3.x",
-		"jade": "*"
+		"jade": "*",
+		"mongoose": "*",
+		"basic-auth-mongoose": "*",
+		"randomstring": "*",
+		"validator": "*",
+		"gravatar": "*",
+		"socket.io": "*"
   }
 }

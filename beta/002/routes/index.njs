@@ -1,18 +1,17 @@
-var styledb = require('../modules/styledb.njs');
+var styledb = require('../models/styledb.njs');
 
 /* -------------------------------------------------------------
 Function which formats the JSON data to valid CSS .
 The style var accepts a JSON object, and the callback 
 returns CSS
 ------------------------------------------------------------- */
-
-var createCSS = function(style, callback) {
+function createCSS(styling, callback) {
 	var css = '';
-	for (var element in style) {
+	for (var element in styling) {
 		css += '#blocks ' + element + ' {\n';
-		for (var key in style[element]) {
+		for (var key in styling[element]) {
 			var name = key.replace(/_/g, '-');
-			var value = style[element][key];
+			var value = styling[element][key];
 
 			if (typeof(value) == 'number') {
 				value += 'px';
@@ -23,7 +22,6 @@ var createCSS = function(style, callback) {
 	}
 	callback(css);
 }
-
 
 /* -------------------------------------------------------------
 Module functions
@@ -52,7 +50,6 @@ module.exports = {
 		if (typeof(styledb.current[element]) === 'undefined') {
 			styledb.current[element] = {};
 		}
-
 		styledb.current[element][name] = value;
 
 		createCSS(styledb.current, function(css) {

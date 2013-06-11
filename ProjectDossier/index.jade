@@ -1,0 +1,13 @@
+doctype 5
+html
+	head
+		title Project Dossier
+		include stylesheet.css
+		script(src="jquery.min.js", type="text/javascript")
+	body
+		div#container-left
+			ul.toc
+		div#container-right
+			div#document
+				include ProjectDossier.md	
+	script(src="create-toc.js", type="text/javascript")
