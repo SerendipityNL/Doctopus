@@ -22,13 +22,17 @@ $(':header').each(function() {
 				'title': title,
 				'number': parentCount,
 				'anchor': anchor,
-				'parent': null
 			});
 			
 		}
 		else {
 			childCount++;
-			var anchor = parentCount + '-' + childCount + '-' + mkId(title);
+			if (parentCount === 0){
+				var anchor = mkId('algemeneInleiding');
+			}
+			else {			
+				var anchor = parentCount + '-' + childCount + '-' + mkId(title);
+			}
 			$(this).attr('id', anchor);
 
 			list.push({
@@ -44,19 +48,24 @@ $(':header').each(function() {
 var html = '';
 
 for (var i = 0; i < list.length; i++) {
-	if (list[i].parent === null) {
-		if (i == 0) {
-			html += '<li><a href="#' + list[i].anchor + '">' + list[i].title + '</a></li>';
-		}
-		else if (i == 1) {
-			html += '<li><a href="#' + list[i].anchor + '">' + list[i].title + '</a><ul>';
+	if (list[i].anchor === 'algemeneinleiding'){
+		html += '<li style="list-style-type: none;"><ul><li><a href="#' + list[i].anchor + '">' + list[i].title + '</a></li></ul></li>';
+	}
+	else {		
+		if (typeof(list[i].parent) === 'undefined') {
+			if (i == 0) {
+				html += '<li><ul><li><a href="#' + list[i].anchor + '">' + list[i].title + '</a></li></ul></li>';
+			}
+			else if (i == 1) {
+				html += '<li><a href="#' + list[i].anchor + '">' + list[i].title + '</a><ul>';
+			}
+			else {
+				html += '</ul></li><li><a href="#' + list[i].anchor + '">' + list[i].title + '</a><ul>'
+			}
 		}
 		else {
-			html += '</ul></li><li><a href="#' + list[i].anchor + '">' + list[i].title + '</a><ul>'
+			html += '<li><a href="#' + list[i].anchor + '">' + list[i].title + '</a></li>';
 		}
-	}
-	else {
-		html += '<li><a href="#' + list[i].anchor + '">' + list[i].title + '</a></li>';
 	}
 }
 $('.toc').append(html);
