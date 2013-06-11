@@ -6,4 +6,7 @@ jQuery(document).ready( function() {
 			jQuery('input[name=email]', '#login-form').focus();
 		}
 	});
+	jQuery('#newDocumentButton').on('click', function() {
+		$('#newDocumentModal').modal('show');
+	});
 });
