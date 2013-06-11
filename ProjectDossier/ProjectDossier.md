@@ -1,3 +1,10 @@
+
+![voorblad](afbeeldingen/img51.png)
+# Inleiding
+Dit is het projectdossier voor het project Doctopus, dit dossier bevat alle documentatie voor het project, het functionele en technisch ontwerp zijn geschreven in het Engels. Hier hebben wij als projectgroep voor gekozen omdat deze eventueel onderdeel kunnen zijn van een open source project, deze documentatie zou dan gebundeld worden met de code.
+
+De indeling van het document staat in de balk aan de linkerkant.
+
 ![voorblad pva](afbeeldingen/img52.png)
 
 # Plan van aanpak
