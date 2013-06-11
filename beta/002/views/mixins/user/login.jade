@@ -1,6 +1,10 @@
-if (typeof(session.username) !== 'undefined')
+
+if (typeof(session) !== 'undefined' && typeof(session.username) !== 'undefined')
 	.login.pull-right
 		a.btn.btn-success(href="/dashboard") Dashboard
+		&nbsp;
+		&nbsp;
+		a.btn(href="/logout") Logout
 else
 	.login.pull-right
 		a.btn.btn-success(href="javascript:;") Login

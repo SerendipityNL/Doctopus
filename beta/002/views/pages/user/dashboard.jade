@@ -1,13 +1,12 @@
 extends ../layout
 
 block content
-	.container
-		.span12
-			.span3.well
-				include ../../mixins/user/profileInfo
-			.span9.well
-				h2 Documents
-				#actionBar.pull-right
-					a.btn.btn-success(href="javascript:;") New document
-			
-				p.clear-fix.well No documents to show...
+	.span3.well
+		include ../../mixins/user/profileInfo
+	.span9.well
+		h2 Documents
+		#actionBar.pull-right
+			a#newDocumentButton.btn.btn-success(href="#newDocumentModal", data-goggle="modal") New document
+		p.clear-fix.well No documents to show...
+		
+	include ../../mixins/document/newDocumentModal

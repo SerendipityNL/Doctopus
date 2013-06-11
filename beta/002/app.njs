@@ -35,7 +35,8 @@ app.configure(function() {
 });
 
 // Page routes
-app.get('/', routes.index);
+app.get('/', user.register);
+app.get('/document', routes.index);
 app.get('/custom.css', routes.css);
 app.get('/register', user.register);
 app.get('/login', user.loginView);
