@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
-	mongoose.connect('mongodb://localhost/doctopus')
+	mongoose.connect('mongodb://localhost/doctopus'),
+	Validator = require('validator').Validator;
 
 var userSchema = new mongoose.Schema({
 	email		: {type: String, required : true, index: {unique: true} },
@@ -10,7 +11,7 @@ var userSchema = new mongoose.Schema({
 	username    : {type: String, required : true}
 });
 
-//userSchema.plugin(require('basic-auth-mongoose'));
+userSchema.plugin(require('basic-auth-mongoose'));
 var User = mongoose.model('User', userSchema);
 
 module.exports = {
@@ -23,9 +24,7 @@ module.exports = {
 	},
 	findByUsername: function(username, callback) {
 		User.findOne({'username' : { $regex : new RegExp(username, "i") }}, function (err, user) {
-			if (! err){
-				callback(user);
-			}
+			callback(err, user);
 		});
 	},
 	deleteByUsername: function(username, callback){
@@ -49,7 +48,7 @@ module.exports = {
 		User.findOne({'username' : { $regex : new RegExp(username, "i") }}, function (err, user) {
 			if (! err){
 				
-/*				Validator.prototype.error = function (msg) {
+				Validator.prototype.error = function (msg) {
 				    this._errors.push(msg);
 				    return this;
 				}
@@ -65,13 +64,13 @@ module.exports = {
 				validator.check(params.last).notEmpty();
 				validator.check(params.email).len(6, 64).isEmail();
 				validator.check(params.admin).notEmpty();
-*/				
+				
 				user.email = params['email'], 
 				user.first = params['first'], 
 				user.last = params['last'], 
 				user.username = params['username'],
 				user.admin = params['admin'];
-/*							
+							
 				if (validator.check(params.oldPassword).notEmpty()){
 					if (user.authenticate(params.oldPassword)){
 						validator.check(params.newPassword).equals(params.confirmNewPassword);
@@ -80,7 +79,7 @@ module.exports = {
 				}
 
 				var errors = validator.getErrors();
-*/			
+			
 				user.save(function (err) {
 					if (! err) {
 						callback(null);
@@ -94,7 +93,7 @@ module.exports = {
 	},
 	save: function(params, callback) {
 		console.log('save functie!!');
-/*		Validator.prototype.error = function (msg) {
+		Validator.prototype.error = function (msg) {
 		    this._errors.push(msg);
 		    return this;
 		}
@@ -110,7 +109,7 @@ module.exports = {
 		validator.check(params.email).len(6, 64).isEmail(); 
 	
 		var errors = validator.getErrors();
-*/	
+	
 		// random string for email validation
 		var randomstring = require("randomstring");
 		var token = randomstring.generate();
@@ -148,6 +147,27 @@ module.exports = {
 	},
 	resetPassword: function(email, callback) {
 		
+	},
+	auth: function(req, callback) {
+		var username = null;
+	
+		User.findOne({'email' : req.email}, function (err, found_user) {
+			if (err) {
+				var error = 'Failed to login';
+			} // handle
+			else {
+				if (found_user) {
+					if (found_user.authenticate(req.password)) {  // && found_user.token == 1
+						error = false;
+						username = found_user.username;
+					}
+					else {
+						var error = 'password does not match, or user not activated';
+					}
+				}
+			}
+			callback(error, username);
+		});
 	}
 };
 
@@ -206,25 +226,7 @@ modelFunctions.prototype.activate = function(token, callback) {
 
 modelFunctions.prototype.auth = function(req, callback) {
 
-	var username = null;
 	
-	User.findOne({'email' : req.email}, function (err, found_user) {
-		if (err) {
-			var error = 'Failed to login';
-		} // handle
-		else {
-			if (found_user) {
-				if (found_user.authenticate(req.password) && found_user.token == 1) {
-					var error = false;
-					var username = found_user.username;
-				}
-				else {
-					var error = 'password does not match, or user not activated';
-				}
-			}
-		}
-		callback(error, username);
-	});
 };
 
 // sends e-mail

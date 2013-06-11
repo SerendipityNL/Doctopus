@@ -2,7 +2,7 @@
 var express = require('express'),
 	app = express(),
 	routes = require('./routes/index.njs'),
-	users = require('./routes/users.njs');
+	user = require('./routes/user.njs');
 
 var port = process.env.PORT || 1337;
 
@@ -37,9 +37,25 @@ app.configure(function() {
 // Page routes
 app.get('/', routes.index);
 app.get('/custom.css', routes.css);
-app.post('/setstyle', routes.setstyle);
-app.get('/users', users.index);
+app.get('/register', user.register);
+app.get('/login', user.loginView);
+app.get('/logout', user.logout);
 
+app.post('/setstyle', routes.setstyle);
+app.post('/register', user.create);
+app.post('/login', user.login);
+
+app.all('*', function(req,res,next) {
+	if (req.session.logged_in) {
+		global.session = req.session;
+	    next();
+	}
+	else {
+		res.redirect('/login');
+	}
+});
+
+app.get('/dashboard', user.index);
 // Let the app listen on the defined port
 app.listen(port);
 
