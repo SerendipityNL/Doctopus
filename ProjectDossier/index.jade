@@ -3,6 +3,84 @@ html
 	head
 		title Project Dossier
 		link(rel="stylesheet", href="stylesheet.css")
+		script(src="jquery.min.js", type="text/javascript")
 	body
-		div#document
-			include ProjectDossier.md
+		div#container-left
+			<ul>
+			<li><a href="#plan-van-aanpak">Plan van aanpak</a>
+			<ul><li><a href="#inleiding">Inleiding</a></li>
+			<li><a href="#achtergrond">Achtergrond</a></li>
+			<li><a href="#projectresultaat">Projectresultaat</a></li>
+			<li><a href="#projectactiviteiten">Projectactiviteiten</a></li>
+			<li><a href="#projectgrenzen">Projectgrenzen</a></li>
+			<li><a href="#tussenresultaten">Tussenresultaten</a></li>
+			<li><a href="#kwaliteit">Kwaliteit</a></li>
+			<li><a href="#projectorganisatie">Projectorganisatie:</a></li>
+			<li><a href="#project-locatie">Project locatie</a></li>
+			<li><a href="#contactmomenten">Contactmomenten</a></li>
+			<li><a href="#regels-en-afspraken">Regels en afspraken</a></li>
+			<li><a href="#planning">Planning</a></li>
+			<li><a href="#kosten-en-baten">Kosten en baten</a></li>
+			<li><a href="#risico-analyse">Risico analyse</a></li>
+			<li><a href="#maatregelen">Maatregelen</a></li>
+			<li><a href="#bijlages">Bijlage(s)</a></li>
+			<li><a href="#work-break-down-structure">Work Break Down Structure</a></li>
+			<li><a href="#samenwerkingscontract">Samenwerkingscontract</a></li>
+			<li><a href="#begroting">Begroting</a></li>
+			<li><a href="#risico-analyse-1">Risico Analyse</a></li>
+			<li><a href="#definition-of-done-1">Definition of done</a></li></ul></li>
+			<li><a href="#concepting">Concepting</a>
+			<ul><li><a href="#tot-stand-komen-van-het-concept">Tot stand komen van het concept</a></li>
+			<li><a href="#wat-is-het">Wat is het?</a></li>
+			<li><a href="#concept-lagen">Concept lagen</a></li>
+			<li><a href="#concept-presentatie">Concept presentatie</a></li>
+			<li><a href="#naamgeving-concept">Naamgeving concept</a></li>
+			<li><a href="#bronnenlijst">Bronnenlijst</a></li></ul></li>
+			<li><a href="#functional-design">Functional design</a>
+			<ul><li><a href="#introduction">Introduction</a></li>
+			<li><a href="#application-description">Application Description</a></li>
+			<li><a href="#users">Users</a></li>
+			<li><a href="#why-make-this-application">Why make this application?</a></li>
+			<li><a href="#moscow-model">MoSCoW model</a></li>
+			<li><a href="#sitemap">Sitemap</a></li>
+			<li><a href="#pages">Pages</a></li></ul></li>
+			<li><a href="#grafisch-ontwerp">Grafisch Ontwerp</a>
+			<ul><li><a href="#inleiding-1">Inleiding</a></li>
+			<li><a href="#de-lay-out-van-de-applicatie">De lay-out van de applicatie</a></li>
+			<li><a href="#de-stijl-van-doctopus">De stijl van Doctopus</a></li>
+			<li><a href="#het-logo-van-doctopus">Het logo van Doctopus</a></li>
+			<li><a href="#hardware">Hardware</a></li></ul></li>
+			<li><a href="#technical-design">Technical design</a>
+			<ul><li><a href="#introduction-1">Introduction</a></li>
+			<li><a href="#specifications">Specifications</a></li>
+			<li><a href="#hosting">Hosting</a></li>
+			<li><a href="#technical-layers">Technical layers</a></li>
+			<li><a href="#application-description-1">Application description</a></li>
+			<li><a href="#technical-description">Technical description</a></li>
+			<li><a href="#node-modules">Node Modules</a></li>
+			<li><a href="#coding-conventions">Coding conventions</a></li>
+			<li><a href="#database">Database</a></li>
+			<li><a href="#directory-structure">Directory structure</a></li>
+			<li><a href="#models-1">Models</a></li>
+			<li><a href="#views">Views</a></li>
+			<li><a href="#modules">Modules</a></li>
+			<li><a href="#sources">Sources</a></li></ul></li>
+			<li><a href="#quality-monitoring--implementation">Quality Monitoring &amp; Implementation</a>
+			<ul><li><a href="#testmethode">Testmethode</a></li>
+			<li><a href="#paper-prototype">Paper prototype</a></li>
+			<li><a href="#concept">Concept</a></li>
+			<li><a href="#4-prototype-1">4. Prototype 1</a></li>
+			<li><a href="#5-prototype-2">5. Prototype 2</a></li>
+			<li><a href="#prototype-3">Prototype 3</a></li>
+			<li><a href="#7-prototype-4-beta-001">7. Prototype 4 (beta 001)</a></li></ul></li>
+			<li><a href="#multidisciplinary-teamwork">Multidisciplinary Teamwork</a>
+			<ul><li><a href="#inleiding-5">Inleiding</a></li>
+			<li><a href="#vincent">Vincent</a></li>
+			<li><a href="#edwin">Edwin</a></li>
+			<li><a href="#douwe">Douwe</a></li>
+			<li><a href="#tjerk">Tjerk</a></li></ul></li>
+			</ul>
+		div#container-right
+			div#document
+				include ProjectDossier.md	
+	script(src="create-toc.js", type="text/javascript")

@@ -13,8 +13,6 @@ app.get('/', function(req, res){
 	res.render('index');
 });
 
-// Let the app listen on the port
 app.listen(port);
 
-// Set the console message
 console.log('Application accessible at http://localhost:' + port);

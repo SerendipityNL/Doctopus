@@ -52,6 +52,15 @@ body {
 	color: #404040;
 }
 
+a:link, a:visited {
+	color: #0088CC;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	text-decoration: underline;
+}
+
 h1, h2, h3, h4 {
 	font-weight: bold;
 }
@@ -66,8 +75,8 @@ h1 {
 h2 {
 	font-size: 2em;
 	margin: 1em 0 15px;
+	border-bottom: 1px solid #ddd;
 	padding: 0 0 5px;
-	border-bottom: 1px solid #eee;
 }
 
 h3 {
@@ -76,9 +85,14 @@ h3 {
 }
 
 h4 {
-	margin: 1em 0 10px;
+	margin: 1em 0 5px;
 	font-size: 1.2em;
 }
+
+b {
+	
+}
+
 
 p, table, ul, pre {
 	line-height: 1.7;
@@ -114,7 +128,31 @@ pre {
 	word-wrap: break-word;
 }
 
+div#container-left {
+	float: left;
+	width: 250px;
+	position: fixed;
+	max-height: 100%;
+	overflow-y: scroll;
+}
+
+div#container-left ul {
+	margin: 10px 0;
+}
+
+div#container-left ul ul {
+	margin: 0;
+}
+
+div#container-left a {
+	color: #404040;
+}
+
+div#container-right {
+	margin-left: 250px
+}
+
 div#document {
-	margin: 20px auto;
+	margin: 0 auto;
 	max-width: 720px;
 }
