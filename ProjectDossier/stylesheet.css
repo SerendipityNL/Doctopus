@@ -96,6 +96,10 @@ li {
 	margin: 0 0 0 25px;
 }
 
+img {
+	max-width: 100%;
+}
+
 pre {
 	font-family: Consolas, "Liberation Mono", "Ubuntu mono", Courier, monospace;
 	font-size: 11px;
@@ -112,5 +116,5 @@ pre {
 
 div#document {
 	margin: 20px auto;
-	max-width: 800px;
+	max-width: 720px;
 }
