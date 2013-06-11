@@ -45,7 +45,10 @@ var html = '';
 
 for (var i = 0; i < list.length; i++) {
 	if (list[i].parent === null) {
-		if (i == 1) {
+		if (i == 0) {
+			html += '<li><a href="#' + list[i].anchor + '">' + list[i].title + '</a></li>';
+		}
+		else if (i == 1) {
 			html += '<li><a href="#' + list[i].anchor + '">' + list[i].title + '</a><ul>';
 		}
 		else {
