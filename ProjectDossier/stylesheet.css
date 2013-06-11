@@ -89,8 +89,8 @@ h4 {
 	font-size: 1.2em;
 }
 
-b {
-	
+strong {
+	font-weight: bold;
 }
 
 
@@ -112,6 +112,7 @@ li {
 
 img {
 	max-width: 100%;
+	cursor: pointer;
 }
 
 pre {
@@ -136,28 +137,29 @@ div#container-left {
 	overflow-y: scroll;
 }
 
-div#container-left ul {
+div#container-right {
+	margin-left: 250px
+}
+
+ul.toc {
 	margin: 10px 0;
 }
 
-div#container-left ul ul {
+ul.toc ul {
 	margin: 0;
 }
 
-div#container-left a {
-	color: #404040;
+ul.toc > li > a {
+	font-weight: bold;
 }
 
-div#container-right {
-	margin-left: 250px
+ul.toc a {
+	color: #404040;
 }
 
 div#document {
 	margin: 0 auto;
 	max-width: 720px;
-}
-img{
-	cursor: pointer;
 }
 
 #lightbox {
