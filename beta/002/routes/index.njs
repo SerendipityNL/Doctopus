@@ -1,6 +1,12 @@
 var styledb = require('../modules/styledb.njs');
 
-function createCSS(style, callback) {
+/* -------------------------------------------------------------
+Function which formats the JSON data to valid CSS .
+The style var accepts a JSON object, and the callback 
+returns CSS
+------------------------------------------------------------- */
+
+var createCSS = function(style, callback) {
 	var css = '';
 	for (var element in style) {
 		css += '#blocks ' + element + ' {\n';
@@ -19,36 +25,39 @@ function createCSS(style, callback) {
 }
 
 
-exports.index = function(req, res){
-	res.render('pages/document/document', {
-		'pageTitle': 'Docbuilder - Beta 001',
-		'options': styledb.options,
-		'style': styledb.current,
-		'blocks': styledb.blocks
-	});
-};
+/* -------------------------------------------------------------
+Module functions
+------------------------------------------------------------- */
 
-exports.css = function(req, res) {
-	createCSS(styledb.current, function(css) {
-		res.set('Content-Type', 'text/css');
-		res.send(css);
-	});	
-}
+module.exports = {
+	index: function(req, res) {
+		res.render('pages/document/document', {
+			'pageTitle': 'Docbuilder - Beta 001',
+			'options': styledb.options,
+			'style': styledb.current,
+			'blocks': styledb.blocks
+		});
+	},
+	css: function(req, res) {
+		createCSS(styledb.current, function(css) {
+			res.set('Content-Type', 'text/css');
+			res.send(css);
+		});	
+	},
+	setstyle: function(req, res) {
+		var element = req.body.element;
+		var name = req.body.name;
+		var value = req.body.value;
 
+		if (typeof(styledb.current[element]) === 'undefined') {
+			styledb.current[element] = {};
+		}
 
-exports.setstyle = function(req, res) {
-	var element = req.body.element;
-	var name = req.body.name;
-	var value = req.body.value;
+		styledb.current[element][name] = value;
 
-	if (typeof(styledb.current[element]) === 'undefined') {
-		styledb.current[element] = {};
+		createCSS(styledb.current, function(css) {
+			res.set('Content-Type', 'text/css');
+			res.send(css);
+		});	
 	}
-
-	styledb.current[element][name] = value;
-
-	createCSS(styledb.current, function(css) {
-		res.set('Content-Type', 'text/css');
-		res.send(css);
-	});	
 }
