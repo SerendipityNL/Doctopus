@@ -1301,7 +1301,7 @@ Vanuit het paper prototype is deze basis ontstaan, de basis waarop elk prototype
 
 Het principe is dat er nieuwe elementen kunnen worden toegevoegd, gesorteerd en vervolgens kunnen worden bewerkt / gevuld. Al deze elementen kunnen in een keer worden opgemaakt door middel van overervende opmaak regels. Deze kunnen op elk moment gewijzigd worden, bijvoorbeeld: Alle koptekst moet 24px groot zijn en de kleur zwart worden.
 
-## 4. Prototype 1
+## Prototype 1
 
 ![prototype 1](afbeeldingen/img41.png)
 Prototype 1, afbeelding 3.
@@ -1341,7 +1341,7 @@ Voor de volgende testcase zijn deze punten van belang:
 
 	4. Actie: De vormgeving van het grid zal worden aangepast zodat deze duidelijker wordt.
 
-## 5. Prototype 2
+## Prototype 2
 
 ![prototype 2](afbeeldingen/img42.jpg)
 Prototype 2, afbeelding 4.
@@ -1423,7 +1423,7 @@ Het bewerken van een blok heeft bij deze test het meeste prioriteit, is dit een 
 	3. Actie: Wij gaan een manier bedenken waarop er een keuze gemaakt kan worden tussen wat voor element je toevoegt.
 
 
-## 7. Prototype 4 (beta 001)
+## Prototype 4 (beta 001)
 
 ![prototype 4](afbeeldingen/img44.png)
 Beta versie 001, Prototype 4, afbeelding 6.
