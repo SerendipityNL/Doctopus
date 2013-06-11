@@ -1283,6 +1283,8 @@ The model filename is written in singular and lowercase. For example:
 
 ## Directory structure
 
+![Directory Structure](afbeeldingen/img9.png)]
+
 [afbeelding]
 
 
