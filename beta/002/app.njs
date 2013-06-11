@@ -1,8 +1,14 @@
 // Include the required modules
 var express = require('express'),
 	app = express(),
+	
+	server = require('http').createServer(app),
+	io = require('socket.io').listen(server),
 	routes = require('./routes/index.njs'),
 	user = require('./routes/user.njs');
+	
+	
+	
 
 var port = process.env.PORT || 1337;
 
@@ -57,8 +63,19 @@ app.all('*', function(req,res,next) {
 });
 
 app.get('/dashboard', user.index);
+
 // Let the app listen on the defined port
-app.listen(port);
+app = app.listen(port);
+
+server.listen(app);
+
+io.sockets.on('connection', function(socket){
+	console.log('connection made');
+	socket.on('new document', function(data) {
+		console.log('New document created, titled ' + data.title + ' with the visibility setting on ' + data.visibility);
+	});
+});
+
 
 // Set the console message
 console.log('Application accessible at http://localhost:1337');

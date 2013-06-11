@@ -16,6 +16,7 @@
 		"basic-auth-mongoose": "*",
 		"randomstring": "*",
 		"validator": "*",
-		"gravatar": "*"
+		"gravatar": "*",
+		"socket.io": "*"
   }
 }
