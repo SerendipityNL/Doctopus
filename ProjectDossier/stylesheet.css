@@ -139,6 +139,7 @@ div#container-left {
 	position: fixed;
 	max-height: 100%;
 	overflow-y: scroll;
+	background-color: #F8F8F8;
 }
 
 div#container-right {

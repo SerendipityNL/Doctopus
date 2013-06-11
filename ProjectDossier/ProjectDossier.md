@@ -1,9 +1,9 @@
+<img src="afbeeldingen/img51.png" id="start">
 
-![voorblad](afbeeldingen/img51.png)
-# Inleiding
-Dit is het projectdossier voor het project Doctopus, dit dossier bevat alle documentatie voor het project, het functionele en technisch ontwerp zijn geschreven in het Engels. Hier hebben wij als projectgroep voor gekozen omdat deze eventueel onderdeel kunnen zijn van een open source project, deze documentatie zou dan gebundeld worden met de code.
+## Inleiding
+Welkom in het projectdossier voor het project Doctopus. Dit dossier bevat alle documentatie voor het project, het functionele en technisch ontwerp zijn geschreven in het Engels. Hier hebben wij als projectgroep voor gekozen omdat deze eventueel onderdeel kunnen zijn van een open source project, deze documentatie zou dan gebundeld worden met de code.
 
-De indeling van het document staat in de balk aan de linkerkant.
+Om snel door het document te bladeren kunt u in de inhoudsopgave aan de linkerzijde klikken op een link, u wordt dan meteen doorgestuurd naar het desbetreffende hoofdstuk.
 
 ![voorblad pva](afbeeldingen/img52.png)
 
@@ -18,9 +18,14 @@ Het plan van aanpak zal inzicht geven in de werkwijze die gehanteerd zal worden 
 ## Achtergrond
 ### Benamingen binnen het project
 Er is tijdens het project eerst gebruik gemaakt van een werknaam, namelijk DocBuilder. Deze is vervangen door de huidige projectnaam Doctopus.
-### Locatie / situatie
-De locatie is op de NHL - Hogeschool te Leeuwarden. De project groep werkt voornamelijk in Applab, dit is een lokaal in de NHL. De project leden zijn Vincent Bremer (cohort 2010 - 2011), Edwin ten Wolde (cohort 2011 - 2012), Douwe de Haan (2008 - 2009) en Tjerk Dijkstra (cohort 2011 - 2012). De project groep zal werken aan dit project.
 
+### Locatie / situatie
+De locatie is op de NHL Hogeschool te Leeuwarden. De projectgroep werkt voornamelijk in het AppLab lokaal, wat van onder de minor The Next Web. De projectgroep bestaat uit:
+
+- Vincent Bremer (cohort 2010 - 2011)
+- Edwin ten Wolde (cohort 2011 - 2012)
+- Douwe de Haan (2008 - 2009) 
+- Tjerk Dijkstra (cohort 2011 - 2012). 
 
 ![Projectgroep](afbeeldingen/img48.jpg)
 *Foto van de projectgroep.*
@@ -977,10 +982,10 @@ These are written in camelCase, following the conventions used on the Node.js we
 	var camelCase;
 	var userId;
 	function setName() {
-	    // Function actions
+		// Function actions
 	}
 	function renderPage() {
-	    // Function actions
+		// Function actions
 	}
 
 #### View files
@@ -1008,7 +1013,7 @@ For example:
 Routes example:
 The DELETE and PUT methods will omitted the because web browsers doesn’t fully support these standards [1]. Instead only the GET and POST methods are used, and the right actions are called based on the URL.
 
-[1] http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
+[1] [http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)
 
 	Method   Route              Controller.method
 	GET      /users             -> users.index
@@ -1029,14 +1034,14 @@ The model filename is written in singular and lowercase. For example:
 ### Users collection
 
 	{
-	   _id: 432943232,
-	   nickname: John1923,
-	   firstname: John,
-	   lastname: Baker,
-	   email: jb@mail.com,
-	   password_hash: aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d,
-	   salt: f73e205c3b56aec53e,
-	   level: 1
+		_id: 432943232,
+		nickname: John1923,
+		firstname: John,
+		lastname: Baker,
+		email: jb@mail.com,
+		password_hash: aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d,
+		salt: f73e205c3b56aec53e,
+		level: 1
 	}
 
 
@@ -1199,21 +1204,18 @@ The functions and data in this file will be accessible within the view files, fo
 
 ## Sources
 
-	Robbins, C. (2011, October 17). Scaling Isomorphic Javascript Code. [Web log post]
-	Retrieved March 12, 2013, from
-	https://blog.jit.su/scaling-isomorphic-javascript-code
+Robbins, C. (2011, October 17). Scaling Isomorphic Javascript Code. [Weblog post]  
+Retrieved March 12, 2013, from 
+[https://blog.jit.su/scaling-isomorphic-javascript-code](https://blog.jit.su/scaling-isomorphic-javascript-code)
 
-	Bhatt, N. (2009, January 18). MVC vs. MVP vs. MVVM. [Web log post]
-	Retrieved March 12, 2013, from
-	http://nirajrules.wordpress.com/2009/07/18/mvc-vs-mvp-vs-mvvm/
+Bhatt, N. (2009, January 18). MVC vs. MVP vs. MVVM. [Weblog post]  
+Retrieved March 12, 2013, from [http://nirajrules.wordpress.com/2009/07/18/mvc-vs-mvp-vs-mvvm/](http://nirajrules.wordpress.com/2009/07/18/mvc-vs-mvp-vs-mvvm/)
 
-	Seshadri, G. (1999, December 29). Understanding JavaServer Pages Model 2 architecture.
-	Retrieved March 12, 2013, from
-	http://www.javaworld.com/javaworld/jw-12-1999/jw-12-ssj-jspmvc.html
+Seshadri, G. (1999, December 29). Understanding JavaServer Pages Model 2 architecture.  
+Retrieved March 12, 2013, from [http://www.javaworld.com/javaworld/jw-12-1999/jw-12-ssj-jspmvc.html](http://www.javaworld.com/javaworld/jw-12-1999/jw-12-ssj-jspmvc.html)
 
-	Fowler, M. (2006, July 18). GUI Architectures.
-	Retrieved March 12, 2013, from
-	http://martinfowler.com/eaaDev/uiArchs.html
+Fowler, M. (2006, July 18). GUI Architectures.  
+Retrieved March 12, 2013, from [http://martinfowler.com/eaaDev/uiArchs.html](http://martinfowler.com/eaaDev/uiArchs.html)
 
 
 ![qmi](afbeeldingen/img45.jpg)
