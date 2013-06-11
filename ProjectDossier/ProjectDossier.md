@@ -41,7 +41,7 @@ De doelstelling is om binnen het semester een online documentatie tool te creër
 Het resultaat van dit project voorziet in de behoefte aan een snel en simpele manier van correcte documentatie maken
 
 ## Projectactiviteiten
-### Work breakdown structure:
+### Work breakdown structure
 
 ![WBS](afbeeldingen/img17.png)
 
@@ -66,32 +66,32 @@ Voor iets meer beeldvorming, we financieren alle kosten omdat er geen budget bes
 Er is geen budget voor dit project. De leden van de projectgroep beschikken gelukkig zelf over de benodigde hardware (laptops), voor de software wordt ten alle tijden gezocht naar gratis software dat gebruikt kan worden.
 
 ## Tussenresultaten
-### Deel-producten:
+### Deel-producten
 Om ervoor te zorgen dat er in het project genoeg momenten zijn om te kunnen reflecteren op het werk dat klaar is en op de voortgang, wordt er gebruik gemaakt van versie-planning. Het product heeft verschillende versies waarin het zich kan bevinden. Er wordt vooraf gedefinieerd wanneer een versie compleet is, tot die tijd wordt de versie nog niet als gereed beschouwd. Per versie wordt bepaald welke elementen, functionaliteiten, designs etc. er in moeten zitten en waar aan deze zullen moeten voldoen.
 
-#### Versie 0.1.0 [Profiel]:
+#### Versie 0.1.0 [Profiel]
 In deze versie zal het profiel centraal staan. Registratie van de gebruikers en een inlogsysteem zijn de hoofdelementen in deze versie.
 
-#### Versie 0.2.0 [Indeling en bewerking]:
+#### Versie 0.2.0 [Indeling en bewerking]
 In deze versie zal het indelen van documenten en het bewerken er van centraal staan. Secties toevoegen en verwijderen, onderdelen invoegen (tekst-blokken, afbeeldingen, lijsten), indelingen beheren (secties van volgorde veranderen) en document opmaak zijn de hoofdelementen in deze versie.
 
-#### Versie 0.3.0 [Opslaan]:
+#### Versie 0.3.0 [Opslaan]
 In deze versie zal het opslaan van documenten centraal staan. Documenten aanmaken, opslaan, opmaak opslaan en documenten beheren (overzicht, verwijderen) zijn de hoofdelementen in deze versie.
 
-#### Versie 0.4.0 [Publiceren]:
+#### Versie 0.4.0 [Publiceren]
 In deze versie zal het publiceren van documenten centraal staan. Het publiceren van documenten is het hoofd element van deze versie.
 
-#### Versie 0.5.0 [Delen]:
+#### Versie 0.5.0 [Delen]
 In deze versie zal het delen van documenten centraal staan. Document-rechten beheren en met meerdere gebruikers aan een document werken zijn de hoofdelementen in deze versie.
 
-#### Versie 1.0.0 [Final]:
+#### Versie 1.0.0 [Final]
 Dit is een werkende versie waarin versie 0.1.0 t/m 0.5.0 zijn samengevoegd en getest.
 
-#### Mijlpalen en (tussen)resultaten:
+#### Mijlpalen en (tussen)resultaten
 Elk begin van een sprint wordt er bepaald welke doelen er worden gesteld voor die sprint. Ook vindt er binnen elke sprint een playtest plaats. Dit zijn de mijlpalen om het tussenresultaat te kunnen testen. Zijn de vooraf gestelde doelen behaald dan kan er gezegd worden dat het beoogde resultaat behaald is.
 
 ## Kwaliteit
-### Definition of done:
+### Definition of done
 De definition of done is een document dat wordt op gesteld door de projectgroep. Deze geeft aan wanneer werk daadwerkelijk als ‘klaar’ kan worden beschouwd. Deze wordt voornamelijk door de product owner (Tjerk Dijkstra) bijgewerkt en worden afgetekend. Op deze manier kan elke taak worden gecheckt door de desbetreffende persoon zodat alle producten die daadwerkelijk als af worden beschouwd ook echt af zijn.
 
 Voor de gehele D.o.D. zie bijlage 4.
@@ -99,25 +99,25 @@ Voor de gehele D.o.D. zie bijlage 4.
 ### Quality Monitoring
 Om de kwaliteit te waarborgen en er voor te kunnen zorgen dat de project groep in staat is om aan de kwaliteitseisen te kunnen voldoen zal de kwaliteit moeten worden bewaakt.
 
-#### Monitoring:
+#### Monitoring
 Om het product van een zo hoog mogelijke kwaliteit te kunnen voorzien zullen er veel test momenten plaats vinden. Er zijn een aantal vastgestelde test momenten gepland vanuit de minor The Next Web. Van deze momenten zal gebruik gemaakt gaan worden maar er zullen ook door de projectgroep zelf geplande testmomenten plaats gaan vinden.
 
-#### Test-plan:
+#### Test-plan
 Er zal voor het project een test-plan worden opgesteld waarin het proces, de methoden en de resultaten van tests worden beschreven. Dit document wordt door leden van de projectgroep gemaakt en bijgehouden. Op deze manier is het altijd mogelijk de voortgang van de kwaliteit te bewaken en inzichtelijk te maken voor anderen.
 
-#### Scrum:
+#### Scrum
 Door te werken met sprints van 2 weken is er elke twee weken een moment waarop het product getest kan gaan worden. Hierdoor kan er een reflectie kan worden gedaan op wat de projectgroep gaat doen, blijft doen en stopt te doen. Dit is een reflectie op het werkproces zodat de groep zo productief mogelijk blijft.
 
-#### Deelproducten en versiebeheer:
+#### Deelproducten en versiebeheer
 Door te werken met tussenproducten is de project groep verplicht te voldoen aan meerdere deadlines. Dit zorgt er voor dat bij elke deadline de projectgroep op scherp zal worden gezet om iets af te leveren. Op deze manier kan er op tijd worden in gegrepen als er dingen minder lekker lopen in het proces. Mocht er in de deadline van het Alpha prototype iets mis gaan is het minder erg dan als er alleen een deadline aan het einde van de periode plaats zal vinden.
 
 ### Methodes
 Er zal nog een methode gezocht worden om het testen van het product goed uit te voeren. Deze methode zal worden beschreven in het test-plan.
 
-## Projectorganisatie:
+## Projectorganisatie
 ### Project organisatie en betrokken partijen
 ### Stakeholders
-#### NHL Hogeschool Leeuwarden:
+#### NHL Hogeschool Leeuwarden
 Binnen de NHL zijn de volgende groepen betrokken bij het project.
 
 #### Het Kenniscentrum
@@ -137,7 +137,7 @@ De docenten en tutor voor dit project hebben als rol, hulp en informatie te bied
 - Docent project management, Guido Swildens.
 - Docente project management, Jolanda Postma.
 
-#### Medestudenten binnen de minor The Next Web:
+#### Medestudenten binnen de minor The Next Web
 Deze groep is niet direct betrokken bij het project zelf. Wel maken ze deel uit van een kennis bron waaruit informatie gehaald kan worden. Deze groep kan hulp nodig hebben van de Projectgroep en anders om kan natuurlijk ook.
 
 ### Projectgroep
@@ -200,27 +200,27 @@ Het project vind plaats op de NHL Hogeschool Leeuwarden, binnen de opleiding Com
 
 ## Contactmomenten
 
-### Wekelijkse afspraak Tutor:
+### Wekelijkse afspraak Tutor
 Het is de bedoeling dat de project groep wekelijks een contactmoment heeft met de tutor.
 Het is de bedoeling om hem op de hoogte te stellen van de voortgang van het project en eventuele groepsproblemen en of individuele zaken te kunnen bespreken.
 
-### Playtesting momenten:
+### Playtesting momenten
 Aan het eind van elke sprint is er op donderdag middag om 13:00 uur een Playtest moment geplant. Tijdens deze Playtest kan de projectgroep laten zien aan de mede studenten van de minor The Next Web wat de voortgang van het project is. Het is de bedoeling een werkbaar prototype mee te nemen zodat deze door medestudenten getest kan worden. Op deze manier kunnen de studenten de projectgroep voorzien van feedback en tips die in de volgende sprint meegenomen kunnen worden.
 
-### Playtesting Extra momenten:
+### Playtesting Extra momenten
 Deze extra Playtest sessies zijn ingesteld met als reden dat de opdrachtgever kan worden uitgenodigd. Dit zodat deze ook betrokken wordt bij de voortgang van het project.
 
-### De weekopening:
+### De weekopening
 Deze vindt plaats op elke maandag morgen om 10:00 uur. Tijdens deze bijeenkomst wordt het laatste nieuws verteld dat binnen de minor The Next Web van belang is. Hier kan de projectgroep op de hoogte blijven van eventuele veranderingen en nieuws dat van belang is voor het project.
 
-### Scrum meeting:
+### Scrum meeting
 De scrum meeting vindt plaats op donderdag morgen om 9:30 uur. Deze meeting is bedoeld voor zowel de scrum master als de project owner. Het is een bijeenkomst voor de verschillende groepen met asl reden om de voortgang te bespreken en problemen binnen de groep aan te kaarten. Deze bijeenkomst wordt geleid door Jolanda Postma van het Kenniscentrum. Op deze manier blijven de verschillende groepen van elkaar op de hoogte en kan er ervaring worden uit gewisseld. Ook het Kenniscentrum kan op deze manier op de hoogte van eventuele problemen en moeilijkheden.
 
-### Daily scrum:
+### Daily scrum
 Zoals de naam al zegt zal de Daily Scrum elke werkdag plaats vinden. Deze wordt geleid door de Scrum master en duurt ongeveer 15 minuten. Tijdens deze bespreking wordt van alle projectgroepsleden gevraagd wat ze de dag ervoor hebben gedaan, wat ze van plan zijn te gaan doen op de dag zelf en of er eventuele problemen zijn geweest of worden voorzien. Op deze manier blijft de groep op de hoogte van welke taken elk groepslid  doet en of er problemen zijn waar rekening mee gehouden moet worden. De meeting zal staande worden gehouden en met de werkplek uit het zicht.
 
 ## Regels en afspraken
-### Projectgroep werkafspraken:
+### Projectgroep werkafspraken
 Voor alle regels en afspraken die de projectgroep heeft gemaakt en naleeft is het samenwerkingscontract toegevoegd in de bijlage (zie bijlage 1 Samenwerkingscontract).
 
 ### Software
@@ -281,7 +281,7 @@ Het project wordt een iteratief proces waarbij in elke sprint wordt gewerkt aan 
 	Playtest 5: 	Vind plaats op Donderdag 23 Mei 2013 om 13:00 uur
 	Playtest 6: 	Vind plaats op Donderdag 6 Juni 2013 om 13:00 uur * Dit is een Playtest Extra
 
-#### Feestdagen en vakanties die binnen de werkdagen vallen:
+#### Feestdagen en vakanties die binnen de werkdagen vallen
 
 	Tweede paasdag: Vind plaats op Maandag 1 April 2013
 	Meivakantie: 	Vind plaats vanaf Maandag 29 April 2013 t/m Vrijdag 3 Mei 2013
@@ -306,7 +306,7 @@ Het project wordt een iteratief proces waarbij in elke sprint wordt gewerkt aan 
 	Het eind assessment is in week 26 of 27
 
 ## Kosten en baten
-### Velocity project groep:
+### Velocity project groep
 Het project zou in eerste instantie gebruik maken van Pivotal na verloop van tijd hebben we gemerkt dat dit niet ideaal werkt omdat het een omslachtig programma is waar een hoop extra werk achter vandaan komt voor de project leden. Dit zou dus sneller moeten kunnen. Daarna is overgestapt op een eigen uren schema bijgehouden in Google Drive ook dit bleek niet ideaal te zijn. Het bleef een online programma wat snel vergeten wordt in te vullen waar door de informatie niet compleet genoeg is. Daarna is het scrumboard aan de muur gehangen het bijhouden van uren blijft een hekelpunt maar er wordt in elk geval meer mee gedaan dan de online varianten. Hierdoor hebben we deze manier van werken behouden.
 
 ### Materiaal
@@ -352,7 +352,7 @@ Projectleden:
 - Tjerk Jippe Dijkstra
 - Vincent Bremer
 
-### Afspraken en regels:
+### Afspraken en regels
 
 Tijd:
 
@@ -515,7 +515,7 @@ Personalia
 Een student van 17 jaar studeert op het MBO beschikt over een laptop met Windows 7 met daarop redelijk up to date software, maakt gebruik van Google Chrome en het office pakket.
 Is niet bekend met Dropbox en Google Drive en gebruikt Windows live services voor e-mail, agenda. Maakt af en toe een verslag voor school maar deze beschikt niet over een inhoudsopgave of paginanummering meestal twee á drie a4’tjes.
 
-### Dierenassociaties:
+### Dierenassociaties
 Vanuit deze vragen zijn wij op zoek gegaan naar een metafoor die deze kernwaarden en uitstraling samenvatten, hieruit is een lijst met potentiële namen ontstaan.
 De bever
 Bouwt gestructureerd aan dammen en is altijd bezig met het opbouwen van zijn nest. Is veelzijdig en heeft inzicht. Is een ervaren bouwer die de grootste dammen kan maken, blokkeert het stromen van de grootste rivieren met teamwork.
@@ -529,7 +529,7 @@ Een werker die door grote aantallen en teamwork de grootste gebouwen onder en bo
 #### Inktvis
 Heeft 8 tentakels met zuignappen en spuit inkt. Kan zichzelf camoufleren en ingraven diep in de zee. Kan snel voortbewegen dankzij de vele tentakels en sommige inktvis soorten geven licht.
 
-### Mogelijke namen:
+### Mogelijke namen
 - Blocknode
 	- Een combinatie van de blokken waarmee we willen indelen en NodeJS de taal waarin we dit concept - willen realiseren.
 - Charta
@@ -807,11 +807,11 @@ Een tekstblok (of ander element) wordt binnen het werkveld weergegeven. Er zijn 
 
 ![layout](afbeeldingen/img31.png)
 
-### 1. Kleur keuze/ gebruik:
+### 1. Kleur keuze/ gebruik
 Voor het product Doctopus is gekozen voor een donkere interface. Dit is gedaan om de ogen van de gebruiker zo veel mogelijk te ontlasten van het felle licht dat uit het beeldscherm schijnt. Daarnaast ligt hierdoor de focus op het lichtere element en trekt de rest van de interface niet teveel aandacht. Het werkveld is echter wel wit gebleven omdat dit papier simuleert, het is anders voor de gebruiker anders lastig in te schatten hoe het document uit te printer zal gaan komen.
 De kleur groen is gekozen om het geheel een frisse, moderne en serieuze uitstraling mee te geven. De combinatie van de verschillende grijstinten steken leuk af met het frisse groen. Door de groene tint te gebruiken om elementen die meer aandacht nodig hebben extra uit te lichten is het een handige combinatie van kleuren om de gebruiker te sturen binnen het product. De kleur rood is gebruikt bij de verwijder functie om extra visuele feedback aan deze functie te geven.
 
-### 2. Lettertype keuze/ gebruik:
+### 2. Lettertype keuze/ gebruik
 1. Bebas Regular
 Het lettertype ‘Bebas Regular’ is een strak en smal lettertype. Het bestaat alleen uit hoofdletters, en wordt binnen het product vooral gebruikt bij grotere elementen die de aandacht van de gebruiker moeten vragen. Het is qua vormgeving een strak en modern lettertype dat door het gebruik dit ook uitstraalt op het product.
 
@@ -837,13 +837,13 @@ Het beeldmerk  is zo ontworpen dat het makkelijk gebruikt kan worden als icoon (
 ## Hardware
 Voor het product dat wordt ontwikkeld moet er qua grafische productie rekening worden gehouden met een aantal belangrijke facetten. Het product zal niet voor mobiele telefoon of tablet worden ontwikkeld, maar wel voor devices zoals laptops en desktops. Omdat er binnen dit producten aanbod een groot verschil zit in de resoluties zal het product schaalbaar moeten worden zodat op elke resolutie er mee gewerkt kan worden. De resoluties zullen een minimun van 800 bij 600 pixels moeten hebben, omdat anders niet alle elementen op het scherm passen.. Wat een ander belangrijk element is, is dat het product online zal gaan werken, dit houdt in dat het product via een browser bezocht kan gaan worden door de gebruikers. Waar rekening mee gehouden moet worden is dat er gewerkt gaat worden met HTML5 en CSS3. De browsers waarvoor geschreven gaat worden zullen dit dus moeten ondersteunen.
 
-### Devices:
+### Devices
 De devices waarop het product zal gaan draaien zijn laptops, netbooks en desktops.
 
-### Scherm resoluties:
+### Scherm resoluties
 De minimale scherm resolutie is 800 bij 600 pixels.
 
-### Browsers:
+### Browsers
 De browser moet HTML5 en CSS3 compatibel zijn.
 
 ![voorblad technisch ontwerp](afbeeldingen/img50.jpg)
@@ -1029,7 +1029,7 @@ The model filename is written in singular and lowercase. For example:
 
 ## Database 
 
-### Users collection:
+### Users collection
 
 	{
 	   _id: 432943232,
@@ -1043,7 +1043,7 @@ The model filename is written in singular and lowercase. For example:
 	}
 
 
-### Documents collection:
+### Documents collection
 
 	{
 		"_id": 3432342343,
@@ -1282,16 +1282,16 @@ Bekijk alle problemen die voorkwamen en beoordeel deze, kijk naar welke probleme
 ![paper prototype](afbeeldingen/img33.jpg)
 Paper prototype, afbeelding 1.
 
-### Inleiding:
+### Inleiding
 Het paper prototype is bedoeld om een eerste beeld te krijgen van het product dat wij gaan ontwikkelen. Het kan getest worden bij gebruikers en op die manier kunnen wij snel een globaal beeld krijgen over hoe de gebruiker reageert op het product dat wij gaan bouwen. 
 
-### Resultaat:
+### Resultaat
 - Gebruikers hadden snel een beeld bij het product dat gebouwd gaat worden. 
 - Het voelde aan als spelen met Lego.
 - De algemene reactie was positief na een korte uitleg over wat het product zal moeten gaan worden. 
 - Verder was het nog lastig in te schatten hoe het product daadwerkelijk zal gaan werken omdat het een analoog product is in plaats van een digitaal product.
 
-### Conclusie:
+### Conclusie
 Het volgende prototype zal een digitale variant zijn waarin zo goed mogelijk de basis zal worden gelegd van de USP’s (unique selling points) van het product. 
 
 ## Concept
@@ -1352,12 +1352,12 @@ Prototype 2, afbeelding 4.
 ### Beschrijving
 Dit prototype neemt de verbeteringen mee die aan de hand van de feedback op prototype 1 naar voren zijn gekomen, deze zijn als volgt:
 
-#### Verbeteringen:
+#### Verbeteringen
 - Het vergroten van blokken kan nu door simpelweg op een blok te klikken.
 - De sidebar is kleiner geworden en elementen hebben een kleurcode gekregen, met een schaduw tijdens het slepen is het duidelijk geworden waar een element gaat landen.
 - Vormgeving is duidelijker geworden en bevat meer nuancering.
 
-#### Toevoegingen:
+#### Toevoegingen
 - Het is mogelijk om de inhoud van een element te bewerken door op “edit” te klikken.
 - Er is een functie “toggle borders” toegevoegd om aan te geven hoe het grid is ingesteld.
 
@@ -1395,12 +1395,12 @@ Bij het maken van dit prototype heeft het bewerken van een element de meeste pri
 
 Dit is een andere van werken ten opzichte van vorige prototypes en wij zijn benieuwd naar de werking van deze methode. In ons opzicht wordt het indelen van een document nu duidelijker weergegeven.
 
-#### Verbeteringen:
+#### Verbeteringen
 - Teksteditor toegevoegd met opmaak mogelijkheden (bold, italic, underline).
 - Opslaan van tekst mogelijk.
 - Vormgeving geeft het kolom weer.
 
-#### Toevoegingen:
+#### Toevoegingen
 - Het toevoegen van nieuwe blokken gaat nu in het werkveld aan de hand van een leeg blok.
 - Het wijzigen van de inhoud van een element gebeurt nu in de sidebar in plaats van in het blok zelf.
 
@@ -1434,12 +1434,12 @@ Beta versie 001, Prototype 4, afbeelding 6.
 ### Beschrijving
 Prototype 4 is gelijk de eerste beta versie van het product, we zijn tot deze beta gekomen na het testen van drie verschillende prototypes, na het verwerken van de resultaten van deze prototypes zijn we tot deze beta versie gekomen.
 
-#### Verbeteringen:
+#### Verbeteringen
 - De grafische stijl van het prototype is flink verbeterd met een duidelijk onderscheiding tussen het werkveld en de sidebar en er is gekozen voor een steunkleur die de stijl van doctopus definieert.
 - De sidebar heeft een nieuwe functionaliteit, het laat standaard de opmaak van het document zien, op het moment dat de gebruiker op een element klikt laat het informatie over het desbetreffende element zien.
 - Het direct bewerken van een tekstblok, dit gebeurt niet meer in de sidebar maar direct in het veld zelf.
 
-#### Toevoegingen:
+#### Toevoegingen
 - De complete opmaak van het document kan worden gewijzigd in de sidebar door middel van een optieveld.
 - Het is mogelijk om blokken te verwijderen met de prullenbak tool.
 - Het is mogelijk om lege blokken toe te voegen.
