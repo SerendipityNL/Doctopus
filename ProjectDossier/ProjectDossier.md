@@ -24,7 +24,7 @@ De locatie is op de NHL Hogeschool te Leeuwarden. De projectgroep werkt voorname
 
 - Vincent Bremer (cohort 2010 - 2011)
 - Edwin ten Wolde (cohort 2011 - 2012)
-- Douwe de Haan (2008 - 2009) 
+- Douwe de Haan (cohort 2008 - 2009) 
 - Tjerk Dijkstra (cohort 2011 - 2012). 
 
 ![Projectgroep](afbeeldingen/img48.jpg)
@@ -66,7 +66,8 @@ Als we het hebben over de periode dat dit project loopt zijn de harde data de vo
 Start: Maandag 25 februari 2013
 Deadline van alle documentatie: Woensdag 12 juni 2013
 
-De projectgroep zal echter nog langer door werken aan het product. Dit om tot een goed eindproduct/ prototype te komen dat getoont kan worden aan geinteresseerden. Waarmee gewerkt kan worden door de doelgroep en wat gebruikt kan worden als portfolio materiaal voor de project leden.
+Echter zal de projectgroep nog langer doorwerken aan het product. Dit om tot een goed eindproduct/ prototype te komen dat getoont kan worden aan geïnteresseerden, waarmee gewerkt kan worden door de doelgroep en wat gebruikt kan worden als portfolio materiaal voor de projectleden.
+
 
 ### Budget
 Er is voor dit project € 0,- aan budget kosten beschikbaar.
