@@ -601,100 +601,105 @@ Voor het bedenken van de naam maken wij gebruik van een concepting methode die v
 
 De methode begint met het verdelen van een vel papier over 36 vakken in elk vak kan een begrip geplaatst worden gerelateerd aan ons concept, elk vak wordt ingevuld door een teamlid in volgorde. Het woord dat in een vak wordt geplaatst moet ook aansluiten bij de omheen liggende woorden. Uiteindelijk zal er een rij in het midden vormen van 6 begrippen die centraal staan voor ons concept.
 
-Vertrouwen
-Snelheid
-Proactief
-Adaptief
-Fusie
-Samenwerken
+- Vertrouwen
+- Snelheid
+- Proactief
+- Adaptief
+- Fusie
+- Samenwerken
 
-
+[afbeelding]
 
 Vanuit deze concepting sessie zijn wij verder gegaan met het ontwikkelen van de naam. Om tot een goede naam te komen zijn er verschillende vragen die wij onszelf gesteld hebben:
-Wat is je product /service?
+
+### Wat is je product /service?
 Ons product is een tool waarmee documentatie gemaakt kan worden op een gestructureerde, intuïtieve manier.
-Wat zijn de unique selling points van de product of dienst?
+
+### Wat zijn de unique selling points van de product of dienst?
 Een grid systeem die het document verdeeld in kolommen en structuur bied.
 Het werken met blokken die kunnen worden ingedeeld over de kolommen.
 Het aanpassen van de stijl en opmaak over het gehele document door middel van stijl regels.
 
-Wat voor type uitstraling/imago zou je willen hebben?
+### Wat voor type uitstraling/imago zou je willen hebben?
 Gestructureerd, netjes, logisch, multifunctioneel.
 
-Welke markt/doelgroep bedien je?
+### Welke markt/doelgroep bedien je?
 Mensen die veel documentatie moeten schrijven, mensen die bekend zijn met het aanbod van huidige software/tools zoals Word, Google Drive, OpenOffice en/of Pages. 
 
-Power users
+### Power users
 Personalia
+
 Student van 22 jaar oud die beschikt over een desktop en een laptop met Windows 7 of 8 met daarop recente web browsers en software. Studeert aan een HBO opleiding en heeft ervaring met Photoshop, Google Drive, Dropbox en is van jongs af aan al in aanraking met computers. Schrijft voor school regelmatig verslagen en deze moeten ook netjes gestructureerd zijn en bevatten vaak een inhoudsopgave of pagina-nummering.
 
-Benchmark users
+### Benchmark users
+
 Personalia
 Een student van 17 jaar studeert op het MBO beschikt over een laptop met Windows 7 met daarop redelijk up to date software, maakt gebruik van Google Chrome en het office pakket.
 Is niet bekend met Dropbox en Google Drive en gebruikt Windows live services voor e-mail, agenda. Maakt af en toe een verslag voor school maar deze beschikt niet over een inhoudsopgave of paginanummering meestal twee á drie a4’tjes.
 
-Dierenassociaties:
+### Dierenassociaties:
 Vanuit deze vragen zijn wij op zoek gegaan naar een metafoor die deze kernwaarden en uitstraling samenvatten, hieruit is een lijst met potentiële namen ontstaan.
 De bever
 Bouwt gestructureerd aan dammen en is altijd bezig met het opbouwen van zijn nest. Is veelzijdig en heeft inzicht. Is een ervaren bouwer die de grootste dammen kan maken, blokkeert het stromen van de grootste rivieren met teamwork.
 
-De spin
+#### De spin
 Weeft een spinnenweb met prachtige lijnen en structuren / patronen. Beschikt over veel zijde kant dit zelf aanmaken. Zijde is licht en sterk.
 
-De mier
+#### De mier
 Een werker die door grote aantallen en teamwork de grootste gebouwen onder en boven de grond kan maken. Is een harde werker die grote ondergrondse structuren en steden graaft.
 
-Inktvis
+#### Inktvis
 Heeft 8 tentakels met zuignappen en spuit inkt. Kan zichzelf camoufleren en ingraven diep in de zee. Kan snel voortbewegen dankzij de vele tentakels en sommige inktvis soorten geven licht.
 
-Mogelijke namen:
-Blocknode
-Een combinatie van de blokken waarmee we willen indelen en NodeJS de taal waarin we dit concept willen realiseren.
-Charta
-Betekent papier in latijn, ook het engelse woord voor een kaart of koers.
-Codex
-Is het latijnse woord voor blok, zou ook op code kunnen slaan.
-Docbuilder
-Het opbouwen van een document.
-Blueprint
-In de bouw gebruikt om de lijnen van het gebouw vast te stellen (bouwtekening).
-Doqs
-Afkorting van docs.
-Octodoc
-Combinatie tussen octopus en document.
-Doctopus
-Combinatie tussen octopus en document.
+### Mogelijke namen:
+- Blocknode
+	- Een combinatie van de blokken waarmee we willen indelen en NodeJS de taal waarin we dit concept - willen realiseren.
+- Charta
+	- Betekent papier in latijn, ook het engelse woord voor een kaart of koers.
+- Codex
+	- Is het latijnse woord voor blok, zou ook op code kunnen slaan.
+- Docbuilder
+	- Het opbouwen van een document.
+- Blueprint
+	- In de bouw gebruikt om de lijnen van het gebouw vast te stellen (bouwtekening).
+- Doqs
+	- Afkorting van docs.
+- Octodoc
+	- Combinatie tussen octopus en document.
+- Doctopus
+	- Combinatie tussen octopus en document.
 
-Gekozen naam
+### Gekozen naam
 
-“Doctopus”
+### “Doctopus”
 Uiteindelijk is er er gekozen voor de naam Doctopus, deze naam valt samen met de dieren associatie met een octopus. Het multitasken kan worden uitgebeeld door middel van de acht armen waarmee een octopus meerdere taken tegelijk kan uitvoeren. Het werken aan een document of tekst kan worden uitgebeeld door middel van de inkt.
 
 Het slepen en indelen van blokken kan op een ludieke wijze worden uitgebeeld door middel van tentakels die met zuignappen op een speelse wijze een document indelen.
 
 
 
-Bronnenlijst
+## Bronnenlijst
 (1). 9-06-2013, The Golden Circle
 http://www.eurib.org/fileadmin/user_upload/Documenten/PDF/Positionering/n_-_De_Golden_Circle.pdf
 
+# Functional design
 
-Introduction
+## Introduction
 This functional design describes all the requirements needed for the application. This section is written in English because we will possibly open source the project, including the functional and technical design. 
 
-Application Description
+## Application Description
 The application is an online editor for text and image based documents. The application aims to simplify and structurize the current way of making documents, by introducing a four column grid, drag and drop elements and an easy to manage stylesheet. The best way to describe the application is a mix between Google Docs and Indesign.
 
-Users
+## Users
 The primary target audience (power users) are students with a technical and multimedia background, Who often need to make a lot of documentation and most of the times work together in teams. For our power users it is important that there are a lot of advanced options which make their work easier and faster and frustration free.
 
 Our basic target audience are students with an average education. They need to make documentation on school, but not very often. For them it’s important the application works intuitive, simple and doesn’t require much technical knowledge.
 
-Why make this application?
+## Why make this application?
 When using an application like Microsoft Word or LibreOffice Writer, working in the same document with multiple users at the same time will cause conflicts when the document gets saved. Google Docs (Drive) solves this problem, but still doesn’t provide the structure to easily build a neat looking document with images and a consistent styling.
-MoSCoW model
-Must haves
 
+## MoSCoW model
+### Must haves
 CRUD* documents
 This is the core of the application.
 Document management
@@ -711,13 +716,14 @@ Export to HTML
 When the document needs to be send to someone else, or the user wants a preview of the document, it’s necessary to export to HTML. These HTML pages can also be printed.
 Define styles
 Define styles of the document, this is one of the USP of the application and when it’s not possible to define styles, the project would have failed.
-Should haves
 
+### Should haves
 Document sharing
 When competing with Google Docs, it’s a must to implement document sharing. This means multiple users can access and edit the document, preferably at the same time with websockets.
 Export to PDF
 On many schools PDF is the preferred format to deliver documents. These files can’t be easily changed, look the same on all platforms (Windows, OSX, Linux, iPad etcetera)
-Could haves
+
+### Could haves
 
 Multiple user editing
 When editing an element on the page, that element will be locked for other users. It would perhaps be better to allow users to type in the same blocks 
@@ -729,62 +735,84 @@ Responsive layout
 Scale the complete application according to the screen size so it will also work on smaller screens. When implementing this, it’s also necessary to make all the technical functions compatible with a tablet/smartphone with a touchscreen.
 Responsive view
 Scale the view of a document to tablet devices
-Won’t haves
+
+
+### Won’t haves
 
 Export to other formats
 The application won’t be able to export the document to other formats, like txt, docx, odt or md. Because of the complex grid system, it’s nearly impossible to create a file that looks exactly the same in another word processor.
 
 
 * CRUD = Create, Read, Update and Delete
-Sitemap
 
 
+## Sitemap
+[afbeelding]
 
-Pages
-Homepage
+## Pages
+### Homepage
+
+[afbeelding]
 
 The user goes to the website where information is given about DocBuilder in the form of some screenshots and an screencast. When the user visits the website and isn’t logged in, the user is shown some information about DocBuilder and a screencast explaining what DocBuilder is. Registered users can fill in their username plus password and login, while new users can click on a link to register a new account.
 
 The purpose of this page is the inform the user about the application and convince them to register. This page should give the user an impression of what the application does and how it could help them.
 
-Register new account
+### Register new account
+
+[afbeelding]
 
 When the user has clicked on the link to register a new account, the users gets redirected to the register page. When all fields are valid, the user receives a verification e-mail with a unique link. Before logging in the user needs to verificate it’s account by clicking on this link.
-Logging in
+
+### Logging in
+
+[afbeelding]
 
 On the homepage there is a login form where the user can login with email and password. When the email and password match the user will be redirected to the document management page. When they don’t match, the user will get an error message and needs to try to login again.
 
-Forgot password
+### Forgot password
+
+[afbeelding]
 
 When the user forgets his password, there is a link near the login form on which the user reset their password. When the user clicks this link a reset password form appears and the user must enter the email used when registered. If the entered email is valid, a password reset link will be sent to the user. After clicking on this link to user is able to enter a new password.
-Manage profile
+
+### Manage profile
+
+[afbeelding]
 
 When a user is logged in, there is an option to change the profile. On this page its possible to change the following fields or settings:
 
-Firstname and lastname
-Password
-Email
-Avatar (Gravatar or a custom avatar)
+- Firstname and lastname
+- Password
+- Email
+- Avatar (Gravatar or a custom avatar)
 
+[afbeelding]
 
-
-Sections
+### Sections
 On the green part of the wireframe are the sections. These sections can be added, removed and sorted by order. These sections can be seen as chapters in a book, each chapter could contain multiple pages of content. Each section has a title and a order, each section can be sorted to be a subsection of another section.
 
-Document work area
+### Document work area
 This area contains a four column grid on which blocks can be dragged and dropped. The blocks snap to the grid and can be resized from one column to four columns with a click, everytime the user clicks on a block it will grow one column in size, if the block reaches four columns it will resize back to one column.
 
-Editing a block
+[afbeelding]
+
+### Editing a block
 Each block can be edited once they are inside the document work area by hovering with the cursor on the block that needs to be edited. An edit button will then appear and the user can change the content of the block. Once inside the editing mode of a block its block, its possible to do some simple formatting and change the size of the block (S, M, L, XL) this stands for the columns (1-4).
 
-Image handling
+[afbeelding]
+
+### Image handling
 If the user adds an image block to the document work area, it is possible to upload an image into that block by clicking on the upload button inside that block, the image will resize according to the grid.
 
+[afbeelding]
 
-Navigation bar
+### Navigation bar
 The upper right corner of the navigation bar contains the login information, the user has the possibility to log out and go to the profile page. In the middle of the navigation bar there is dialog that reminds the user when the document was last saved.
 
-Elements
+[afbeelding]
+
+### Elements
 Elements are blocks that can contain the following: 
 
 List item (yellow)
@@ -793,91 +821,105 @@ Text (blue)
 
 Image(red)
 
+[afbeelding]
+
+[afbeelding]
+
+[afbeelding]
 
 
 These blocks can be dragged and dropped to the document work area where they will snap to a grid. 
 
-Manage documents
+### Manage documents
+
+[afbeelding]
+
 When the user is logged in and visits the website, he gets redirected to the “Manage documents” page. On this page the user can search for documents he owns or are shared with this user. There are a view links which on this page:
 
-Document title
+#### Document title
 Opens the HTML page where the complete document can be viewed, this would be the same page as when a document gets exported.
 
-Share
+#### Share
 Brings up a popup to manage the sharing settings like removing users from the document, and inviting them to a document.
 
-Edit
+#### Edit
 Sends the user to the page where the document can be modified.
 
-With selected (select box)
+#### With selected (select box)
 Offers different options to quickly manage multiple selected documents, like; remove, export and sharing documents.
 Saving the document
 The entire document is saved automatically after one minute, after every edit the document is also saved. The user can trigger the same save event manually with the save button.
 
-Styling the document
+#### Styling the document
 
+[afbeelding]
 
 The user has the possibility to add a style for the entire document at the styling window. The elements the user can style are as follows:
 
-Font size		(12pt)
-Font color		(#f02f2f (hex value))
-Font family		(Arial, sans-serif)
-Line-height		(18pt)
-Heading 1, 2 ,3, 4 	
-color		(#2312 (hex value))
-size		(18pt)
+- Font size		(12pt)
+- Font color		(#f02f2f (hex value))
+- Font family		(Arial, sans-serif)
+- Line-height		(18pt)
+- Heading 1, 2 ,3, 4 	
+- color		(#2312 (hex value))
+- size		(18pt)
 
 Everytime the user changes a style it will be applied to the whole document and is automatically saved.
 
 
-Sharing the document
+### Sharing the document
 
-Change sharing options
+#### Change sharing options
 The user can change the sharing options for the document at any time, when pressing the share button a popup will appear in which the user can manage the rights for the current users and has the possibility to add/remove users, this will work the same as sending an invitation.
 
 When the user presses the share button a pop up dialog will appear, in this pop up the user can invite other users via e-mail and adjust the rights to each invited user (read, write, edit, owner).
-Sending the invitation
+
+#### Sending the invitation
 If the user has made a selection of users the invitations can be send to the corresponding email addresses. The invited users will receive an email containing a hyperlink to the document and information about the document they were invited to.
-Communication with multiple users
+
+#### Communication with multiple users
 When multiple users are working together on one document its possible to communicate via chat. The chat is optional and can be turned on and off, and is off by default.
-Editing a document with multiple users
+
+#### Editing a document with multiple users
 Its possible to work with multiple users on one document, when a user is editing a block its not possible for other users to edit that block as well. It will appear locked, when the user is done editing the block it is saved and unlocked. This means only one user at a time can edit one block.
 
 
 
-Grafisch Ontwerp
-Inleiding
+# Grafisch Ontwerp
+
+## Inleiding
 Het grafisch document is onderdeel van het project Doctopus. In het document is alle informatie te vinden over het gebruik van de stijl binnen dit product. Qua usability wordt beschreven waarmee rekening gehouden is in het ontwerp om het voor de gebruiker zo gebruiksvriendelijk mogelijk te maken.
-De lay-out van de applicatie
 
-1. Document informatie
-Op deze plek zal de gebruiker alle informatie vinden over het document waarin deze zich bevind. Deze beweegt te allen tijde mee met de gebruiker omdat het belangrijk is dat de gebruiker altijd weet in welk document hij of zij zich bevindt.
+## De lay-out van de applicatie
 
-2. Werkveld van de gebruiker
+[afbeelding]
+
+### 1. Document informatie
+Op deze plek zal de gebruiker alle informatie vinden over het document waarin deze zich bevind. Deze beweegt
+ te allen tijde mee met de gebruiker omdat het belangrijk is dat de gebruiker altijd weet in welk document hij of zij zich bevindt.
+
+### 2. Werkveld van de gebruiker
 Binnen het werk veld kan de gebruiker visueel zien hoe het document er uit eindelijk uit komt te zien. De gebruiker kan op deze plek al zijn content toevoegen en rangschikken. Alle mogelijke handelingen worden visueel ondersteund zodat de gebruiker zo intuïtief mogelijk zijn of haar content kan bewerken tot het gewenste resultaat. Het werkveld staat gecentreerd in het scherm en vult het grootste deel van de ruimte. Dit omdat het werkveld element het belangrijkste element van het gehele product is en de gebruiker hier de meeste handelingen zal verrichten.
 
-3. Blokken toevoegen/ verwijderen
+### 3. Blokken toevoegen/ verwijderen
 Op deze plek staan twee zeer belangrijke en veel gebruikte acties die de gebruiker vaak zal gaan gebruiken, namelijk het toevoegen en verwijderen van blokken. De knoppen zijn net naast het werkveld  gepositioneerd zodat dat de gebruiker er snel bij kan en ze niet in de weg staan tijdens het bewerken van de content. Visueel zijn ze zo ontworpen dat meteen duidelijk is wat de functie van de knop inhoud.
 
-
-
-
-4. Sidebar
+### 4. Sidebar
 In de sidebar kan de gebruiker alle informatie vinden die beschikbaar is over het element dat hij of zij heeft geselecteerd. De sidebar staat rechts in beeld omdat de meeste focus zodoende valt op het werkveld.
 
-5. Blok informatie
+### 5. Blok informatie
 Deze informatie staat boven aan in de sidebar  en is het grootste element in de sidebar. Dit is gedaan om binnen de sidebar al eerst de focus op dit element te leggen. Hierdoor kan de gebruiker snel en duidelijk zien wat het element is dat deze geselecteerd heeft en eventueel aanpast.
 
-6. Blok opties
+### 6. Blok opties
 De blok opties zijn donker weergegeven behalve wanneer deze in gebruik is, dan licht deze namelijk op. Hierdoor ziet de gebruiker visueel meteen welke optie hij of zij gebruikt. Daarnaast staat in elke optie de beschrijving links en de eventuele aanpassingen die gedaan kunnen worden rechts.
 
-7. Scroll balk(en)
+### 7. Scroll balk(en)
 1. Scroll balk links:
 Deze balk verschijnt als het er meer opties in de ‘Blok opties’ zitten dan kan worden weergegeven op het scherm. Door te scrollen zal de gebruiker alle opties kunnen opvragen en blijven gebruiken, ook op een kleiner scherm.
 2. Scroll balk rechts:
 Deze balk verschijnt als het werkveld langer is dan visueel in het scherm kan worden weergegeven. Door te scrollen zal de  gebruiker het gehele werkveld kunnen bekijken en niet belemmerd worden door de grootte van zijn of haar beeldscherm.
 
-8. Product logo
+### 8. Product logo
 Dit logo wordt rechts boven in weergegeven zodat de gebruiker kan zien dat hij of zij aan het werk is in Doctopus. Tevens is het logo een link om naar de startpagina van het systeem te gaan, waarop de gebruiker zijn of haar documenten kan zien en instellingen omtrent profiel en weergave kan wijzigen.
 
 9. Een tekst blok
