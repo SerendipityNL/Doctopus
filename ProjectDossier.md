@@ -458,7 +458,7 @@ Gegevens:
 	<tr><td>Geboortedatum</td><td>09-07-1988</td></tr>
 </table>
 
-Vincent Bremer
+#### Vincent Bremer
 Taak binnen het project:  Programmeur.  
 Gegevens:                    	
 
