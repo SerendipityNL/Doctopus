@@ -4,10 +4,15 @@ var Gravatar = require('gravatar'),
 
 module.exports = {
 	register: function(req, res) {
-		res.render('pages/user/register', {
-			pageTitle: 'User registration',
-			session: req.session
-		});
+		if (req.session.logged_in = true){
+			res.redirect('/dashboard');
+		}
+		else {			
+			res.render('pages/user/register', {
+				pageTitle: 'User registration',
+				session: req.session
+			});
+		}
 	},
 	loginView: function(req, res){
 		res.send('login view');
