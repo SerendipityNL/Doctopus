@@ -23,7 +23,7 @@ De locatie is op de NHL - Hogeschool te Leeuwarden. De project groep werkt voorn
 
 
 ![Projectgroep](afbeeldingen/img48.jpg)
-Foto van de projectgroep.
+*Foto van de projectgroep.*
 
 ## Projectresultaat
 ### Aanleiding
@@ -51,8 +51,7 @@ Het resultaat van dit project voorziet in de behoefte aan een snel en simpele ma
 ### Work breakdown structure
 
 ![WBS](afbeeldingen/img17.png)
-
-Dit is de work breakdown structure van het project.
+*Dit is de work breakdown structure van het project.*
 
 
 ## Projectgrenzen
@@ -131,7 +130,7 @@ Binnen de NHL zijn de volgende groepen betrokken bij het project.
 Vanuit het kenniscentrum is Jolanda Postma het aanspreekpunt.
 
 ![stakeholder analyse](afbeeldingen/img47.jpg)
-stakeholder analyse.
+*stakeholder analyse.*
 
 ### Betrokken partijen
 Docenten en Tutor:
@@ -233,32 +232,25 @@ Voor alle regels en afspraken die de projectgroep heeft gemaakt en naleeft is he
 ### Software
 De groep zal een groot aantal tools gaan gebruiken om het product te kunnen ontwikkelen. De tools die gebruikt zullen gaan worden zijn met zorg uitgekozen door de groep en door het afstemmen van deze tools zal voorkomen worden dat er problemen gaan ontstaan met het synchroniseren van bestanden die door verschillende personen zijn ontwikkeld.
 
-**Google Drive**
-
+#### Google Drive
 Google Drive is de plaats waar de groep gezamenlijke documenten tegelijkertijd kan gaan bewerken. Omdat Google Drive (als het via internet gebruikt wordt) minder handig is om snel (andere bestanden dan documentatie) te delen is de keuze gemaakt om Google Drive te gebruiken i.c.m. Dropbox.
 
-**Dropbox**
-
+#### Dropbox
 Dropbox wordt gebruikt om snel bestanden te kunnen delen met groepsleden. Het is handig als back-up tool en om alle groepsleden toegang te geven tot gemaakte documenten en bestanden. Een minpunt is dat er niet gezamenlijk aan dezelfde documenten (tegelijkertijd) gewerkt kan worden. Dit probleem vangen we af door Dropbox te gebruiken i.c.m. Google Drive.
 
-**Github**
-
+#### Github
 Wordt gebruikt als gezamenlijke programmeer omgeving.
 
-**Sublime Text 2**
-
+#### Sublime Text 2
 Sublime text 2 zal worden gebruikt voor het verwerken van codes en scripts.
 
-**Pivitol tracker**
-
+#### Pivitol tracker
 Pivitol tracker is een tool die gebruikt gaat worden i.c.m. de scrum techniek. Met deze tool kan de groep de voortgang van het  project bijhouden. Ook geeft het inzicht in de taken die nog moeten gebeuren en de hoeveelheid tijd die deze kunnen gaan kosten. Het is een hulpmiddel die er voor moet zorgen dat het project overzichtelijk blijft en tijd moet gaan opleveren die belangrijk is voor het product.
 
-**Office Word**
-
+#### Office Word
 Dit programma wordt gebruikt voor persoonlijke documentatie. Het is namelijk niet mogelijk gezamenlijk aan documentatie te kunnen werken. Maar omdat het project gaat over het verbeteren van documentatie en tools is het idee ontstaan om in meerdere (veel gebruikte) programma’s te werken zodat er bij de project ook een goed beeld kan ontstaan over eventuele mankementen aan deze programma’s maar ook aan de goede punten die deze tools hebben.
 
-**Office Excel**
-
+#### Office Excel
 Dit programma wordt gebruikt om lijsten bij te houden binnen de groep voor onder andere afwezigheid, overzichten van planningen en kosten die gemaakt worden voor het project.
 
 ## Planning
@@ -348,9 +340,7 @@ De externe validatie kan niet worden gevonden of ziet af van zijn/ haar taak. In
 ### Kwaliteit
 Het product is niet genoeg afgestemd op de doelgroep waardoor deze niet aanslaat of gebruikt gaat worden. Dit zou betekenen dat het project voor een deel gefaald is omdat het doel is om voor deze groep een tool te bouwen die ze willen gebruiken boven andere tools die al op de markt zijn. Echter is er in dit geval wel een tool aanwezig dus als school opdracht is het project wel geslaagd maar zonder het beoogde resultaat.
 
-## Bijlagen
-
-## 1. Samenwerkingscontract
+## Bijlage 1 - Samenwerkingscontract
 ### Projectgroep: DocBuilders
 Projectleden:
 
@@ -390,15 +380,15 @@ Werk:
 
 Edwin ten Wolde         Douwe de Haan         Tjerk Jippe Dijkstra      Vincent Bremer
 
-## 2. Begroting
+## Bijlage 2 - Begroting
 
 ![begroting](afbeeldingen/img54.png)
 
-## 3. Risico Analyse
+## Bijlage 3 - Risico Analyse
 
 ![risico analyse](afbeeldingen/img55.png)
 
-## 4. Definition of done
+## Bijlage 4 - Definition of done
 **Documentatie**
 
 - Documentatie moet volledig in het Engels worden geschreven.
@@ -459,7 +449,7 @@ Het doel is om een tool te ontwikkelen waarin de gebruiker zonder frustratie een
 ![devorm](afbeeldingen/img38.jpg)
 ![devorm](afbeeldingen/img39.jpg)
 ![devorm](afbeeldingen/img40.jpg)
-Afbeeldingen concept ontwikkeling van de pitch pagina
+*Afbeeldingen concept ontwikkeling van de pitch pagina*
 
 Om het concept visueel te maken hebben we gekozen voor een pitch pagina. Binnen deze pagina is het de bedoeling dat de kern van het concept wordt uitgelegd. Daarnaast is het van belang om de boodschap zo goed mogelijk over te brengen. De pagina is in vier stappen verdeeld. De eerste stap is de kern van het concept zo kort en pakkend mogelijk uitgelegd. Stap twee is een iets meer uitgebreide uitleg over wat het probleem is waarmee wij zitten en geloven te kunnen oplossen. Bij stap drie worden de pluspunten zo kort en pakkend mogelijk behandeld. Deze wordt gevolgd door stap vier het inschrijven voor de mail lijst. 
 
@@ -475,10 +465,10 @@ Afbeelding 1: De slogan voor op de pitch pagina
 Het doel van deze pitch pagina is om de interesse bij mensen te wekken voor het product wat wij willen gaan maken, daarnaast willen wij ook meten in hoeverre mensen geïnteresseerd zijn in een product zoals deze door middel van het inschrijfformulier.
 
 ![concept](afbeeldingen/img36.png)
-Afbeelding 2, de vergelijking tussen de huidige tools en de ambitie van onze.
+*Afbeelding 2, de vergelijking tussen de huidige tools en de ambitie van onze.*
 
 ![concept](afbeeldingen/img35.png)
-afbeelding 3: hierbij wordt puntsgewis aangewezen wat er mist in de huidige tools en wat onze tool wel bied.
+*afbeelding 3: hierbij wordt puntsgewis aangewezen wat er mist in de huidige tools en wat onze tool wel bied.*
 
 
 ## Naamgeving concept
@@ -1667,4 +1657,4 @@ Om op elkaar te reflecteren hebben we als groep een feedback ronde gehouden. Hie
 	- Kan een druk dagje hebben, op de bank liggen, rondlopen etc.
  
 ![team](afbeeldingen/img28.png)
-Foto door  Edwin ten Wolde. (v.l.n.r.) Douwe de Haan, Tjerk Dijkstra en Vincent Bremer.
+*Foto door  Edwin ten Wolde. (v.l.n.r.) Douwe de Haan, Tjerk Dijkstra en Vincent Bremer.*
