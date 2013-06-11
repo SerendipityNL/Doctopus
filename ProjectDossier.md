@@ -1131,13 +1131,13 @@ The DELETE and PUT methods will omitted the because web browsers doesn’t fully
 
 [1] http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
 
-	Method  Route            Controller.method
-	GET     /users               -> users.index
-	GET     /users/new        -> users.new
-	POST    /users/new       -> users.create
-	GET     /users/edit/*       -> users.edit
-	POST    /users/edit/*     -> users.update
-	POST    /users/delete/*  -> users.delete
+	Method   Route              Controller.method
+	GET      /users             -> users.index
+	GET      /users/new         -> users.new
+	POST     /users/new         -> users.create
+	GET      /users/edit/*      -> users.edit
+	POST     /users/edit/*      -> users.update
+	POST     /users/delete/*    -> users.delete
 
 #### Models
 The model filename is written in singular and lowercase. For example:
@@ -1145,127 +1145,128 @@ The model filename is written in singular and lowercase. For example:
 	user.njs
 	document.njs
 
-Dire
-ctory structure
+## Database 
+
+### Users collection:
+
+	{
+	   _id: 432943232,
+	   nickname: John1923,
+	   firstname: John,
+	   lastname: Baker,
+	   email: jb@mail.com,
+	   password_hash: aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d,
+	   salt: f73e205c3b56aec53e,
+	   level: 1
+	}
 
 
+### Documents collection:
 
-
-
-Database 
-
-Users collection:
-{
-   _id: 432943232,
-   nickname: John1923,
-   firstname: John,
-   lastname: Baker,
-   email: jb@mail.com,
-   password_hash: aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d,
-   salt: f73e205c3b56aec53e,
-   level: 1
-}
-
-
-Documents collection:
-
-{
-	"_id": 3432342343,
-	"title": "Technical design",
-	"collaborators": ["43255443", "133214", "943723"],
-	"public": false,
-	"deleted": false,
-	"styling": {
-		"p": {
-			"font_size": 14,
-			"color": "#000000"
+	{
+		"_id": 3432342343,
+		"title": "Technical design",
+		"collaborators": ["43255443", "133214", "943723"],
+		"public": false,
+		"deleted": false,
+		"styling": {
+			"p": {
+				"font_size": 14,
+				"color": "#000000"
+			},
+			"li": {
+				"list_style_type": "disc"
+			}
 		},
-		"li": {
-			"list_style_type": "disc"
-		}
-	},
-	"blocks": [
-		{
-			"_id": 3432342343,
-			"type": "text",
-			"content": "Lorem ipsum..",
-			"order": 3,
-			"cols": 4
-		},
-		{
-			"_id": 3432342343,
-			"type": "list",
-			"content": ["list item #1","list item #2"],
-			"order": 1,
-			"cols": 2
-		},
-		{
-			"_id": 3432342343,
-			"type": "image",
-			"content": "uploads/hjt34d.png",
-			"order": 2,
-			"cols": 2
-		}
-	]
-}
+		"blocks": [
+			{
+				"_id": 3432342343,
+				"type": "text",
+				"content": "Lorem ipsum..",
+				"order": 3,
+				"cols": 4
+			},
+			{
+				"_id": 3432342343,
+				"type": "list",
+				"content": ["list item #1","list item #2"],
+				"order": 1,
+				"cols": 2
+			},
+			{
+				"_id": 3432342343,
+				"type": "image",
+				"content": "uploads/hjt34d.png",
+				"order": 2,
+				"cols": 2
+			}
+		]
+	}
 
-Database design
+### Database design
+
+[afbeelding]
 
 
-App.njs
+## Directory structure
+
+[afbeelding]
+
+
+### App.njs
 App.njs is the starting point of the application, it requires the core modules of the framework and initializes the web server. The configuration of the application can also be found in this file.
 
-Routes (controllers)
+### Routes (controllers)
 Because the backend serves mainly as an API, all routes are linked to specific functions. These functions can return (json) data, insert/update data to the database model or render views. 
 
-documents.index
+#### documents.index
 route: GET /documents
 Render the document index page with an overview of all documents the user has access to.
 
-documents.new
+#### documents.new
 route: GET /documents/new
 Render the page to create a new document.
 
-documents.create
+#### documents.create
 route: POST /documents/create
 Create a new document and save it to the model/database.
 
-documents.edit
+#### documents.edit
 route: GET /documents/:id
 Renders the page for editing the document and passes all data from the document model to the view.
 
-documents.print
+#### documents.print
 route: GET /documents/print/:id
 Renders the page for printing the document.
 
 Example users route:
 
-// App.njs
-app.get('/users', users.index);
-app.get('/users/view/:id', users.view);
+	// App.njs
+	app.get('/users', users.index);
+	app.get('/users/view/:id', users.view);
 
-// Users.njs
-var users = ['John', 'Kate', 'Rick'];
-module.exports = {
-   index: function(req, res) {
-      res.render('pages/users/index, {
-         'pageName': 'Users',
-         'users': users
-      });
-   },
-   view: function(req, res) {
-      var id = req.param.id;
-      res.render('pages/users/view' {
-         'pageName': 'View user',
-         'user': users[id]
-      });
-   }
-}
+	// Users.njs
+	var users = ['John', 'Kate', 'Rick'];
+	module.exports = {
+	   index: function(req, res) {
+	      res.render('pages/users/index, {
+	         'pageName': 'Users',
+	         'users': users
+	      });
+	   },
+	   view: function(req, res) {
+	      var id = req.param.id;
+	      res.render('pages/users/view' {
+	         'pageName': 'View user',
+	         'user': users[id]
+	      });
+	   }
+	}
 
-Models
+## Models
 At this very moment the models aren’t implemented yet. These will be implemented in the future and how they should be written is described here.
 
-user.njs
+### user.njs
 In the user model the information from the database concerning users is handled. Users have the following keys in the database:
 - username			(string, required, unique)
 - email address		(string, required, unique)
@@ -1275,50 +1276,51 @@ In the user model the information from the database concerning users is handled.
 - salt				(string, required)
 - admin			(number, required, default: 0)
 
-modelFunctions
+### modelFunctions
 To easily get all the functions you want access to, the variable modelFunctions is created and defined as function(){}. After that, all the other functions are extended into this variable with the prototype method.
 
-findAll
+### findAll
 This function finds all the users in the database, with all the information that is present. 
 
-findByUsername
+### findByUsername
 This function returns a single user, that is searched by username.
 
-deleteByUsername
+### deleteByUsername
 This function deletes a single user, which is found by its username
 
-update
+### update
 This function finds one user in the database, and updates it with the parameters given. If the user does not exists already, use the save function 
 
-save
+### save
 This function saves a new user into the database. If the user already exists, use the update function.
 
-isAdmin
+### isAdmin
 This function checks whether the user is an administrator or not.
 
-Auth
+### Auth
 Validates the posted login data and verifies that the user exists in the database with the right password and email combination, if there are any validation errors it will return an error object filled with these errors, if not the error object will return false and the user controller will set the sessions accordingly and redirect the user to the users view.
 
-Views
+## Views
 View files are placed in the directory “/views/” and need to have the *.jade extension. The template engine used is Jade and their conventions are followed. For more information see the documentation of Jade on http://www.jade-lang.com
 
-Modules
-Descriptions
+## Modules
+### Descriptions
 We decided to use our own modules folder instead of the default node_modules folder for our modules. All third party modules specified in the package.json which are installed with the npm command will be placed in node_modules. All modules we write specific for our own project, will be placed in the modules directory.
 
-app.local.njs
+### app.local.njs
 The functions and data in this file will be accessible within the view files, for example:
 
-module.exports = {
-   dateDMY: function(val) {
-      var date = new Date(value);
-      var day = date.getDate();
-      var month = date.getMonth();
-      var year = date.getFullYear();
-      return day + '-' + month + '-' + year;
-   }
-}
-Sources
+	module.exports = {
+	   dateDMY: function(val) {
+	      var date = new Date(value);
+	      var day = date.getDate();
+	      var month = date.getMonth();
+	      var year = date.getFullYear();
+	      return day + '-' + month + '-' + year;
+	   }
+	}
+
+## Sources
 
 Robbins, C. (2011, October 17). Scaling Isomorphic Javascript Code. [Web log post]
 Retrieved March 12, 2013, from
@@ -1338,94 +1340,105 @@ http://martinfowler.com/eaaDev/uiArchs.html
 
 
 
-Quality Monitoring & Implementation
-Testmethode
-Inleiding
+# Quality Monitoring & Implementation
+## Testmethode
+### Inleiding
 Voor dit project gaan wij de scrum methode hanteren, dit gaat ook samenhangen met onze test momenten. Wij zullen aan het einde van elke sprint een prototype ontwikkelen die verschillende functionaliteiten zullen bevatten. 
 
 Inspiratie voor onze testmethode halen wij uit eerdere testervaringen en het boek “Don’t make me think” door Steve Krug*. Hij beschrijft in zijn boek wat een goedkope en snelle user-test minimaal zou moeten bevatten. De conventies die hij stelt nemen wij over en breiden wij uit waar nodig. Hierdoor zijn wij tot de volgende randvoorwaarden gekomen voor het uitvoeren van een prototype test.
 
-*Krug, Steve Don’t make me think- pagina 137
-Randvoorwaarden
-Doe een test met minimaal 3 a 4 testpersonen.
-Leg bevindingen vast (dit kan op papier, met Silverback of notuleren op de computer). 
-Voer de test uit met minimaal 2 personen (persoon 1 begeleidt de testpersoon indien nodig, persoon 2 observeert en ondersteunt).
-Voor aanvang van de test de testpersoon eerst een goede introductie/ uitleg bieden.
-Eerste indruk is belangrijk, vraag de testpersoon naar algemene indruk / verwachtingen van het testen van het product.
-Vraag of de testpersoon interesse heeft naar het product.
-Alle bevindingen verwerken in het testverslag.
-Inleiding + Afbeelding
-Verbeteringen / Veranderingen ten opzichte van vorig prototype
-Beschrijving + Testcase + Observatiepunten
-Conclusie + Actielijst
-Plan van Aanpak
+* Krug, Steve Don’t make me think- pagina 137
+
+### Randvoorwaarden
+
+- Doe een test met minimaal 3 a 4 testpersonen.
+- Leg bevindingen vast (dit kan op papier, met Silverback of notuleren op de computer). 
+- Voer de test uit met minimaal 2 personen (persoon 1 begeleidt de testpersoon indien nodig, persoon 2 observeert en ondersteunt).
+- Voor aanvang van de test de testpersoon eerst een goede introductie/ uitleg bieden.
+- Eerste indruk is belangrijk, vraag de testpersoon naar algemene indruk / verwachtingen van het testen van het product.
+- Vraag of de testpersoon interesse heeft naar het product.
+- Alle bevindingen verwerken in het testverslag.
+	- Inleiding + Afbeelding
+	- Verbeteringen / Veranderingen ten opzichte van vorig prototype
+	- Beschrijving + Testcase + Observatiepunten
+	- Conclusie + Actielijst
+
+### Plan van Aanpak
 Aan het einde van elke sprint wordt er getest volgens de bovenstaande randvoorwaarden. Dit zal om de twee weken zijn afhankelijk van de sprint. Dit zal uitkomen op ongeveer zeven test momenten met daarin verschillende prototypes c.q. beta versies.
-Met wie zal er getest worden?
+
+### Met wie zal er getest worden?
 Wij gaan voornamelijk testen met onze power users (zie concepting pagina [9]). Dit zijn mensen die veel documentatie moeten maken en bekend zijn met de huidige tools (Google Drive, Microsoft Word). Deze power users hebben in zekere mate ervaring met het gebruik van computers en software. Een reden waarom we met de power users testen is omdat deze mensen veeleisend en veel verwachtend zijn, wij verwachten daarom ook dat zij met een kritische blik naar het product zullen kijken.
 
 Bij voorkeur zal er getest worden met personen die in elk geval niet in de minor Next Web zitten (indien mogelijk). Dit omdat deze personen over te veel inside-informatie kunnen beschikken. Dit zal bij de eerste test momenten nog niet een al te grote rol spelen maar bij latere test momenten is het van belang een blanco mening en inzicht te verkrijgen over het product.
 
-Middelen
-Pen en papier
-Silverback (camera registratie)
-Macbook + notule software
-Prototype
-Testplan
+### Middelen
+- Pen en papier
+- Silverback (camera registratie)
+- Macbook + notule software
+- Prototype
+
+### Testplan
 Hier staat beschreven over wat een test minimaal zou moeten bevatten.
 
-Stap 1:  Eerste indruk, algemene bevindingen
+#### Stap 1:  Eerste indruk, algemene bevindingen
 We laten de gebruiker het prototype zien en stellen de vraag : “Wat denk jij dat hiermee mogelijk is?” Deze bevindingen nemen wij mee voor voornamelijk vormgeving aangezien dit de eerste indruk geeft maar zou ook relevant kunnen zijn aan onze naamgeving / product identiteit.
 
-Stap 2: We geven een korte introductie in de vorm van een verhaal over wat ons product is en wat er verwacht wordt van de gebruiker, 
+#### Stap 2: We geven een korte introductie in de vorm van een verhaal over wat ons product is en wat er verwacht wordt van de gebruiker, 
 Dit doen we om de gebruiker een indruk te geven van wat het prototype zou moeten doen en wat ermee mogelijk is, dit werkt als inleiding voor op de test.
 
-Stap 3: Stel opdrachten op, gerelateerd aan de functionaliteiten van het prototype.
+#### Stap 3: Stel opdrachten op, gerelateerd aan de functionaliteiten van het prototype.
 Denk hierbij aan verschillende opdrachten die de functionaliteiten van het prototype op de proef gaan stellen en aan taken waar een gebruiker gewend is en waarschijnlijk vaker zal gaan gebruiken.
 
 Bijvoorbeeld: “Bewerk een tekst een verander de opmaak naar bold, plaats deze tekst vervolgens rechts bovenin”
 
-Stap 4: Observeer de gebruiker en notuleer pauzes / complicaties.
+#### Stap 4: Observeer de gebruiker en notuleer pauzes / complicaties.
 Let bij het testen op de denk- / pauzemomenten van de gebruiker. Kijk bij het uitvoeren van een opdracht naar waar de gebruiker na moet denken en waarom. Noteer vervolgens bij welke opdracht(en) problemen voorkwamen. Als een gebruiker moeite heeft met het uitvoeren van de opdracht dan zal er hoogstwaarschijnlijk iets niet duidelijk zijn, spring niet direct in om te helpen maar observeer en noteer wat er gebeurt, vraag achteraf naar meer details.
 
-Stap 5: Vat de problemen die de gebruikers hebben gehad samen tot een actielijst.
+#### Stap 5: Vat de problemen die de gebruikers hebben gehad samen tot een actielijst.
 Bekijk alle problemen die voorkwamen en beoordeel deze, kijk naar welke problemen meer prioriteit hebben dan anderen en kom zo tot een actielijst. Deze lijst kan direct mee worden genomen in de volgende sprint.
-Paper prototype
 
+## Paper prototype
+
+[afbeelding]
 Paper prototype, afbeelding 1.
 
-Inleiding:
+### Inleiding:
 Het paper prototype is bedoeld om een eerste beeld te krijgen van het product dat wij gaan ontwikkelen. Het kan getest worden bij gebruikers en op die manier kunnen wij snel een globaal beeld krijgen over hoe de gebruiker reageert op het product dat wij gaan bouwen. 
 
-Resultaat:
+### Resultaat:
 - Gebruikers hadden snel een beeld bij het product dat gebouwd gaat worden. 
 - Het voelde aan als spelen met Lego.
 - De algemene reactie was positief na een korte uitleg over wat het product zal moeten gaan worden. 
 - Verder was het nog lastig in te schatten hoe het product daadwerkelijk zal gaan werken omdat het een analoog product is in plaats van een digitaal product.
 
-Conclusie:
+### Conclusie:
 Het volgende prototype zal een digitale variant zijn waarin zo goed mogelijk de basis zal worden gelegd van de USP’s (unique selling points) van het product. 
 
-Concept
+## Concept
+
+[afbeelding]
 
 Concept, afbeelding 2.
 
-Beschrijving
+### Beschrijving
 Vanuit het paper prototype is deze basis ontstaan, de basis waarop elk prototype is gebaseerd, is een werkveld waarin blokken kunnen worden geplaatst en gesorteerd. Dit werkveld bevat verschillende soorten blokken ook wel elementen genoemd. Elementen bestaan uit: tekst, afbeeldingen en lijsten.
 
 Het principe is dat er nieuwe elementen kunnen worden toegevoegd, gesorteerd en vervolgens kunnen worden bewerkt / gevuld. Al deze elementen kunnen in een keer worden opgemaakt door middel van overervende opmaak regels. Deze kunnen op elk moment gewijzigd worden, bijvoorbeeld: Alle koptekst moet 24px groot zijn en de kleur zwart worden.
 
-4. Prototype 1
+## 4. Prototype 1
 
+[afbeelding]
 
 Prototype 1, afbeelding 3.
-Beschrijving
+
+### Beschrijving
 Uitgaande van het concept bestaat dit prototype uit een 4 koloms werkveld met rechts een sidebar met daarin de verschillende elementen die naar het werkveld gesleept kunnen worden. Elk element kan door middel van een klik op het vergroot icoon rechtsonder veranderen van grootte, hier in zijn drie incrementele stappen het element is standaard een kolom, het element kan nooit groter zijn dan vier koloms. Op het moment dat een element vier koloms is en er op vergroten geklikt veranderd het element terug naar een kolom.
 
-Testcase Prototype 1
-Inleiding
+### Testcase Prototype 1
+#### Inleiding
 Dit prototype zal mensen introduceren met het werken met blokken om het document in te delen volgens een vooraf ingesteld vier koloms grid. Wij zijn benieuwd naar hoe intuïtief dit prototype overkomt op de eindgebruiker en waar er onduidelijkheden liggen. Daarom zullen wij simpele taken vragen van de gebruiker zoals het toevoegen van nieuwe elementen en het wijzigen van tekst / opmaak naar eigen smaak.
 
-Testcase
+#### Testcase
 Voor de volgende testcase zijn deze punten van belang:
 
 1. We vragen de gebruiker om nieuwe elementen op het werkveld toe te voegen, hierbij kijken wij naar hoe snel gebruikers dit door hebben.
@@ -1434,7 +1447,8 @@ Voor de volgende testcase zijn deze punten van belang:
 4. Leggen de iconen goed uit waar voor de knop dient?
 5. Wat is de reactie van de gebruiker op het grid systeem?
 6. Algemene indruk / bevindingen.
-Conclusie / Actielijst Prototype 1
+
+### Conclusie / Actielijst Prototype 1
 
 1. Probleem: Meerdere gebruikers hadden moeite met het vergroten en verkleinen van de elementen.
 
@@ -1452,29 +1466,34 @@ Conclusie / Actielijst Prototype 1
 
 4. Actie: De vormgeving van het grid zal worden aangepast zodat deze duidelijker wordt.
 
-5. Prototype 2
+## 5. Prototype 2
+
+[afbeelding]
 
 Prototype 2, afbeelding 4.
-Beschrijving
+
+### Beschrijving
 Dit prototype neemt de verbeteringen mee die aan de hand van de feedback op prototype 1 naar voren zijn gekomen, deze zijn als volgt:
 
-Verbeteringen:
-Het vergroten van blokken kan nu door simpelweg op een blok te klikken.
-De sidebar is kleiner geworden en elementen hebben een kleurcode gekregen, met een schaduw tijdens het slepen is het duidelijk geworden waar een element gaat landen.
-Vormgeving is duidelijker geworden en bevat meer nuancering.
+#### Verbeteringen:
+- Het vergroten van blokken kan nu door simpelweg op een blok te klikken.
+- De sidebar is kleiner geworden en elementen hebben een kleurcode gekregen, met een schaduw tijdens het slepen is het duidelijk geworden waar een element gaat landen.
+- Vormgeving is duidelijker geworden en bevat meer nuancering.
 
-Toevoegingen:
-Het is mogelijk om de inhoud van een element te bewerken door op “edit” te klikken.
-Er is een functie “toggle borders” toegevoegd om aan te geven hoe het grid is ingesteld.
+#### Toevoegingen:
+- Het is mogelijk om de inhoud van een element te bewerken door op “edit” te klikken.
+- Er is een functie “toggle borders” toegevoegd om aan te geven hoe het grid is ingesteld.
 
 
-Testcase Prototype 2
+### Testcase Prototype 2
 1. We vragen de gebruiker om nieuwe elementen op het werkveld toe te voegen, hierbij kijken wij naar hoe snel gebruikers dit door hebben.
 2. Begrijpen gebruikers de functionaliteit van het schalen van blokken door op het blok zelf te klikken?
 3. Zijn de acties die gebruiker moet nemen om de inhoud van een blok te wijzigen duidelijk?
 4. Wat is de reactie van de gebruiker op het grid-system?
 5. Algemene indruk / bevindingen.
-Conclusie / Actielijst Prototype 2
+
+
+### Conclusie / Actielijst Prototype 2
 1. Probleem: Veel gebruikers zijn op zoek naar opties van een element of een soort menu balk waarin alles samengevat staat, sommige proberen met rechtermuisknop zo’n soort menu naar voren te halen.
 
 1. Actie: Er moet meer informatie getoond worden over de blokken en de eigenschappen er van, het design is te minimalistisch op dit moment.
@@ -1487,29 +1506,35 @@ Conclusie / Actielijst Prototype 2
 
 3. Actie: Er moet een andere manier komen voor het toevoegen van elementen.
 
-Prototype 3
+
+## Prototype 3
+
+[afbeelding]
 
 Prototype 3, afbeelding 5.
-Beschrijving
+
+### Beschrijving
 Bij het maken van dit prototype heeft het bewerken van een element de meeste prioriteit, dit prototype bevat een teksteditor met opmaak mogelijkheden. In dit prototype is het toevoegen van elementen aangepast, in plaats van het slepen van nieuwe elementen naar het werkveld zijn de nieuwe elementen nu direct zichtbaar als een doorzichtig blok, op het moment dat de gebruiker op het blok klikt wordt deze toegevoegd aan het werkveld.
 
 Dit is een andere van werken ten opzichte van vorige prototypes en wij zijn benieuwd naar de werking van deze methode. In ons opzicht wordt het indelen van een document nu duidelijker weergegeven.
 
-Verbeteringen:
-Teksteditor toegevoegd met opmaak mogelijkheden (bold, italic, underline).
-Opslaan van tekst mogelijk.
-Vormgeving geeft het kolom weer.
+#### Verbeteringen:
+- Teksteditor toegevoegd met opmaak mogelijkheden (bold, italic, underline).
+- Opslaan van tekst mogelijk.
+- Vormgeving geeft het kolom weer.
 
-Toevoegingen:
-Het toevoegen van nieuwe blokken gaat nu in het werkveld aan de hand van een leeg blok.
-Het wijzigen van de inhoud van een element gebeurt nu in de sidebar in plaats van in het blok zelf.
-Testcase Prototype 3
+#### Toevoegingen:
+- Het toevoegen van nieuwe blokken gaat nu in het werkveld aan de hand van een leeg blok.
+- Het wijzigen van de inhoud van een element gebeurt nu in de sidebar in plaats van in het blok zelf.
+
+### Testcase Prototype 3
 Het bewerken van een blok heeft bij deze test het meeste prioriteit, is dit een logische plek om de inhoud van een blok te wijzigen en zijn er genoeg opmaak mogelijkheden voor tekst? Daarnaast is de nieuwe manier van een element toevoegen aan het werkveld een punt die wij willen behandelen in deze test.
 
 1. We vragen de gebruiker om de inhoud van een blok te wijzigen en op te maken, dit vragen wij om de nieuwe werking van de sidebar te testen.
 2. De elementen moeten worden geactiveerd. Het systeem om nieuwe blokken aan te maken willen we testen op gebruiksgemak.
 3. Het indelen van blokken is duidelijker gemaakt door een schaduw toe te voegen aan het blok dat gesleept wordt, wij willen testen of dit daadwerkelijk zo is.
-Conclusie / Actielijst Prototype 3
+
+### Conclusie / Actielijst Prototype 3
 1. Probleem: De inhoud van het blok wijzigen door middel van de sidebar is niet bij iedereen direct duidelijk, meerdere gebruikers hebben eerst moeten zoeken naar waar de inhoud gewijzigd moet worden, een merendeel verwacht het in het blok zelf.
 
 1. Actie: Dit probleem herkennen wij en we gaan dit terugbrengen naar tekst wijzigen in het blok zelf i.p.v. de sidebar.
@@ -1523,64 +1548,70 @@ Conclusie / Actielijst Prototype 3
 3. Actie: Wij gaan een manier bedenken waarop er een keuze gemaakt kan worden tussen wat voor element je toevoegt.
 
 
-7. Prototype 4 (beta 001)
+## 7. Prototype 4 (beta 001)
+
+[afbeelding]
 
 Beta versie 001, Prototype 4, afbeelding 6.
-Beschrijving
+
+### Beschrijving
 Prototype 4 is gelijk de eerste beta versie van het product, we zijn tot deze beta gekomen na het testen van drie verschillende prototypes, na het verwerken van de resultaten van deze prototypes zijn we tot deze beta versie gekomen.
 
-Verbeteringen:
-De grafische stijl van het prototype is flink verbeterd met een duidelijk onderscheiding tussen het werkveld en de sidebar en er is gekozen voor een steunkleur die de stijl van doctopus definieert.
-De sidebar heeft een nieuwe functionaliteit, het laat standaard de opmaak van het document zien, op het moment dat de gebruiker op een element klikt laat het informatie over het desbetreffende element zien.
-Het direct bewerken van een tekstblok, dit gebeurt niet meer in de sidebar maar direct in het veld zelf.
+#### Verbeteringen:
+- De grafische stijl van het prototype is flink verbeterd met een duidelijk onderscheiding tussen het werkveld en de sidebar en er is gekozen voor een steunkleur die de stijl van doctopus definieert.
+- De sidebar heeft een nieuwe functionaliteit, het laat standaard de opmaak van het document zien, op het moment dat de gebruiker op een element klikt laat het informatie over het desbetreffende element zien.
+- Het direct bewerken van een tekstblok, dit gebeurt niet meer in de sidebar maar direct in het veld zelf.
 
-Toevoegingen:
-De complete opmaak van het document kan worden gewijzigd in de sidebar door middel van een optieveld.
-Het is mogelijk om blokken te verwijderen met de prullenbak tool.
-Het is mogelijk om lege blokken toe te voegen.
-Het lege blok omzetten naar een specifiek element (lijst, text afbeelding) (afbeelding 6).
+#### Toevoegingen:
+- De complete opmaak van het document kan worden gewijzigd in de sidebar door middel van een optieveld.
+- Het is mogelijk om blokken te verwijderen met de prullenbak tool.
+- Het is mogelijk om lege blokken toe te voegen.
+- Het lege blok omzetten naar een specifiek element (lijst, text afbeelding) (afbeelding 6).
+
+[afbeelding]
 
 Het omzetten van een element, afbeelding 7.
 
-Testcase prototype 4
+### Testcase prototype 4
 Voor dit prototype is er gekeken naar hoe de gebruiker om gaat met de vernieuwde functionaliteiten. Belangrijk tijdens het testen van dit prototype is de usability van het product, er komen veel functionaliteiten samen in deze beta, de vraag is of deze goed samenwerken en ook logisch zijn ingedeeld voor gebruikers die voor het eerst met die product werken. Daarvoor hebben wij een testcase beschreven die al deze functionaliteiten behandelt, zodat wij bij het testen/observeren zoveel mogelijk  problemen kunnen achterhalen.
 
 De gebruiker zal een aantal taken krijgen die deze moet uitvoeren. Tijdens het observeren zal duidelijk moeten worden waar voor de gebruiker de haperingen zitten. Tijdens het uitvoeren van de taken zullen alle nieuwe functionaliteiten aan bod komen zodat elke functie kan worden getest op usability.
-Algemene vragen
-Wat is de eerste indruk van het product en wat denk jij dat je ermee kan doen?
+
+### Algemene vragen
+#### Wat is de eerste indruk van het product en wat denk jij dat je ermee kan doen?
 Deze vraag stellen wij voornamelijk voor de grafische stijl en of deze overkomt op de gebruiker.
 En of de functionaliteiten duidelijk zijn naar de gebruiker toe.
 
-Als je iets zou kunnen veranderen binnen het product, wat zou dit dan zijn?
+#### Als je iets zou kunnen veranderen binnen het product, wat zou dit dan zijn?
 Dit vragen wij om achter nieuwe inzichten te komen en ons te laten inspireren door de gebruikers.
 
-Is de testpersoon geïnteresseerd in het product?
+#### Is de testpersoon geïnteresseerd in het product?
 Deze vraag stellen wij om een beeld te krijgen over de vraag die er is naar het product.
 
-1. Maak een nieuw blok. 
-Bij het uitvoeren van deze handeling zullen wij kijken naar hoe lang de gebruiker nodig heeft om de “toevoegen” knop te vinden en of deze zijn functie duidelijk vertolkt.
+	1. Maak een nieuw blok. 
+	Bij het uitvoeren van deze handeling zullen wij kijken naar hoe lang de gebruiker nodig heeft om de “toevoegen” knop te vinden en of deze zijn functie duidelijk vertolkt.
 
-2. Verander het nieuwe blok in een tekst blok
-Hierbij gaan wij kijken naar of de gebruiker op de goede plek zocht naar deze knop en of de iconen die verschijnen duidelijk waren. Door te kijken naar hoe de gebruiker deze handeling uitvoert kunnen wij concluderen of deze handeling logisch is.
+	2. Verander het nieuwe blok in een tekst blok
+	Hierbij gaan wij kijken naar of de gebruiker op de goede plek zocht naar deze knop en of de iconen die verschijnen duidelijk waren. Door te kijken naar hoe de gebruiker deze handeling uitvoert kunnen wij concluderen of deze handeling logisch is.
 
-3. Typ de tekst: 'De kat krabt de krullen van de trap.' in het tekst blok.
-4. Maak de door jou getypte tekst 'dik gedrukt en cursief'
-Dit vragen wij van de gebruiker om te kijken of de tekst editor logisch werkt. We zijn ook benieuwd naar hoe zij deze editor gaan aanroepen.
+	3. Typ de tekst: 'De kat krabt de krullen van de trap.' in het tekst blok.
+	4. Maak de door jou getypte tekst 'dik gedrukt en cursief'
+	Dit vragen wij van de gebruiker om te kijken of de tekst editor logisch werkt. We zijn ook benieuwd naar hoe zij deze editor gaan aanroepen.
 
-5. Vergroot het tekst blok naar een breedte van 3 kolommen.
-De optie voor het vergroten hebben wij nu in de sidebar verwerkt, wij zijn benieuwd of dit een logische plek daarvoor is.
+	5. Vergroot het tekst blok naar een breedte van 3 kolommen.
+	De optie voor het vergroten hebben wij nu in de sidebar verwerkt, wij zijn benieuwd of dit een logische plek daarvoor is.
 
-6. Verander de kleur van de tekst naar blauw.
-Hierbij gaan we wederom kijken naar de sidebar of de opties daar binnen logisch zijn ingedeeld en benoemd.
+	6. Verander de kleur van de tekst naar blauw.
+	Hierbij gaan we wederom kijken naar de sidebar of de opties daar binnen logisch zijn ingedeeld en benoemd.
 
-7. Sla jou wijzigingen op
-Positie van de “opslaan” knop en snelheid van het vinden van deze knop.
+	7. Sla jou wijzigingen op
+	Positie van de “opslaan” knop en snelheid van het vinden van deze knop.
 
-8. Verwijder de titel van dit document.
-Het testen van de “drag and drop” delete functionaliteit en de logica daarvan.
+	8. Verwijder de titel van dit document.
+	Het testen van de “drag and drop” delete functionaliteit en de logica daarvan.
 
-9. Zet de door jou getypte tekst rechtsboven aan de pagina.
-Het testen van de “drag and drop” voor het indelen van de blokken.
+	9. Zet de door jou getypte tekst rechtsboven aan de pagina.
+	Het testen van de “drag and drop” voor het indelen van de blokken.
 
 Conclusie / Actielijst Prototype 4
 
