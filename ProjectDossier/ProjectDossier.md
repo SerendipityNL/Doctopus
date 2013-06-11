@@ -90,7 +90,7 @@ Er is tijdens het project eerst gebruik gemaakt van een werknaam, namelijk DocBu
 De locatie is op de NHL - Hogeschool te Leeuwarden. De project groep werkt voornamelijk in Applab, dit is een lokaal in de NHL. De project leden zijn Vincent Bremer (cohort 2010 - 2011), Edwin ten Wolde (cohort 2011 - 2012), Douwe de Haan (2008 - 2009) en Tjerk Dijkstra (cohort 2011 - 2012). De project groep zal werken aan dit project.
 
 
-![Projectgroep](afbeeldingen/img48.png)
+![Projectgroep](afbeeldingen/img48.jpg)
 Foto van de projectgroep.
 
 ## Projectresultaat
@@ -169,7 +169,7 @@ Elk begin van een sprint wordt er bepaald welke doelen er worden gesteld voor di
 ### Definition of done:
 De definition of done is een document dat wordt op gesteld door de projectgroep. Deze geeft aan wanneer werk daadwerkelijk als ‘klaar’ kan worden beschouwd. Deze wordt voornamelijk door de product owner (Tjerk Dijkstra) bijgewerkt en worden afgetekend. Op deze manier kan elke taak worden gecheckt door de desbetreffende persoon zodat alle producten die daadwerkelijk als af worden beschouwd ook echt af zijn.
 
-Voor de gehele D.o.D. zie bijlage 11.5.
+Voor de gehele D.o.D. zie bijlage 4.
 
 ### Quality Monitoring
 Om de kwaliteit te waarborgen en er voor te kunnen zorgen dat de project groep in staat is om aan de kwaliteitseisen te kunnen voldoen zal de kwaliteit moeten worden bewaakt.
@@ -191,73 +191,84 @@ Er zal nog een methode gezocht worden om het testen van het product goed uit te 
 
 ## Projectorganisatie:
 ### Project organisatie en betrokken partijen
-#### Stakeholders
-NHL Hogeschool Leeuwarden:
+### Stakeholders
+#### NHL Hogeschool Leeuwarden:
 Binnen de NHL zijn de volgende groepen betrokken bij het project.
-Het Kenniscentrum
+
+#### Het Kenniscentrum
 Vanuit het kenniscentrum is Jolanda Postma het aanspreekpunt.
 
-![stakeholder analyse](afbeeldingen/img47.png)
+![stakeholder analyse](afbeeldingen/img47.jpg)
 stakeholder analyse.
 
 ### Betrokken partijen
 Docenten en Tutor:
 De docenten en tutor voor dit project hebben als rol, hulp en informatie te bieden op momenten dat de project groep hier baat bij heeft.
 
-Docent programmeren en tutor van de projectgroep, Raymond van Dongelen.
-Docent programmeren, Dirk Sierd de Vries.
-Docent usability, Sjef Smeets.
-Docent design, Jan-Wessel Hovingh.
-Docent project management, Guido Swildens.
-Docente project management, Jolanda Postma.
-Medestudenten binnen de minor The Next Web:
+- Docent programmeren en tutor van de projectgroep, Raymond van Dongelen.
+- Docent programmeren, Dirk Sierd de Vries.
+- Docent usability, Sjef Smeets.
+- Docent design, Jan-Wessel Hovingh.
+- Docent project management, Guido Swildens.
+- Docente project management, Jolanda Postma.
+
+#### Medestudenten binnen de minor The Next Web:
 Deze groep is niet direct betrokken bij het project zelf. Wel maken ze deel uit van een kennis bron waaruit informatie gehaald kan worden. Deze groep kan hulp nodig hebben van de Projectgroep en anders om kan natuurlijk ook.
-Projectgroep
+
+### Projectgroep
 De project groep is samengesteld door de groep zelf. Het is een groep studenten die elkaar gevonden heeft in het beschikken over veel motivatie en verschillende expertises die op elkaar aansluiten.
-Douwe de Haan
-Taak binnen het project:  Programmeur.
-Gegevens:                          	
-Naam:                                   	Douwe
-Achternaam:                    	de Haan
-Adres:                                   	van Nispensingel 1
-Postcode                            	8016 LM
-Woonplaats:                    	Zwolle
-Telefoon:                            	+316 25 14 64 23
-E-mail:                                  	douwedehaan@live.nl
-Geboortedatum:          	05-03-1990
-Edwin ten Wolde
-Taak binnen het project:  Scrum master en front-end developer.
-Gegevens:                          	
-Naam:                                   	Edwin
-Achternaam:                    	ten Wolde
-Adres:                                   	Johan Winklerwei 393
-Postcode                            	8915 EW
-Woonplaats:                    	Leeuwarden
-Telefoon:                            	+ 316 11 58 15 54
-E-mail:                                  	ed.wolde@gmail.com  
-Geboortedatum:          	27-07-1990
-Tjerk Jippe Dijkstra
-Taak binnen het project:  Project owner en programmeur.
-Gegevens:                          	
-Naam:                                   	Tjerk Jippe
-Achternaam:                    	Dijkstra
-Adres:                                   	Zonstraat 9
-Postcode                            	9801 VW
-Woonplaats:                    	Zuidhorn
-Telefoon:                            	+316 15 50 25 30
-E-mail:                                  	tjerk.dijkstra@gmail.com        	
-Geboortedatum:          	09-07-1988
-Vincent Bremer
-Taak binnen het project:  Programmeur.
-Gegevens:                    	
-Naam:                                   	Vincent
-Achternaam:                    	Bremer
-Adres:                                   	Valkstraat 33
-Postcode                            	8605 AV
-Woonplaats:                    	Sneek
-Telefoon:                            	+316 50 49 09 16
-E-mail:                                  	vbremer89@gmail.com             	
-Geboortedatum:          	09-02-1989
+
+#### Douwe de Haan
+
+	Taak binnen het project: Programmeur.
+
+	Naam:                Douwe
+	Achternaam:          de Haan
+	Adres:               van Nispensingel 1
+	Postcode             8016 LM
+	Woonplaats:          Zwolle
+	Telefoon:            + 316 25 14 64 23
+	E-mail:              douwedehaan@live.nl
+	Geboortedatum:       05-03-1990
+	
+#### Edwin ten Wolde
+	
+	Taak binnen het project:  Scrum master en front-end developer.
+	                          	
+	Naam:                Edwin
+	Achternaam:          ten Wolde
+	Adres:               Johan Winklerwei 393
+	Postcode          	 8915 EW
+	Woonplaats:          Leeuwarden
+	Telefoon:            + 316 11 58 15 54
+	E-mail:              ed.wolde@gmail.com  
+	Geboortedatum:       27-07-1990
+
+#### Tjerk Jippe Dijkstra
+	
+	Taak binnen het project:  Project owner en programmeur.
+	                       	
+	Naam:                Tjerk Jippe
+	Achternaam:          Dijkstra
+	Adres:               Zonstraat 9
+	Postcode             9801 VW
+	Woonplaats:          Zuidhorn
+	Telefoon:            + 316 15 50 25 30
+	E-mail:              tjerk.dijkstra@gmail.com        	
+	Geboortedatum:       09-07-1988
+
+#### Vincent Bremer
+	
+	Taak binnen het project:  Programmeur.
+
+	Naam:                Vincent
+	Achternaam:          Bremer
+	Adres:               Valkstraat 33
+	Postcode             8605 AV
+	Woonplaats:          Sneek
+	Telefoon:            + 316 50 49 09 16
+	E-mail:              vbremer89@gmail.com             	
+	Geboortedatum:       09-02-1989
 
 ## Project locatie
 Het project vind plaats op de NHL Hogeschool Leeuwarden, binnen de opleiding Communication Multimedia Design. Binnen deze opleiding wordt gewerkt met minors waarbij het project zal vallen onder de minor The Next Web. 
@@ -285,36 +296,36 @@ Zoals de naam al zegt zal de Daily Scrum elke werkdag plaats vinden. Deze wordt 
 
 ## Regels en afspraken
 ### Projectgroep werkafspraken:
-Voor alle regels en afspraken die de projectgroep heeft gemaakt en naleeft is het samenwerkingscontract toegevoegd in de bijlage (zie bijlage 11.2 Samenwerkingscontract).
+Voor alle regels en afspraken die de projectgroep heeft gemaakt en naleeft is het samenwerkingscontract toegevoegd in de bijlage (zie bijlage 1 Samenwerkingscontract).
 
 ### Software
 De groep zal een groot aantal tools gaan gebruiken om het product te kunnen ontwikkelen. De tools die gebruikt zullen gaan worden zijn met zorg uitgekozen door de groep en door het afstemmen van deze tools zal voorkomen worden dat er problemen gaan ontstaan met het synchroniseren van bestanden die door verschillende personen zijn ontwikkeld.
 
-Google Drive:
+**Google Drive**
 
 Google Drive is de plaats waar de groep gezamenlijke documenten tegelijkertijd kan gaan bewerken. Omdat Google Drive (als het via internet gebruikt wordt) minder handig is om snel (andere bestanden dan documentatie) te delen is de keuze gemaakt om Google Drive te gebruiken i.c.m. Dropbox.
 
-Dropbox:
+**Dropbox**
 
 Dropbox wordt gebruikt om snel bestanden te kunnen delen met groepsleden. Het is handig als back-up tool en om alle groepsleden toegang te geven tot gemaakte documenten en bestanden. Een minpunt is dat er niet gezamenlijk aan dezelfde documenten (tegelijkertijd) gewerkt kan worden. Dit probleem vangen we af door Dropbox te gebruiken i.c.m. Google Drive.
 
-Github:
+**Github**
 
 Wordt gebruikt als gezamenlijke programmeer omgeving.
 
-Sublime Text 2:
+**Sublime Text 2**
 
 Sublime text 2 zal worden gebruikt voor het verwerken van codes en scripts.
 
-Pivitol tracker:
+**Pivitol tracker**
 
 Pivitol tracker is een tool die gebruikt gaat worden i.c.m. de scrum techniek. Met deze tool kan de groep de voortgang van het  project bijhouden. Ook geeft het inzicht in de taken die nog moeten gebeuren en de hoeveelheid tijd die deze kunnen gaan kosten. Het is een hulpmiddel die er voor moet zorgen dat het project overzichtelijk blijft en tijd moet gaan opleveren die belangrijk is voor het product.
 
-Office Word:
+**Office Word**
 
 Dit programma wordt gebruikt voor persoonlijke documentatie. Het is namelijk niet mogelijk gezamenlijk aan documentatie te kunnen werken. Maar omdat het project gaat over het verbeteren van documentatie en tools is het idee ontstaan om in meerdere (veel gebruikte) programma’s te werken zodat er bij de project ook een goed beeld kan ontstaan over eventuele mankementen aan deze programma’s maar ook aan de goede punten die deze tools hebben.
 
-Office Excel:
+**Office Excel**
 
 Dit programma wordt gebruikt om lijsten bij te houden binnen de groep voor onder andere afwezigheid, overzichten van planningen en kosten die gemaakt worden voor het project.
 
@@ -322,52 +333,56 @@ Dit programma wordt gebruikt om lijsten bij te houden binnen de groep voor onder
 Stroken planning voor gehele periode:
 Het project wordt een iteratief proces waarbij in elke sprint wordt gewerkt aan een functioneel en testbaar prototype. Doelen worden aan het begin van een sprint vastgesteld en aan het eind van elke sprint zal er worden getest of het prototype voldoet aan de verwachtingen en eisen die van te voren gesteld zijn. De feedback die tijdens het testen terugkomt zal worden gebruikt en meegenomen in de volgende sprint om het eindproduct van een zo hoog mogelijke kwaliteit te kunnen voorzien.
 
-![planning](afbeeldingen/img46.png)
+![planning](afbeeldingen/img46.jpg)
 
-Speciale momenten
-Sprints:
-Sprint 0: Begint op Maandag 25 Februari 2013
-Sprint 1: Begint op Maandag 11 Maart 2013
-Sprint 2: Begint op Maandag 25 Maart 2013
-Sprint 3: Begint op Maandag 8 April 2013
-Sprint 4: Begint op Maandag 22 April 2013       	*Deze sprint bevat de Mei vakantie
-Sprint 5: Begint op Maandag 13 Mei 2013
-Sprint 6: Begint op Maandag 27 Mei 2013
+#### Speciale momenten
 
-Playtests:
-Playtest 1: Vind plaats op Donderdag 7 Maart 2013 om 13:00 uur
-Playtest 2: Vind plaats op Donderdag 21 Maart 2013 om 13:00 uur    * Dit is een Playtest Extra
-Playtest 3: Vind plaats op Donderdag 4 April 2013 om 13:00 uur
-Playtest 4: Vind plaats op Woensdag 8 Mei 2013 om 13:00 uur
-Playtest 5: Vind plaats op Donderdag 23 Mei 2013 om 13:00 uur
-Playtest 6: Vind plaats op Donderdag 6 Juni 2013 om 13:00 uur       * Dit is een Playtest Extra
-Feestdagen en vakanties die binnen de werkdagen vallen:
-Tweede paasdag: Vind plaats op Maandag 1 April 2013
-Meivakantie: Vind plaats vanaf Maandag 29 April 2013 t/m Vrijdag 3 Mei 2013
-Koninginnedag: Vind plaats op Dinsdag 30 April 2013
+	Sprints
 
-Projectgroep excursie Lissabon: 
-Vind plaats vanaf maandag 6 mei 2013 t/m vrijdag 10 mei 2013
+	Sprint 0: 		Begint op Maandag 25 Februari 2013
+	Sprint 1: 		Begint op Maandag 11 Maart 2013
+	Sprint 2: 		Begint op Maandag 25 Maart 2013
+	Sprint 3: 		Begint op Maandag 8 April 2013
+	Sprint 4: 		Begint op Maandag 22 April 2013 * Deze sprint bevat de Mei vakantie
+	Sprint 5: 		Begint op Maandag 13 Mei 2013
+	Sprint 6: 		Begint op Maandag 27 Mei 2013
 
-Hemelvaartsdag: Vind plaats op donderdag 9 Mei 2013
-Pinksteren: Vind plaats op maandag 20 Mei 2013
-Afstemmingsgesprek:
-Het afstemmingsgesprek valt in            	week 21
+	Playtests
 
-Deadlines:
-Deadline tussen Assessment is op      	28 maart 2013
-Deadline eind Assessment is op            	12 juni 2013
+	Playtest 1: 	Vind plaats op Donderdag 7 Maart 2013 om 13:00 uur
+	Playtest 2: 	Vind plaats op Donderdag 21 Maart 2013 om 13:00 uur * Dit is een Playtest Extra
+	Playtest 3: 	Vind plaats op Donderdag 4 April 2013 om 13:00 uur
+	Playtest 4: 	Vind plaats op Woensdag 8 Mei 2013 om 13:00 uur
+	Playtest 5: 	Vind plaats op Donderdag 23 Mei 2013 om 13:00 uur
+	Playtest 6: 	Vind plaats op Donderdag 6 Juni 2013 om 13:00 uur * Dit is een Playtest Extra
 
-Assessments:
-Het tussen assessment is in                     	week 15 of 16
-De individuele assessments zijn in      	week 25
-Het eind assessment is in                          	week 26 of 27
+#### Feestdagen en vakanties die binnen de werkdagen vallen:
+
+	Tweede paasdag: Vind plaats op Maandag 1 April 2013
+	Meivakantie: 	Vind plaats vanaf Maandag 29 April 2013 t/m Vrijdag 3 Mei 2013
+	Koninginnedag:  Vind plaats op Dinsdag 30 April 2013
+
+	Projectgroep excursie Lissabon: 
+	Vind plaats vanaf maandag 6 mei 2013 t/m vrijdag 10 mei 2013
+
+	Hemelvaartsdag: Vind plaats op donderdag 9 Mei 2013
+	Pinksteren: 	Vind plaats op maandag 20 Mei 2013
+
+	Afstemmingsgesprek:
+	Het afstemmingsgesprek valt in week 21
+
+	Deadlines:
+	Deadline tussen Assessment is op 28 maart 2013
+	Deadline eind Assessment is op 12 juni 2013
+
+	Assessments:
+	Het tussen assessment is in week 15 of 16
+	De individuele assessments zijn in week 25
+	Het eind assessment is in week 26 of 27
 
 ## Kosten en baten
 ### Velocity project groep:
 Het project zou in eerste instantie gebruik maken van Pivotal na verloop van tijd hebben we gemerkt dat dit niet ideaal werkt omdat het een omslachtig programma is waar een hoop extra werk achter vandaan komt voor de project leden. Dit zou dus sneller moeten kunnen. Daarna is overgestapt op een eigen uren schema bijgehouden in Google Drive ook dit bleek niet ideaal te zijn. Het bleef een online programma wat snel vergeten wordt in te vullen waar door de informatie niet compleet genoeg is. Daarna is het scrumboard aan de muur gehangen het bijhouden van uren blijft een hekelpunt maar er wordt in elk geval meer mee gedaan dan de online varianten. Hierdoor hebben we deze manier van werken behouden.
-
-![velocity](afbeeldingen/img53.png)
 
 ### Materiaal
 Materiaal dat nodig is tijdens het project zal voornamelijk papier zijn en schrijfgerij zijn.
@@ -376,16 +391,14 @@ Misschien dat er boeken zullen moeten worden aangeschaft voor bepaalde research.
 En eventuele bibliotheek kosten zullen misschien ook worden gemaakt.
 
 ### Kosten overzicht
-Voor een overzicht van de kosten die gemaakt moeten en gaan worden tijdens dit project is de begroting toegevoegd in de bijlage. (Zie bijlage 11.3 Begroting).
-
-![kosten](afbeeldingen/img54.png)
+Voor een overzicht van de kosten die gemaakt moeten en gaan worden tijdens dit project is de begroting toegevoegd in de bijlage. (Zie bijlage 2 Begroting).
 
 ## Risico analyse
 ### Risico’s
 Tijdens het proces zijn er verschillende risico’s die het behalen van de doelstelling kunnen beïnvloeden.  Door het in kaart brengen van deze risico’s en het vooraf beschrijven van de maatregelen kan er zo effectief mogelijk worden omgesprongen op het moment dat een risico werkelijkheid zal worden.
 
 ### Analyse risico’s tabel
-Voor alle risico’s die in kaart zijn gebracht is de risico analyse toegevoegd in de bijlage (zie bijlage 11.4 Risico Analyse). Hieronder staan alleen de risico’s met een waardering hoog of gemiddeld.
+Voor alle risico’s die in kaart zijn gebracht is de risico analyse toegevoegd in de bijlage (zie bijlage 3 Risico Analyse). Hieronder staan alleen de risico’s met een waardering hoog of gemiddeld.
 
 ![risico tabel](afbeeldingen/img53.png)
 
@@ -403,12 +416,9 @@ De externe validatie kan niet worden gevonden of ziet af van zijn/ haar taak. In
 ### Kwaliteit
 Het product is niet genoeg afgestemd op de doelgroep waardoor deze niet aanslaat of gebruikt gaat worden. Dit zou betekenen dat het project voor een deel gefaald is omdat het doel is om voor deze groep een tool te bouwen die ze willen gebruiken boven andere tools die al op de markt zijn. Echter is er in dit geval wel een tool aanwezig dus als school opdracht is het project wel geslaagd maar zonder het beoogde resultaat.
 
-## Bijlage(s)
-## Work Break Down Structure
+## Bijlagen
 
-
-
-## Samenwerkingscontract
+## 1. Samenwerkingscontract
 ### Projectgroep: DocBuilders
 Projectleden:
 
@@ -448,116 +458,15 @@ Werk:
 
 Edwin ten Wolde         Douwe de Haan         Tjerk Jippe Dijkstra      Vincent Bremer
 
-## Begroting
+## 2. Begroting
 
-Benodigde materialen
-Kosten
-Hoe vaak
-Papier
-2,-
-eenmalig
-Pennen
-2,-
-eenmalig
-Stiften
-2,-
-eenmalig
-Lijm
-1,-
-eenmalig
-Hosting (virtual private server)
-29,-
-per maand
-Domeinnaam
-1,-
-per maand
-Scrum logboek
-…
-eenmalig
+![begroting](afbeeldingen/img54.png)
 
-## Risico Analyse
-Risico’s
-Omschrijving
-Waarschijnlijkheid
-Impact
-Waardering
-Binnen projectgroep
-Projectleden hebben behaalde punten al binnen maar nog niet verkregen
-4
-4
-Hoog
- 
-Groep heeft niet voldoende ervaring en kennis om het project af te ronden
-1
-4
-Gemiddeld
- 
-Te weinig communicatie richting stakeholders
-1
-4
-Gemiddeld
- 
-Groepsleden houden zich niet aan de opgestelde groepsregels
-2
-1
-Laag
- 
-Documentatie wordt niet tijdig bijgewerkt
-2
-2
-Laag
- 
-Er is te veel gepland in te weinig tijd
-2
-2
-Laag
- 
-Het aantal gestelde milestones is te weinig
-1
-2
-Laag
-Budget
-Groep moet kosten maken om het product tot een goed einde te brengen
-1
-2
-Laag
-Extern
-Er is geen groep die belang heeft bij het product
-2
-4
-Hoog
- 
-Gevonden externe validatie ziet af van deze taak
-2
-4
-Hoog
- 
-Niet in staat externe validatie te vinden
-1
-4
-Gemiddeld
-Kwaliteit
-Het product is door slechte afstemming met de doelgroep niet genoeg op de wensen aan gepast en onbruikbaar voor deze groep
-2
-4
-Hoog
- 
-Scrum master en project owner hebben geen goede samenwerking of genoeg kennis en zijn niet in staat samen het project in goede banen te leiden
-2
-4
-Hoog
- 
-Er is te veel onduidelijkheid over het resultaat van het product
-1
-3
-Laag
- 
-Er zijn niet genoeg middelen om het product tot een goed eindproduct te maken
-1
-3
-Laag
+## 3. Risico Analyse
 
-## Definition of done
+![risico analyse](afbeeldingen/img55.png)
+
+## 4. Definition of done
 **Documentatie**
 
 - Documentatie moet volledig in het Engels worden geschreven.
@@ -582,6 +491,7 @@ Laag
 - De lagen in PSD's moeten allemaal een naam hebben en indien er meer dan 20 lagen zijn moeten deze worden verdeeld over mappen.
 - Bestandsnamen moeten logisch zijn en mag geen spaties bevatten (test_bestand.psd)
 
+![concepting voorblad](afbeeldingen/img23.jpg)
 
 # Concepting
 
@@ -600,7 +510,8 @@ De ambitie is om de doelgroep een tool aan te bieden die meer structuur biedt da
 ## Concept lagen
 Om een beter beeld te krijgen over hoe ons concept in elkaar steekt, hebben wij het concept verdeeld over verschillende concept lagen. In deze lagen benoemen wij waar het concept voor staat, waar het in gelooft en waar het hart ligt. De methode is onder andere geïnspireerd door de “The Golden Circle (1)”.
 
-[afbeelding]
+![conceptlagen](afbeeldingen/img22.png)
+
 ### Het hart
 Dit concept gelooft in een plek waarbij het maken van een tekst document volledig intuïtief kan verlopen, geen enkele gebruiker hoeft na te denken over welke handeling nodig is om iets te bereiken. Deze handelingen zullen aanvoelen als logisch. Dit product zal werken als tool die de gebruiker helpt en ondersteunt, het zal structuur brengen aan het opbouwen van een document en het opmaken daarvan.
 
@@ -612,9 +523,11 @@ Het doel is om een tool te ontwikkelen waarin de gebruiker zonder frustratie een
 
 ### De vorm
 
-[afbeelding]
-
-Afbeelding concept ontwikkeling van de pitch pagina
+![devorm](afbeeldingen/img37.jpg)
+![devorm](afbeeldingen/img38.jpg)
+![devorm](afbeeldingen/img39.jpg)
+![devorm](afbeeldingen/img40.jpg)
+Afbeeldingen concept ontwikkeling van de pitch pagina
 
 Om het concept visueel te maken hebben we gekozen voor een pitch pagina. Binnen deze pagina is het de bedoeling dat de kern van het concept wordt uitgelegd. Daarnaast is het van belang om de boodschap zo goed mogelijk over te brengen. De pagina is in vier stappen verdeeld. De eerste stap is de kern van het concept zo kort en pakkend mogelijk uitgelegd. Stap twee is een iets meer uitgebreide uitleg over wat het probleem is waarmee wij zitten en geloven te kunnen oplossen. Bij stap drie worden de pluspunten zo kort en pakkend mogelijk behandeld. Deze wordt gevolgd door stap vier het inschrijven voor de mail lijst. 
 
@@ -624,16 +537,16 @@ Uiteindelijk gaat het concept richting een tool, deze moet ondersteunen en frust
 ## Concept presentatie
 Op de pitch pagina staan de kernwaarden van ons product beschreven en kunnen potentiële gebruiker inschrijven voor een beta lijst.
 
-[afbeelding]
-Afbeelding 1: De slogan voor op de pitch pagina
+![concept](afbeeldingen/img34.png)
 
+Afbeelding 1: De slogan voor op de pitch pagina
 Het doel van deze pitch pagina is om de interesse bij mensen te wekken voor het product wat wij willen gaan maken, daarnaast willen wij ook meten in hoeverre mensen geïnteresseerd zijn in een product zoals deze door middel van het inschrijfformulier.
 
-[afbeelding]
+![concept](afbeeldingen/img36.png)
 Afbeelding 2, de vergelijking tussen de huidige tools en de ambitie van onze.
 
-[afbeelding]
-afbeelding 3: hierbij wordt puntsgewijs aangewezen wat er mist in de huidige tools en wat onze tool wel bied.
+![concept](afbeeldingen/img35.png)
+afbeelding 3: hierbij wordt puntsgewis aangewezen wat er mist in de huidige tools en wat onze tool wel bied.
 
 
 ## Naamgeving concept
@@ -648,7 +561,7 @@ De methode begint met het verdelen van een vel papier over 36 vakken in elk vak 
 - Fusie
 - Samenwerken
 
-[afbeelding]
+![naamgeving](afbeeldingen/img24.png)
 
 Vanuit deze concepting sessie zijn wij verder gegaan met het ontwikkelen van de naam. Om tot een goede naam te komen zijn er verschillende vragen die wij onszelf gesteld hebben:
 
@@ -717,10 +630,13 @@ Uiteindelijk is er er gekozen voor de naam Doctopus, deze naam valt samen met de
 Het slepen en indelen van blokken kan op een ludieke wijze worden uitgebeeld door middel van tentakels die met zuignappen op een speelse wijze een document indelen.
 
 
-
 ## Bronnenlijst
 (1). 9-06-2013, The Golden Circle
 http://www.eurib.org/fileadmin/user_upload/Documenten/PDF/Positionering/n_-_De_Golden_Circle.pdf
+
+
+
+![functioneel ontwerp voorblad](afbeeldingen/img29.jpg)
 
 # Functional design
 
@@ -787,12 +703,12 @@ The application won’t be able to export the document to other formats, like tx
 
 
 ## Sitemap
-[afbeelding]
+![sitemap](afbeeldingen/img11.png)
 
 ## Pages
 ### Homepage
 
-[afbeelding]
+![homepage](afbeeldingen/img2.png)
 
 The user goes to the website where information is given about DocBuilder in the form of some screenshots and an screencast. When the user visits the website and isn’t logged in, the user is shown some information about DocBuilder and a screencast explaining what DocBuilder is. Registered users can fill in their username plus password and login, while new users can click on a link to register a new account.
 
@@ -800,25 +716,25 @@ The purpose of this page is the inform the user about the application and convin
 
 ### Register new account
 
-[afbeelding]
+![register](afbeeldingen/img12.png)
 
 When the user has clicked on the link to register a new account, the users gets redirected to the register page. When all fields are valid, the user receives a verification e-mail with a unique link. Before logging in the user needs to verificate it’s account by clicking on this link.
 
 ### Logging in
 
-[afbeelding]
+![loggin](afbeeldingen/img20.png)
 
 On the homepage there is a login form where the user can login with email and password. When the email and password match the user will be redirected to the document management page. When they don’t match, the user will get an error message and needs to try to login again.
 
 ### Forgot password
 
-[afbeelding]
+![password](afbeeldingen/img14.png)
 
 When the user forgets his password, there is a link near the login form on which the user reset their password. When the user clicks this link a reset password form appears and the user must enter the email used when registered. If the entered email is valid, a password reset link will be sent to the user. After clicking on this link to user is able to enter a new password.
 
 ### Manage profile
 
-[afbeelding]
+![profile](afbeeldingen/img15.png)
 
 When a user is logged in, there is an option to change the profile. On this page its possible to change the following fields or settings:
 
@@ -827,30 +743,30 @@ When a user is logged in, there is an option to change the profile. On this page
 - Email
 - Avatar (Gravatar or a custom avatar)
 
-[afbeelding]
-
 ### Sections
+![navbar](afbeeldingen/img4.png)
+
 On the green part of the wireframe are the sections. These sections can be added, removed and sorted by order. These sections can be seen as chapters in a book, each chapter could contain multiple pages of content. Each section has a title and a order, each section can be sorted to be a subsection of another section.
 
 ### Document work area
 This area contains a four column grid on which blocks can be dragged and dropped. The blocks snap to the grid and can be resized from one column to four columns with a click, everytime the user clicks on a block it will grow one column in size, if the block reaches four columns it will resize back to one column.
 
-[afbeelding]
+![dragndrop](afbeeldingen/img1.png)
 
 ### Editing a block
 Each block can be edited once they are inside the document work area by hovering with the cursor on the block that needs to be edited. An edit button will then appear and the user can change the content of the block. Once inside the editing mode of a block its block, its possible to do some simple formatting and change the size of the block (S, M, L, XL) this stands for the columns (1-4).
 
-[afbeelding]
+![editblock](afbeeldingen/img13.png)
 
 ### Image handling
 If the user adds an image block to the document work area, it is possible to upload an image into that block by clicking on the upload button inside that block, the image will resize according to the grid.
 
-[afbeelding]
+![imagehandle](afbeeldingen/img18.png)
 
 ### Navigation bar
 The upper right corner of the navigation bar contains the login information, the user has the possibility to log out and go to the profile page. In the middle of the navigation bar there is dialog that reminds the user when the document was last saved.
 
-[afbeelding]
+![navigationbar](afbeeldingen/img3.png)
 
 ### Elements
 Elements are blocks that can contain the following: 
@@ -861,18 +777,15 @@ Text (blue)
 
 Image(red)
 
-[afbeelding]
-
-[afbeelding]
-
-[afbeelding]
-
+![list-item-yellow](afbeeldingen/img5.png)
+![list-item-blue](afbeeldingen/img6.png)
+![list-item-red](afbeeldingen/img7.png)
 
 These blocks can be dragged and dropped to the document work area where they will snap to a grid. 
 
 ### Manage documents
 
-[afbeelding]
+![manage documents](afbeeldingen/img10.png)
 
 When the user is logged in and visits the website, he gets redirected to the “Manage documents” page. On this page the user can search for documents he owns or are shared with this user. There are a view links which on this page:
 
@@ -892,7 +805,7 @@ The entire document is saved automatically after one minute, after every edit th
 
 #### Styling the document
 
-[afbeelding]
+![styling](afbeeldingen/img19.png)
 
 The user has the possibility to add a style for the entire document at the styling window. The elements the user can style are as follows:
 
@@ -906,8 +819,9 @@ The user has the possibility to add a style for the entire document at the styli
 
 Everytime the user changes a style it will be applied to the whole document and is automatically saved.
 
-
 ### Sharing the document
+
+![sharing](afbeeldingen/img8.png)
 
 #### Change sharing options
 The user can change the sharing options for the document at any time, when pressing the share button a popup will appear in which the user can manage the rights for the current users and has the possibility to add/remove users, this will work the same as sending an invitation.
@@ -923,8 +837,7 @@ When multiple users are working together on one document its possible to communi
 #### Editing a document with multiple users
 Its possible to work with multiple users on one document, when a user is editing a block its not possible for other users to edit that block as well. It will appear locked, when the user is done editing the block it is saved and unlocked. This means only one user at a time can edit one block.
 
-
-
+![grafisch ontwerp](afbeeldingen/img32.jpg)
 # Grafisch Ontwerp
 
 ## Inleiding
@@ -932,7 +845,7 @@ Het grafisch document is onderdeel van het project Doctopus. In het document is 
 
 ## De lay-out van de applicatie
 
-[afbeelding]
+![layout](afbeeldingen/img30.png)
 
 ### 1. Document informatie
 Op deze plek zal de gebruiker alle informatie vinden over het document waarin deze zich bevind. Deze beweegt
@@ -967,7 +880,7 @@ Een tekstblok (of ander element) wordt binnen het werkveld weergegeven. Er zijn 
 
 ## De stijl van Doctopus
 
-[afbeelding]
+![layout](afbeeldingen/img31.png)
 
 ### 1. Kleur keuze/ gebruik:
 Voor het product Doctopus is gekozen voor een donkere interface. Dit is gedaan om de ogen van de gebruiker zo veel mogelijk te ontlasten van het felle licht dat uit het beeldscherm schijnt. Daarnaast ligt hierdoor de focus op het lichtere element en trekt de rest van de interface niet teveel aandacht. Het werkveld is echter wel wit gebleven omdat dit papier simuleert, het is anders voor de gebruiker anders lastig in te schatten hoe het document uit te printer zal gaan komen.
@@ -984,7 +897,7 @@ Het gebruik van de lettertypes zal voor alle elementen verschillen, belangrijkst
 
 ## Het logo van Doctopus
 
-[afbeelding]
+![logo](afbeeldingen/img26.png)
 
 ### Gebruik
 Het logo bestaat uit twee delen, het icoon/ beeldmerk en de tekst. Deze kunnen zowel in combinatie met elkaar als los van elkaar gebruikt worden. In dien mogelijk zou het logo zo veel mogelijk gebruikt moeten worden met de groene kleur die Doctopus hanteert, echter kan hier van afgeweken worden als hiermee het doel (waarvoor het logo gebruikt gaat worden) in deze specifieke situatie anders niet zal worden bereikt. De mening van een ervaren designer kan hierin een (belangrijke) rol spelen.
@@ -1008,6 +921,8 @@ De minimale scherm resolutie is 800 bij 600 pixels.
 ### Browsers:
 De browser moet HTML5 en CSS3 compatibel zijn.
 
+![voorblad technisch ontwerp](afbeeldingen/img50.jpg)
+
 # Technical design
 ## Introduction
 In this part of the project documentation you will find the technical specifications of the Doctopus project. Here is described what is needed to run the application and how the system is build. This includes an installation guide, conventions, version history, database layout and some other relevant technical information.
@@ -1017,14 +932,15 @@ This document is chronologically structured, this means that if you follow the b
 While making this document, the application is not finished. This is noted throughout the document where this applies.
 
 ## Specifications
-System requirements:	Windows, Linux, OS X
-Installed software:		Node.js (http://nodejs.org/)
-				MongoDB 
-Required modules:		ExpressJS (http://expressjs.com/)
-				Socket.IO (http://socket.io/)
-				Mongoose (http://mongoosejs.com/)
-				Jade (http://jade-lang.com)
-Validator (https://github.com/chriso/node-validator)
+	System requirements:	Windows, Linux, OS X
+	Installed software:		Node.js (http://nodejs.org/)
+							MongoDB 
+
+	Required modules:		ExpressJS (http://expressjs.com/)
+							Socket.IO (http://socket.io/)
+							Mongoose (http://mongoosejs.com/)
+							Jade (http://jade-lang.com)
+							Validator (https://github.com/chriso/node-validator)
 
 ## Hosting
 There are a few free options regarding the hosting of the application including Heroku, Nodester and Nodecloud. Another option could be hosting on a Virtual Private Server which has to be configured and installed for running the Node.js.
@@ -1051,7 +967,7 @@ Cons:  Load balancing / traffic handling, services like Heroku and Nodester have
 
 ## Technical layers
 
-[afbeelding]
+![tech layers](afbeeldingen/img21.png)
 
 We will use Node.js for handling all our requests which will happen at the client side. Between the client side and the database are several Node.js modules which take care of the data handling and basic structure. 
 
@@ -1059,12 +975,13 @@ We will use Node.js for handling all our requests which will happen at the clien
 Our application will consist of mostly front-end Javascript functions (jQuery) which has an open connection with the server via a socket, which updates the database sending JSON data. We use NodeJS and SocketIO because this structure provides instant communication between front-end and server-side Javascript.
 
 Installation
-1. Download Node.js from http://www.nodejs.org/
-2. Install Node.js
-3. Install the module “nodemon” by executing the command:
-On Windows: “npm install nodemon”
-On Linux and OS X: “sudo npm install nodemon”
-4. Install MongoDB
+
+	1. Download Node.js from http://www.nodejs.org/
+	2. Install Node.js
+	3. Install the module “nodemon” by executing the command:
+	On Windows: “npm install nodemon”
+	On Linux and OS X: “sudo npm install nodemon”
+	4. Install MongoDB
 
 ## Technical description
 ### What is Node.js?
@@ -1245,14 +1162,11 @@ The model filename is written in singular and lowercase. For example:
 
 ### Database design
 
-![Database design](afbeeldingen/img9.png)
+![Database design](afbeeldingen/img16.png)
 
 ## Directory structure
 
 ![Directory Structure](afbeeldingen/img9.png)
-
-[afbeelding]
-
 
 ### App.njs
 App.njs is the starting point of the application, it requires the core modules of the framework and initializes the web server. The configuration of the application can also be found in this file.
@@ -1363,24 +1277,24 @@ The functions and data in this file will be accessible within the view files, fo
 
 ## Sources
 
-Robbins, C. (2011, October 17). Scaling Isomorphic Javascript Code. [Web log post]
-Retrieved March 12, 2013, from
-https://blog.jit.su/scaling-isomorphic-javascript-code
+	Robbins, C. (2011, October 17). Scaling Isomorphic Javascript Code. [Web log post]
+	Retrieved March 12, 2013, from
+	https://blog.jit.su/scaling-isomorphic-javascript-code
 
-Bhatt, N. (2009, January 18). MVC vs. MVP vs. MVVM. [Web log post]
-Retrieved March 12, 2013, from
-http://nirajrules.wordpress.com/2009/07/18/mvc-vs-mvp-vs-mvvm/
+	Bhatt, N. (2009, January 18). MVC vs. MVP vs. MVVM. [Web log post]
+	Retrieved March 12, 2013, from
+	http://nirajrules.wordpress.com/2009/07/18/mvc-vs-mvp-vs-mvvm/
 
-Seshadri, G. (1999, December 29). Understanding JavaServer Pages Model 2 architecture.
-Retrieved March 12, 2013, from
-http://www.javaworld.com/javaworld/jw-12-1999/jw-12-ssj-jspmvc.html
+	Seshadri, G. (1999, December 29). Understanding JavaServer Pages Model 2 architecture.
+	Retrieved March 12, 2013, from
+	http://www.javaworld.com/javaworld/jw-12-1999/jw-12-ssj-jspmvc.html
 
-Fowler, M. (2006, July 18). GUI Architectures.
-Retrieved March 12, 2013, from
-http://martinfowler.com/eaaDev/uiArchs.html
+	Fowler, M. (2006, July 18). GUI Architectures.
+	Retrieved March 12, 2013, from
+	http://martinfowler.com/eaaDev/uiArchs.html
 
 
-
+![qmi](afbeeldingen/img45.jpg)
 # Quality Monitoring & Implementation
 ## Testmethode
 ### Inleiding
@@ -1388,7 +1302,7 @@ Voor dit project gaan wij de scrum methode hanteren, dit gaat ook samenhangen me
 
 Inspiratie voor onze testmethode halen wij uit eerdere testervaringen en het boek “Don’t make me think” door Steve Krug*. Hij beschrijft in zijn boek wat een goedkope en snelle user-test minimaal zou moeten bevatten. De conventies die hij stelt nemen wij over en breiden wij uit waar nodig. Hierdoor zijn wij tot de volgende randvoorwaarden gekomen voor het uitvoeren van een prototype test.
 
-* Krug, Steve Don’t make me think- pagina 137
+*Krug, Steve Don’t make me think- pagina 137*
 
 ### Randvoorwaarden
 
@@ -1440,7 +1354,7 @@ Bekijk alle problemen die voorkwamen en beoordeel deze, kijk naar welke probleme
 
 ## Paper prototype
 
-[afbeelding]
+![paper prototype](afbeeldingen/img33.jpg)
 Paper prototype, afbeelding 1.
 
 ### Inleiding:
@@ -1457,8 +1371,7 @@ Het volgende prototype zal een digitale variant zijn waarin zo goed mogelijk de 
 
 ## Concept
 
-[afbeelding]
-
+![concept](afbeeldingen/img25.jpg)
 Concept, afbeelding 2.
 
 ### Beschrijving
@@ -1468,8 +1381,7 @@ Het principe is dat er nieuwe elementen kunnen worden toegevoegd, gesorteerd en 
 
 ## 4. Prototype 1
 
-[afbeelding]
-
+![prototype 1](afbeeldingen/img41.png)
 Prototype 1, afbeelding 3.
 
 ### Beschrijving
@@ -1509,8 +1421,7 @@ Voor de volgende testcase zijn deze punten van belang:
 
 ## 5. Prototype 2
 
-[afbeelding]
-
+![prototype 2](afbeeldingen/img42.jpg)
 Prototype 2, afbeelding 4.
 
 ### Beschrijving
@@ -1551,8 +1462,7 @@ Dit prototype neemt de verbeteringen mee die aan de hand van de feedback op prot
 
 ## Prototype 3
 
-[afbeelding]
-
+![prototype 3](afbeeldingen/img43.png)
 Prototype 3, afbeelding 5.
 
 ### Beschrijving
@@ -1593,8 +1503,7 @@ Het bewerken van een blok heeft bij deze test het meeste prioriteit, is dit een 
 
 ## 7. Prototype 4 (beta 001)
 
-[afbeelding]
-
+![prototype 4](afbeeldingen/img44.png)
 Beta versie 001, Prototype 4, afbeelding 6.
 
 ### Beschrijving
@@ -1611,7 +1520,7 @@ Prototype 4 is gelijk de eerste beta versie van het product, we zijn tot deze be
 - Het is mogelijk om lege blokken toe te voegen.
 - Het lege blok omzetten naar een specifiek element (lijst, text afbeelding) (afbeelding 6).
 
-[afbeelding]
+![element](afbeeldingen/img27.jpg)
 
 Het omzetten van een element, afbeelding 7.
 
@@ -1741,6 +1650,7 @@ Deze vraag stellen wij om een beeld te krijgen over de vraag die er is naar het 
 Alle volledige notities / individuele testresultaten en Silverback opnamen zijn opgeslagen op onze gedeelde Dropbox, aangezien de omvang van al deze bestanden groot zijn, zijn deze niet meegestuurd met dit verslag, mocht het nodig zijn om deze in te willen zien dan kunnen wij dit alsnog opsturen.
 
 
+![voorblad teamwork](afbeeldingen/img49.jpg)
 # Multidisciplinary Teamwork
 ## Inleiding
 Om op elkaar te reflecteren hebben we als groep een feedback ronde gehouden. Hierbij hebben we een lijst op internet opgezocht met heel veel karakter eigenschappen. Deze lijst heeft Vincent door een kort scriptje gehaald waardoor er een lijst van 20 willekeurige eigenschappen uit rolde. Daarna mocht elk teamlid om de beurt een eigenschap kiezen uit de lijst waar op hij wilde dat gereflecteerd werd. Na het kiezen van een eigenschap mocht iedereen even na denken bij wie hij deze het beste vond passen en als iedereen er uit was werd er afgeteld. Op de laatste tel wees iedereen de persoon aan waarvan hij vond dat de eigenschap het meest van toepassing was. Daarna werd er door iedereen toegelicht waarom hij dit vond. Hierdoor ontstond vaak wel een discussie of gedeelde meningen over de uitkomst. Door dit spel te spelen heeft iedereen een beter beeld gekregen van hoe hij binnen de groep functioneert.
@@ -1766,7 +1676,6 @@ Om op elkaar te reflecteren hebben we als groep een feedback ronde gehouden. Hie
 	- Mag wel wat vaker roepen waar het op staat, je mening meer naar voren brengen. Je bent soms wat te stil
 - Ontwijkend
 	- Soms iets te snel niet de confrontatie aan willen gaan.
-
 
 
 ## Edwin
@@ -1825,6 +1734,5 @@ Om op elkaar te reflecteren hebben we als groep een feedback ronde gehouden. Hie
 - Onrustig
 	- Kan een druk dagje hebben, op de bank liggen, rondlopen etc.
  
-[afbeelding]
-
+![team](afbeeldingen/img28.png)
 Foto door  Edwin ten Wolde. (v.l.n.r.) Douwe de Haan, Tjerk Dijkstra en Vincent Bremer.
