@@ -95,6 +95,63 @@
 		- [Gekozen naam](#gekozen-naam)
 		- [“Doctopus”](#doctopus)
 	- [Bronnenlijst](#bronnenlijst)
+- [Functional design](#functional-design)
+	- [Introduction](#introduction)
+	- [Application Description](#application-description)
+	- [Users](#users)
+	- [Why make this application?](#why-make-this-application)
+	- [MoSCoW model](#moscow-model)
+		- [Must haves](#must-haves)
+		- [Should haves](#should-haves)
+		- [Could haves](#could-haves)
+		- [Won’t haves](#wont-haves)
+	- [Sitemap](#sitemap)
+	- [Pages](#pages)
+		- [Homepage](#homepage)
+		- [Register new account](#register-new-account)
+		- [Logging in](#logging-in)
+		- [Forgot password](#forgot-password)
+		- [Manage profile](#manage-profile)
+		- [Sections](#sections)
+		- [Document work area](#document-work-area)
+		- [Editing a block](#editing-a-block)
+		- [Image handling](#image-handling)
+		- [Navigation bar](#navigation-bar)
+		- [Elements](#elements)
+		- [Manage documents](#manage-documents)
+			- [Document title](#document-title)
+			- [Share](#share)
+			- [Edit](#edit)
+			- [With selected (select box)](#with-selected-select-box)
+			- [Styling the document](#styling-the-document)
+		- [Sharing the document](#sharing-the-document)
+			- [Change sharing options](#change-sharing-options)
+			- [Sending the invitation](#sending-the-invitation)
+			- [Communication with multiple users](#communication-with-multiple-users)
+			- [Editing a document with multiple users](#editing-a-document-with-multiple-users)
+- [Grafisch Ontwerp](#grafisch-ontwerp)
+	- [Inleiding](#inleiding-1)
+	- [De lay-out van de applicatie](#de-lay-out-van-de-applicatie)
+		- [1. Document informatie](#1-document-informatie)
+		- [2. Werkveld van de gebruiker](#2-werkveld-van-de-gebruiker)
+		- [3. Blokken toevoegen/ verwijderen](#3-blokken-toevoegen-verwijderen)
+		- [4. Sidebar](#4-sidebar)
+		- [5. Blok informatie](#5-blok-informatie)
+		- [6. Blok opties](#6-blok-opties)
+		- [7. Scroll balk(en)](#7-scroll-balken)
+		- [8. Product logo](#8-product-logo)
+		- [9. Een tekst blok](#9-een-tekst-blok)
+	- [De stijl van Doctopus](#de-stijl-van-doctopus)
+		- [1. Kleur keuze/ gebruik:](#1-kleur-keuze-gebruik)
+		- [2. Lettertype keuze/ gebruik:](#2-lettertype-keuze-gebruik)
+	- [Het logo van Doctopus](#het-logo-van-doctopus)
+		- [Gebruik](#gebruik)
+		- [Product naam](#product-naam)
+		- [Beeldmerk](#beeldmerk)
+	- [Hardware](#hardware)
+		- [Devices:](#devices)
+		- [Scherm resoluties:](#scherm-resoluties)
+		- [Browsers:](#browsers)
 - [Technical design](#technical-design)
 	- [Introduction](#introduction-1)
 	- [Specifications](#specifications)
@@ -155,63 +212,6 @@
 		- [Descriptions](#descriptions)
 		- [app.local.njs](#applocalnjs)
 	- [Sources](#sources)
-- [Functional design](#functional-design)
-	- [Introduction](#introduction)
-	- [Application Description](#application-description)
-	- [Users](#users)
-	- [Why make this application?](#why-make-this-application)
-	- [MoSCoW model](#moscow-model)
-		- [Must haves](#must-haves)
-		- [Should haves](#should-haves)
-		- [Could haves](#could-haves)
-		- [Won’t haves](#wont-haves)
-	- [Sitemap](#sitemap)
-	- [Pages](#pages)
-		- [Homepage](#homepage)
-		- [Register new account](#register-new-account)
-		- [Logging in](#logging-in)
-		- [Forgot password](#forgot-password)
-		- [Manage profile](#manage-profile)
-		- [Sections](#sections)
-		- [Document work area](#document-work-area)
-		- [Editing a block](#editing-a-block)
-		- [Image handling](#image-handling)
-		- [Navigation bar](#navigation-bar)
-		- [Elements](#elements)
-		- [Manage documents](#manage-documents)
-			- [Document title](#document-title)
-			- [Share](#share)
-			- [Edit](#edit)
-			- [With selected (select box)](#with-selected-select-box)
-			- [Styling the document](#styling-the-document)
-		- [Sharing the document](#sharing-the-document)
-			- [Change sharing options](#change-sharing-options)
-			- [Sending the invitation](#sending-the-invitation)
-			- [Communication with multiple users](#communication-with-multiple-users)
-			- [Editing a document with multiple users](#editing-a-document-with-multiple-users)
-- [Grafisch Ontwerp](#grafisch-ontwerp)
-	- [Inleiding](#inleiding-1)
-	- [De lay-out van de applicatie](#de-lay-out-van-de-applicatie)
-		- [1. Document informatie](#1-document-informatie)
-		- [2. Werkveld van de gebruiker](#2-werkveld-van-de-gebruiker)
-		- [3. Blokken toevoegen/ verwijderen](#3-blokken-toevoegen-verwijderen)
-		- [4. Sidebar](#4-sidebar)
-		- [5. Blok informatie](#5-blok-informatie)
-		- [6. Blok opties](#6-blok-opties)
-		- [7. Scroll balk(en)](#7-scroll-balken)
-		- [8. Product logo](#8-product-logo)
-		- [9. Een tekst blok](#9-een-tekst-blok)
-	- [De stijl van Doctopus](#de-stijl-van-doctopus)
-		- [1. Kleur keuze/ gebruik:](#1-kleur-keuze-gebruik)
-		- [2. Lettertype keuze/ gebruik:](#2-lettertype-keuze-gebruik)
-	- [Het logo van Doctopus](#het-logo-van-doctopus)
-		- [Gebruik](#gebruik)
-		- [Product naam](#product-naam)
-		- [Beeldmerk](#beeldmerk)
-	- [Hardware](#hardware)
-		- [Devices:](#devices)
-		- [Scherm resoluties:](#scherm-resoluties)
-		- [Browsers:](#browsers)
 - [Quality Monitoring & Implementation](#quality-monitoring--implementation)
 	- [Testmethode](#testmethode)
 		- [Inleiding](#inleiding-2)
@@ -975,6 +975,291 @@ Het slepen en indelen van blokken kan op een ludieke wijze worden uitgebeeld doo
 (1). 9-06-2013, The Golden Circle
 http://www.eurib.org/fileadmin/user_upload/Documenten/PDF/Positionering/n_-_De_Golden_Circle.pdf
 
+# Functional design
+
+## Introduction
+This functional design describes all the requirements needed for the application. This section is written in English because we will possibly open source the project, including the functional and technical design. 
+
+## Application Description
+The application is an online editor for text and image based documents. The application aims to simplify and structurize the current way of making documents, by introducing a four column grid, drag and drop elements and an easy to manage stylesheet. The best way to describe the application is a mix between Google Docs and Indesign.
+
+## Users
+The primary target audience (power users) are students with a technical and multimedia background, Who often need to make a lot of documentation and most of the times work together in teams. For our power users it is important that there are a lot of advanced options which make their work easier and faster and frustration free.
+
+Our basic target audience are students with an average education. They need to make documentation on school, but not very often. For them it’s important the application works intuitive, simple and doesn’t require much technical knowledge.
+
+## Why make this application?
+When using an application like Microsoft Word or LibreOffice Writer, working in the same document with multiple users at the same time will cause conflicts when the document gets saved. Google Docs (Drive) solves this problem, but still doesn’t provide the structure to easily build a neat looking document with images and a consistent styling.
+
+## MoSCoW model
+### Must haves
+CRUD* documents
+This is the core of the application.
+Document management
+When a document has been created, there must be a place where the user can manage his or her documents.
+CRUD* sections
+All the elements of an page are placed within these sections, without sections it would be impossible to navigate through the document.
+CRUD* elements/blocks
+These are elements which can be dragged inside a section and make up the content of the document.
+CRUD* users
+Documents are linked to users.
+User login
+To make sure documents are private, a user must login to access his or her documents.
+Export to HTML
+When the document needs to be send to someone else, or the user wants a preview of the document, it’s necessary to export to HTML. These HTML pages can also be printed.
+Define styles
+Define styles of the document, this is one of the USP of the application and when it’s not possible to define styles, the project would have failed.
+
+### Should haves
+Document sharing
+When competing with Google Docs, it’s a must to implement document sharing. This means multiple users can access and edit the document, preferably at the same time with websockets.
+Export to PDF
+On many schools PDF is the preferred format to deliver documents. These files can’t be easily changed, look the same on all platforms (Windows, OSX, Linux, iPad etcetera)
+
+### Could haves
+
+Multiple user editing
+When editing an element on the page, that element will be locked for other users. It would perhaps be better to allow users to type in the same blocks 
+User chat
+Possibility for chatting with other users within document.
+Add comments
+Add comments to certain lines of text
+Responsive layout
+Scale the complete application according to the screen size so it will also work on smaller screens. When implementing this, it’s also necessary to make all the technical functions compatible with a tablet/smartphone with a touchscreen.
+Responsive view
+Scale the view of a document to tablet devices
+
+
+### Won’t haves
+
+Export to other formats
+The application won’t be able to export the document to other formats, like txt, docx, odt or md. Because of the complex grid system, it’s nearly impossible to create a file that looks exactly the same in another word processor.
+
+
+* CRUD = Create, Read, Update and Delete
+
+
+## Sitemap
+[afbeelding]
+
+## Pages
+### Homepage
+
+[afbeelding]
+
+The user goes to the website where information is given about DocBuilder in the form of some screenshots and an screencast. When the user visits the website and isn’t logged in, the user is shown some information about DocBuilder and a screencast explaining what DocBuilder is. Registered users can fill in their username plus password and login, while new users can click on a link to register a new account.
+
+The purpose of this page is the inform the user about the application and convince them to register. This page should give the user an impression of what the application does and how it could help them.
+
+### Register new account
+
+[afbeelding]
+
+When the user has clicked on the link to register a new account, the users gets redirected to the register page. When all fields are valid, the user receives a verification e-mail with a unique link. Before logging in the user needs to verificate it’s account by clicking on this link.
+
+### Logging in
+
+[afbeelding]
+
+On the homepage there is a login form where the user can login with email and password. When the email and password match the user will be redirected to the document management page. When they don’t match, the user will get an error message and needs to try to login again.
+
+### Forgot password
+
+[afbeelding]
+
+When the user forgets his password, there is a link near the login form on which the user reset their password. When the user clicks this link a reset password form appears and the user must enter the email used when registered. If the entered email is valid, a password reset link will be sent to the user. After clicking on this link to user is able to enter a new password.
+
+### Manage profile
+
+[afbeelding]
+
+When a user is logged in, there is an option to change the profile. On this page its possible to change the following fields or settings:
+
+- Firstname and lastname
+- Password
+- Email
+- Avatar (Gravatar or a custom avatar)
+
+[afbeelding]
+
+### Sections
+On the green part of the wireframe are the sections. These sections can be added, removed and sorted by order. These sections can be seen as chapters in a book, each chapter could contain multiple pages of content. Each section has a title and a order, each section can be sorted to be a subsection of another section.
+
+### Document work area
+This area contains a four column grid on which blocks can be dragged and dropped. The blocks snap to the grid and can be resized from one column to four columns with a click, everytime the user clicks on a block it will grow one column in size, if the block reaches four columns it will resize back to one column.
+
+[afbeelding]
+
+### Editing a block
+Each block can be edited once they are inside the document work area by hovering with the cursor on the block that needs to be edited. An edit button will then appear and the user can change the content of the block. Once inside the editing mode of a block its block, its possible to do some simple formatting and change the size of the block (S, M, L, XL) this stands for the columns (1-4).
+
+[afbeelding]
+
+### Image handling
+If the user adds an image block to the document work area, it is possible to upload an image into that block by clicking on the upload button inside that block, the image will resize according to the grid.
+
+[afbeelding]
+
+### Navigation bar
+The upper right corner of the navigation bar contains the login information, the user has the possibility to log out and go to the profile page. In the middle of the navigation bar there is dialog that reminds the user when the document was last saved.
+
+[afbeelding]
+
+### Elements
+Elements are blocks that can contain the following: 
+
+List item (yellow)
+
+Text (blue)
+
+Image(red)
+
+[afbeelding]
+
+[afbeelding]
+
+[afbeelding]
+
+
+These blocks can be dragged and dropped to the document work area where they will snap to a grid. 
+
+### Manage documents
+
+[afbeelding]
+
+When the user is logged in and visits the website, he gets redirected to the “Manage documents” page. On this page the user can search for documents he owns or are shared with this user. There are a view links which on this page:
+
+#### Document title
+Opens the HTML page where the complete document can be viewed, this would be the same page as when a document gets exported.
+
+#### Share
+Brings up a popup to manage the sharing settings like removing users from the document, and inviting them to a document.
+
+#### Edit
+Sends the user to the page where the document can be modified.
+
+#### With selected (select box)
+Offers different options to quickly manage multiple selected documents, like; remove, export and sharing documents.
+Saving the document
+The entire document is saved automatically after one minute, after every edit the document is also saved. The user can trigger the same save event manually with the save button.
+
+#### Styling the document
+
+[afbeelding]
+
+The user has the possibility to add a style for the entire document at the styling window. The elements the user can style are as follows:
+
+- Font size		(12pt)
+- Font color		(#f02f2f (hex value))
+- Font family		(Arial, sans-serif)
+- Line-height		(18pt)
+- Heading 1, 2 ,3, 4 	
+- color		(#2312 (hex value))
+- size		(18pt)
+
+Everytime the user changes a style it will be applied to the whole document and is automatically saved.
+
+
+### Sharing the document
+
+#### Change sharing options
+The user can change the sharing options for the document at any time, when pressing the share button a popup will appear in which the user can manage the rights for the current users and has the possibility to add/remove users, this will work the same as sending an invitation.
+
+When the user presses the share button a pop up dialog will appear, in this pop up the user can invite other users via e-mail and adjust the rights to each invited user (read, write, edit, owner).
+
+#### Sending the invitation
+If the user has made a selection of users the invitations can be send to the corresponding email addresses. The invited users will receive an email containing a hyperlink to the document and information about the document they were invited to.
+
+#### Communication with multiple users
+When multiple users are working together on one document its possible to communicate via chat. The chat is optional and can be turned on and off, and is off by default.
+
+#### Editing a document with multiple users
+Its possible to work with multiple users on one document, when a user is editing a block its not possible for other users to edit that block as well. It will appear locked, when the user is done editing the block it is saved and unlocked. This means only one user at a time can edit one block.
+
+
+
+# Grafisch Ontwerp
+
+## Inleiding
+Het grafisch document is onderdeel van het project Doctopus. In het document is alle informatie te vinden over het gebruik van de stijl binnen dit product. Qua usability wordt beschreven waarmee rekening gehouden is in het ontwerp om het voor de gebruiker zo gebruiksvriendelijk mogelijk te maken.
+
+## De lay-out van de applicatie
+
+[afbeelding]
+
+### 1. Document informatie
+Op deze plek zal de gebruiker alle informatie vinden over het document waarin deze zich bevind. Deze beweegt
+ te allen tijde mee met de gebruiker omdat het belangrijk is dat de gebruiker altijd weet in welk document hij of zij zich bevindt.
+
+### 2. Werkveld van de gebruiker
+Binnen het werk veld kan de gebruiker visueel zien hoe het document er uit eindelijk uit komt te zien. De gebruiker kan op deze plek al zijn content toevoegen en rangschikken. Alle mogelijke handelingen worden visueel ondersteund zodat de gebruiker zo intuïtief mogelijk zijn of haar content kan bewerken tot het gewenste resultaat. Het werkveld staat gecentreerd in het scherm en vult het grootste deel van de ruimte. Dit omdat het werkveld element het belangrijkste element van het gehele product is en de gebruiker hier de meeste handelingen zal verrichten.
+
+### 3. Blokken toevoegen/ verwijderen
+Op deze plek staan twee zeer belangrijke en veel gebruikte acties die de gebruiker vaak zal gaan gebruiken, namelijk het toevoegen en verwijderen van blokken. De knoppen zijn net naast het werkveld  gepositioneerd zodat dat de gebruiker er snel bij kan en ze niet in de weg staan tijdens het bewerken van de content. Visueel zijn ze zo ontworpen dat meteen duidelijk is wat de functie van de knop inhoud.
+
+### 4. Sidebar
+In de sidebar kan de gebruiker alle informatie vinden die beschikbaar is over het element dat hij of zij heeft geselecteerd. De sidebar staat rechts in beeld omdat de meeste focus zodoende valt op het werkveld.
+
+### 5. Blok informatie
+Deze informatie staat boven aan in de sidebar  en is het grootste element in de sidebar. Dit is gedaan om binnen de sidebar al eerst de focus op dit element te leggen. Hierdoor kan de gebruiker snel en duidelijk zien wat het element is dat deze geselecteerd heeft en eventueel aanpast.
+
+### 6. Blok opties
+De blok opties zijn donker weergegeven behalve wanneer deze in gebruik is, dan licht deze namelijk op. Hierdoor ziet de gebruiker visueel meteen welke optie hij of zij gebruikt. Daarnaast staat in elke optie de beschrijving links en de eventuele aanpassingen die gedaan kunnen worden rechts.
+
+### 7. Scroll balk(en)
+1. Scroll balk links:
+Deze balk verschijnt als het er meer opties in de ‘Blok opties’ zitten dan kan worden weergegeven op het scherm. Door te scrollen zal de gebruiker alle opties kunnen opvragen en blijven gebruiken, ook op een kleiner scherm.
+2. Scroll balk rechts:
+Deze balk verschijnt als het werkveld langer is dan visueel in het scherm kan worden weergegeven. Door te scrollen zal de  gebruiker het gehele werkveld kunnen bekijken en niet belemmerd worden door de grootte van zijn of haar beeldscherm.
+
+### 8. Product logo
+Dit logo wordt rechts boven in weergegeven zodat de gebruiker kan zien dat hij of zij aan het werk is in Doctopus. Tevens is het logo een link om naar de startpagina van het systeem te gaan, waarop de gebruiker zijn of haar documenten kan zien en instellingen omtrent profiel en weergave kan wijzigen.
+
+### 9. Een tekst blok
+Een tekstblok (of ander element) wordt binnen het werkveld weergegeven. Er zijn veel verschillende opties en functies die deze blokken bevatten.
+
+## De stijl van Doctopus
+
+[afbeelding]
+
+### 1. Kleur keuze/ gebruik:
+Voor het product Doctopus is gekozen voor een donkere interface. Dit is gedaan om de ogen van de gebruiker zo veel mogelijk te ontlasten van het felle licht dat uit het beeldscherm schijnt. Daarnaast ligt hierdoor de focus op het lichtere element en trekt de rest van de interface niet teveel aandacht. Het werkveld is echter wel wit gebleven omdat dit papier simuleert, het is anders voor de gebruiker anders lastig in te schatten hoe het document uit te printer zal gaan komen.
+De kleur groen is gekozen om het geheel een frisse, moderne en serieuze uitstraling mee te geven. De combinatie van de verschillende grijstinten steken leuk af met het frisse groen. Door de groene tint te gebruiken om elementen die meer aandacht nodig hebben extra uit te lichten is het een handige combinatie van kleuren om de gebruiker te sturen binnen het product. De kleur rood is gebruikt bij de verwijder functie om extra visuele feedback aan deze functie te geven.
+
+### 2. Lettertype keuze/ gebruik:
+1. Bebas Regular
+Het lettertype ‘Bebas Regular’ is een strak en smal lettertype. Het bestaat alleen uit hoofdletters, en wordt binnen het product vooral gebruikt bij grotere elementen die de aandacht van de gebruiker moeten vragen. Het is qua vormgeving een strak en modern lettertype dat door het gebruik dit ook uitstraalt op het product.
+
+2. Roboto Slab Regular
+Het lettertype ‘Roboto Slab Regular’ is een web-font dat voor commerciële doeleinden gebruikt mag worden. Het is op een kleine schaal nog steeds goed leesbaar en straalt door de haakjes die aan veel letters zitten een eigen identiteit uit. Door het gebruik van dit font zullen veel gebruikers snel de huisstijl van Doctopus herkennen  terwijl het een goed leesbaar lettertype is.
+
+Het gebruik van de lettertypes zal voor alle elementen verschillen, belangrijkste punten zijn hierbij leesbaarheid(qua grootte) en een duidelijk contrast(qua kleur in combinatie met de achtergrond-kleur).
+
+## Het logo van Doctopus
+
+[afbeelding]
+
+### Gebruik
+Het logo bestaat uit twee delen, het icoon/ beeldmerk en de tekst. Deze kunnen zowel in combinatie met elkaar als los van elkaar gebruikt worden. In dien mogelijk zou het logo zo veel mogelijk gebruikt moeten worden met de groene kleur die Doctopus hanteert, echter kan hier van afgeweken worden als hiermee het doel (waarvoor het logo gebruikt gaat worden) in deze specifieke situatie anders niet zal worden bereikt. De mening van een ervaren designer kan hierin een (belangrijke) rol spelen.
+
+### Product naam
+De naam Doctopus is afgeleid van Doc (documentatie) en Octopus (een zeedier met acht tentakels).
+Door een dier te combineren met het product heeft als doel om zo sneller en connectie te kweken tussen de gebruiker en het product. Daarnaast heeft de octopus acht tentakels die symbool staan voor het efficiënte en snellere werken wat het product als hoofd prioriteit stelt.
+
+### Beeldmerk
+Het beeldmerk  is zo ontworpen dat het makkelijk gebruikt kan worden als icoon (bijvoorbeeld voor een app versie van het product). Door het niet volledig tonen van de octopus, wordt er ruimte gecreëerd voor een eigen aanvulling van de gebruiker en krijgt het icoon een spannender dynamiek.
+
+## Hardware
+Voor het product dat wordt ontwikkeld moet er qua grafische productie rekening worden gehouden met een aantal belangrijke facetten. Het product zal niet voor mobiele telefoon of tablet worden ontwikkeld, maar wel voor devices zoals laptops en desktops. Omdat er binnen dit producten aanbod een groot verschil zit in de resoluties zal het product schaalbaar moeten worden zodat op elke resolutie er mee gewerkt kan worden. De resoluties zullen een minimun van 800 bij 600 pixels moeten hebben, omdat anders niet alle elementen op het scherm passen.. Wat een ander belangrijk element is, is dat het product online zal gaan werken, dit houdt in dat het product via een browser bezocht kan gaan worden door de gebruikers. Waar rekening mee gehouden moet worden is dat er gewerkt gaat worden met HTML5 en CSS3. De browsers waarvoor geschreven gaat worden zullen dit dus moeten ondersteunen.
+
+### Devices:
+De devices waarop het product zal gaan draaien zijn laptops, netbooks en desktops.
+
+### Scherm resoluties:
+De minimale scherm resolutie is 800 bij 600 pixels.
+
+### Browsers:
+De browser moet HTML5 en CSS3 compatibel zijn.
 
 # Technical design
 ## Introduction
@@ -1345,295 +1630,6 @@ http://www.javaworld.com/javaworld/jw-12-1999/jw-12-ssj-jspmvc.html
 Fowler, M. (2006, July 18). GUI Architectures.
 Retrieved March 12, 2013, from
 http://martinfowler.com/eaaDev/uiArchs.html
-
-
-
-
-# Functional design
-
-## Introduction
-This functional design describes all the requirements needed for the application. This section is written in English because we will possibly open source the project, including the functional and technical design. 
-
-## Application Description
-The application is an online editor for text and image based documents. The application aims to simplify and structurize the current way of making documents, by introducing a four column grid, drag and drop elements and an easy to manage stylesheet. The best way to describe the application is a mix between Google Docs and Indesign.
-
-## Users
-The primary target audience (power users) are students with a technical and multimedia background, Who often need to make a lot of documentation and most of the times work together in teams. For our power users it is important that there are a lot of advanced options which make their work easier and faster and frustration free.
-
-Our basic target audience are students with an average education. They need to make documentation on school, but not very often. For them it’s important the application works intuitive, simple and doesn’t require much technical knowledge.
-
-## Why make this application?
-When using an application like Microsoft Word or LibreOffice Writer, working in the same document with multiple users at the same time will cause conflicts when the document gets saved. Google Docs (Drive) solves this problem, but still doesn’t provide the structure to easily build a neat looking document with images and a consistent styling.
-
-## MoSCoW model
-### Must haves
-CRUD* documents
-This is the core of the application.
-Document management
-When a document has been created, there must be a place where the user can manage his or her documents.
-CRUD* sections
-All the elements of an page are placed within these sections, without sections it would be impossible to navigate through the document.
-CRUD* elements/blocks
-These are elements which can be dragged inside a section and make up the content of the document.
-CRUD* users
-Documents are linked to users.
-User login
-To make sure documents are private, a user must login to access his or her documents.
-Export to HTML
-When the document needs to be send to someone else, or the user wants a preview of the document, it’s necessary to export to HTML. These HTML pages can also be printed.
-Define styles
-Define styles of the document, this is one of the USP of the application and when it’s not possible to define styles, the project would have failed.
-
-### Should haves
-Document sharing
-When competing with Google Docs, it’s a must to implement document sharing. This means multiple users can access and edit the document, preferably at the same time with websockets.
-Export to PDF
-On many schools PDF is the preferred format to deliver documents. These files can’t be easily changed, look the same on all platforms (Windows, OSX, Linux, iPad etcetera)
-
-### Could haves
-
-Multiple user editing
-When editing an element on the page, that element will be locked for other users. It would perhaps be better to allow users to type in the same blocks 
-User chat
-Possibility for chatting with other users within document.
-Add comments
-Add comments to certain lines of text
-Responsive layout
-Scale the complete application according to the screen size so it will also work on smaller screens. When implementing this, it’s also necessary to make all the technical functions compatible with a tablet/smartphone with a touchscreen.
-Responsive view
-Scale the view of a document to tablet devices
-
-
-### Won’t haves
-
-Export to other formats
-The application won’t be able to export the document to other formats, like txt, docx, odt or md. Because of the complex grid system, it’s nearly impossible to create a file that looks exactly the same in another word processor.
-
-
-* CRUD = Create, Read, Update and Delete
-
-
-## Sitemap
-[afbeelding]
-
-## Pages
-### Homepage
-
-[afbeelding]
-
-The user goes to the website where information is given about DocBuilder in the form of some screenshots and an screencast. When the user visits the website and isn’t logged in, the user is shown some information about DocBuilder and a screencast explaining what DocBuilder is. Registered users can fill in their username plus password and login, while new users can click on a link to register a new account.
-
-The purpose of this page is the inform the user about the application and convince them to register. This page should give the user an impression of what the application does and how it could help them.
-
-### Register new account
-
-[afbeelding]
-
-When the user has clicked on the link to register a new account, the users gets redirected to the register page. When all fields are valid, the user receives a verification e-mail with a unique link. Before logging in the user needs to verificate it’s account by clicking on this link.
-
-### Logging in
-
-[afbeelding]
-
-On the homepage there is a login form where the user can login with email and password. When the email and password match the user will be redirected to the document management page. When they don’t match, the user will get an error message and needs to try to login again.
-
-### Forgot password
-
-[afbeelding]
-
-When the user forgets his password, there is a link near the login form on which the user reset their password. When the user clicks this link a reset password form appears and the user must enter the email used when registered. If the entered email is valid, a password reset link will be sent to the user. After clicking on this link to user is able to enter a new password.
-
-### Manage profile
-
-[afbeelding]
-
-When a user is logged in, there is an option to change the profile. On this page its possible to change the following fields or settings:
-
-- Firstname and lastname
-- Password
-- Email
-- Avatar (Gravatar or a custom avatar)
-
-[afbeelding]
-
-### Sections
-On the green part of the wireframe are the sections. These sections can be added, removed and sorted by order. These sections can be seen as chapters in a book, each chapter could contain multiple pages of content. Each section has a title and a order, each section can be sorted to be a subsection of another section.
-
-### Document work area
-This area contains a four column grid on which blocks can be dragged and dropped. The blocks snap to the grid and can be resized from one column to four columns with a click, everytime the user clicks on a block it will grow one column in size, if the block reaches four columns it will resize back to one column.
-
-[afbeelding]
-
-### Editing a block
-Each block can be edited once they are inside the document work area by hovering with the cursor on the block that needs to be edited. An edit button will then appear and the user can change the content of the block. Once inside the editing mode of a block its block, its possible to do some simple formatting and change the size of the block (S, M, L, XL) this stands for the columns (1-4).
-
-[afbeelding]
-
-### Image handling
-If the user adds an image block to the document work area, it is possible to upload an image into that block by clicking on the upload button inside that block, the image will resize according to the grid.
-
-[afbeelding]
-
-### Navigation bar
-The upper right corner of the navigation bar contains the login information, the user has the possibility to log out and go to the profile page. In the middle of the navigation bar there is dialog that reminds the user when the document was last saved.
-
-[afbeelding]
-
-### Elements
-Elements are blocks that can contain the following: 
-
-List item (yellow)
-
-Text (blue)
-
-Image(red)
-
-[afbeelding]
-
-[afbeelding]
-
-[afbeelding]
-
-
-These blocks can be dragged and dropped to the document work area where they will snap to a grid. 
-
-### Manage documents
-
-[afbeelding]
-
-When the user is logged in and visits the website, he gets redirected to the “Manage documents” page. On this page the user can search for documents he owns or are shared with this user. There are a view links which on this page:
-
-#### Document title
-Opens the HTML page where the complete document can be viewed, this would be the same page as when a document gets exported.
-
-#### Share
-Brings up a popup to manage the sharing settings like removing users from the document, and inviting them to a document.
-
-#### Edit
-Sends the user to the page where the document can be modified.
-
-#### With selected (select box)
-Offers different options to quickly manage multiple selected documents, like; remove, export and sharing documents.
-Saving the document
-The entire document is saved automatically after one minute, after every edit the document is also saved. The user can trigger the same save event manually with the save button.
-
-#### Styling the document
-
-[afbeelding]
-
-The user has the possibility to add a style for the entire document at the styling window. The elements the user can style are as follows:
-
-- Font size		(12pt)
-- Font color		(#f02f2f (hex value))
-- Font family		(Arial, sans-serif)
-- Line-height		(18pt)
-- Heading 1, 2 ,3, 4 	
-- color		(#2312 (hex value))
-- size		(18pt)
-
-Everytime the user changes a style it will be applied to the whole document and is automatically saved.
-
-
-### Sharing the document
-
-#### Change sharing options
-The user can change the sharing options for the document at any time, when pressing the share button a popup will appear in which the user can manage the rights for the current users and has the possibility to add/remove users, this will work the same as sending an invitation.
-
-When the user presses the share button a pop up dialog will appear, in this pop up the user can invite other users via e-mail and adjust the rights to each invited user (read, write, edit, owner).
-
-#### Sending the invitation
-If the user has made a selection of users the invitations can be send to the corresponding email addresses. The invited users will receive an email containing a hyperlink to the document and information about the document they were invited to.
-
-#### Communication with multiple users
-When multiple users are working together on one document its possible to communicate via chat. The chat is optional and can be turned on and off, and is off by default.
-
-#### Editing a document with multiple users
-Its possible to work with multiple users on one document, when a user is editing a block its not possible for other users to edit that block as well. It will appear locked, when the user is done editing the block it is saved and unlocked. This means only one user at a time can edit one block.
-
-
-
-# Grafisch Ontwerp
-
-## Inleiding
-Het grafisch document is onderdeel van het project Doctopus. In het document is alle informatie te vinden over het gebruik van de stijl binnen dit product. Qua usability wordt beschreven waarmee rekening gehouden is in het ontwerp om het voor de gebruiker zo gebruiksvriendelijk mogelijk te maken.
-
-## De lay-out van de applicatie
-
-[afbeelding]
-
-### 1. Document informatie
-Op deze plek zal de gebruiker alle informatie vinden over het document waarin deze zich bevind. Deze beweegt
- te allen tijde mee met de gebruiker omdat het belangrijk is dat de gebruiker altijd weet in welk document hij of zij zich bevindt.
-
-### 2. Werkveld van de gebruiker
-Binnen het werk veld kan de gebruiker visueel zien hoe het document er uit eindelijk uit komt te zien. De gebruiker kan op deze plek al zijn content toevoegen en rangschikken. Alle mogelijke handelingen worden visueel ondersteund zodat de gebruiker zo intuïtief mogelijk zijn of haar content kan bewerken tot het gewenste resultaat. Het werkveld staat gecentreerd in het scherm en vult het grootste deel van de ruimte. Dit omdat het werkveld element het belangrijkste element van het gehele product is en de gebruiker hier de meeste handelingen zal verrichten.
-
-### 3. Blokken toevoegen/ verwijderen
-Op deze plek staan twee zeer belangrijke en veel gebruikte acties die de gebruiker vaak zal gaan gebruiken, namelijk het toevoegen en verwijderen van blokken. De knoppen zijn net naast het werkveld  gepositioneerd zodat dat de gebruiker er snel bij kan en ze niet in de weg staan tijdens het bewerken van de content. Visueel zijn ze zo ontworpen dat meteen duidelijk is wat de functie van de knop inhoud.
-
-### 4. Sidebar
-In de sidebar kan de gebruiker alle informatie vinden die beschikbaar is over het element dat hij of zij heeft geselecteerd. De sidebar staat rechts in beeld omdat de meeste focus zodoende valt op het werkveld.
-
-### 5. Blok informatie
-Deze informatie staat boven aan in de sidebar  en is het grootste element in de sidebar. Dit is gedaan om binnen de sidebar al eerst de focus op dit element te leggen. Hierdoor kan de gebruiker snel en duidelijk zien wat het element is dat deze geselecteerd heeft en eventueel aanpast.
-
-### 6. Blok opties
-De blok opties zijn donker weergegeven behalve wanneer deze in gebruik is, dan licht deze namelijk op. Hierdoor ziet de gebruiker visueel meteen welke optie hij of zij gebruikt. Daarnaast staat in elke optie de beschrijving links en de eventuele aanpassingen die gedaan kunnen worden rechts.
-
-### 7. Scroll balk(en)
-1. Scroll balk links:
-Deze balk verschijnt als het er meer opties in de ‘Blok opties’ zitten dan kan worden weergegeven op het scherm. Door te scrollen zal de gebruiker alle opties kunnen opvragen en blijven gebruiken, ook op een kleiner scherm.
-2. Scroll balk rechts:
-Deze balk verschijnt als het werkveld langer is dan visueel in het scherm kan worden weergegeven. Door te scrollen zal de  gebruiker het gehele werkveld kunnen bekijken en niet belemmerd worden door de grootte van zijn of haar beeldscherm.
-
-### 8. Product logo
-Dit logo wordt rechts boven in weergegeven zodat de gebruiker kan zien dat hij of zij aan het werk is in Doctopus. Tevens is het logo een link om naar de startpagina van het systeem te gaan, waarop de gebruiker zijn of haar documenten kan zien en instellingen omtrent profiel en weergave kan wijzigen.
-
-### 9. Een tekst blok
-Een tekstblok (of ander element) wordt binnen het werkveld weergegeven. Er zijn veel verschillende opties en functies die deze blokken bevatten.
-
-## De stijl van Doctopus
-
-[afbeelding]
-
-### 1. Kleur keuze/ gebruik:
-Voor het product Doctopus is gekozen voor een donkere interface. Dit is gedaan om de ogen van de gebruiker zo veel mogelijk te ontlasten van het felle licht dat uit het beeldscherm schijnt. Daarnaast ligt hierdoor de focus op het lichtere element en trekt de rest van de interface niet teveel aandacht. Het werkveld is echter wel wit gebleven omdat dit papier simuleert, het is anders voor de gebruiker anders lastig in te schatten hoe het document uit te printer zal gaan komen.
-De kleur groen is gekozen om het geheel een frisse, moderne en serieuze uitstraling mee te geven. De combinatie van de verschillende grijstinten steken leuk af met het frisse groen. Door de groene tint te gebruiken om elementen die meer aandacht nodig hebben extra uit te lichten is het een handige combinatie van kleuren om de gebruiker te sturen binnen het product. De kleur rood is gebruikt bij de verwijder functie om extra visuele feedback aan deze functie te geven.
-
-### 2. Lettertype keuze/ gebruik:
-1. Bebas Regular
-Het lettertype ‘Bebas Regular’ is een strak en smal lettertype. Het bestaat alleen uit hoofdletters, en wordt binnen het product vooral gebruikt bij grotere elementen die de aandacht van de gebruiker moeten vragen. Het is qua vormgeving een strak en modern lettertype dat door het gebruik dit ook uitstraalt op het product.
-
-2. Roboto Slab Regular
-Het lettertype ‘Roboto Slab Regular’ is een web-font dat voor commerciële doeleinden gebruikt mag worden. Het is op een kleine schaal nog steeds goed leesbaar en straalt door de haakjes die aan veel letters zitten een eigen identiteit uit. Door het gebruik van dit font zullen veel gebruikers snel de huisstijl van Doctopus herkennen  terwijl het een goed leesbaar lettertype is.
-
-Het gebruik van de lettertypes zal voor alle elementen verschillen, belangrijkste punten zijn hierbij leesbaarheid(qua grootte) en een duidelijk contrast(qua kleur in combinatie met de achtergrond-kleur).
-
-## Het logo van Doctopus
-
-[afbeelding]
-
-### Gebruik
-Het logo bestaat uit twee delen, het icoon/ beeldmerk en de tekst. Deze kunnen zowel in combinatie met elkaar als los van elkaar gebruikt worden. In dien mogelijk zou het logo zo veel mogelijk gebruikt moeten worden met de groene kleur die Doctopus hanteert, echter kan hier van afgeweken worden als hiermee het doel (waarvoor het logo gebruikt gaat worden) in deze specifieke situatie anders niet zal worden bereikt. De mening van een ervaren designer kan hierin een (belangrijke) rol spelen.
-
-### Product naam
-De naam Doctopus is afgeleid van Doc (documentatie) en Octopus (een zeedier met acht tentakels).
-Door een dier te combineren met het product heeft als doel om zo sneller en connectie te kweken tussen de gebruiker en het product. Daarnaast heeft de octopus acht tentakels die symbool staan voor het efficiënte en snellere werken wat het product als hoofd prioriteit stelt.
-
-### Beeldmerk
-Het beeldmerk  is zo ontworpen dat het makkelijk gebruikt kan worden als icoon (bijvoorbeeld voor een app versie van het product). Door het niet volledig tonen van de octopus, wordt er ruimte gecreëerd voor een eigen aanvulling van de gebruiker en krijgt het icoon een spannender dynamiek.
-
-## Hardware
-Voor het product dat wordt ontwikkeld moet er qua grafische productie rekening worden gehouden met een aantal belangrijke facetten. Het product zal niet voor mobiele telefoon of tablet worden ontwikkeld, maar wel voor devices zoals laptops en desktops. Omdat er binnen dit producten aanbod een groot verschil zit in de resoluties zal het product schaalbaar moeten worden zodat op elke resolutie er mee gewerkt kan worden. De resoluties zullen een minimun van 800 bij 600 pixels moeten hebben, omdat anders niet alle elementen op het scherm passen.. Wat een ander belangrijk element is, is dat het product online zal gaan werken, dit houdt in dat het product via een browser bezocht kan gaan worden door de gebruikers. Waar rekening mee gehouden moet worden is dat er gewerkt gaat worden met HTML5 en CSS3. De browsers waarvoor geschreven gaat worden zullen dit dus moeten ondersteunen.
-
-### Devices:
-De devices waarop het product zal gaan draaien zijn laptops, netbooks en desktops.
-
-### Scherm resoluties:
-De minimale scherm resolutie is 800 bij 600 pixels.
-
-### Browsers:
-De browser moet HTML5 en CSS3 compatibel zijn.
 
 
 
