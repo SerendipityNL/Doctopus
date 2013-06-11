@@ -20,8 +20,9 @@ $(':header').each(function() {
 
 			list.push({
 				'title': title,
-				'number' : parentCount,
-				'anchor': anchor
+				'number': parentCount,
+				'anchor': anchor,
+				'parent': null
 			});
 			
 		}
@@ -43,8 +44,16 @@ $(':header').each(function() {
 var html = '';
 
 for (var i = 0; i < list.length; i++) {
-	//console.log(list[i].number + ' - ' + list[i].title);
-	html += '<li><a href="#' + list[i].anchor + '">' + list[i].title + '</a></li>';
-	
+	if (list[i].parent === null) {
+		if (i == 1) {
+			html += '<li><a href="#' + list[i].anchor + '">' + list[i].title + '</a><ul>';
+		}
+		else {
+			html += '</ul></li><li><a href="#' + list[i].anchor + '">' + list[i].title + '</a><ul>'
+		}
+	}
+	else {
+		html += '<li><a href="#' + list[i].anchor + '">' + list[i].title + '</a></li>';
+	}
 }
 $('.toc').append(html);
