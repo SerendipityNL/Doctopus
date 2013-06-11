@@ -1,3 +1,4 @@
+![Database design](afbeeldingen/img51.png)
 
 - [Plan van aanpak](#plan-van-aanpak)
 	- [Inleiding](#inleiding)
@@ -72,6 +73,7 @@
 	- [Douwe](#douwe)
 	- [Tjerk](#tjerk)
 
+![voorblad pva](afbeeldingen/img52.png)
 
 # Plan van aanpak
 
@@ -88,6 +90,7 @@ Er is tijdens het project eerst gebruik gemaakt van een werknaam, namelijk DocBu
 De locatie is op de NHL - Hogeschool te Leeuwarden. De project groep werkt voornamelijk in Applab, dit is een lokaal in de NHL. De project leden zijn Vincent Bremer (cohort 2010 - 2011), Edwin ten Wolde (cohort 2011 - 2012), Douwe de Haan (2008 - 2009) en Tjerk Dijkstra (cohort 2011 - 2012). De project groep zal werken aan dit project.
 
 
+![Projectgroep](afbeeldingen/img48.png)
 Foto van de projectgroep.
 
 ## Projectresultaat
@@ -115,7 +118,10 @@ Het resultaat van dit project voorziet in de behoefte aan een snel en simpele ma
 ## Projectactiviteiten
 ### Work breakdown structure:
 
+![WBS](afbeeldingen/img17.png)
+
 Dit is de work breakdown structure van het project.
+
 
 ## Projectgrenzen
 ### Periode
@@ -191,8 +197,8 @@ Binnen de NHL zijn de volgende groepen betrokken bij het project.
 Het Kenniscentrum
 Vanuit het kenniscentrum is Jolanda Postma het aanspreekpunt.
 
-[afbeelding]
-Steakholder analyse.
+![stakeholder analyse](afbeeldingen/img47.png)
+stakeholder analyse.
 
 ### Betrokken partijen
 Docenten en Tutor:
@@ -316,6 +322,7 @@ Dit programma wordt gebruikt om lijsten bij te houden binnen de groep voor onder
 Stroken planning voor gehele periode:
 Het project wordt een iteratief proces waarbij in elke sprint wordt gewerkt aan een functioneel en testbaar prototype. Doelen worden aan het begin van een sprint vastgesteld en aan het eind van elke sprint zal er worden getest of het prototype voldoet aan de verwachtingen en eisen die van te voren gesteld zijn. De feedback die tijdens het testen terugkomt zal worden gebruikt en meegenomen in de volgende sprint om het eindproduct van een zo hoog mogelijke kwaliteit te kunnen voorzien.
 
+![planning](afbeeldingen/img46.png)
 
 Speciale momenten
 Sprints:
@@ -360,6 +367,8 @@ Het eind assessment is in                          	week 26 of 27
 ### Velocity project groep:
 Het project zou in eerste instantie gebruik maken van Pivotal na verloop van tijd hebben we gemerkt dat dit niet ideaal werkt omdat het een omslachtig programma is waar een hoop extra werk achter vandaan komt voor de project leden. Dit zou dus sneller moeten kunnen. Daarna is overgestapt op een eigen uren schema bijgehouden in Google Drive ook dit bleek niet ideaal te zijn. Het bleef een online programma wat snel vergeten wordt in te vullen waar door de informatie niet compleet genoeg is. Daarna is het scrumboard aan de muur gehangen het bijhouden van uren blijft een hekelpunt maar er wordt in elk geval meer mee gedaan dan de online varianten. Hierdoor hebben we deze manier van werken behouden.
 
+![velocity](afbeeldingen/img53.png)
+
 ### Materiaal
 Materiaal dat nodig is tijdens het project zal voornamelijk papier zijn en schrijfgerij zijn.
 Ook zal er een host moeten worden gezocht om het product op te kunnen draaien, er zal in eerste instantie worden gezocht naar een gratis host maar mocht dit niet lukken zal er naar een betaalde versie moeten worden gezocht.
@@ -369,6 +378,8 @@ En eventuele bibliotheek kosten zullen misschien ook worden gemaakt.
 ### Kosten overzicht
 Voor een overzicht van de kosten die gemaakt moeten en gaan worden tijdens dit project is de begroting toegevoegd in de bijlage. (Zie bijlage 11.3 Begroting).
 
+![kosten](afbeeldingen/img54.png)
+
 ## Risico analyse
 ### Risico’s
 Tijdens het proces zijn er verschillende risico’s die het behalen van de doelstelling kunnen beïnvloeden.  Door het in kaart brengen van deze risico’s en het vooraf beschrijven van de maatregelen kan er zo effectief mogelijk worden omgesprongen op het moment dat een risico werkelijkheid zal worden.
@@ -376,56 +387,7 @@ Tijdens het proces zijn er verschillende risico’s die het behalen van de doels
 ### Analyse risico’s tabel
 Voor alle risico’s die in kaart zijn gebracht is de risico analyse toegevoegd in de bijlage (zie bijlage 11.4 Risico Analyse). Hieronder staan alleen de risico’s met een waardering hoog of gemiddeld.
 
-Hoog gewaardeerde risico’s:
-Risico’s
-Omschrijving
-Waarschijnlijk-heid
-Impact
-Waardering
-Binnen projectgroep
-Projectleden hebben behaalde punten al binnen maar nog niet verkregen
-4
-4
-Hoog
-Extern
-Er is geen groep die belang heeft bij het product
-2
-4
-Hoog
- 
-Gevonden externe validatie ziet af van deze taak
-2
-4
-Hoog
-Kwaliteit
-Het product is door slechte afstemming met de doelgroep niet genoeg op de wensen aan gepast en onbruikbaar voor deze groep
-2
-4
-Hoog
- 
-Scrum master en project owner hebben geen goede samenwerking of genoeg kennis en zijn niet in staat samen het project in goede banen te leiden
-2
-4
-Hoog
- 
- 
-Gemiddeld gewaardeerde risico’s:
-Binnen projectgroep
-Groep heeft niet voldoende skills en kennis om het project af te ronden
-1
-4
-Gemiddeld
- 
-Te weinig communicatie richting stakeholders
-1
-4
-Gemiddeld
-Extern
-Niet in staat externe validatie te vinden
-1
-4
-Gemiddeld
-
+![risico tabel](afbeeldingen/img53.png)
 
 ## Maatregelen
 ### Binnen Projectgroep
@@ -596,20 +558,25 @@ Er zijn niet genoeg middelen om het product tot een goed eindproduct te maken
 Laag
 
 ## Definition of done
-Documentatie
+**Documentatie**
+
 - Documentatie moet volledig in het Engels worden geschreven.
 - De vormgeving en lettertype moeten aansluiten bij de huidige conventie.
 - Het stuk moet eerst zijn gecheckt door tenminste 1 groepslid op spelling en inhoud.
 - Er mogen geen ontbrekende onderdelen / losse einden in het stuk zitten. Hiermee wordt bedoeld dat elk geschreven stuk volledig af moet zijn en een doel vervuld.
 - Indien er bronnen aanwezig zijn, moeten deze vermeld worden in een bronnenlijst die onderin het stuk wordt weergegeven.
-Programmeren
+
+**Programmeren**
+
 - Alle grote functionaliteiten moeten voorzien van volledig Engelse commentaar.
 - Code moet juist inspringen (geen wirwar aan functies).
 - Indien er afhankelijkheden zijn naar andere bestanden moeten deze in de commentaar worden vermeld.
 - (x)HTML 5 valid strict, kan worden gevalideerd met wc3 validator.
 - Voor Model en Class namen wordt camelCase gebruikt.
 - Bestandsnamen moeten logisch zijn en mag geen spaties bevatten (test_bestand.js).
-Design
+
+**Design**
+
 - Alle mogelijke schetsen moeten worden bewaard voor het assessment.
 - Moet voldoen aan de huidige conventie (lettertype, huisstijl).
 - De lagen in PSD's moeten allemaal een naam hebben en indien er meer dan 20 lagen zijn moeten deze worden verdeeld over mappen.
@@ -1278,12 +1245,11 @@ The model filename is written in singular and lowercase. For example:
 
 ### Database design
 
-[afbeelding]
-
+![Database design](afbeeldingen/img9.png)
 
 ## Directory structure
 
-![Directory Structure](afbeeldingen/img9.png)]
+![Directory Structure](afbeeldingen/img9.png)
 
 [afbeelding]
 
