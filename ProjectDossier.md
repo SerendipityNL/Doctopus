@@ -922,16 +922,18 @@ Deze balk verschijnt als het werkveld langer is dan visueel in het scherm kan wo
 ### 8. Product logo
 Dit logo wordt rechts boven in weergegeven zodat de gebruiker kan zien dat hij of zij aan het werk is in Doctopus. Tevens is het logo een link om naar de startpagina van het systeem te gaan, waarop de gebruiker zijn of haar documenten kan zien en instellingen omtrent profiel en weergave kan wijzigen.
 
-9. Een tekst blok
+### 9. Een tekst blok
 Een tekstblok (of ander element) wordt binnen het werkveld weergegeven. Er zijn veel verschillende opties en functies die deze blokken bevatten.
 
-De stijl van Doctopus
+## De stijl van Doctopus
 
-1. Kleur keuze/ gebruik:
+[afbeelding]
+
+### 1. Kleur keuze/ gebruik:
 Voor het product Doctopus is gekozen voor een donkere interface. Dit is gedaan om de ogen van de gebruiker zo veel mogelijk te ontlasten van het felle licht dat uit het beeldscherm schijnt. Daarnaast ligt hierdoor de focus op het lichtere element en trekt de rest van de interface niet teveel aandacht. Het werkveld is echter wel wit gebleven omdat dit papier simuleert, het is anders voor de gebruiker anders lastig in te schatten hoe het document uit te printer zal gaan komen.
 De kleur groen is gekozen om het geheel een frisse, moderne en serieuze uitstraling mee te geven. De combinatie van de verschillende grijstinten steken leuk af met het frisse groen. Door de groene tint te gebruiken om elementen die meer aandacht nodig hebben extra uit te lichten is het een handige combinatie van kleuren om de gebruiker te sturen binnen het product. De kleur rood is gebruikt bij de verwijder functie om extra visuele feedback aan deze functie te geven.
 
-2. Lettertype keuze/ gebruik:
+### 2. Lettertype keuze/ gebruik:
 1. Bebas Regular
 Het lettertype ‘Bebas Regular’ is een strak en smal lettertype. Het bestaat alleen uit hoofdletters, en wordt binnen het product vooral gebruikt bij grotere elementen die de aandacht van de gebruiker moeten vragen. Het is qua vormgeving een strak en modern lettertype dat door het gebruik dit ook uitstraalt op het product.
 
@@ -939,41 +941,42 @@ Het lettertype ‘Bebas Regular’ is een strak en smal lettertype. Het bestaat 
 Het lettertype ‘Roboto Slab Regular’ is een web-font dat voor commerciële doeleinden gebruikt mag worden. Het is op een kleine schaal nog steeds goed leesbaar en straalt door de haakjes die aan veel letters zitten een eigen identiteit uit. Door het gebruik van dit font zullen veel gebruikers snel de huisstijl van Doctopus herkennen  terwijl het een goed leesbaar lettertype is.
 
 Het gebruik van de lettertypes zal voor alle elementen verschillen, belangrijkste punten zijn hierbij leesbaarheid(qua grootte) en een duidelijk contrast(qua kleur in combinatie met de achtergrond-kleur).
-Het logo van Doctopus
 
+## Het logo van Doctopus
 
-Gebruik
+[afbeelding]
+
+### Gebruik
 Het logo bestaat uit twee delen, het icoon/ beeldmerk en de tekst. Deze kunnen zowel in combinatie met elkaar als los van elkaar gebruikt worden. In dien mogelijk zou het logo zo veel mogelijk gebruikt moeten worden met de groene kleur die Doctopus hanteert, echter kan hier van afgeweken worden als hiermee het doel (waarvoor het logo gebruikt gaat worden) in deze specifieke situatie anders niet zal worden bereikt. De mening van een ervaren designer kan hierin een (belangrijke) rol spelen.
 
-Product naam
+### Product naam
 De naam Doctopus is afgeleid van Doc (documentatie) en Octopus (een zeedier met acht tentakels).
 Door een dier te combineren met het product heeft als doel om zo sneller en connectie te kweken tussen de gebruiker en het product. Daarnaast heeft de octopus acht tentakels die symbool staan voor het efficiënte en snellere werken wat het product als hoofd prioriteit stelt.
 
-Beeldmerk
+### Beeldmerk
 Het beeldmerk  is zo ontworpen dat het makkelijk gebruikt kan worden als icoon (bijvoorbeeld voor een app versie van het product). Door het niet volledig tonen van de octopus, wordt er ruimte gecreëerd voor een eigen aanvulling van de gebruiker en krijgt het icoon een spannender dynamiek.
-Hardware
+
+## Hardware
 Voor het product dat wordt ontwikkeld moet er qua grafische productie rekening worden gehouden met een aantal belangrijke facetten. Het product zal niet voor mobiele telefoon of tablet worden ontwikkeld, maar wel voor devices zoals laptops en desktops. Omdat er binnen dit producten aanbod een groot verschil zit in de resoluties zal het product schaalbaar moeten worden zodat op elke resolutie er mee gewerkt kan worden. De resoluties zullen een minimun van 800 bij 600 pixels moeten hebben, omdat anders niet alle elementen op het scherm passen.. Wat een ander belangrijk element is, is dat het product online zal gaan werken, dit houdt in dat het product via een browser bezocht kan gaan worden door de gebruikers. Waar rekening mee gehouden moet worden is dat er gewerkt gaat worden met HTML5 en CSS3. De browsers waarvoor geschreven gaat worden zullen dit dus moeten ondersteunen.
 
-Devices:
+### Devices:
 De devices waarop het product zal gaan draaien zijn laptops, netbooks en desktops.
 
-Scherm resoluties:
+### Scherm resoluties:
 De minimale scherm resolutie is 800 bij 600 pixels.
 
-Browsers:
+### Browsers:
 De browser moet HTML5 en CSS3 compatibel zijn.
 
-
-
-Technical design
-Introduction
+# Technical design
+## Introduction
 In this part of the project documentation you will find the technical specifications of the Doctopus project. Here is described what is needed to run the application and how the system is build. This includes an installation guide, conventions, version history, database layout and some other relevant technical information.
 
 This document is chronologically structured, this means that if you follow the basic structure you will find the information you need in the right order for making the Doctopus product.
 
 While making this document, the application is not finished. This is noted throughout the document where this applies.
 
-Specifications
+## Specifications
 System requirements:	Windows, Linux, OS X
 Installed software:		Node.js (http://nodejs.org/)
 				MongoDB 
@@ -983,32 +986,36 @@ Required modules:		ExpressJS (http://expressjs.com/)
 				Jade (http://jade-lang.com)
 Validator (https://github.com/chriso/node-validator)
 
-Hosting
+## Hosting
 There are a few free options regarding the hosting of the application including Heroku, Nodester and Nodecloud. Another option could be hosting on a Virtual Private Server which has to be configured and installed for running the Node.js.
 
-Appfog
+### Appfog
 Pros: Supports multiple types of programming languages like Node.js, Ruby, PHP and Java. The free accounts provides 5GB data traffic, 2GB ram, 100MB storage and 100 requests per second. Deployment of the application is made easy with an command line utility.
 
 Cons: When the free account isn’t sufficient, the cheapest paid account costs $50 per month. There is no option for custom domains in the free account.
-Heroku
+
+### Heroku
 Pros: It’s accessible, safe and free. There is a lot of documentation available for starting and running a Node.js server on Heroku which makes it good for a quick launch. Custom domain can be linked to Heroku through CNAME.
 
 Cons: It’s not possible to have assets like external images hosted on Heroku, which means that an alternative service has to be implemented to accommodate this. One of these services is Amazon S3 which can be used to a certain extend and comes with a pricetag.
 
-Nodester
+### Nodester
 Pros: Nodester is made with Node in mind, which means deployment is very quick and easy.
 
 Cons: It also uses Amazon EC2, Rackspace, HP Cloud or Azure for storage.
-VPS server
+
+### VPS server
 Pros:  Flexibility, with a private server you can install all the modules / extensions you need and want depending on your wishes. 
 
 Cons:  Load balancing / traffic handling, services like Heroku and Nodester have this build in or they have an entire team to make sure the traffic
-Technical layers
 
+## Technical layers
+
+[afbeelding]
 
 We will use Node.js for handling all our requests which will happen at the client side. Between the client side and the database are several Node.js modules which take care of the data handling and basic structure. 
 
-Application description
+## Application description
 Our application will consist of mostly front-end Javascript functions (jQuery) which has an open connection with the server via a socket, which updates the database sending JSON data. We use NodeJS and SocketIO because this structure provides instant communication between front-end and server-side Javascript.
 
 Installation
@@ -1019,118 +1026,127 @@ On Windows: “npm install nodemon”
 On Linux and OS X: “sudo npm install nodemon”
 4. Install MongoDB
 
-Technical description
-What is Node.js?
+## Technical description
+### What is Node.js?
 “Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.” (http://www.nodejs.org)
 
-Why Node.js?
+### Why Node.js?
 Node.js has the perfect integration of multiple modules which is needed for making this product work. For instance, it should be possible to edit a document with multiple users simultaneously and with the easy integration of websockets in Node this is possible. There is also a large community with lots of templating languages, MVC structures and other modules that can be used to build the project faster and more efficient.
 
-About MongoDB
+### About MongoDB
 MongoDB (from "humongous") is a scalable, high-performance, open source NoSQL database. Written in C++.
 
-Why MongoDB?
+### Why MongoDB?
 This project will produce a lot of requests containing mostly text. The ambition is to make the requests and posts on the client side using Javascript (jQuery) in combination with Express. JSON is the preferred format for making these requests and MongoDB saves data as JSON objects so there is no conversion needed when storing the data.
 Another important pro for choosing MongoDB is the speed, because Mongo scales well it has great potential for either a small or large database.
 
-About Nodemon
+### About Nodemon
 Nodemon is a packaging service used for installing and maintaining Node.JS in combination with modules. It makes sure everything is in the right place and updated and makes it  easier to add or access new modules.
 
-Node Modules
-Express
+## Node Modules
+### Express
 Express is a web application framework made for Node, this needed for structuring the application, express gives us the possibility to install modules and other plug-ins that we need. This is the most important layer of the application since its connects multiple modules and adds the needed MVP structure to further expand our application.
 
-Socket.IO
+### Socket.IO
 Socket.IO enables the application to push realtime data from the server to the client and vice versa. It supports multiple transport methods for different devices and web browsers. This is needed when multiple users need to edit documents simultaneously. 
 
-Provider
+### Provider
 The provider is a self written script that makes it possible to load a model with just one line or two lines of code. It provides a easy way to access the models (hence the name).
 
-Mongoose
+### Mongoose
 Mongoose is a module which enables the application to make use of object modeling. It makes it easier to retrieve and save data from and to the MongoDB database.
 
-Jade
+### Jade
 Jade is a templating engine which is heavily related to HAML, which is a templating engine for Ruby, designed for NodeJs. With this engine DOM elements are shortened to just the tag and indentation decides whether the element is a child of the previous one or not.
 
-Validator
+### Validator
 Validator is a Node.js module that allows for validation methods within the Model. It contains basic validation methods like checking if a field is empty or valid. Useful for checking all the POST data that comes into the model. At this moment Validator is not yet implemented.
 
 For more information, visit: https://github.com/chriso/node-validator
-Coding conventions
+
+## Coding conventions
 Here are the conventions listed by which the application is build, when extending or updating the application, the conventions should be followed to maintain a consistent code base.
 
-Global
-DRY, Don’t Repeat Yourself is a global convention that follows through all the programming that will happen on this project.
+### Global
+#### DRY
+Don’t Repeat Yourself is a global convention that follows through all the programming that will happen on this project.
 
-KISS, Keep It Short and Simple, omit useless words and try not to overcomplicate things, make functions fulfill a clear purpose, don’t write code that overkills.
+#### KISS
+Keep It Short and Simple, omit useless words and try not to overcomplicate things, make functions fulfill a clear purpose, don’t write code that overkills.
 
-CSS
+#### CSS
 Global styles will be defined at the top of the document. Global styles are all basic HTML elements. (like html, div, span etcetera)
 
 Classes and ID’s will be written with an hyphen. When a class is a child to another class this will be shown by indenting the code as follows:
 
-div.parent-class {
-    property: value
-}
-    span.child-class {
-        property: value
-    }
+	div.parent-class {
+		property: value
+	}
+	span.child-class {
+		property: value
+	}
 
-.highlight {
-    property: value
-}
+	.highlight {
+		property: value
+	}
 
 All elements are defined with their type first and then the identifier. This does not apply for styling rules (like font-size, background-color) that could be used throughout the whole system.
 
-Variables and functions
+#### Variables and functions
 These are written in camelCase, following the conventions used on the Node.js website. For example:
-var camelCase;
-var userId;
-function setName() {
-    // Function actions
-}
-function renderPage() {
-    // Function actions
-}
 
-View files
+	var camelCase;
+	var userId;
+	function setName() {
+	    // Function actions
+	}
+	function renderPage() {
+	    // Function actions
+	}
+
+#### View files
 The view files are lowercase, words separated with a dash, and have the extension *.jade.
 For example:
-index.jade
-view_user.jade
-delete_document.jade
 
-Database fields
+	index.jade
+	view_user.jade
+	delete_document.jade
+
+#### Database fields
 Database fields/columns are written in lowercase, and words are separated with an underscore.
 For example:
-user_items
-firstname
 
-Controllers
+	user_items
+	firstname
+
+#### Controllers (routes)
 The controller filename is written in plural and lowercase.
 For example:
-users.njs
-documents.njs
+
+	users.njs
+	documents.njs
 
 Routes example:
 The DELETE and PUT methods will omitted the because web browsers doesn’t fully support these standards [1]. Instead only the GET and POST methods are used, and the right actions are called based on the URL.
 
 [1] http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
 
-Method  Route            Controller.method       
-GET     /users               -> users.index
-GET     /users/new        -> users.new
-POST    /users/new       -> users.create
-GET     /users/edit/*       -> users.edit
-POST    /users/edit/*     -> users.update
-POST    /users/delete/*  -> users.delete
+	Method  Route            Controller.method
+	GET     /users               -> users.index
+	GET     /users/new        -> users.new
+	POST    /users/new       -> users.create
+	GET     /users/edit/*       -> users.edit
+	POST    /users/edit/*     -> users.update
+	POST    /users/delete/*  -> users.delete
 
-Models
+#### Models
 The model filename is written in singular and lowercase. For example:
-user.njs
-document.njs
 
-Directory structure
+	user.njs
+	document.njs
+
+Dire
+ctory structure
 
 
 
