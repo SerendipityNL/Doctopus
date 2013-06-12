@@ -11,7 +11,7 @@ Om snel door het document te bladeren kunt u in de inhoudsopgave aan de linkerzi
 
 ## Inleiding
 
-Er is binnen de project groep een idee ontstaan (en ingediend bij de minor The Next Web van de NHL Hogeschool Leeuwarden) om een nieuwe documentatie tool te ontwikkelen. Deze zal simpel zijn in gebruik en er kan nette documentatie mee gemaakt worden. Uitgangspunten zijn onder andere dat in huidige tools het lastig is om opmaak aan te passen, vooral wanneer meerdere documenten worden samengevoegd met verschillende opmaak-stijlen. Het gezamenlijk werken aan één bestand is in weinig documentatie tools mogelijk. Het opbouwen en wijzigen van opmaak is niet altijd even gebruiksvriendelijk en werkt vaak met veel extra stappen. Deze stappen zouden de gebruiker veel tijd kunnen schelen als ze geautomatiseerd zouden zijn. Met deze insteek wil de projectgroep die op dit project zit een nieuwe tool ontwikkelen die voor deze problemen een oplossing bied.
+Er is binnen de projectgroep een idee ontstaan (en ingediend bij de minor The Next Web van de NHL Hogeschool Leeuwarden) om een nieuwe documentatie tool te ontwikkelen. Deze zal simpel zijn in gebruik en er kan nette documentatie mee gemaakt worden. Uitgangspunten zijn onder andere dat in huidige tools het lastig is om opmaak aan te passen, vooral wanneer meerdere documenten worden samengevoegd met verschillende opmaak. Het gezamenlijk werken aan één bestand is in weinig documentatie tools mogelijk. Het opbouwen en wijzigen van opmaak is niet altijd even gebruiksvriendelijk en werkt vaak met veel extra stappen. Deze stappen zouden de gebruiker veel tijd kunnen schelen als ze geautomatiseerd zouden zijn. Met deze insteek wil de projectgroep die op dit project zit een nieuwe tool ontwikkelen die voor deze problemen een oplossing bied.
 
 Het plan van aanpak zal inzicht geven in de werkwijze die gehanteerd zal worden tijdens het ontwikkelen van deze tool, welke stakeholders er betrokken zijn bij het project en wat de mogelijke risico’s zijn bij het ontwikkelen van deze tool.
 
@@ -20,7 +20,7 @@ Het plan van aanpak zal inzicht geven in de werkwijze die gehanteerd zal worden 
 Er is tijdens het project eerst gebruik gemaakt van een werknaam, namelijk DocBuilder. Deze is vervangen door de huidige projectnaam Doctopus.
 
 ### Locatie / situatie
-De locatie is op de NHL Hogeschool te Leeuwarden. De projectgroep werkt voornamelijk in het AppLab lokaal, wat van onder de minor The Next Web. De projectgroep bestaat uit:
+De locatie is op de NHL Hogeschool te Leeuwarden. De projectgroep werkt voornamelijk in het Applab lokaal, wat van onder de minor The Next Web. De projectgroep bestaat uit:
 
 - Vincent Bremer (cohort 2010 - 2011)
 - Edwin ten Wolde (cohort 2011 - 2012)
@@ -32,12 +32,12 @@ De locatie is op de NHL Hogeschool te Leeuwarden. De projectgroep werkt voorname
 
 ## Projectresultaat
 ### Aanleiding
-De aanleiding voor dit project is het gebrek aan goede documentatie software die beschikbaar is. Het gebrek dat de huidige software heeft zijn een te veel aan functies die de gebruiker in verwarring brengen en het overzicht laten vervagen voor de gebruiker, het gebrek aan regels die er voor kunnen zorgen dat de opmaak snel een chaos wordt, de combinatie van een simpel overzichtelijk werkveld met alleen de opties in beeld die daadwerkelijk van belang zijn voor het maken van nette en gestructureerde documentatie en een mogelijkheid samen tegelijkertijd aan dezelfde documenten te kunnen werken.
+De aanleiding voor dit project is het gebrek aan goede documentatie software die beschikbaar is. Het gebrek dat de huidige software heeft zijn een teveel aan functies die de gebruiker in verwarring brengen en het overzicht laten vervagen voor de gebruiker, het gebrek aan regels die er voor kunnen zorgen dat de opmaak snel een chaos wordt, de combinatie van een simpel overzichtelijk werkveld met alleen de opties in beeld die daadwerkelijk van belang zijn voor het maken van nette en gestructureerde documentatie en een mogelijkheid samen tegelijkertijd aan dezelfde documenten te kunnen werken.
 
 ### Opdracht
 Het ontwikkelen van een documentatietool die het maken van documentatie snel en simpel houd, waarin gezamenlijk aan documentatie kan worden gewerkt en waarbij de opmaak snel kan worden gedaan en aangepast zowel voor als tijdens en achteraf.
 
-### Eisen Randvoorwaarden
+### Eisen randvoorwaarden
 #### Kenniscentrum
 Vanuit het kenniscentrum is de voorwaarde naar voren gekomen om als groep te zoeken naar een externe validatie van het project.
 Meerwaarde:
@@ -50,7 +50,7 @@ Hoe kan ons product voorzien in de behoefte aan een snelle simpele manier van co
 De doelstelling is om binnen het semester een online documentatie tool te creëren die het maken van documentatie versimpelt, versneld, en kan vergemakkelijken ten opzichte van andere vergelijkbare initiatieven. 
 
 ### Resultaat
-Het resultaat van dit project voorziet in de behoefte aan een snel en simpele manier van correcte documentatie maken
+Het resultaat van dit project voorziet in de behoefte aan een snel en simpele manier van correcte documentatie maken.
 
 ## Projectactiviteiten
 ### Work breakdown structure
@@ -63,10 +63,10 @@ Het resultaat van dit project voorziet in de behoefte aan een snel en simpele ma
 ### Periode
 Als we het hebben over de periode dat dit project loopt zijn de harde data de volgende twee:
 
-Start: Maandag 25 Februari 2013
-Deadline van alle documentatie: Woensdag 12 Juni 2013
+Start: Maandag 25 februari 2013
+Deadline van alle documentatie: Woensdag 12 juni 2013
 
-Echter zal de projectgroep nog langer door werken aan het product. Dit om tot een goed eindproduct/ prototype te komen dat getoont kan worden aan geinteresseerden. Waarmee gewerkt kan worden door de doelgroep en wat gebruikt kan worden als portfolio materiaal voor de project leden.
+De projectgroep zal echter nog langer door werken aan het product. Dit om tot een goed eindproduct/ prototype te komen dat getoont kan worden aan geinteresseerden. Waarmee gewerkt kan worden door de doelgroep en wat gebruikt kan worden als portfolio materiaal voor de project leden.
 
 ### Budget
 Er is voor dit project € 0,- aan budget kosten beschikbaar.
@@ -74,14 +74,14 @@ Kosten die gemaakt zullen gaan worden zijn voor de projectgroep zelf en zullen e
 Voor iets meer beeldvorming, we financieren alle kosten omdat er geen budget beschikbaar is gesteld voor dit project.
 
 ### Software en hardware
-Er is geen budget voor dit project. De leden van de projectgroep beschikken gelukkig zelf over de benodigde hardware (laptops), voor de software wordt ten alle tijden gezocht naar gratis software dat gebruikt kan worden.
+Er is geen budget voor dit project. De leden van de projectgroep beschikken gelukkig zelf over de benodigde hardware (laptops), voor de software wordt te alle tijden gezocht naar gratis software dat gebruikt kan worden.
 
 ## Tussenresultaten
 ### Deel-producten
 Om ervoor te zorgen dat er in het project genoeg momenten zijn om te kunnen reflecteren op het werk dat klaar is en op de voortgang, wordt er gebruik gemaakt van versie-planning. Het product heeft verschillende versies waarin het zich kan bevinden. Er wordt vooraf gedefinieerd wanneer een versie compleet is, tot die tijd wordt de versie nog niet als gereed beschouwd. Per versie wordt bepaald welke elementen, functionaliteiten, designs etc. er in moeten zitten en waar aan deze zullen moeten voldoen.
 
 #### Versie 0.1.0 [Profiel]
-In deze versie zal het profiel centraal staan. Registratie van de gebruikers en een inlogsysteem zijn de hoofdelementen in deze versie.
+In deze versie zal het profiel centraal staan. Registratie van de gebruikers en een inlog systeem zijn de hoofdelementen in deze versie.
 
 #### Versie 0.2.0 [Indeling en bewerking]
 In deze versie zal het indelen van documenten en het bewerken er van centraal staan. Secties toevoegen en verwijderen, onderdelen invoegen (tekst-blokken, afbeeldingen, lijsten), indelingen beheren (secties van volgorde veranderen) en document opmaak zijn de hoofdelementen in deze versie.
@@ -93,7 +93,7 @@ In deze versie zal het opslaan van documenten centraal staan. Documenten aanmake
 In deze versie zal het publiceren van documenten centraal staan. Het publiceren van documenten is het hoofd element van deze versie.
 
 #### Versie 0.5.0 [Delen]
-In deze versie zal het delen van documenten centraal staan. Document-rechten beheren en met meerdere gebruikers aan een document werken zijn de hoofdelementen in deze versie.
+In deze versie zal het delen van documenten centraal staan, documentrechten beheren en met meerdere gebruikers aan een document werken zijn de hoofdelementen in deze versie.
 
 #### Versie 1.0.0 [Final]
 Dit is een werkende versie waarin versie 0.1.0 t/m 0.5.0 zijn samengevoegd en getest.
@@ -111,7 +111,7 @@ Voor de gehele D.o.D. zie bijlage 4.
 Om de kwaliteit te waarborgen en er voor te kunnen zorgen dat de project groep in staat is om aan de kwaliteitseisen te kunnen voldoen zal de kwaliteit moeten worden bewaakt.
 
 #### Monitoring
-Om het product van een zo hoog mogelijke kwaliteit te kunnen voorzien zullen er veel test momenten plaats vinden. Er zijn een aantal vastgestelde test momenten gepland vanuit de minor The Next Web. Van deze momenten zal gebruik gemaakt gaan worden maar er zullen ook door de projectgroep zelf geplande testmomenten plaats gaan vinden.
+Om het product van een zo hoog mogelijke kwaliteit te kunnen voorzien zullen er veel test momenten plaats vinden. Er zijn een aantal vastgestelde test momenten gepland vanuit de minor The Next Web. Van deze momenten zal gebruik gemaakt gaan worden maar er zullen ook door de projectgroep zelf geplande test momenten plaats gaan vinden.
 
 #### Test-plan
 Er zal voor het project een test-plan worden opgesteld waarin het proces, de methoden en de resultaten van tests worden beschreven. Dit document wordt door leden van de projectgroep gemaakt en bijgehouden. Op deze manier is het altijd mogelijk de voortgang van de kwaliteit te bewaken en inzichtelijk te maken voor anderen.
@@ -138,8 +138,8 @@ Vanuit het kenniscentrum is Jolanda Postma het aanspreekpunt.
 *stakeholder analyse.*
 
 ### Betrokken partijen
-Docenten en Tutor:
-De docenten en tutor voor dit project hebben als rol, hulp en informatie te bieden op momenten dat de project groep hier baat bij heeft.
+Docenten en tutor:
+De docenten en tutor voor dit project hebben als rol, hulp en informatie te bieden op momenten dat de projectgroep hier baat bij heeft.
 
 - Docent programmeren en tutor van de projectgroep, Raymond van Dongelen.
 - Docent programmeren, Dirk Sierd de Vries.
@@ -213,7 +213,7 @@ Het project vind plaats op de NHL Hogeschool Leeuwarden, binnen de opleiding Com
 
 ### Wekelijkse afspraak Tutor
 Het is de bedoeling dat de project groep wekelijks een contactmoment heeft met de tutor.
-Het is de bedoeling om hem op de hoogte te stellen van de voortgang van het project en eventuele groepsproblemen en of individuele zaken te kunnen bespreken.
+Het is de bedoeling om hem op de hoogte te stellen van de voortgang van het project en eventuele problemen en of individuele zaken te kunnen bespreken.
 
 ### Playtesting momenten
 Aan het eind van elke sprint is er op donderdag middag om 13:00 uur een Playtest moment geplant. Tijdens deze Playtest kan de projectgroep laten zien aan de mede studenten van de minor The Next Web wat de voortgang van het project is. Het is de bedoeling een werkbaar prototype mee te nemen zodat deze door medestudenten getest kan worden. Op deze manier kunnen de studenten de projectgroep voorzien van feedback en tips die in de volgende sprint meegenomen kunnen worden.
@@ -225,7 +225,7 @@ Deze extra Playtest sessies zijn ingesteld met als reden dat de opdrachtgever ka
 Deze vindt plaats op elke maandag morgen om 10:00 uur. Tijdens deze bijeenkomst wordt het laatste nieuws verteld dat binnen de minor The Next Web van belang is. Hier kan de projectgroep op de hoogte blijven van eventuele veranderingen en nieuws dat van belang is voor het project.
 
 ### Scrum meeting
-De scrum meeting vindt plaats op donderdag morgen om 9:30 uur. Deze meeting is bedoeld voor zowel de scrum master als de project owner. Het is een bijeenkomst voor de verschillende groepen met asl reden om de voortgang te bespreken en problemen binnen de groep aan te kaarten. Deze bijeenkomst wordt geleid door Jolanda Postma van het Kenniscentrum. Op deze manier blijven de verschillende groepen van elkaar op de hoogte en kan er ervaring worden uit gewisseld. Ook het Kenniscentrum kan op deze manier op de hoogte van eventuele problemen en moeilijkheden.
+De scrum meeting vindt plaats op donderdag morgen om 9:30 uur. Deze meeting is bedoeld voor zowel de scrum master als de project owner. Het is een bijeenkomst voor de verschillende groepen met als reden om de voortgang te bespreken en problemen binnen de groep aan te kaarten. Deze bijeenkomst wordt geleid door Jolanda Postma van het Kenniscentrum. Op deze manier blijven de verschillende groepen van elkaar op de hoogte en kan er ervaring worden uit gewisseld. Ook het Kenniscentrum kan op deze manier op de hoogte van eventuele problemen en moeilijkheden.
 
 ### Daily scrum
 Zoals de naam al zegt zal de Daily Scrum elke werkdag plaats vinden. Deze wordt geleid door de Scrum master en duurt ongeveer 15 minuten. Tijdens deze bespreking wordt van alle projectgroepsleden gevraagd wat ze de dag ervoor hebben gedaan, wat ze van plan zijn te gaan doen op de dag zelf en of er eventuele problemen zijn geweest of worden voorzien. Op deze manier blijft de groep op de hoogte van welke taken elk groepslid  doet en of er problemen zijn waar rekening mee gehouden moet worden. De meeting zal staande worden gehouden en met de werkplek uit het zicht.
@@ -268,34 +268,34 @@ Het project wordt een iteratief proces waarbij in elke sprint wordt gewerkt aan 
 
 	Sprints
 
-	Sprint 0: 		Begint op Maandag 25 Februari 2013
-	Sprint 1: 		Begint op Maandag 11 Maart 2013
-	Sprint 2: 		Begint op Maandag 25 Maart 2013
-	Sprint 3: 		Begint op Maandag 8 April 2013
-	Sprint 4: 		Begint op Maandag 22 April 2013 * Deze sprint bevat de Mei vakantie
-	Sprint 5: 		Begint op Maandag 13 Mei 2013
-	Sprint 6: 		Begint op Maandag 27 Mei 2013
+	Sprint 0: 		Begint op Maandag 25 februari 2013
+	Sprint 1: 		Begint op Maandag 11 maart 2013
+	Sprint 2: 		Begint op Maandag 25 maart 2013
+	Sprint 3: 		Begint op Maandag 8 april 2013
+	Sprint 4: 		Begint op Maandag 22 april 2013 * Deze sprint bevat de Mei vakantie
+	Sprint 5: 		Begint op Maandag 13 mei 2013
+	Sprint 6: 		Begint op Maandag 27 mei 2013
 
 	Playtests
 
-	Playtest 1: 	Vind plaats op Donderdag 7 Maart 2013 om 13:00 uur
-	Playtest 2: 	Vind plaats op Donderdag 21 Maart 2013 om 13:00 uur * Dit is een Playtest Extra
-	Playtest 3: 	Vind plaats op Donderdag 4 April 2013 om 13:00 uur
-	Playtest 4: 	Vind plaats op Woensdag 8 Mei 2013 om 13:00 uur
-	Playtest 5: 	Vind plaats op Donderdag 23 Mei 2013 om 13:00 uur
-	Playtest 6: 	Vind plaats op Donderdag 6 Juni 2013 om 13:00 uur * Dit is een Playtest Extra
+	Playtest 1: 	Vind plaats op Donderdag 7 maart 2013 om 13:00 uur
+	Playtest 2: 	Vind plaats op Donderdag 21 maart 2013 om 13:00 uur * Dit is een Playtest Extra
+	Playtest 3: 	Vind plaats op Donderdag 4 april 2013 om 13:00 uur
+	Playtest 4: 	Vind plaats op Woensdag 8 mei 2013 om 13:00 uur
+	Playtest 5: 	Vind plaats op Donderdag 23 mei 2013 om 13:00 uur
+	Playtest 6: 	Vind plaats op Donderdag 6 juni 2013 om 13:00 uur * Dit is een Playtest Extra
 
 #### Feestdagen en vakanties die binnen de werkdagen vallen
 
-	Tweede paasdag: Vind plaats op Maandag 1 April 2013
-	Meivakantie: 	Vind plaats vanaf Maandag 29 April 2013 t/m Vrijdag 3 Mei 2013
-	Koninginnedag:  Vind plaats op Dinsdag 30 April 2013
+	Tweede paasdag: Vind plaats op Maandag 1 april 2013
+	Meivakantie: 	Vind plaats vanaf Maandag 29 april 2013 t/m Vrijdag 3 mei 2013
+	Koninginnedag:  Vind plaats op Dinsdag 30 april 2013
 
 	Projectgroep excursie Lissabon: 
 	Vind plaats vanaf maandag 6 mei 2013 t/m vrijdag 10 mei 2013
 
-	Hemelvaartsdag: Vind plaats op donderdag 9 Mei 2013
-	Pinksteren: 	Vind plaats op maandag 20 Mei 2013
+	Hemelvaartsdag: Vind plaats op donderdag 9 mei 2013
+	Pinksteren: 	Vind plaats op maandag 20 mei 2013
 
 	Afstemmingsgesprek:
 	Het afstemmingsgesprek valt in week 21
@@ -310,17 +310,17 @@ Het project wordt een iteratief proces waarbij in elke sprint wordt gewerkt aan 
 	Het eind assessment is in week 26 of 27
 
 ## Kosten en baten
-### Velocity project groep
-Het project zou in eerste instantie gebruik maken van Pivotal na verloop van tijd hebben we gemerkt dat dit niet ideaal werkt omdat het een omslachtig programma is waar een hoop extra werk achter vandaan komt voor de project leden. Dit zou dus sneller moeten kunnen. Daarna is overgestapt op een eigen uren schema bijgehouden in Google Drive ook dit bleek niet ideaal te zijn. Het bleef een online programma wat snel vergeten wordt in te vullen waar door de informatie niet compleet genoeg is. Daarna is het scrumboard aan de muur gehangen het bijhouden van uren blijft een hekelpunt maar er wordt in elk geval meer mee gedaan dan de online varianten. Hierdoor hebben we deze manier van werken behouden.
+### Velocity projectgroep
+Het project zou in eerste instantie gebruik maken van Pivotal na verloop van tijd hebben we gemerkt dat dit niet ideaal werkt omdat het een omslachtig programma is waar een hoop extra werk achter vandaan komt voor de project leden. Dit zou dus sneller moeten kunnen. Daarna is overgestapt op een eigen uren schema bijgehouden in Google Drive ook dit bleek niet ideaal te zijn. Het bleef een online programma wat snel vergeten wordt in te vullen waar door de informatie niet compleet genoeg is. Daarna is het scrumboard aan de muur gehangen het bijhouden van uren blijft een hekel punt maar er wordt in elk geval meer mee gedaan dan de online varianten. Hierdoor hebben we deze manier van werken behouden.
 
 ### Materiaal
-Materiaal dat nodig is tijdens het project zal voornamelijk papier zijn en schrijfgerij zijn.
+Materiaal dat nodig is tijdens het project zal voornamelijk papier zijn en schrijf gerij zijn.
 Ook zal er een host moeten worden gezocht om het product op te kunnen draaien, er zal in eerste instantie worden gezocht naar een gratis host maar mocht dit niet lukken zal er naar een betaalde versie moeten worden gezocht.
 Misschien dat er boeken zullen moeten worden aangeschaft voor bepaalde research.
 En eventuele bibliotheek kosten zullen misschien ook worden gemaakt.
 
 ### Kosten overzicht
-Voor een overzicht van de kosten die gemaakt moeten en gaan worden tijdens dit project is de begroting toegevoegd in de bijlage. (Zie bijlage 2 Begroting).
+Voor een overzicht van de kosten die gemaakt moeten en gaan worden tijdens dit project is de begroting toegevoegd in de bijlage. (Zie bijlage 2 begroting).
 
 ## Risico analyse
 ### Risico’s
@@ -333,11 +333,11 @@ Voor alle risico’s die in kaart zijn gebracht is de risico analyse toegevoegd 
 
 ## Maatregelen
 ### Binnen Projectgroep
-Factoren die binnen de projectgroep het grootste risico hebben zijn kort samengevat. Projectleden hebben meer punten dan ze van tevoren hadden gedacht, de groep heeft te weinig ervaring, slechte communicatie richting de stakeholders.
+Factoren die binnen de projectgroep het grootste risico hebben zijn kort samengevat. Project leden hebben meer punten dan ze van tevoren hadden gedacht, de groep heeft te weinig ervaring, slechte communicatie richting de stakeholders.
 
 Communiceren met alle externe partijen is een zeer belangrijk punt om constant in de gaten te houden. Niet alleen om de stakeholders op de hoogte te houden van de voortgang maar ook om ze alert, betrokken en scherp te houden bij het project. Het is namelijk van belang voor het slagen van het project om deze mensen er bij te betrekken.
 
-Er zijn projectleden die als ze met het project door zouden gaan meer punten halen dan dat deze nodig zouden hebben. In het geval dat deze projectleden uit het project zouden stappen om deze reden zou dit veel impact hebben op de voortgang van het project. Er wordt verwacht dat deze leden zo snel mogelijk inzicht kunnen geven in wat ze van plan zijn en welke maatregelen er daarna getroffen moeten gaan worden.
+Er zijn project leden die als ze met het project door zouden gaan meer punten halen dan dat deze nodig zouden hebben. In het geval dat deze project leden uit het project zouden stappen om deze reden zou dit veel impact hebben op de voortgang van het project. Er wordt verwacht dat deze leden zo snel mogelijk inzicht kunnen geven in wat ze van plan zijn en welke maatregelen er daarna getroffen moeten gaan worden.
 
 ### Extern
 De externe validatie kan niet worden gevonden of ziet af van zijn/ haar taak. In dit geval zou er nieuwe validatie gezocht moeten worden. Het gevolg zou zijn dat er geen externe validatie heeft plaats gevonden of dat een deel van het project zonder externe validatie plaats vindt. Dit zou voor het project kunnen laten falen omdat er zonder externe validatie geen geldig project gedraaid is.
@@ -367,13 +367,13 @@ Tijd:
 Te laat komen:
 - Mocht een persoon te laat komen of niet aanwezig kunnen zijn die dag dan meld deze dat bij een ander groepslid (de voorkeur is om dit bij de Scrummaster Edwin ten Wolde te doen).
 - Mocht er een patroon ontstaan in het te laat komen van een persoon (meerdere malen in een korte periode of door dezelfde reden) zal er een gesprek met deze persoon plaats vinden.
-Mochten er meerdere van deze gesprekken moeten plaats vinden en de groep stemt er mee in loopt de desbetreffende persoon de kans uit de groep te worden geplaats.
+Mochten er meerdere van deze gesprekken moeten plaats vinden en de groep stemt er mee in loopt de desbetreffende persoon de kans uit de groep te worden geplaatst.
 
 Vrij:
 - Vrije dagen worden uiterlijk een dag van te voren aangevraagd (bij voorkeur eerder i.v.m. de planning).
 - Vrije dagen kunnen alleen worden toegekend in overleg met de groep, mocht het voor het project te belangrijk zijn om een dag vrij te nemen en de reden van vrij nemen is niet urgent genoeg kan het zijn dat de vrijdag op de gewenste dag niet wordt toegekend.
 Locatie:
-- De standaard werklocatie is op de NHL Hogeschool in het App-lab.
+- De standaard werklocatie is op de NHL Hogeschool in het Applab.
 Kosten:
 - Kosten worden van te voren met de gehele project groep overlegt.
 - Kosten voor het project worden genoteerd en eerlijk verdeelt onder alle groepsleden.
@@ -399,7 +399,7 @@ Edwin ten Wolde         Douwe de Haan         Tjerk Jippe Dijkstra      Vincent 
 - Documentatie moet volledig in het Engels worden geschreven.
 - De vormgeving en lettertype moeten aansluiten bij de huidige conventie.
 - Het stuk moet eerst zijn gecheckt door tenminste 1 groepslid op spelling en inhoud.
-- Er mogen geen ontbrekende onderdelen / losse einden in het stuk zitten. Hiermee wordt bedoeld dat elk geschreven stuk volledig af moet zijn en een doel vervuld.
+- Er mogen geen losse einden in het stuk zitten. Hiermee wordt bedoeld dat elk geschreven stuk volledig af moet zijn en een doel vervuld.
 - Indien er bronnen aanwezig zijn, moeten deze vermeld worden in een bronnenlijst die onderin het stuk wordt weergegeven.
 
 **Programmeren**
@@ -500,10 +500,10 @@ Een grid systeem die het document verdeeld in kolommen en structuur bied.
 Het werken met blokken die kunnen worden ingedeeld over de kolommen.
 Het aanpassen van de stijl en opmaak over het gehele document door middel van stijl regels.
 
-### Wat voor type uitstraling/imago zou je willen hebben?
+### Wat voor type uitstraling zou je willen hebben?
 Gestructureerd, netjes, logisch, multifunctioneel.
 
-### Welke markt/doelgroep bedien je?
+### Welke doelgroep bedien je?
 Mensen die veel documentatie moeten schrijven, mensen die bekend zijn met het aanbod van huidige software/tools zoals Word, Google Drive, OpenOffice en/of Pages. 
 
 ### Power users
@@ -515,7 +515,7 @@ Student van 22 jaar oud die beschikt over een desktop en een laptop met Windows 
 
 Personalia
 Een student van 17 jaar studeert op het MBO beschikt over een laptop met Windows 7 met daarop redelijk up to date software, maakt gebruik van Google Chrome en het office pakket.
-Is niet bekend met Dropbox en Google Drive en gebruikt Windows live services voor e-mail, agenda. Maakt af en toe een verslag voor school maar deze beschikt niet over een inhoudsopgave of paginanummering meestal twee á drie a4’tjes.
+Is niet bekend met Dropbox en Google Drive en gebruikt Windows live services voor e-mail, agenda. Maakt af en toe een verslag voor school maar deze beschikt niet over een inhoudsopgave of pagina nummering meestal twee á drie a4’tjes.
 
 ### Dierenassociaties
 Vanuit deze vragen zijn wij op zoek gegaan naar een metafoor die deze kernwaarden en uitstraling samenvatten, hieruit is een lijst met potentiële namen ontstaan.
@@ -523,7 +523,7 @@ De bever
 Bouwt gestructureerd aan dammen en is altijd bezig met het opbouwen van zijn nest. Is veelzijdig en heeft inzicht. Is een ervaren bouwer die de grootste dammen kan maken, blokkeert het stromen van de grootste rivieren met teamwork.
 
 #### De spin
-Weeft een spinnenweb met prachtige lijnen en structuren / patronen. Beschikt over veel zijde kant dit zelf aanmaken. Zijde is licht en sterk.
+Weeft een spinnenweb met prachtige lijnen en patronen. Beschikt over veel zijde kant dit zelf aanmaken. Zijde is licht en sterk.
 
 #### De mier
 Een werker die door grote aantallen en teamwork de grootste gebouwen onder en boven de grond kan maken. Is een harde werker die grote ondergrondse structuren en steden graaft.
@@ -535,9 +535,9 @@ Heeft 8 tentakels met zuignappen en spuit inkt. Kan zichzelf camoufleren en ingr
 - Blocknode
 	- Een combinatie van de blokken waarmee we willen indelen en NodeJS de taal waarin we dit concept - willen realiseren.
 - Charta
-	- Betekent papier in latijn, ook het engelse woord voor een kaart of koers.
+	- Betekent papier in latijn, ook het Engelse woord voor een kaart of koers.
 - Codex
-	- Is het latijnse woord voor blok, zou ook op code kunnen slaan.
+	- Is het Latijnse woord voor blok, zou ook op code kunnen slaan.
 - Docbuilder
 	- Het opbouwen van een document.
 - Blueprint
@@ -552,7 +552,7 @@ Heeft 8 tentakels met zuignappen en spuit inkt. Kan zichzelf camoufleren en ingr
 ### Gekozen naam
 
 ### “Doctopus”
-Uiteindelijk is er er gekozen voor de naam Doctopus, deze naam valt samen met de dieren associatie met een octopus. Het multitasken kan worden uitgebeeld door middel van de acht armen waarmee een octopus meerdere taken tegelijk kan uitvoeren. Het werken aan een document of tekst kan worden uitgebeeld door middel van de inkt.
+Uiteindelijk is er gekozen voor de naam Doctopus, deze naam valt samen met de dieren associatie met een octopus. Het multitasken kan worden uitgebeeld door middel van de acht armen waarmee een octopus meerdere taken tegelijk kan uitvoeren. Het werken aan een document of tekst kan worden uitgebeeld door middel van de inkt.
 
 Het slepen en indelen van blokken kan op een ludieke wijze worden uitgebeeld door middel van tentakels die met zuignappen op een speelse wijze een document indelen.
 
@@ -820,7 +820,7 @@ Het lettertype ‘Bebas Regular’ is een strak en smal lettertype. Het bestaat 
 2. Roboto Slab Regular
 Het lettertype ‘Roboto Slab Regular’ is een web-font dat voor commerciële doeleinden gebruikt mag worden. Het is op een kleine schaal nog steeds goed leesbaar en straalt door de haakjes die aan veel letters zitten een eigen identiteit uit. Door het gebruik van dit font zullen veel gebruikers snel de huisstijl van Doctopus herkennen  terwijl het een goed leesbaar lettertype is.
 
-Het gebruik van de lettertypes zal voor alle elementen verschillen, belangrijkste punten zijn hierbij leesbaarheid(qua grootte) en een duidelijk contrast(qua kleur in combinatie met de achtergrond-kleur).
+Het gebruik van de lettertypes zal voor alle elementen verschillen, belangrijkste punten zijn hierbij leesbaarheid(qua grootte) en een duidelijk contrast(qua kleur in combinatie met de achtergrondkleur).
 
 ## Het logo van Doctopus
 
@@ -837,7 +837,7 @@ Door een dier te combineren met het product heeft als doel om zo sneller en conn
 Het beeldmerk  is zo ontworpen dat het makkelijk gebruikt kan worden als icoon (bijvoorbeeld voor een app versie van het product). Door het niet volledig tonen van de octopus, wordt er ruimte gecreëerd voor een eigen aanvulling van de gebruiker en krijgt het icoon een spannender dynamiek.
 
 ## Hardware
-Voor het product dat wordt ontwikkeld moet er qua grafische productie rekening worden gehouden met een aantal belangrijke facetten. Het product zal niet voor mobiele telefoon of tablet worden ontwikkeld, maar wel voor devices zoals laptops en desktops. Omdat er binnen dit producten aanbod een groot verschil zit in de resoluties zal het product schaalbaar moeten worden zodat op elke resolutie er mee gewerkt kan worden. De resoluties zullen een minimun van 800 bij 600 pixels moeten hebben, omdat anders niet alle elementen op het scherm passen.. Wat een ander belangrijk element is, is dat het product online zal gaan werken, dit houdt in dat het product via een browser bezocht kan gaan worden door de gebruikers. Waar rekening mee gehouden moet worden is dat er gewerkt gaat worden met HTML5 en CSS3. De browsers waarvoor geschreven gaat worden zullen dit dus moeten ondersteunen.
+Voor het product dat wordt ontwikkeld moet er qua grafische productie rekening worden gehouden met een aantal belangrijke facetten. Het product zal niet voor mobiele telefoon of tablet worden ontwikkeld, maar wel voor devices zoals laptops en desktops. Omdat er binnen dit producten aanbod een groot verschil zit in de resoluties zal het product schaalbaar moeten worden zodat op elke resolutie er mee gewerkt kan worden. De resoluties zullen een minimum van 800 bij 600 pixels moeten hebben, omdat anders niet alle elementen op het scherm passen.. Wat een ander belangrijk element is, is dat het product online zal gaan werken, dit houdt in dat het product via een browser bezocht kan gaan worden door de gebruikers. Waar rekening mee gehouden moet worden is dat er gewerkt gaat worden met HTML5 en CSS3. De browsers waarvoor geschreven gaat worden zullen dit dus moeten ondersteunen.
 
 ### Devices
 De devices waarop het product zal gaan draaien zijn laptops, netbooks en desktops.
@@ -1224,7 +1224,7 @@ Retrieved March 12, 2013, from [http://martinfowler.com/eaaDev/uiArchs.html](htt
 ### Inleiding
 Voor dit project gaan wij de scrum methode hanteren, dit gaat ook samenhangen met onze test momenten. Wij zullen aan het einde van elke sprint een prototype ontwikkelen die verschillende functionaliteiten zullen bevatten. 
 
-Inspiratie voor onze testmethode halen wij uit eerdere testervaringen en het boek “Don’t make me think” door Steve Krug*. Hij beschrijft in zijn boek wat een goedkope en snelle user-test minimaal zou moeten bevatten. De conventies die hij stelt nemen wij over en breiden wij uit waar nodig. Hierdoor zijn wij tot de volgende randvoorwaarden gekomen voor het uitvoeren van een prototype test.
+Inspiratie voor onze testmethode halen wij uit eerdere test ervaringen en het boek “Don’t make me think” door Steve Krug*. Hij beschrijft in zijn boek wat een goedkope en snelle user-test minimaal zou moeten bevatten. De conventies die hij stelt nemen wij over en breiden wij uit waar nodig. Hierdoor zijn wij tot de volgende randvoorwaarden gekomen voor het uitvoeren van een prototype test.
 
 *Steve Krug, Don’t make me think- pagina 137*
 
@@ -1233,12 +1233,12 @@ Inspiratie voor onze testmethode halen wij uit eerdere testervaringen en het boe
 - Doe een test met minimaal 3 a 4 testpersonen.
 - Leg bevindingen vast (dit kan op papier, met Silverback of notuleren op de computer). 
 - Voer de test uit met minimaal 2 personen (persoon 1 begeleidt de testpersoon indien nodig, persoon 2 observeert en ondersteunt).
-- Voor aanvang van de test de testpersoon eerst een goede introductie/ uitleg bieden.
-- Eerste indruk is belangrijk, vraag de testpersoon naar algemene indruk / verwachtingen van het testen van het product.
+- Voor aanvang van de test de testpersoon eerst een goede uitleg bieden.
+- Eerste indruk is belangrijk, vraag de testpersoon naar algemene indruk en verwachtingen van het testen van het product.
 - Vraag of de testpersoon interesse heeft naar het product.
 - Alle bevindingen verwerken in het testverslag.
 	- Inleiding + Afbeelding
-	- Verbeteringen / Veranderingen ten opzichte van vorig prototype
+	- Verbeteringen / veranderingen vergeleken met het vorig prototype
 	- Beschrijving + Testcase + Observatiepunten
 	- Conclusie + Actielijst
 
@@ -1279,10 +1279,10 @@ Bekijk alle problemen die voorkwamen en beoordeel deze, kijk naar welke probleme
 ## Paper prototype
 
 ![paper prototype](afbeeldingen/img33.jpg)
-Paper prototype, afbeelding 1.
+Paperprototype, afbeelding 1.
 
 ### Inleiding
-Het paper prototype is bedoeld om een eerste beeld te krijgen van het product dat wij gaan ontwikkelen. Het kan getest worden bij gebruikers en op die manier kunnen wij snel een globaal beeld krijgen over hoe de gebruiker reageert op het product dat wij gaan bouwen. 
+Het paperprototype is bedoeld om een eerste beeld te krijgen van het product dat wij gaan ontwikkelen. Het kan getest worden bij gebruikers en op die manier kunnen wij snel een globaal beeld krijgen over hoe de gebruiker reageert op het product dat wij gaan bouwen. 
 
 ### Resultaat
 - Gebruikers hadden snel een beeld bij het product dat gebouwd gaat worden. 
@@ -1309,11 +1309,11 @@ Het principe is dat er nieuwe elementen kunnen worden toegevoegd, gesorteerd en 
 Prototype 1, afbeelding 3.
 
 ### Beschrijving
-Uitgaande van het concept bestaat dit prototype uit een 4 koloms werkveld met rechts een sidebar met daarin de verschillende elementen die naar het werkveld gesleept kunnen worden. Elk element kan door middel van een klik op het vergroot icoon rechtsonder veranderen van grootte, hier in zijn drie incrementele stappen het element is standaard een kolom, het element kan nooit groter zijn dan vier koloms. Op het moment dat een element vier koloms is en er op vergroten geklikt veranderd het element terug naar een kolom.
+Uitgaande van het concept bestaat dit prototype uit een 4 kolommen werkveld met rechts een sidebar met daarin de verschillende elementen die naar het werkveld gesleept kunnen worden. Elk element kan door middel van een klik op het vergroot icoon rechtsonder veranderen van grootte, hier in zijn drie incrementele stappen het element is standaard een kolom, het element kan nooit groter zijn dan vier kolommen. Op het moment dat een element vier kolommen is en er op vergroten geklikt veranderd het element terug naar een kolom.
 
 ### Testcase Prototype 1
 #### Inleiding
-Dit prototype zal mensen introduceren met het werken met blokken om het document in te delen volgens een vooraf ingesteld vier koloms grid. Wij zijn benieuwd naar hoe intuïtief dit prototype overkomt op de eindgebruiker en waar er onduidelijkheden liggen. Daarom zullen wij simpele taken vragen van de gebruiker zoals het toevoegen van nieuwe elementen en het wijzigen van tekst / opmaak naar eigen smaak.
+Dit prototype zal mensen introduceren met het werken met blokken om het document in te delen volgens een vooraf ingesteld grid. Wij zijn benieuwd naar hoe intuïtief dit prototype overkomt op de eindgebruiker en waar er onduidelijkheden liggen. Daarom zullen wij simpele taken vragen van de gebruiker zoals het toevoegen van nieuwe elementen en het wijzigen van tekst / opmaak naar eigen smaak.
 
 #### Testcase
 Voor de volgende testcase zijn deze punten van belang:
@@ -1480,7 +1480,7 @@ Deze vraag stellen wij om een beeld te krijgen over de vraag die er is naar het 
 	6. Verander de kleur van de tekst naar blauw.
 	Hierbij gaan we wederom kijken naar de sidebar of de opties daar binnen logisch zijn ingedeeld en benoemd.
 
-	7. Sla jou wijzigingen op
+	7. Sla jouw wijzigingen op
 	Positie van de “opslaan” knop en snelheid van het vinden van deze knop.
 
 	8. Verwijder de titel van dit document.
@@ -1546,7 +1546,7 @@ Deze vraag stellen wij om een beeld te krijgen over de vraag die er is naar het 
 
 
 	12. Probleem
-	Er is geen functie aanwezig waardoor de gebruiker op een logische manier blokken kan deselecteren.
+	Er is geen functie aanwezig waardoor de gebruiker op een logische manier blokken kan de selecteren.
 
 	12. Actie
 	Deze functie gaat er komen.
@@ -1645,7 +1645,7 @@ Om op elkaar te reflecteren hebben we als groep een feedback ronde gehouden. Hie
 - Nuchter
 	- Geen gedoe, beetje relativeren ‘zo is het, punt klaar!’ maak je niet zo druk. Kan wel doorslaan naar laksheid.
 - Geen half werk
-	- Maakt je werk af en zorgt dat het het goed doet.
+	- Maakt je werk af en zorgt dat je het goed doet.
 - Pakt snel dingen op
 	- Leert snel hoe je je code in de rest moet laten passen.
 - Besluitvaardig
