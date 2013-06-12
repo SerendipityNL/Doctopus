@@ -3,7 +3,9 @@ var parentCount = 0;
 var childCount = 0;
 
 function mkId(title) {
-	var newTitle = title.toLowerCase().replace(/ /g, '-');
+	var newTitle = title.toLowerCase().replace(/[^a-zA-Z0-9\\s]+$/g, '');
+	newTitle = newTitle.replace(/ /g, '-');
+		
 	return newTitle;
 }
 

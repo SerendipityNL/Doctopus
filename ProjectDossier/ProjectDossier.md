@@ -1226,7 +1226,7 @@ Voor dit project gaan wij de scrum methode hanteren, dit gaat ook samenhangen me
 
 Inspiratie voor onze testmethode halen wij uit eerdere testervaringen en het boek “Don’t make me think” door Steve Krug*. Hij beschrijft in zijn boek wat een goedkope en snelle user-test minimaal zou moeten bevatten. De conventies die hij stelt nemen wij over en breiden wij uit waar nodig. Hierdoor zijn wij tot de volgende randvoorwaarden gekomen voor het uitvoeren van een prototype test.
 
-*Krug, Steve Don’t make me think- pagina 137*
+*Steve Krug, Don’t make me think- pagina 137*
 
 ### Randvoorwaarden
 
