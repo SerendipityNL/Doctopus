@@ -269,28 +269,28 @@ Het project wordt een iteratief proces waarbij in elke sprint wordt gewerkt aan 
 
 	Sprints
 
-	Sprint 0: 		Begint op Maandag 25 februari 2013
-	Sprint 1: 		Begint op Maandag 11 maart 2013
-	Sprint 2: 		Begint op Maandag 25 maart 2013
-	Sprint 3: 		Begint op Maandag 8 april 2013
-	Sprint 4: 		Begint op Maandag 22 april 2013 * Deze sprint bevat de Mei vakantie
-	Sprint 5: 		Begint op Maandag 13 mei 2013
-	Sprint 6: 		Begint op Maandag 27 mei 2013
+	Sprint 0: 		Begint op maandag 25 februari 2013
+	Sprint 1: 		Begint op maandag 11 maart 2013
+	Sprint 2: 		Begint op maandag 25 maart 2013
+	Sprint 3: 		Begint op maandag 8 april 2013
+	Sprint 4: 		Begint op maandag 22 april 2013 * Deze sprint bevat de mei vakantie
+	Sprint 5: 		Begint op maandag 13 mei 2013
+	Sprint 6: 		Begint op maandag 27 mei 2013
 
 	Playtests
 
-	Playtest 1: 	Vind plaats op Donderdag 7 maart 2013 om 13:00 uur
-	Playtest 2: 	Vind plaats op Donderdag 21 maart 2013 om 13:00 uur * Dit is een Playtest Extra
-	Playtest 3: 	Vind plaats op Donderdag 4 april 2013 om 13:00 uur
-	Playtest 4: 	Vind plaats op Woensdag 8 mei 2013 om 13:00 uur
-	Playtest 5: 	Vind plaats op Donderdag 23 mei 2013 om 13:00 uur
-	Playtest 6: 	Vind plaats op Donderdag 6 juni 2013 om 13:00 uur * Dit is een Playtest Extra
+	Playtest 1: 	Vind plaats op donderdag 7 maart 2013 om 13:00 uur
+	Playtest 2: 	Vind plaats op donderdag 21 maart 2013 om 13:00 uur * Dit is een Playtest Extra
+	Playtest 3: 	Vind plaats op donderdag 4 april 2013 om 13:00 uur
+	Playtest 4: 	Vind plaats op woensdag 8 mei 2013 om 13:00 uur
+	Playtest 5: 	Vind plaats op donderdag 23 mei 2013 om 13:00 uur
+	Playtest 6: 	Vind plaats op donderdag 6 juni 2013 om 13:00 uur * Dit is een Playtest Extra
 
 #### Feestdagen en vakanties die binnen de werkdagen vallen
 
-	Tweede paasdag: Vind plaats op Maandag 1 april 2013
-	Meivakantie: 	Vind plaats vanaf Maandag 29 april 2013 t/m Vrijdag 3 mei 2013
-	Koninginnedag:  Vind plaats op Dinsdag 30 april 2013
+	Tweede paasdag: Vind plaats op maandag 1 april 2013
+	Meivakantie: 	Vind plaats vanaf maandag 29 april 2013 t/m vrijdag 3 mei 2013
+	Koninginnedag:  Vind plaats op dinsdag 30 april 2013
 
 	Projectgroep excursie Lissabon: 
 	Vind plaats vanaf maandag 6 mei 2013 t/m vrijdag 10 mei 2013
@@ -302,8 +302,8 @@ Het project wordt een iteratief proces waarbij in elke sprint wordt gewerkt aan 
 	Het afstemmingsgesprek valt in week 21
 
 	Deadlines:
-	Deadline tussen Assessment is op 28 maart 2013
-	Deadline eind Assessment is op 12 juni 2013
+	Deadline tussen assessment is op 28 maart 2013
+	Deadline eind assessment is op 12 juni 2013
 
 	Assessments:
 	Het tussen assessment is in week 15 of 16
