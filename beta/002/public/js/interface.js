@@ -15,6 +15,7 @@ jQuery(document).ready( function() {
 		var newDocument 		= {};
 		newDocument.title 		= jQuery('#newDocumentModal .modal-body input[name="documentTitle"]').val();
 		newDocument.visibility	= jQuery('#newDocumentModal .modal-body select').val();
+		newDocument.username	= jQuery('#newDocumentModal .modal-body input[name="username"]').val();
 		
 		socket.emit('new document', newDocument);
 	});
