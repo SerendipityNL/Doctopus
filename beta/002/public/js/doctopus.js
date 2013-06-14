@@ -49,6 +49,12 @@
 		showNotice : function (message, type, duration){
 			$('.notice').fadeIn().text(message).addClass(type).delay(duration).fadeOut('slow'); 
 		},
+		startDropzone : function (){
+			Dropzone.options.myAwesomeDropzone = {
+				paramName: "file", // The name that will be used to transfer the file
+				maxFilesize: 2
+			};
+		},
 		startTrashcan : function() {
 			var trashSettings = methods.settings.sortableTrash;
 
@@ -273,6 +279,7 @@
 			jQuery('.plus_icon').off('click.changeBlock');
 			jQuery('#blocks > div').off('click.selectBlock');
 			jQuery('.block-text').off('dblclick.textEditor');
+			jQuery('.block-img').off('dblclick.imageUpload');
 			jQuery('#js-save_and_close').off('click.saveAndCloseText');
 			jQuery('#js-save').off('click.saveText');
 			jQuery('#js-close').off('click.closeText');
@@ -290,6 +297,10 @@
 			});
 			jQuery('.block-text').on('dblclick.textEditor', function() {
 				methods.createTexteditor(jQuery(this));
+			});
+
+			jQuery('.block-img').on('dblclick.imageUpload', function() {
+				methods.startDropzone(jQuery(this));
 			});
 
 			jQuery('#trashcan').on('click.deleteBlock', function() {

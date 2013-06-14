@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "",
-  "author": "Douwe de Haan, Vincent Bremer, Tjerk dijkstra and Edwin ten Wolde",
+  "author": "Douwe de Haan, Vincent Bremer, Tjerk Dijkstra and Edwin ten Wolde",
   "license": "BSD",
   "dependencies": {
 		"express": "3.x",
@@ -17,6 +17,7 @@
 		"randomstring": "*",
 		"validator": "*",
 		"gravatar": "*",
-		"socket.io": "*"
+		"socket.io": "*",
+    "easyimage": "*"
   }
 }
