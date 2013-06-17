@@ -10,7 +10,7 @@
 					, handle				: '.block-actions .move'
 					, delay					: 300
 					, placeholder			: 'col-placeholder'
-					, cursor				: {
+					, cursorAt				: {
 						  left				: 5
 						, top				: 5
 					}
@@ -47,6 +47,7 @@
 		},
 		// message is text, type is error, succes, warning and duration is int in ms
 		showNotice : function (message, type, duration){
+			$('.notice').stop(true);
 			$('.notice').fadeIn().text(message).addClass(type).delay(duration).fadeOut('slow'); 
 		},
 		startDropzone : function (){
@@ -74,12 +75,10 @@
 			var sortSettings = methods.settings.sortable;
 
 			jQuery(sortSettings.selector).sortable({
-				  items					: sortSettings.items
+				 items					: sortSettings.items
+				, scroll                : true
+				, scrollSensitivity		: 50
 				, handle				: sortSettings.handle
-				, cursorAt				: {
-					  left					: sortSettings.cursor.left
-					, top					: sortSettings.cursor.top
-				}
 				, connectWith			: methods.settings.sortableTrash.selector
 				, delay					: sortSettings.delay
 				, placeholder			: sortSettings.placeholder
@@ -289,6 +288,7 @@
 			methods.activateListeners();
 		},
 		activateListeners: function (){
+
 			jQuery('.add_more_blocks_button').on('click.addMoreBlocks', function() {
 				methods.addBlock();
 			});
@@ -309,6 +309,7 @@
 
 			jQuery(document).on('click.deselect', function (){
 				methods.deselect(event.target.className);
+				console.log(event.target);
 			});	
 			  
 			jQuery('.resize-block-btn-plus, .resize-block-btn-min').on('click.resizeBlock', function(){

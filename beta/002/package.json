@@ -13,7 +13,6 @@
 		"express": "3.x",
 		"jade": "*",
 		"mongoose": "*",
-		"basic-auth-mongoose": "*",
 		"randomstring": "*",
 		"validator": "*",
 		"gravatar": "*",

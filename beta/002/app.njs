@@ -56,15 +56,15 @@ app.get('/logout', user.logout);
 app.post('/setstyle', routes.setstyle);
 app.post('/register', user.create);
 app.post('/login', user.login);
-app.all('*', function(req,res,next) {
-	if (req.session.logged_in) {
-		global.session = req.session;
-	    next();
-	}
-	else {
-		res.redirect('/login');
-	}
-});
+// app.all('*', function(req,res,next) {
+// 	if (req.session.logged_in) {
+// 		global.session = req.session;
+// 	    next();
+// 	}
+// 	else {
+// 		res.redirect('/login');
+// 	}
+// });
 app.get('/dashboard', user.index);
 
 // handles image upload

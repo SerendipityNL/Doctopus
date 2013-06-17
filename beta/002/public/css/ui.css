@@ -361,7 +361,7 @@ div.block-actions {
 }
 
 div#blocks div:hover div.block-actions {
-/*	display: block;		*/
+	display: block;		
 }
 
 div.block-actions ul {

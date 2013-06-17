@@ -11,7 +11,7 @@ var userSchema = new mongoose.Schema({
 	username    : {type: String, required : true}
 });
 
-userSchema.plugin(require('basic-auth-mongoose'));
+
 var User = mongoose.model('User', userSchema);
 
 module.exports = {
