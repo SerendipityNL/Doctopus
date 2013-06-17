@@ -122,6 +122,7 @@ module.exports = {
 			token: token
 		});
 		console.log(user);
+		
 /*		if(errors.length == 0) {
 */			user.save(function (err) {
 				callback(err);
@@ -159,13 +160,16 @@ module.exports = {
 				if (found_user) {
 					if (found_user.authenticate(req.password)) {  // && found_user.token == 1
 						error = false;
+						console.log(found_user);
 						username = found_user.username;
+						
 					}
 					else {
 						var error = 'password does not match, or user not activated';
 					}
 				}
 			}
+			console.log(username);
 			callback(error, username);
 		});
 	}

@@ -4,7 +4,7 @@ var Gravatar = require('gravatar'),
 
 module.exports = {
 	register: function(req, res) {
-		if (req.session.logged_in = true){
+		if (req.session.logged_in == true){
 			res.redirect('/dashboard');
 		}
 		else {			
@@ -14,20 +14,25 @@ module.exports = {
 			});
 		}
 	},
-	loginView: function(req, res){
-		res.send('login view');
-	},
 	login: function(req, res) {
-		User.auth(req.body, function(err, username) {
-			if (! err) {
-				req.session.logged_in = true;
-				req.session.username  = username;
-				res.redirect('/register');
-			}
-			else {
-				res.send(err);
-			}
-		});
+		if (typeof(req.body.username) != 'undefined') {
+			console.log(req.body);
+			User.auth(req.body, function(err, username) {
+				if (! err) {
+					req.session.logged_in = true;
+					req.session.username = username;
+					res.redirect('/dashboard');
+				}
+				else {
+					res.send(err);
+				}
+			});
+		}
+		else {
+			res.render('pages/user/login', {
+				pageTitle: 'Login'
+			})
+		}
 	},
 	logout: function(req, res) {
 		req.session.logged_in = false;

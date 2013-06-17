@@ -41,17 +41,21 @@ app.configure(function() {
 });
 
 // Page routes
+app.get('*', function(req, res, next) {
+	//console.log(req.session);
+	next();
+});
+
 app.get('/', user.register);
 app.get('/document', routes.index);
 app.get('/custom.css', routes.css);
 app.get('/register', user.register);
-app.get('/login', user.loginView);
+app.get('/login', user.login);
 app.get('/logout', user.logout);
 
 app.post('/setstyle', routes.setstyle);
 app.post('/register', user.create);
 app.post('/login', user.login);
-
 app.all('*', function(req,res,next) {
 	if (req.session.logged_in) {
 		global.session = req.session;
@@ -61,6 +65,7 @@ app.all('*', function(req,res,next) {
 		res.redirect('/login');
 	}
 });
+app.get('/dashboard', user.index);
 
 // handles image upload
 app.post('/file-upload', function(req, res){
@@ -127,7 +132,6 @@ app.post('/file-upload', function(req, res){
 
 });
 
-app.get('/dashboard', user.index);
 
 // Let the app listen on the defined port
 app = app.listen(port);
