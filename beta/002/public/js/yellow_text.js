@@ -118,7 +118,6 @@
       methods.container = $('<div />').addClass( methods.settings.containerClass ).css({
         'float'   : 'left',
         'width'   : methods.settings.width,
-        'border'  : '1px solid #ccc'
       });
 
       // Add the container after the element where we bind this plugin too
