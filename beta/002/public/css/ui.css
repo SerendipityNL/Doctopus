@@ -708,7 +708,7 @@ i {
 #dropzone-previews .preview:hover.error .error-message {
   display: block;
 }
-.upload-button{
+.dropzone{
 	text-align:center;
 	width:100%;
 	color:#fff;

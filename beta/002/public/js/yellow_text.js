@@ -446,6 +446,7 @@
 	  
 	  methods.destroyContainer();
       var noticeData = [];
+
       noticeData = {
           msg       : "Block has been saved",
           msgtype   : "succes",
@@ -455,7 +456,6 @@
             
       $('body').doctopus('showNotice', noticeData); 
       //$('document').doctopus(["showNotice", msg, msgtype, duration]);
-      console.log('penis');
     },
     
     destroyContainer: function() {

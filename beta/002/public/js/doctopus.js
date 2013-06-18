@@ -47,9 +47,9 @@
 		},
 		// message is text, type is error, succes, warning and duration is int in ms
 		showNotice : function (noticeData){
-			console.log(noticeData.msg);
+			console.log(noticeData);
 			$('.notice').stop(true);
-			$('.notice').fadeIn().text(noticeData.msg).addClass(noticeData.msgtype).delay(noticeData.duriation).fadeOut('slow'); 
+			$('.notice').fadeIn("slow").text(noticeData.msg).addClass(noticeData.msgtype).delay(noticeData.duriation).fadeOut('slow'); 
 		},
 		startTrashcan : function() {
 			var trashSettings = methods.settings.sortableTrash;
@@ -148,7 +148,7 @@
 
 
 				if(classes[1] == "block-image"){
-					var form = '<div id="dropzone"><div class="upload-button">Upload</div><form enctype="multipart/form-data" id="dropzone" action="file-upload" class="dropzone"></div>';
+					var form = '<form enctype="multipart/form-data" id="dropzone" action="file-upload" class="dropzone">';
 
 					jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(form);
 
