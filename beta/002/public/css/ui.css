@@ -538,29 +538,33 @@ i {
 	font-family: arial;
 }
 .notice{
-	width:670px;
-	height:15px;
-	padding:10px;
+	position:fixed;
+	top:0px;
+	width:680px;
+	padding:13px 5px 14px 5px;
 	background:#fff;
 	text-align: center;
 	font-size:18px;
-	color:#000;
+	color:#fff;
 	float:left;
 	display: none;
-	margin-left:19px;
-	border-radius: 15px;
+	margin-left:20px;
+	z-index:999;
 }
 	.notice.succes{
 		background:#96bb49;
 	}
 	.notice.error{
-		background: #e32d2d;
+		background:#e32d2d;
 	}
+	.notice.warning{
+		background:#f1bc3d;
+	}
+
 #dropzone {
   position: relative;
-  border: 1px solid rgba(0,0,0,0.08);
-  background: rgba(0,0,0,0.02);
-  padding: 1em;
+  border: 1px solid #96bb49;
+  background:#96bb49;
   width:100%;
   height:100%;
 }
