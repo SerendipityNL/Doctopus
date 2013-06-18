@@ -9,7 +9,7 @@ var express = require('express'),
 	user = require('./routes/user.njs'),
 	files = require('./routes/files.njs');		
 
-	//documentModel = require('./models/provider.njs').load('document');
+	documentModel = require('./models/provider.njs').load('document');
 	
 
 var port = process.env.PORT || 1337;
@@ -43,11 +43,6 @@ app.configure(function() {
 });
 
 // Page routes
-app.get('*', function(req, res, next) {
-	//console.log(req.session.username);
-	next();
-});
-
 app.get('/', front.index);
 
 app.get('/register', user.register);
@@ -73,7 +68,20 @@ io.sockets.on('connection', function(socket){
 	console.log('connection made');
 	socket.on('new document', function(data) {
 		console.log('New document created, titled ' + data.title + ' with the visibility setting on ' + data.visibility + ' by ' + data.username);
-		socket.emit('new document', 'success');
+		documentModel.save(data, function(err, document) {
+			if (err) {
+				console.log(err);
+			}
+			else {
+				var data = [];
+				data = {
+					state: 'success',
+					document: document
+				};
+				console.log(document._id);
+				socket.emit('new document', data);
+			}
+		})
 	});
 });
 
