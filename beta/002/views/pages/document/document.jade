@@ -44,31 +44,32 @@ html(ng-app)
 		div#block-definition-bottomline
 		div#option-wrapper
 			div#selected-block
-				div.standard-container	"No block selected"
-				div.temp-hiding
-					div.hidden-options
-						div.type
-						div.col
-						div.block-id
-					div.option-container 
-						div.option-definition Block type
-						div.option-definition Text
-					div.option-container 
-						div.option-definition Block size
-						div.option-definition
-							div.resize-block-container
-								div.resize-block-btn-plus Change size +
+				
+				// -
+					div.temp-hiding
+						div.hidden-options
+							div.type
+							div.col
+							div.block-id
+						div.option-container 
+							div.option-definition Block type
+							div.option-definition Text
+						div.option-container 
+							div.option-definition Block size
+							div.option-definition
+								div.resize-block-container
+									div.resize-block-btn-plus Change size +
 
-						p Paragraph styling:
-						mixin setpx('Font size:', 'p', 'font_size', style.p.font_size)
-						mixin color('Color:', 'p', 'color', style.p.color)
-						mixin select('Font family:', 'p', 'font_family', options.fonts, style.p.font_family)
+				p Paragraph styling:
+				mixin setpx('Font size:', 'p', 'font_size', style.p.font_size)
+				mixin color('Color:', 'p', 'color', style.p.color)
+				mixin select('Font family:', 'p', 'font_family', options.fonts, style.p.font_family)
 
-						p List styling:
-						mixin setpx('Font size:', 'ul', 'font_size', style.ul.font_size) 
-						mixin color('Color:', 'ul', 'color', style.ul.color)
-						mixin select('Font family:', 'ul', 'font_family', options.fonts, style.ul.font_family)
-						mixin select('List style:', 'li', 'list_style_type', options.list_style_types, style.li.list_style_type)
+				p List styling:
+				mixin setpx('Font size:', 'ul', 'font_size', style.ul.font_size) 
+				mixin color('Color:', 'ul', 'color', style.ul.color)
+				mixin select('Font family:', 'ul', 'font_family', options.fonts, style.ul.font_family)
+				mixin select('List style:', 'li', 'list_style_type', options.list_style_types, style.li.list_style_type)
 			
 			<a class="add_more_blocks_button" href="javascript:;" >&nbsp;</a>
 

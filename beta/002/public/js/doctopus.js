@@ -222,21 +222,20 @@
 			
 			methods.reactivateListeners();
 		},
-		selectBlock: function (el){
-			var classes = jQuery(el).attr('class').split(/\s/);
-			var col  	= parseInt(classes[0].charAt(classes[0].length-1));
-			var type	= classes[1];
-			var id 		= jQuery(el).attr('data-id');
-
+		// selectBlock: function (el){
+		// 	var classes = jQuery(el).attr('class').split(/\s/);
+		// 	var col  	= parseInt(classes[0].charAt(classes[0].length-1));
+		// 	var type	= classes[1];
+		// 	var id 		= jQuery(el).attr('data-id');			
 				
-			jQuery('.selected-block').removeClass('selected-block');
-			jQuery(el).addClass('selected-block');
+		// 	jQuery('.selected-block').removeClass('selected-block');
+		// 	jQuery(el).addClass('selected-block');
 
-			jQuery('.temp-hiding').show();
-			jQuery('.standard-container').hide();
-			jQuery('#selected-block .name').text(col);
-			jQuery('#selected-block .type').text(type);
-		},
+		// 	jQuery('.temp-hiding').show();
+		// 	jQuery('.standard-container').hide();
+		// 	jQuery('#selected-block .name').text(col);
+		// 	jQuery('#selected-block .type').text(type);
+		// },
 		deselect: function(el){
 			if(el == ""){
 				jQuery('.selected-block').removeClass('selected-block')
@@ -287,7 +286,11 @@
 			jQuery('body').off('click.deselect');
 			methods.activateListeners();
 		},
-		activateListeners: function (){
+		activateListeners: function () {
+
+			jQuery('#blocks > div').on('click', function() { 
+				jQuery(this).selectBlock();
+			});
 
 			jQuery('.add_more_blocks_button').on('click.addMoreBlocks', function() {
 				methods.addBlock();
@@ -336,11 +339,13 @@
 				methods.destroyTexteditor();
 			});
 			
-			jQuery('#blocks > div').on('click.selectBlock', function(){
-				methods.selectBlock(jQuery(this));
-			});
-
 		}
+	};
+	jQuery.fn.selectBlock = function() {
+		jQuery('.selected-block').removeClass('selected-block');
+		jQuery(this).addClass('selected-block');
+		var classes = jQuery(this).attr('class');
+		console.log(classes);
 	};
 	
 	jQuery.fn.getPrev = function (data){
