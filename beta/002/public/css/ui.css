@@ -559,159 +559,18 @@ i {
 	.notice.warning{
 		background:#f1bc3d;
 	}
-
-#dropzone {
-  position: relative;
-  background:#96bb49;
-  width:100%;
-  height:100%;
-}
-#dropzone.clickable {
-  cursor: pointer;
-}
-#dropzone.clickable .message,
-#dropzone.clickable .message span {
-  cursor: pointer;
-}
-#dropzone.clickable * {
-  cursor: default;
-}
-#dropzone .message {
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
-}
-#dropzone.drag-hover {
-  background: #444;
-}
-#dropzone.started .message {
-  display: none;
-}
-#dropzone .preview,
-#dropzone-previews .preview {
-  background: #444;
-  position: relative;
-  display: inline-block;
-  margin: 17px;
-  vertical-align: top;
-  padding: 6px 6px 6px 6px;
-}
-#dropzone .preview .details,
-#dropzone-previews .preview .details {
-  width: 100px;
-  height: 100px;
-  position: relative;
-  background: #444;
-  padding: 5px;
-  margin-bottom: 22px;
-}
-#dropzone .preview .details .filename,
-#dropzone-previews .preview .details .filename {
-  overflow: hidden;
-  height: 100%;
-}
-#dropzone .preview .details img,
-#dropzone-previews .preview .details img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100px;
-}
-#dropzone .preview .details .size,
-#dropzone-previews .preview .details .size {
-  position: absolute;
-  bottom: -28px;
-  left: 3px;
-  height: 28px;
-  line-height: 28px;
-}
-#dropzone .preview.error .error-mark,
-#dropzone-previews .preview.error .error-mark {
-  display: block;
-}
-#dropzone .preview.success .success-mark,
-#dropzone-previews .preview.success .success-mark {
-  display: block;
-}
-#dropzone .preview:hover .details img,
-#dropzone-previews .preview:hover .details img {
-  display: none;
-}
-#dropzone .preview:hover .success-mark,
-#dropzone-previews .preview:hover .success-mark,
-#dropzone .preview:hover .error-mark,
-#dropzone-previews .preview:hover .error-mark {
-  display: none;
-}
-#dropzone .preview .success-mark,
-#dropzone-previews .preview .success-mark,
-#dropzone .preview .error-mark,
-#dropzone-previews .preview .error-mark {
-  display: none;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  font-family:'RobotoSlabRegular';
-	font-size: 1em;
-	color:#fff;
-
-  text-align: center;
-  right: -10px;
-  top: -10px;
-}
-#dropzone .preview .success-mark,
-#dropzone-previews .preview .success-mark {
-  color: #8cc657;
-}
-#dropzone .preview .error-mark,
-#dropzone-previews .preview .error-mark {
-  color: #ee162d;
-}
-#dropzone .preview .progress,
-#dropzone-previews .preview .progress {
-  position: absolute;
-  top: 100px;
-  left: 6px;
-  right: 6px;
-  height: 6px;
-  background: #f00;
-  display: none;
-}
-#dropzone .preview .progress .upload,
-#dropzone-previews .preview .progress .upload {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  background-color: #f00;
-}
-#dropzone .preview.processing .progress,
-#dropzone-previews .preview.processing .progress {
-  display: block;
-}
-#dropzone .preview .error-message,
-#dropzone-previews .preview .error-message {
-  display: none;
-  position: absolute;
-  top: -5px;
-  left: -20px;
-  background: #f00;
-  padding: 8px 10px;
-  color: #fff;
-  min-width: 140px;
-  max-width: 500px;
-  z-index: 500;
-}
-#dropzone .preview:hover.error .error-message,
-#dropzone-previews .preview:hover.error .error-message {
-  display: block;
-}
-.dropzone{
+.upload input[type="submit"]{
+	display:block;
+	float:right;
+	width:198px;
 	text-align:center;
-	width:100%;
-	color:#fff;
-	padding:17px 0px;
+	color:#FFF;
+	font-size:18px;
+	margin-bottom: 10px;
+	height:34px;
+	padding:7px;
+	text-decoration:none;
+	border:none;
+	cursor:pointer;
 }
 

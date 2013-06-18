@@ -45,6 +45,7 @@
 			methods.startSortable();
 			methods.activateListeners();
 		},
+
 		// message is text, type is error, succes, warning and duration is int in ms
 		showNotice : function (noticeData){
 			console.log(noticeData);
@@ -71,7 +72,7 @@
 
 			jQuery(sortSettings.selector).sortable({
 				 items					: sortSettings.items
-				, scroll                : true
+				, scroll                : false
 				, scrollSensitivity		: 50
 				, handle				: sortSettings.handle
 				, connectWith			: methods.settings.sortableTrash.selector
@@ -148,11 +149,10 @@
 
 
 				if(classes[1] == "block-image"){
-					var form = '<form enctype="multipart/form-data" id="dropzone" action="file-upload" class="dropzone">';
+					var form = '<form enctype="multipart/form-data" method="post" action="file-upload" class="upload"><input type="submit" name="upload"></form>';
 
 					jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(form);
 
-					$("div#dropzone").dropzone({ url: "/file/post" });
 				}
 	
 				if(add_block == true){
@@ -175,7 +175,6 @@
 			jQuery('.close_icon').click(function() {
 				jQuery(this).parent().parent().find('.plus_icon').show();
 				jQuery(this).parent().remove();
-
 			});
 
 		},
