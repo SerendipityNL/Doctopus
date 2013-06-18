@@ -554,7 +554,6 @@ i {
 
 #dropzone {
   position: relative;
-  border: 1px solid #96bb49;
   background:#96bb49;
   width:100%;
   height:100%;
@@ -575,20 +574,18 @@ i {
   filter: none;
 }
 #dropzone.drag-hover {
-  border-color: rgba(0,0,0,0.15);
-  background: rgba(0,0,0,0.04);
+  background: #444;
 }
 #dropzone.started .message {
   display: none;
 }
 #dropzone .preview,
 #dropzone-previews .preview {
-  background: rgba(255,255,255,0.8);
+  background: #444;
   position: relative;
   display: inline-block;
   margin: 17px;
   vertical-align: top;
-  border: 1px solid #acacac;
   padding: 6px 6px 6px 6px;
 }
 #dropzone .preview .details,
@@ -596,7 +593,7 @@ i {
   width: 100px;
   height: 100px;
   position: relative;
-  background: #ebebeb;
+  background: #444;
   padding: 5px;
   margin-bottom: 22px;
 }
@@ -650,7 +647,7 @@ i {
   font-family:'RobotoSlabRegular';
 	font-size: 1em;
 	color:#fff;
-  
+
   text-align: center;
   right: -10px;
   top: -10px;
@@ -670,7 +667,7 @@ i {
   left: 6px;
   right: 6px;
   height: 6px;
-  background: #d7d7d7;
+  background: #f00;
   display: none;
 }
 #dropzone .preview .progress .upload,
@@ -702,5 +699,11 @@ i {
 #dropzone .preview:hover.error .error-message,
 #dropzone-previews .preview:hover.error .error-message {
   display: block;
+}
+.upload-button{
+	text-align:center;
+	width:100%;
+	color:#fff;
+	padding:17px 0px;
 }
 
