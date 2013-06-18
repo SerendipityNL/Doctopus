@@ -43,6 +43,19 @@
 			}, options);
 						
 			methods.startSortable();
+
+			// hey there, this works but this needs a better place, iam sorry though
+			jQuery('body').on('showNotice', function(){
+
+				var noticeData = {
+					msg  : "Changes have been saved",
+					msgtype : "succes",
+					duration : 3000
+				};
+
+				methods.showNotice(noticeData);
+			});
+
 			methods.activateListeners();
 		},
 
@@ -278,18 +291,12 @@
 		},
 		activateListeners: function () {
 
-			
-			$("body").trigger("showNotice", function (){
-				console.log('notice shown');
-			});
-
-
 			jQuery('#blocks > div').on('click.selectBlock', function() {
 				jQuery(this).selectBlock();
 			});
 			
 			jQuery(document).on('click.deselect', function (e) {
-				$(this).deselect(e);
+				jQuery(this).deselect(e);
 			});
 
 			jQuery('.add_more_blocks_button').on('click.addMoreBlocks', function() {

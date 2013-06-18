@@ -445,16 +445,8 @@
 	  $( methods.settings.targetSelector ).html(methods.getContentFromEditor());	
 	  
 	  methods.destroyContainer();
-
-      var noticeData = {
-          msg       : "Block has been saved",
-          msgtype   : "succes",
-          duration  : 5000
-      };
       
-      console.log( noticeData );
-            
-      $('body').trigger('showNotice', noticeData);      
+      $('body').trigger('showNotice');      
 
       //$('document').doctopus(["showNotice", msg, msgtype, duration]);
     },
