@@ -1,6 +1,7 @@
 var Gravatar = require('gravatar'),
 	Provider = require('../models/provider.njs'),
-	User = Provider.load('user');
+	User = Provider.load('user'),
+	Document = Provider.load('document');
 
 module.exports = {
 	register: function(req, res) {
@@ -51,14 +52,17 @@ module.exports = {
 		});
 	},
 	index: function(req, res) {
-		console.log(req.session);
 		User.findByUsername(req.session.username, function(err, user){
-			var avatarUrl = Gravatar.url(user.email, {s: '230', r: 'x', d: '404'});
-			res.render('pages/user/dashboard', {
-				avatar:		avatarUrl,				
-				pageTitle: 	'Dashboard',
-				session: 	req.session,
-				user:		user
+			Document.findByOwner(user, function(err, documents) {
+				console.log(documents);
+				var avatarUrl = Gravatar.url(user.email, {s: '230', r: 'x', d: '404'});
+				res.render('pages/user/dashboard', {
+					avatar:		avatarUrl,				
+					pageTitle: 	'Dashboard',
+					session: 	req.session,
+					user:		user,
+					documents:	documents
+				});
 			});
 		});
 	}

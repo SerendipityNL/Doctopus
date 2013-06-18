@@ -3,10 +3,23 @@ extends ../layout
 block content
 	.span3.well
 		include ../../mixins/user/profileInfo
-	.span9.well
+	.span9.well#dashboardDocuments
 		h2 Documents
 		#actionBar.pull-right
 			a#newDocumentButton.btn.btn-success(href="#newDocumentModal", data-goggle="modal") New document
-		p.clear-fix.well No documents to show...
+		
+		ul.documentList
+			each document in documents
+				li.span4
+					.thumbnail
+						a.thumbnail(href="#")
+							img(width="300px", height="200px", src="img/placeholder.png")
+						.caption
+							h3 #{document.get('title')}
+							p Hier eventueel een omschrijving
+							p
+								a.btn.btn-success(href="/document/manage/#{document.get('id')}") Manage
+								&nbsp;
+								a.btn(href="/document/edit/#{document.get('id')}") Edit
 		
 	include ../../mixins/document/newDocumentModal

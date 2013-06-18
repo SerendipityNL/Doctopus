@@ -19,9 +19,10 @@ jQuery(document).ready( function() {
 		
 		socket.emit('new document', newDocument);
 		socket.on('new document', function(data) {
-			if (data == "success"){
+			if (data.state == "success"){
 				jQuery('#newDocumentModal').modal('hide');
-				alert('het is je gelukt!');
+				var html = '<li class="span4"><div class="thumbnail"><a href="#" class="thumbnail"><img width="300px" height="200px" src="img/placeholder.png"></a><div class="caption"><h3>'+data.document.title+'</h3><p>Hier eventueel een omschrijving</p><p><a href="/document/manage/'+data.document._id+'" class="btn btn-success">Manage</a>&nbsp;<a href="'+data.document._id+'" class="btn">Edit</a></p></div></div></li>'
+				jQuery('ul.documentList').append(html);
 			}
 			else {
 				alert('data is ' + data);

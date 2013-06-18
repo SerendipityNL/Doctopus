@@ -34,18 +34,27 @@ header {
 				right: 20px;
 				top: 40px;
 			}
+#dashboardDocuments ul {
+	margin-top: 40px;
+}
+#dashboardDocuments ul li {
+	margin-top: 20px;
+}
+#dashboardDocuments ul li:nth-child(3n - 2) {
+	margin-left: -10px;
+}
 #actionBar {
 	margin: -40px 0 40px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'BebasRegular' !important;
 }
 /*
  *
  *			Registration Form
  *
  ****************************************/
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'BebasRegular' !important;
-}
 
 #registration{
 	
