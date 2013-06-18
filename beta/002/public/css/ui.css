@@ -647,7 +647,10 @@ i {
   position: absolute;
   width: 40px;
   height: 40px;
-  font-size: 30px;
+  font-family:'RobotoSlabRegular';
+	font-size: 1em;
+	color:#fff;
+  
   text-align: center;
   right: -10px;
   top: -10px;
