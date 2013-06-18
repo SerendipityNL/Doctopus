@@ -46,7 +46,8 @@
 			methods.activateListeners();
 		},
 		// message is text, type is error, succes, warning and duration is int in ms
-		showNotice : function (message, type, duration){
+		showNotice : function (noticeData){
+			console.log(noticeData.msg);
 			$('.notice').stop(true);
 			$('.notice').fadeIn().text(message).addClass(type).delay(duration).fadeOut('slow'); 
 		},
@@ -147,7 +148,7 @@
 
 
 				if(classes[1] == "block-image"){
-					var form = '<div id="dropzone"><form enctype="multipart/form-data" id="dropzone" action="file-upload" class="dropzone"></div>';
+					var form = '<div id="dropzone"><p>Upload</p><form enctype="multipart/form-data" id="dropzone" action="file-upload" class="dropzone"></div>';
 
 					jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(form);
 
@@ -251,7 +252,7 @@
 			jQuery('.selected-block').remove();
 
 			msg 		= "Block has been removed";
-			msgtype  	= "succes";
+			msgtype  	= "error";
 			duration	= 2000;
 
 			methods.showNotice(msg, msgtype, duration);
@@ -389,6 +390,7 @@
 	jQuery.fn.doctopus = function( method ) {
 		return this.each( function() {
 			if (methods[method]) {
+				console.log(method);
 				return methods[method].apply( this, Array.prototype.slice.call( arguments, 1) );
 			}
 			else if ( typeof method === 'object' || ! method ) {

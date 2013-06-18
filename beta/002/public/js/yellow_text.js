@@ -444,7 +444,18 @@
 	  // Put the content back in the textfield
 	  $( methods.settings.targetSelector ).html(methods.getContentFromEditor());	
 	  
-	  methods.destroyContainer();  
+	  methods.destroyContainer();
+      var noticeData = [];
+      noticeData = {
+          msg       : "Block has been removed",
+          msgtype   : "error",
+          duration  : 5000
+      };
+      
+            
+      $('body').doctopus('showNotice', noticeData); 
+      //$('document').doctopus(["showNotice", msg, msgtype, duration]);
+      console.log('penis');
     },
     
     destroyContainer: function() {
