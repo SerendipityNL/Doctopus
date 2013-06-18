@@ -262,19 +262,15 @@
 
 			if (block.hasClass('col-1')) {
 				block.switchClass('col-1', 'col-2', 250);
-				console.log('hoi 1');
 			}
 			else if (block.hasClass('col-2')) {
 				block.switchClass('col-2', 'col-3', 250);
-				console.log('hoi 2');
 			}
 			else if (block.hasClass('col-3')) {
 				block.switchClass('col-3', 'col-4', 250);
-				console.log('hoi 3');
 			}
 			else {
 				block.switchClass('col-4', 'col-1', 250);
-				console.log('hoi 4');
 			}
 		},
 		reactivateListeners: function() {
@@ -292,7 +288,9 @@
 		},
 		activateListeners: function () {
 
-			jQuery('#blocks > div').on('click', function() { 
+			jQuery('#blocks > div').on('click', function() {
+				// OLD SCRIPT FROM TD
+				//methods.selectBlock(jQuery(this));
 				jQuery(this).selectBlock();
 			});
 
@@ -312,7 +310,7 @@
 
 			jQuery(document).on('click.deselect', function (){
 				methods.deselect(event.target.className);
-				console.log(event.target);
+				//console.log(event.target);
 			});	
 			  
 			jQuery('.resize-block-btn-plus, .resize-block-btn-min').on('click.resizeBlock', function(){
@@ -346,6 +344,7 @@
 		jQuery(this).addClass('selected-block');
 		var classes = jQuery(this).attr('class');
 		console.log(classes);
+		
 	};
 	
 	jQuery.fn.getPrev = function (data){
