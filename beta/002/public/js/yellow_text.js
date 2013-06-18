@@ -447,8 +447,8 @@
 	  methods.destroyContainer();
       var noticeData = [];
       noticeData = {
-          msg       : "Block has been removed",
-          msgtype   : "error",
+          msg       : "Block has been saved",
+          msgtype   : "succes",
           duration  : 5000
       };
       
