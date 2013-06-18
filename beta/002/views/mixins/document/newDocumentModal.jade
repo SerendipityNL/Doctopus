@@ -8,7 +8,7 @@
 		select(name="documentVisibility")
 			option(value="public", selected="selected") Public
 			option(value="private") Private
-		input(type="hidden", name="username", value="#{session.username}")
+		input(type="hidden", name="username", value=session.username)
 	.modal-footer
 		button.btn(data-dismiss="modal", aria-hidden="true") Close
 		button.btn.btn-success Create new document

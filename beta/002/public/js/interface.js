@@ -18,5 +18,13 @@ jQuery(document).ready( function() {
 		newDocument.username	= jQuery('#newDocumentModal .modal-body input[name="username"]').val();
 		
 		socket.emit('new document', newDocument);
+		socket.on('new document', function(data) {
+			if (data == "success"){
+				alert('het is je gelukt!');
+			}
+			else {
+				alert('data is ' + data);
+			}
+		});
 	});
 });

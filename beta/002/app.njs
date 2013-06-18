@@ -136,7 +136,8 @@ server.listen(app);
 io.sockets.on('connection', function(socket){
 	console.log('connection made');
 	socket.on('new document', function(data) {
-		console.log('New document created, titled ' + data.title + ' with the visibility setting on ' + data.visibility + ' by ' + data);
+		console.log('New document created, titled ' + data.title + ' with the visibility setting on ' + data.visibility + ' by ' + data.username);
+		socket.emit('new document', 'success');
 	});
 });
 
