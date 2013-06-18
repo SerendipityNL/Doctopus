@@ -279,6 +279,12 @@
 		},
 		activateListeners: function () {
 
+			
+			$("body").trigger("showNotice", function (){
+				console.log('notice shown');
+			});
+
+
 			jQuery('#blocks > div').on('click.selectBlock', function() {
 				jQuery(this).selectBlock();
 			});
