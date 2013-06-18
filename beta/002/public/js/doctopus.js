@@ -148,7 +148,7 @@
 
 
 				if(classes[1] == "block-image"){
-					var form = '<div id="dropzone"><p>Upload</p><form enctype="multipart/form-data" id="dropzone" action="file-upload" class="dropzone"></div>';
+					var form = '<div id="dropzone"><div class="upload-button">Upload</div><form enctype="multipart/form-data" id="dropzone" action="file-upload" class="dropzone"></div>';
 
 					jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(form);
 
