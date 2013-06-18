@@ -49,7 +49,7 @@
 		showNotice : function (noticeData){
 			console.log(noticeData.msg);
 			$('.notice').stop(true);
-			$('.notice').fadeIn().text(message).addClass(type).delay(duration).fadeOut('slow'); 
+			$('.notice').fadeIn().text(noticeData.msg).addClass(noticeData.msgtype).delay(noticeData.duriation).fadeOut('slow'); 
 		},
 		startTrashcan : function() {
 			var trashSettings = methods.settings.sortableTrash;
@@ -237,11 +237,15 @@
 		deleteBlock: function(){
 			jQuery('.selected-block').remove();
 
-			msg 		= "Block has been removed";
-			msgtype  	= "error";
-			duration	= 2000;
+			var noticeData = [];
 
-			methods.showNotice(msg, msgtype, duration);
+			noticeData = {
+			  msg       : "Block has been removed",
+			  msgtype   : "error",
+			  duration  : 5000
+			};
+
+			methods.showNotice(noticeData);
 		},
 		resizeBlock: function() {
 
