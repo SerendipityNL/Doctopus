@@ -2,8 +2,28 @@ var mongoose = require('mongoose');
 	mongoose.createConnection('mongodb://localhost/doctopus');
 
 var documentSchema = new mongoose.Schema({
-	
-	});
+	"_id": 3432342343,
+	"title": "Technical design",
+	"collaborators": ["43255443", "133214", "943723"],
+	"public": false,
+	"deleted": false,
+	"styling": {
+		"p": {
+			"font_size": 14,
+			"color": "#000000"
+		},
+		"li": {
+			"list_style_type": "disc"
+		}
+	},
+	"blocks": [
+	email		: {type: String, required : true, index: {unique: true} },
+	first		: {type: String },
+	last		: {type: String },
+	admin		: {type: Number, required : true, default: 0},
+	token       : {type: String, required : true},
+	username    : {type: String, required : true}
+});
 
 var Document = mongoose.model('User', documentSchema);
 
