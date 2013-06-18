@@ -1,6 +1,6 @@
 var Gravatar = require('gravatar'),
 	Provider = require('../models/provider.njs'),
-	User = Provider.load('user')
+	User = Provider.load('user');
 
 module.exports = {
 	register: function(req, res) {
