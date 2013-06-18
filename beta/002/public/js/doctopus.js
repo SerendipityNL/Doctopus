@@ -228,25 +228,11 @@
 			
 			methods.reactivateListeners();
 		},
-		// selectBlock: function (el){
-		// 	var classes = jQuery(el).attr('class').split(/\s/);
-		// 	var col  	= parseInt(classes[0].charAt(classes[0].length-1));
-		// 	var type	= classes[1];
-		// 	var id 		= jQuery(el).attr('data-id');			
-				
-		// 	jQuery('.selected-block').removeClass('selected-block');
-		// 	jQuery(el).addClass('selected-block');
-
-		// 	jQuery('.temp-hiding').show();
-		// 	jQuery('.standard-container').hide();
-		// 	jQuery('#selected-block .name').text(col);
-		// 	jQuery('#selected-block .type').text(type);
-		// },
-		deselect: function(el){
-			if(el == ""){
-				jQuery('.selected-block').removeClass('selected-block')
-			}
-
+		hideOptions: function() {
+			jQuery('.selected-block').removeClass('selected-block');
+			$('.option-text').hide();
+			$('.option-list').hide();
+			$('.option-block').hide();
 		},
 		deleteBlock: function(){
 			jQuery('.selected-block').remove();
@@ -278,21 +264,24 @@
 			jQuery('.add_more_blocks_button').off('click.addMoreBlocks');
 			jQuery('.plus_icon').off('click.changeBlock');
 			jQuery('#blocks > div').off('click.selectBlock');
+			jQuery(document).off('click.deselect');
 			jQuery('.block-text').off('dblclick.textEditor');
 			jQuery('#js-save_and_close').off('click.saveAndCloseText');
 			jQuery('#js-save').off('click.saveText');
 			jQuery('#js-close').off('click.closeText');
 			jQuery('.resize-block-btn-plus, .resize-block-btn-min').off('click.resizeBlock');
 			jQuery('#trashcan').off('click.deleteBlock')
-			jQuery('body').off('click.deselect');
+
 			methods.activateListeners();
 		},
 		activateListeners: function () {
 
-			jQuery('#blocks > div').on('click', function() {
-				// OLD SCRIPT FROM TD
-				//methods.selectBlock(jQuery(this));
+			jQuery('#blocks > div').on('click.selectBlock', function() {
 				jQuery(this).selectBlock();
+			});
+			
+			jQuery(document).on('click.deselect', function (e) {
+				$(this).deselect(e);
 			});
 
 			jQuery('.add_more_blocks_button').on('click.addMoreBlocks', function() {
@@ -308,22 +297,14 @@
 			jQuery('#trashcan').on('click.deleteBlock', function() {
 				methods.deleteBlock();
 			});
-
-			jQuery(document).on('click.deselect', function (){
-				methods.deselect(event.target.className);
-				//console.log(event.target);
-			});	
 			  
-			jQuery('.resize-block-btn-plus, .resize-block-btn-min').on('click.resizeBlock', function(){
-
-				console.log('click');
-				if(jQuery(this).hasClass('resize-block-btn-min')){
+			jQuery('.resize-block-btn-plus, .resize-block-btn-min').on('click.resizeBlock', function() {
+				if (jQuery(this).hasClass('resize-block-btn-min')) {
 					var step = 'decrease';
 				}
-				else{
+				else {
 					var step = 'increase';
 				}
-
 				methods.resizeBlock();
 			});
 
@@ -340,14 +321,29 @@
 			
 		}
 	};
-	jQuery.fn.selectBlock = function() {
-		jQuery('.selected-block').removeClass('selected-block');
-		jQuery(this).addClass('selected-block');
-		var classes = jQuery(this).attr('class');
-		console.log(classes);
-		
-	};
 	
+	jQuery.fn.selectBlock = function() {
+		
+		methods.hideOptions();
+
+		jQuery(this).addClass('selected-block');
+		$('.option-block').show();
+
+		if (jQuery(this).hasClass('block-text')) {			
+			$('.option-text').show();
+		}
+		else if  (jQuery(this).hasClass('block-list')) {			
+			$('.option-list').show();
+		}
+	};
+
+	jQuery.fn.deselect = function(e) {
+		if (e.target.nodeName == 'HTML') {
+			methods.hideOptions();
+		}
+		
+	}
+
 	jQuery.fn.getPrev = function (data){
 		var prevBlockOffset = data.usableData.prevBlockOffset;
 		if (jQuery(this).prev().length > 0) {
