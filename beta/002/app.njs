@@ -4,7 +4,8 @@ var express = require('express'),
 	
 	server = require('http').createServer(app),
 	io = require('socket.io').listen(server),
-	routes = require('./routes/index.njs'),
+	document = require('./routes/document.njs'),
+	front = require('./routes/front.njs')
 	user = require('./routes/user.njs');
 	
 	
@@ -42,29 +43,23 @@ app.configure(function() {
 
 // Page routes
 app.get('*', function(req, res, next) {
-	//console.log(req.session);
+	//console.log(req.session.username);
 	next();
 });
 
-app.get('/', user.register);
-app.get('/document', routes.index);
-app.get('/custom.css', routes.css);
+app.get('/', front.index);
+
+app.get('/register', user.register);
+app.get('/document', document.index);
+app.get('/custom.css', document.css);
 app.get('/register', user.register);
 app.get('/login', user.login);
 app.get('/logout', user.logout);
 
-app.post('/setstyle', routes.setstyle);
+app.post('/setstyle', document.setstyle);
 app.post('/register', user.create);
 app.post('/login', user.login);
-// app.all('*', function(req,res,next) {
-// 	if (req.session.logged_in) {
-// 		global.session = req.session;
-// 	    next();
-// 	}
-// 	else {
-// 		res.redirect('/login');
-// 	}
-// });
+
 app.get('/dashboard', user.index);
 
 // handles image upload
