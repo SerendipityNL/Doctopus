@@ -212,6 +212,15 @@ body{
 					width:250px;
 					padding-bottom:20px;
 				}
+				.option-block {
+					display: none;
+				}
+				.option-text {
+					display: none;
+				}
+				.option-list {
+					display: none;
+				}
 					.option-container{
 						cursor:pointer;
 						float:right;
