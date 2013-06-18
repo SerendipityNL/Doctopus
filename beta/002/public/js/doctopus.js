@@ -50,12 +50,6 @@
 			$('.notice').stop(true);
 			$('.notice').fadeIn().text(message).addClass(type).delay(duration).fadeOut('slow'); 
 		},
-		startDropzone : function (){
-			Dropzone.options.myAwesomeDropzone = {
-				paramName: "file", // The name that will be used to transfer the file
-				maxFilesize: 2
-			};
-		},
 		startTrashcan : function() {
 			var trashSettings = methods.settings.sortableTrash;
 
@@ -150,6 +144,15 @@
 					jQuery(this).parent().hide().parent().find('.normal_icons').show();
 					add_block = false;
 				}
+
+
+				if(classes[1] == "block-image"){
+					var form = '<div id="dropzone"><form enctype="multipart/form-data" id="dropzone" action="file-upload" class="dropzone"></div>';
+
+					jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(form);
+
+					$("div#dropzone").dropzone({ url: "/file/post" });
+				}
 	
 				if(add_block == true){
 					//no more selected, add class to parent block and hide the menu
@@ -200,6 +203,8 @@
 		addBlock: function() {
 			var blockHtml = '<div class="empty-block col-1" data-colspan="1"><div class="plus_icon"></div></div>';
 			jQuery(methods.settings.sortable.selector).append(blockHtml).focus();
+
+			$('html, body').stop(true);
 
 			//scroll to new appended div
 			$('html, body').animate({
@@ -277,7 +282,6 @@
 			jQuery('.plus_icon').off('click.changeBlock');
 			jQuery('#blocks > div').off('click.selectBlock');
 			jQuery('.block-text').off('dblclick.textEditor');
-			jQuery('.block-img').off('dblclick.imageUpload');
 			jQuery('#js-save_and_close').off('click.saveAndCloseText');
 			jQuery('#js-save').off('click.saveText');
 			jQuery('#js-close').off('click.closeText');
@@ -300,10 +304,6 @@
 			});
 			jQuery('.block-text').on('dblclick.textEditor', function() {
 				methods.createTexteditor(jQuery(this));
-			});
-
-			jQuery('.block-img').on('dblclick.imageUpload', function() {
-				methods.startDropzone(jQuery(this));
 			});
 
 			jQuery('#trashcan').on('click.deleteBlock', function() {

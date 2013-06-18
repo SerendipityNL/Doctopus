@@ -8,10 +8,7 @@
 *
 */
 .js-editor-container {
-  margin-top: 0.5em;
-  border: 1px solid #c9c8c8 !important;
-  border-radius: 3px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  
 }
 
 /**
@@ -23,13 +20,7 @@
 *
 */
 .js-editor-buttons {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e8e8e8), color-stop(100%, #d2d1d1));
-  background-image: -webkit-linear-gradient(#e8e8e8, #d2d1d1);
-  background-image: -moz-linear-gradient(#e8e8e8, #d2d1d1);
-  background-image: -o-linear-gradient(#e8e8e8, #d2d1d1);
-  background-image: linear-gradient(#e8e8e8, #d2d1d1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  background:#444;
 }
 
 .js-editor-buttons > a {
@@ -38,27 +29,28 @@
   width: 16px;
   height: 16px;
   margin: 8px;
-  font: 16px Georgia;
+  font: 16px;
   text-align: center;
   text-transform: uppercase;
-  text-shadow: 0 1px white;
+  color:#fff;
+  /*text-shadow: 0 1px white;*/
   cursor: pointer;
 }
 a.js-editor-save,
 a.js-editor-cancel {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7d9d35), color-stop(100%, #366311));
-  background-image: -webkit-linear-gradient(#7d9d35 0%, #366311 100%);
-  background-image: -moz-linear-gradient(#7d9d35, #366311);
-  background-image: -o-linear-gradient(#7d9d35, #366311);
-  background-image: linear-gradient(#7d9d35, #366311);
-  width: auto;
+  width: 55px;
   text-shadow: none;
-  color: #FFFFFF;
-  outline: 1px solid #cdcdcd;
+  background: #777;
+  color: #fff;
   text-transform: capitalize;
-  padding: 3px 6px;
-  margin-top: 6px;
+  margin:5px;
+  padding: 4px 6px;
+  border-radius:100px;
   font-weight: lighter;
+}
+a.js-editor-save:hover,a.js-editor-save:active,
+a.js-editor-cancel:hover, a.js-editor-cancel:active{
+  background:#96bb49;
 }
 
 .bold {
@@ -137,5 +129,4 @@ a.js-editor-cancel {
 }
 */
 .js-editor-iframe {
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.25);
 }

@@ -20,6 +20,7 @@ jQuery(document).ready( function() {
 		socket.emit('new document', newDocument);
 		socket.on('new document', function(data) {
 			if (data == "success"){
+				jQuery('#newDocumentModal').modal('hide');
 				alert('het is je gelukt!');
 			}
 			else {
