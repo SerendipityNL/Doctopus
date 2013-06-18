@@ -47,9 +47,8 @@
 		},
 		// message is text, type is error, succes, warning and duration is int in ms
 		showNotice : function (noticeData){
-			console.log(noticeData);
 			$('.notice').stop(true);
-			$('.notice').fadeIn("slow").text(noticeData.msg).addClass(noticeData.msgtype).delay(noticeData.duriation).fadeOut('slow'); 
+			$('.notice').fadeIn(1000).text(noticeData.msg).addClass(noticeData.msgtype).delay(noticeData.duration).fadeOut(1000); 
 		},
 		startTrashcan : function() {
 			var trashSettings = methods.settings.sortableTrash;
@@ -242,7 +241,7 @@
 			noticeData = {
 			  msg       : "Block has been removed",
 			  msgtype   : "error",
-			  duration  : 5000
+			  duration  : 2000
 			};
 
 			methods.showNotice(noticeData);
