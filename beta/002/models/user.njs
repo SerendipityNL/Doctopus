@@ -11,7 +11,7 @@ var userSchema = new mongoose.Schema({
 	username    : {type: String, required : true}
 });
 
-
+userSchema.plugin(require('basic-auth-mongoose'));
 var User = mongoose.model('User', userSchema);
 
 module.exports = {
@@ -153,6 +153,8 @@ module.exports = {
 		var username = null;
 	
 		User.findOne({'email' : req.email}, function (err, found_user) {
+			console.log(found_user);
+			console.log(req.email);
 			if (err) {
 				var error = 'Failed to login';
 			} // handle

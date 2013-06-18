@@ -15,8 +15,7 @@ module.exports = {
 		}
 	},
 	login: function(req, res) {
-		if (typeof(req.body.username) != 'undefined') {
-			console.log(req.body);
+		if (typeof(req.body.email) != 'undefined') {
 			User.auth(req.body, function(err, username) {
 				if (! err) {
 					req.session.logged_in = true;
@@ -45,11 +44,14 @@ module.exports = {
 				res.send('Succesfully registered');
 			} else {				
 				console.log(err);
-				res.send(err);
+				res.render('pages/user/register', {
+					pageTitle: 'User Registration'
+				});
 			}
 		});
 	},
 	index: function(req, res) {
+		console.log(req.session);
 		User.findByUsername(req.session.username, function(err, user){
 			var avatarUrl = Gravatar.url(user.email, {s: '230', r: 'x', d: '404'});
 			res.render('pages/user/dashboard', {
