@@ -9,7 +9,7 @@ var express = require('express'),
 	user = require('./routes/user.njs');
 	var fs = require('fs');
 
-	documentModel = require('./models/provider.njs').load('document');
+	//documentModel = require('./models/provider.njs').load('document');
 	
 
 	
