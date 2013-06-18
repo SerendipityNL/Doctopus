@@ -30,7 +30,7 @@ Module functions
 module.exports = {
 	index: function(req, res) {
 		res.render('pages/document/document', {
-			'pageTitle': 'Docbuilder - Beta 001',
+			'pageTitle': 'Doctopus - Beta 002',
 			'options': styledb.options,
 			'style': styledb.current,
 			'blocks': styledb.blocks

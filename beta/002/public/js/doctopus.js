@@ -332,7 +332,7 @@
 		if (jQuery(this).hasClass('block-text')) {			
 			$('.option-text').show();
 		}
-		else if  (jQuery(this).hasClass('block-list')) {			
+		else if (jQuery(this).hasClass('block-list')) {			
 			$('.option-list').show();
 		}
 	};
@@ -340,8 +340,7 @@
 	jQuery.fn.deselect = function(e) {
 		if (e.target.nodeName == 'HTML') {
 			methods.hideOptions();
-		}
-		
+		}		
 	}
 
 	jQuery.fn.getPrev = function (data){
