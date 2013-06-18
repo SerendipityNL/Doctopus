@@ -7,7 +7,7 @@ var express = require('express'),
 	document = require('./routes/document.njs'),
 	front = require('./routes/front.njs')
 	user = require('./routes/user.njs');
-	
+	var fs = require('fs');
 	
 	
 
