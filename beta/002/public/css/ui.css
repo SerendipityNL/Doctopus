@@ -477,6 +477,20 @@ div.empty-block:hover, .empty-block:active {
 	background:url('../img/ui/icons/new-block-hover.png') no-repeat center center #96bb49;
 }
 
+.upload input[type="submit"]{
+	display:block;
+	float:right;
+	width:198px;
+	text-align:center;
+	color:#FFF;
+	font-size:18px;
+	margin-bottom: 10px;
+	height:34px;
+	padding:7px;
+	text-decoration:none;
+	border:none;
+	cursor:pointer;
+}
 
 .edit_bar{
 	width:auto;
@@ -559,18 +573,3 @@ i {
 	.notice.warning{
 		background:#f1bc3d;
 	}
-
-.upload input[type="submit"]{
-	display:block;
-	float:right;
-	width:198px;
-	text-align:center;
-	color:#FFF;
-	font-size:18px;
-	margin-bottom: 10px;
-	height:34px;
-	padding:7px;
-	text-decoration:none;
-	border:none;
-	cursor:pointer;
-}
