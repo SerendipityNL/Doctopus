@@ -325,6 +325,11 @@ div#blocks .col-placeholder {
 	/*text-align: justify;*/
 }
 
+div#blocks img{
+	width:100%;
+}
+
+
 div#blocks .col-placeholder {
 	background:#ccc;
 }
