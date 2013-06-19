@@ -559,6 +559,7 @@ i {
 	.notice.warning{
 		background:#f1bc3d;
 	}
+<<<<<<< HEAD
 
 #dropzone {
   position: relative;
@@ -710,9 +711,20 @@ i {
   display: block;
 }
 .upload-button{
+=======
+.upload input[type="submit"]{
+	display:block;
+	float:right;
+	width:198px;
+>>>>>>> 6e49257217af655bb8217dfbc5e8b2014b4279e5
 	text-align:center;
-	width:100%;
-	color:#fff;
-	padding:17px 0px;
+	color:#FFF;
+	font-size:18px;
+	margin-bottom: 10px;
+	height:34px;
+	padding:7px;
+	text-decoration:none;
+	border:none;
+	cursor:pointer;
 }
 

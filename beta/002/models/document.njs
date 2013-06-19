@@ -1,18 +1,42 @@
 var mongoose = require('mongoose');
 	mongoose.createConnection('mongodb://localhost/doctopus');
 
+var blockSchema = new mongoose.Schema({
+	type					: {type: String, required: true},
+	order					: {type: Number, required: true, min: 0},
+	content					: {type: mongoose.Schema.Types.Mixed, any: {}},
+	colls					: {type: Number, required: true, min: 1, max: 4}
+});
+
 var documentSchema = new mongoose.Schema({
-	
-	});
+	title					: {type: String, required: true},
+	owner					: {type: mongoose.Schema.Types.ObjectId, required: true},
+	collaborators			: {type: Array, required: false},
+	visibility				: {type: Boolean, required: true, default: true},
+	deleted					: {type: Boolean, required: true, default: false},
+	styling					: {type: Array, required: false},
+	blocks					: [blockSchema]
+});
 
-var Document = mongoose.model('User', documentSchema);
-
+var Document = mongoose.model('Document', documentSchema);
+var User = require('./provider.njs').load('user');
 module.exports = {
 	findAll: function(callback) {
 		Document.find(function(err, documents) {
 			if ( ! err) {
 				callback(null, documents);
 			}
+		});
+	},
+	findByOwner: function(user, callback) {
+		Document.find({owner : user._id}, function (err, documents) {
+			console.log(err);
+			callback(err, documents);
+		});
+	},
+	findByCollaborator: function(id, callback){
+		Document.find({collaborators: { $in: [id] }}, function(err, documents) {
+			callback(err, documents);
 		});
 	},
 	findByID: function(id, callback) {
@@ -52,9 +76,19 @@ module.exports = {
 		});
 	},
 	save: function(params, callback) {
-		document.save(function(err){
 		
+		User.findByUsername({username: params.username}, function(err, user) {
+			document = new Document;
+			document.set('title', params.title);
+			document.set('owner', user._id);
+			document.set('visibility', params.visibility);
+		
+			document.save(function(err){
+				callback(err, document);
+			});
+			
 		});
+		
 	},
 };
 

@@ -1,4 +1,5 @@
-var fs = require('fs');	
+// file system and easyimage resize
+var fs 		= require('fs');	
 var easyimg = require('easyimage');
 /* -------------------------------------------------------------
 Module functions

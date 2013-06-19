@@ -118,6 +118,8 @@ module.exports = {
 			email: params['email'],
 			username: params['username'],
 			password: params['password'],
+			first: params['firstname'],
+			last: params['lastname'],
 			admin: 1,
 			token: token
 		});

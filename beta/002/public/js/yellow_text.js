@@ -445,17 +445,10 @@
 	  $( methods.settings.targetSelector ).html(methods.getContentFromEditor());	
 	  
 	  methods.destroyContainer();
-      var noticeData = [];
-      noticeData = {
-          msg       : "Block has been saved",
-          msgtype   : "succes",
-          duration  : 5000
-      };
       
-            
-      $('body').doctopus('showNotice', noticeData); 
+      $('body').trigger('showNotice');      
+
       //$('document').doctopus(["showNotice", msg, msgtype, duration]);
-      console.log('penis');
     },
     
     destroyContainer: function() {

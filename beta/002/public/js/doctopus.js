@@ -43,13 +43,26 @@
 			}, options);
 						
 			methods.startSortable();
+
+			// hey there, this works but this needs a better place, iam sorry though
+			jQuery('body').on('showNotice', function(){
+
+				var noticeData = {
+					msg  : "Changes have been saved",
+					msgtype : "succes",
+					duration : 3000
+				};
+
+				methods.showNotice(noticeData);
+			});
+
 			methods.activateListeners();
 		},
+
 		// message is text, type is error, succes, warning and duration is int in ms
 		showNotice : function (noticeData){
-			console.log(noticeData.msg);
 			$('.notice').stop(true);
-			$('.notice').fadeIn().text(noticeData.msg).addClass(noticeData.msgtype).delay(noticeData.duriation).fadeOut('slow'); 
+			$('.notice').fadeIn(1000).text(noticeData.msg).addClass(noticeData.msgtype).delay(noticeData.duration).fadeOut(1000); 
 		},
 		startTrashcan : function() {
 			var trashSettings = methods.settings.sortableTrash;
@@ -71,7 +84,7 @@
 
 			jQuery(sortSettings.selector).sortable({
 				 items					: sortSettings.items
-				, scroll                : true
+				, scroll                : false
 				, scrollSensitivity		: 50
 				, handle				: sortSettings.handle
 				, connectWith			: methods.settings.sortableTrash.selector
@@ -148,11 +161,10 @@
 
 
 				if(classes[1] == "block-image"){
-					var form = '<div id="dropzone"><div class="upload-button">Upload</div><form enctype="multipart/form-data" id="dropzone" action="file-upload" class="dropzone"></div>';
+					var form = '<form enctype="multipart/form-data" method="post" action="file-upload" class="upload"><input type="submit" name="upload"></form>';
 
 					jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(form);
 
-					$("div#dropzone").dropzone({ url: "/file/post" });
 				}
 	
 				if(add_block == true){
@@ -175,7 +187,6 @@
 			jQuery('.close_icon').click(function() {
 				jQuery(this).parent().parent().find('.plus_icon').show();
 				jQuery(this).parent().remove();
-
 			});
 
 		},
@@ -242,7 +253,7 @@
 			noticeData = {
 			  msg       : "Block has been removed",
 			  msgtype   : "error",
-			  duration  : 5000
+			  duration  : 2000
 			};
 
 			methods.showNotice(noticeData);
@@ -285,7 +296,7 @@
 			});
 			
 			jQuery(document).on('click.deselect', function (e) {
-				$(this).deselect(e);
+				jQuery(this).deselect(e);
 			});
 
 			jQuery('.add_more_blocks_button').on('click.addMoreBlocks', function() {
@@ -336,7 +347,7 @@
 		if (jQuery(this).hasClass('block-text')) {			
 			$('.option-text').show();
 		}
-		else if  (jQuery(this).hasClass('block-list')) {			
+		else if (jQuery(this).hasClass('block-list')) {			
 			$('.option-list').show();
 		}
 	};
@@ -344,8 +355,7 @@
 	jQuery.fn.deselect = function(e) {
 		if (e.target.nodeName == 'HTML') {
 			methods.hideOptions();
-		}
-		
+		}		
 	}
 
 	jQuery.fn.getPrev = function (data){
