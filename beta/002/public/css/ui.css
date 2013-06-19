@@ -584,6 +584,7 @@ i {
 		padding:6px;
 		background:#777;
 		color:#fff;
+		border-radius:100px;
 	}
 	.mainbar-button:hover, .mainbar-button:active{
 		background:#96bb49;
