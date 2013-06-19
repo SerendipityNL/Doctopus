@@ -10,6 +10,7 @@ var blockSchema = new mongoose.Schema({
 
 var documentSchema = new mongoose.Schema({
 	title					: {type: String, required: true},
+	description				: {type: String, required: false},
 	owner					: {type: mongoose.Schema.Types.ObjectId, required: true},
 	collaborators			: {type: Array, required: false},
 	visibility				: {type: Boolean, required: true, default: true},
@@ -80,6 +81,7 @@ module.exports = {
 		User.findByUsername({username: params.username}, function(err, user) {
 			document = new Document;
 			document.set('title', params.title);
+			document.set('description', params.description);
 			document.set('owner', user._id);
 			document.set('visibility', params.visibility);
 		

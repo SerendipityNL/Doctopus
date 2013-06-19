@@ -1,0 +1,19 @@
+#newDocumentModal.modal.hide.fade(tabindex="-1", role="dialog", aria-labbeledby="newDocumentModal", aria-hidden="true")
+	.modal-header
+		button.close(type="button", data-dismiss="modal", aria-hidden="true") x
+		h3#newDocumentModal New document
+	.modal-body
+		span Document Title
+		input(type="text", name="documentTitle", placeholder="Document Title")
+		br
+		span Document Description
+		input(type="text", name="documentDescription", placeholder="Document Description")
+		br
+		span Document Visibility /n /n
+		select(name="documentVisibility")
+			option(value="public", selected="selected") Public
+			option(value="private") Private
+		input(type="hidden", name="username", value=session.username)
+	.modal-footer
+		button.btn(data-dismiss="modal", aria-hidden="true") Close
+		button.btn.btn-success Create new document
