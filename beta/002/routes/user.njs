@@ -51,8 +51,11 @@ module.exports = {
 			}
 		});
 	},
-	index: function(req, res) {
-		User.findByUsername(req.session.username, function(err, user){
+	dashboard: function(req, res) {
+		if ( ! req.session.logged_in){
+			res.redirect('/');
+		}
+		User.findByUsername(req.session.username, function(err, user) {
 			Document.findByOwner(user, function(err, documents) {
 				console.log(documents);
 				var avatarUrl = Gravatar.url(user.email, {s: '230', r: 'x', d: '404'});

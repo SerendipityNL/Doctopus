@@ -42,22 +42,24 @@ app.configure(function() {
 	app.locals(require('./modules/app.locals.njs'));
 });
 
-// Page routes
+// Homepage route
 app.get('/', front.index);
 
+// User routes
 app.get('/register', user.register);
+app.post('/register', user.create);
+app.get('/login', user.login);
+app.post('/login', user.login);
+app.get('/logout', user.logout);
+app.get('/dashboard', user.dashboard);
+
+// Document routes
+app.post('/setstyle', document.setstyle);
 app.get('/document', document.index);
 app.get('/custom.css', document.css);
-app.get('/register', user.register);
-app.get('/login', user.login);
-app.get('/logout', user.logout);
 
-app.post('/setstyle', document.setstyle);
-app.post('/register', user.create);
-app.post('/login', user.login);
+// Files routes
 app.post('/file-upload', files.upload);
-
-app.get('/dashboard', user.index);
 
 // Let the app listen on the defined port
 app = app.listen(port);

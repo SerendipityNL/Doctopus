@@ -2,7 +2,11 @@ extends ../layout
 
 block content
 	.span3.well
-		include ../../mixins/user/profileInfo
+		h2=user.username
+		p: strong Avatar
+		p: img(src="#{avatar}")
+		p: strong Name
+		p #{user.firstname} #{user.lastname}
 	.span9.well#dashboardDocuments
 		h2 Documents
 		#actionBar.pull-right
@@ -22,4 +26,17 @@ block content
 								&nbsp;
 								a.btn(href="/document/edit/#{document.get('id')}") Edit
 		
-	include ../../mixins/document/newDocumentModal
+	#newDocumentModal.modal.hide.fade(tabindex="-1", role="dialog", aria-labbeledby="newDocumentModal", aria-hidden="true")
+		.modal-header
+			button.close(type="button", data-dismiss="modal", aria-hidden="true") x
+			h3#newDocumentModal New document
+		.modal-body
+			input(type="text", name="documentTitle", placeholder="Document Title")
+			br
+			select(name="documentVisibility")
+				option(value="public", selected="selected") Public
+				option(value="private") Private
+			input(type="hidden", name="username", value=session.username)
+		.modal-footer
+			button.btn(data-dismiss="modal", aria-hidden="true") Close
+			button.btn.btn-success Create new document
