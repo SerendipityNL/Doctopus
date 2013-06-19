@@ -29,7 +29,7 @@ app.configure(function() {
 	// Enable the logging
 	app.use(express.logger('dev'));
 
-	// Set the path to the public directory
+	// Set the path to the public and upload directory
 	app.use(express.static(__dirname + '/public'));
 
 	// Set the views directory

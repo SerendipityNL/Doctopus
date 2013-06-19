@@ -70,8 +70,11 @@
 
 			url: "/file-upload",
 
-			success: function(data) {
-				//console.log(data.name);
+			success: function(succes, data) {
+
+				console.log(data);
+
+				jQuery('.selected-block').html("<img src='uploads/"+data+"'>");
 
 				//jQuery('.selected-block').html("<img src='localhost:1337/public/uploads/1_c8qo8rm5cdi.jpg'>");
 				jQuery('.success-mark').show();
