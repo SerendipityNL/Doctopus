@@ -573,3 +573,18 @@ i {
 	.notice.warning{
 		background:#f1bc3d;
 	}
+
+#block-mainbar{
+	width:100%;
+	padding:4px;
+	background:#444;
+}
+	.mainbar-button{
+		width:100px;
+		padding:6px;
+		background:#777;
+		color:#fff;
+	}
+	.mainbar-button:hover, .mainbar-button:active{
+		background:#96bb49;
+	}
