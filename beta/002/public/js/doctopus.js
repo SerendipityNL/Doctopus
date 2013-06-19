@@ -64,6 +64,28 @@
 			$('.notice').stop(true);
 			$('.notice').fadeIn(1000).text(noticeData.msg).addClass(noticeData.msgtype).delay(noticeData.duration).fadeOut(1000); 
 		},
+		startDropzone : function (){
+
+			jQuery("#file_dropzone").dropzone({
+
+			url: "/file-upload",
+
+			success: function(data) {
+				//console.log(data.name);
+
+				//jQuery('.selected-block').html("<img src='localhost:1337/public/uploads/1_c8qo8rm5cdi.jpg'>");
+				jQuery('.success-mark').show();
+				jQuery('.error-mark').hide();
+			},
+
+			error: function() {
+				jQuery('.success-mark').hide();
+				jQuery('.error-mark').show();
+			}
+
+			}); 
+
+		},
 		startTrashcan : function() {
 			var trashSettings = methods.settings.sortableTrash;
 
@@ -161,10 +183,12 @@
 
 
 				if(classes[1] == "block-image"){
-					var form = '<form enctype="multipart/form-data" method="post" action="file-upload" class="upload"><input type="submit" name="upload"></form>';
+
+					var form = '<form action="file-upload" class="dropzone" id="file_dropzone"></form>';
 
 					jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(form);
 
+					methods.startDropzone();
 				}
 	
 				if(add_block == true){
