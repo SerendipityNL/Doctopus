@@ -68,6 +68,7 @@
 
 			jQuery("#file_dropzone").dropzone({
 
+			dictDefaultMessage : "<div class='upload-button'>Click to Upload<div class='icn'></div></div>",
 			url: "/file-upload",
 
 			success: function(succes, data) {

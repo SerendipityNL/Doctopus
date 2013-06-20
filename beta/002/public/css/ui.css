@@ -594,3 +594,23 @@ i {
 	.mainbar-button:hover, .mainbar-button:active{
 		background:#96bb49;
 	}
+
+.upload-button{
+	width: 88%;
+	height: 89px;
+	background: #96bb49;
+	color: #FFF;
+	font-size: 17px;
+	padding: 10px;
+	text-align: center;
+}
+.upload-button .icn{
+	background:url('../img/ui/icons/upload-icn.png');
+	width:62px;
+	height:62px;
+	margin-top:10px;
+	display:block;
+	cursor:pointer;
+	margin-left: auto;
+	margin-right: auto;
+}
