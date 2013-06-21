@@ -72,19 +72,12 @@
 			url: "/file-upload",
 
 			success: function(succes, data) {
-
-				console.log(data);
-
+				// append the response
 				jQuery('.selected-block').html("<img src='uploads/"+data+"'>");
-
-				//jQuery('.selected-block').html("<img src='localhost:1337/public/uploads/1_c8qo8rm5cdi.jpg'>");
-				jQuery('.success-mark').show();
-				jQuery('.error-mark').hide();
 			},
 
 			error: function() {
-				jQuery('.success-mark').hide();
-				jQuery('.error-mark').show();
+				console.log('error with upload file');
 			}
 
 			}); 
