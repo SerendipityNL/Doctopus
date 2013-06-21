@@ -334,6 +334,10 @@
 				methods.deleteBlock();
 			});
 			  
+			jQuery('.resize').on('click.resize', function (){
+				methods.resizeBlock();
+			});
+
 			jQuery('.resize-block-btn-plus, .resize-block-btn-min').on('click.resizeBlock', function() {
 				if (jQuery(this).hasClass('resize-block-btn-min')) {
 					var step = 'decrease';
@@ -362,8 +366,12 @@
 		
 		methods.hideOptions();
 
+		jQuery('.block-actions').hide();
+
 		jQuery(this).addClass('selected-block');
 		$('.option-block').show();
+
+		jQuery(this).find('.block-actions').show();
 
 		if (jQuery(this).hasClass('block-text')) {			
 			$('.option-text').show();
@@ -376,6 +384,7 @@
 	jQuery.fn.deselect = function(e) {
 		if (e.target.nodeName == 'HTML') {
 			methods.hideOptions();
+			jQuery(this).find('.block-actions').hide();
 		}		
 	}
 

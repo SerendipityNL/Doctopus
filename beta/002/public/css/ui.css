@@ -362,24 +362,35 @@ div.empty-block {
 }
 
 .block-actions{
-	width:100%;
-	padding:4px;
-	background:#444;
+	width: 100%;
+	background: #444;
 	display: none;
+	height: 30px;
+	position: absolute;
+	top: -30px;
+	border: 1px solid #444;
 }
 	.mainbar-button{
-		width:100px;
-		padding:6px;
+		width:24px;
+		height:24px;
 		background:#777;
 		color:#fff;
-		border-radius:100px;
+		float:left;
 	}
 	.mainbar-button:hover, .mainbar-button:active{
 		background:#96bb49;
 	}
+	.mainbar-button.resize{
+		background:url('../img/ui/icons/resize_icn.png') no-repeat;
+	}
+	.mainbar-button.move{
+		background:url('../img/ui/icons/drag-icn.png') no-repeat;
+		float:right;
+		cursor: move;
+	}
 
 div#blocks div:hover div.block-actions {
-	display:block;
+/*	display:block;*/
 }
 
 
