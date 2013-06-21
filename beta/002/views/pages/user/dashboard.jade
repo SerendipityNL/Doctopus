@@ -31,7 +31,15 @@ block content
 			button.close(type="button", data-dismiss="modal", aria-hidden="true") x
 			h3#newDocumentModal New document
 		.modal-body
+			span Document Title
+			br
 			input(type="text", name="documentTitle", placeholder="Document Title")
+			br
+			span Document Description
+			br
+			input(type="text", name="documentDescription", placeholder="Document Description")
+			br
+			span Document Visibility
 			br
 			select(name="documentVisibility")
 				option(value="public", selected="selected") Public
