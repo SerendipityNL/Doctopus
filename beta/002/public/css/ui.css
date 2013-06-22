@@ -365,30 +365,47 @@ div.empty-block {
 	width: 100%;
 	background: #444;
 	display: none;
-	height: 30px;
-	position: absolute;
-	top: -30px;
+	height: 35px;
 	border: 1px solid #444;
 }
 	.mainbar-button{
-		width:24px;
-		height:24px;
-		background:#777;
-		color:#fff;
-		float:left;
+		width: 55px;
+		text-shadow: none;
+		background: #777;
+		color: #fff;
+		text-transform: capitalize;
+		margin: 5px;
+		padding: 4px 6px;
+		border-radius: 100px;
+		font-weight: lighter;
+		float:right;
+		cursor: pointer;
+		text-align: center;
+	}
+	.mainbar-button.resize{
+		cursor: e-resize;
+	}
+	.mainbar-button.move{
+		cursor: move;
 	}
 	.mainbar-button:hover, .mainbar-button:active{
 		background:#96bb49;
 	}
-	.mainbar-button.resize{
-		background:url('../img/ui/icons/resize_icn.png') no-repeat;
-	}
-	.mainbar-button.move{
-		background:url('../img/ui/icons/drag-icn.png') no-repeat;
-		float:right;
-		cursor: move;
-	}
 
+.definition-icn{
+	width:20px;
+	height:20px;
+	float:left;
+	margin-right:10px;
+}
+.definition-icn-bar{
+	width:20px!important;
+	height:20px;
+	float:left;
+	display: block;
+	margin-left:10px;
+	margin-top:5px;
+}
 div#blocks div:hover div.block-actions {
 /*	display:block;*/
 }

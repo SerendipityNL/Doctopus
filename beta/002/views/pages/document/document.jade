@@ -28,8 +28,8 @@ html(ng-app)
 				for block in blocks
 					div(class='col-#{block.cols} block-#{block.type}', data-id='#{block.id}', data-colspan='#{block.cols}')
 						div.block-actions
-							div(class="mainbar-button resize")
-							div(class="mainbar-button move")	
+							div(class="mainbar-button resize") resize
+							div(class="mainbar-button move") move
 
 						if block.type == 'text'
 							p.col-content #{block.content}
@@ -57,12 +57,14 @@ html(ng-app)
 
 				div.option-text
 					p Paragraph styling:
+						img(src="img/ui/icons/text-icn.png", class="definition-icn") 
 					mixin setpx('Font size:', 'p', 'font_size', style.p.font_size)
 					mixin color('Color:', 'p', 'color', style.p.color)
 					mixin select('Font family:', 'p', 'font_family', options.fonts, style.p.font_family)
 
 				div.option-list
 					p List styling:
+						img(src="img/ui/icons/list-icn.png", class="definition-icn") 
 					mixin setpx('Font size:', 'ul', 'font_size', style.ul.font_size) 
 					mixin color('Color:', 'ul', 'color', style.ul.color)
 					mixin select('Font family:', 'ul', 'font_family', options.fonts, style.ul.font_family)

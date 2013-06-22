@@ -191,7 +191,10 @@
 				if(add_block == true){
 					//no more selected, add class to parent block and hide the menu
 					if (classes[1] === 'block-text') {
-						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html('<p class="col-content">This is a textblock.</p>');
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html('<div class="block-actions"><div class="mainbar-button resize">Resize</div><div class="mainbar-button move">Move</div></div><p class="col-content">This is a textblock.</p>');
+					}
+					if(classes[1] == 'block-list'){
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html('<div class="block-actions"><div class="mainbar-button resize">Resize</div><div class="mainbar-button move">Move</div></div><ul><li><p class="col-content">This is a list</li><li>Another item</li></ul></p>');
 					}
 					else {
 						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]);
@@ -375,9 +378,16 @@
 
 		if (jQuery(this).hasClass('block-text')) {			
 			$('.option-text').show();
+			jQuery('#block-definition h2').text('Text block');
+			jQuery('.definition-icn-bar').remove();
+			jQuery(this).find('.block-actions').append('<img class="definition-icn-bar" src="img/ui/icons/text-icn.png">');
 		}
+			
 		else if (jQuery(this).hasClass('block-list')) {			
 			$('.option-list').show();
+			jQuery('#block-definition h2').text('List block');
+			jQuery('.definition-icn-bar').remove();
+			jQuery(this).find('.block-actions').append('<img class="definition-icn-bar" src="img/ui/icons/list-icn.png">');
 		}
 	};
 
