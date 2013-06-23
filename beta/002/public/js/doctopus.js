@@ -157,6 +157,12 @@
 		},
 		changeBlock: function (el){
 
+			//define static html objects that need to be appended
+			var options 	= '<div class="block-actions"><div class="mainbar-button resize">Resize</div><div class="mainbar-button move">Move</div></div>';
+			var form 		= '<form action="file-upload" class="dropzone" id="file_dropzone"></form>';
+			var textBlock 	= '<p class="col-content">This is a textblock. <br/> Double click to edit me!</p>';
+			var listBlock  	= '<p class="col-content"><ul><li>This is a list</li><li>Another item</li></ul></p>';
+
 			jQuery(el).parent().find('.plus_icon').hide();
 			jQuery(el).parent().append(methods.buildChangeMenu(methods.settings.changeBlock.iconSet));
 			jQuery(el).parent().find('.icon_selector').show();
@@ -178,29 +184,23 @@
 					add_block = false;
 				}
 
-
 				if(classes[1] == "block-image"){
-
-					var form = '<form action="file-upload" class="dropzone" id="file_dropzone"></form>';
-
 					jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(form);
-
 					methods.startDropzone();
 				}
 	
 				if(add_block == true){
 					//no more selected, add class to parent block and hide the menu
 					if (classes[1] === 'block-text') {
-						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html('<div class="block-actions"><div class="mainbar-button resize">Resize</div><div class="mainbar-button move">Move</div></div><p class="col-content">This is a textblock.</p>');
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + textBlock +' ');
 					}
 					if(classes[1] == 'block-list'){
-						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html('<div class="block-actions"><div class="mainbar-button resize">Resize</div><div class="mainbar-button move">Move</div></div><ul><li><p class="col-content">This is a list</li><li>Another item</li></ul></p>');
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + listBlock +' ');
 					}
 					else {
 						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]);
 					}
 					
-					//jQuery(this).parent().parent().parent().text('A textblock has been added');
 					//removes the icon selector
 					jQuery(this).parent().parent().remove();
 				}
@@ -251,7 +251,7 @@
 		},
 		createTexteditor: function(el) {
 			jQuery('#textarea').texteditor('destroyContainer');
-			jQuery('.edit_bar').text('Editing mode - not saved yet');
+			//jQuery('.edit_bar').text('Editing mode - not saved yet');
 			jQuery(el).append('<textarea id="textarea"></textarea>');
 			var text = el.addClass('isBeingEdited').find('p:first').hide().html();
 			
@@ -366,28 +366,30 @@
 	};
 	
 	jQuery.fn.selectBlock = function() {
-		
+
+		var textIcon = '<img class="definition-icn-bar" src="img/ui/icons/text-icn.png">';
+		var listIcon = '<img class="definition-icn-bar" src="img/ui/icons/list-icn.png">';
+
+		// hides options
 		methods.hideOptions();
-
 		jQuery('.block-actions').hide();
-
 		jQuery(this).addClass('selected-block');
 		$('.option-block').show();
-
 		jQuery(this).find('.block-actions').show();
 
+		// text block
 		if (jQuery(this).hasClass('block-text')) {			
 			$('.option-text').show();
 			jQuery('#block-definition h2').text('Text block');
 			jQuery('.definition-icn-bar').remove();
-			jQuery(this).find('.block-actions').append('<img class="definition-icn-bar" src="img/ui/icons/text-icn.png">');
+			jQuery(this).find('.block-actions').append(textIcon);
 		}
-			
+		// list block	
 		else if (jQuery(this).hasClass('block-list')) {			
 			$('.option-list').show();
 			jQuery('#block-definition h2').text('List block');
 			jQuery('.definition-icn-bar').remove();
-			jQuery(this).find('.block-actions').append('<img class="definition-icn-bar" src="img/ui/icons/list-icn.png">');
+			jQuery(this).find('.block-actions').append(listIcon);
 		}
 	};
 
