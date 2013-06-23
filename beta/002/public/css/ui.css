@@ -367,6 +367,7 @@ div.empty-block {
 	display: none;
 	height: 35px;
 	border: 1px solid #444;
+	float:left;
 }
 	.mainbar-button{
 		width: 55px;

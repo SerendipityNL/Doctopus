@@ -47,13 +47,13 @@
 			// hey there, this works but this needs a better place, iam sorry though
 			jQuery('body').on('showNotice', function(){
 
-				var noticeData = {
+				var changeNotice = {
 					msg  : "Changes have been saved",
 					msgtype : "succes",
 					duration : 3000
 				};
 
-				methods.showNotice(noticeData);
+				methods.showNotice(changeNotice);
 			});
 
 			methods.activateListeners();
@@ -68,28 +68,27 @@
 
 			jQuery("#file_dropzone").dropzone({
 
-			dictDefaultMessage : "<div class='upload-button'>Click to Upload<div class='icn'></div></div>",
-			url: "/file-upload",
+				dictDefaultMessage : "<div class='upload-button'>Click to Upload<div class='icn'></div></div>",
+				url: "/file-upload",
 
-			success: function(succes, data) {
-				// append the response
+				success: function(succes, data) {
+					
+					var imageNotice = {
+					  msg       : "Image has been uploaded",
+					  msgtype   : "succes",
+					  duration  : 2000
+					};
 
-				var noticeData = {
-				  msg       : "Image has been uploaded",
-				  msgtype   : "succes",
-				  duration  : 2000
-				};
+					methods.showNotice(imageNotice);
+					jQuery('.preview processing image-preview').remove();
+					jQuery('.upload-button').remove();
+					jQuery('#file_dropzone').remove();
+					jQuery('.selected-block').append("<img src='uploads/"+data+"'>");
+				},
 
-				methods.showNotice(noticeData);
-				jQuery('.preview processing image-preview').remove();
-				jQuery('.upload-button').remove();
-				jQuery('#file_dropzone').remove();
-				jQuery('.selected-block').append("<img src='uploads/"+data+"'>");
-			},
-
-			error: function() {
-				console.log('error with upload file');
-			}
+				error: function() {
+					console.log('error with upload file');
+				}
 
 			}); 
 
@@ -283,13 +282,13 @@
 		deleteBlock: function(){
 			jQuery('.selected-block').remove();
 
-			var noticeData = {
+			var addBlockNotice = {
 			  msg       : "Block has been removed",
 			  msgtype   : "error",
 			  duration  : 2000
 			};
 
-			methods.showNotice(noticeData);
+			methods.showNotice(addBlockNotice);
 		},
 		resizeBlock: function() {
 
