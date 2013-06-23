@@ -73,7 +73,18 @@
 
 			success: function(succes, data) {
 				// append the response
-				jQuery('.selected-block').html("<img src='uploads/"+data+"'>");
+
+				var noticeData = {
+				  msg       : "Image has been uploaded",
+				  msgtype   : "succes",
+				  duration  : 2000
+				};
+
+				methods.showNotice(noticeData);
+				jQuery('.preview processing image-preview').remove();
+				jQuery('.upload-button').remove();
+				jQuery('#file_dropzone').remove();
+				jQuery('.selected-block').append("<img src='uploads/"+data+"'>");
 			},
 
 			error: function() {
@@ -185,7 +196,7 @@
 				}
 
 				if(classes[1] == "block-image"){
-					jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(form);
+					jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(''+ options + form +'');
 					methods.startDropzone();
 				}
 	
@@ -272,9 +283,7 @@
 		deleteBlock: function(){
 			jQuery('.selected-block').remove();
 
-			var noticeData = [];
-
-			noticeData = {
+			var noticeData = {
 			  msg       : "Block has been removed",
 			  msgtype   : "error",
 			  duration  : 2000
