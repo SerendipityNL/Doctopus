@@ -41,9 +41,19 @@ module.exports = {
 	},
 	findByID: function(id, callback) {
 		var ObjectId = mongoose.Schema.Types.ObjectId;
-		Document.findOne({"id" : new ObjectId(id)}, function (err, document) {
-			console.log(document);
-			callback(err, document);
+		var collaborators = new Array();
+
+		Document.findById(id, function (err, document) {
+			var length = document.collaborators.length;
+	
+			for (var i = 0; i < length; i++) {
+				User.findByID(collab.id, function(err, user) {
+					collaborators[collab.id] = user;
+				});
+			}
+			
+			console.log(collaborators);
+			callback(err, document, collaborators);
 		});
 	},
 	deleteById: function(id, callback){
@@ -94,10 +104,11 @@ module.exports = {
 		
 	},
 	saveBlock: function(params, callback){
-		console.log('params:' + params);
-		Document.find({_id: params.document.id}, function(err, document) {
-			console.log('document: ' + document);
-		});
+		console.log(params);
+
+		// Document.find({_id: params.document._id}, function(err, document) {
+		// 	console.log('document: ' + document);
+		// });
 		
 		//Document.find({"blocks" : {$in [params.block.id]}})
 	},

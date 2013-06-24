@@ -56,13 +56,13 @@
 				};	
 
 				var testData = {
-					blockId 	:  1,
+					_id 		:  1,
 					col   		:  2,
 					content 	: "content",
 					documentId 	: "_1213123123123"
 				}
 
-				socket.emit('block.changed', testData);
+				socket.emit('block.saved', testData);
 				
 				methods.showNotice(changeNotice);
 			});

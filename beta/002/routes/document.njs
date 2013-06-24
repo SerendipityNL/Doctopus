@@ -39,7 +39,7 @@ module.exports = {
 	},
 	manage: function(req, res) {
 		console.log(req.params.id);
-		Document.findByID("ObjectId('"+req.params.id+"')", function(err, document) {
+		Document.findByID(req.params.id, function(err, document) {
 			
 			res.render('pages/document/manage', {
 				pageTitle: 'Manage document ' + document.title,
