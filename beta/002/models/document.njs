@@ -47,8 +47,8 @@ module.exports = {
 			var length = document.collaborators.length;
 	
 			for (var i = 0; i < length; i++) {
-				User.findByID(collab.id, function(err, user) {
-					collaborators[collab.id] = user;
+				User.findByID(document.collaborators[i], function(err, user) {
+					collaborators.push(user);
 				});
 			}
 			
@@ -112,6 +112,18 @@ module.exports = {
 		
 		//Document.find({"blocks" : {$in [params.block.id]}})
 	},
+	newCollaborator: function(params, callback) {
+		console.log(params);
+		User.findByEmail(params.collaboratorEmail, function(err, user) {
+			Document.findById(params.documentId, function(err, document) {
+				document.collaborators.push(user._id);
+				document.save(function(err, document) {
+					console.log(err, document, user);
+					callback(err, document, user);
+				});
+			});
+		});
+	}
 };
 
 /*

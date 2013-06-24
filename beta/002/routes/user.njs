@@ -35,8 +35,10 @@ module.exports = {
 		}
 	},
 	logout: function(req, res) {
-		res.clearCookie('authtoken');
-		res.redirect('/');
+		User.logout(req.cookies.authtoken, function() {
+			res.clearCookie('authtoken');
+			res.redirect('/');
+		});
 	},
 	create: function(req, res) {
 		User.save(req.body, function(err) {

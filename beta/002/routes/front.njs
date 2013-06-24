@@ -3,6 +3,6 @@ module.exports = {
 		if (req.session.logged_in) {
 			res.redirect('/dashboard');
 		}
-		res.render('pages/front/index');			
+		res.render('pages/front/index', {'pageTitle': 'Doctopus'});
 	}
 }

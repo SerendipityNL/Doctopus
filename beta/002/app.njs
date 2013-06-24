@@ -68,7 +68,6 @@ server.listen(app);
 
 io.sockets.on('connection', function(socket){
 	socket.on('document.new', function(data) {
-		console.log('New document created, titled ' + data.title + ' with the visibility setting on ' + data.visibility + ' by ' + data.username);
 		documentModel.save(data, function(err, document) {
 			if (err) {
 				console.log(err);
@@ -93,10 +92,23 @@ io.sockets.on('connection', function(socket){
 			documentModel.saveBlock(block, function(err, block){
 		});
 	});
+<<<<<<< HEAD
 
 	// new collaborator
+=======
+	
+>>>>>>> f40fb72ab733f623eba40331ec1b728dd4369f57
 	socket.on('collaborator.new', function(collaborator) {
-		console.log(collaborator);
+		documentModel.newCollaborator(collaborator, function(err, document, user) {
+			if (!err) {
+				data = {'document' : document, 'user' : user, 'state' : 'success'};
+				socket.emit('collaborator.new', data);
+			}
+			else {
+				data = {'state' : 'error'};
+				socket.emit('collaborator.new', data);
+			};
+		});
 	});
 
 	//new block added
