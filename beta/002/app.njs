@@ -1,7 +1,6 @@
 // Include the required modules
 var express = require('express'),
 	app = express(),
-	
 	server = require('http').createServer(app),
 	io = require('socket.io').listen(server, {log: false}),
 	document = require('./routes/document.njs'),
@@ -56,6 +55,7 @@ app.get('/dashboard', user.dashboard);
 // Document routes
 app.post('/setstyle', document.setstyle);
 app.get('/document', document.index);
+app.get('/document/manage/:id', document.manage);
 app.get('/custom.css', document.css);
 
 // Files routes
@@ -82,7 +82,15 @@ io.sockets.on('connection', function(socket){
 				console.log(document._id);
 				socket.emit('new document', data);
 			}
-		})
+		});
+	});
+	
+	socket.on('block.changed', function(block) {
+		console.log(block);
+
+		documentModel.saveBlock(block, function(err, block){
+
+		});
 	});
 });
 

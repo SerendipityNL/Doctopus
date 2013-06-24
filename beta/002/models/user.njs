@@ -94,7 +94,6 @@ module.exports = {
 		});
 	},
 	save: function(params, callback) {
-		console.log('save functie!!');
 		Validator.prototype.error = function (msg) {
 		    this._errors.push(msg);
 		    return this;
@@ -123,7 +122,6 @@ module.exports = {
 			admin: 1,
 			token: token
 		});
-		console.log(user);
 		
 /*		if(errors.length == 0) {
 */			user.save(function (err) {
@@ -171,6 +169,7 @@ module.exports = {
 		var username = null;
 
 		User.findOne({'email' : req.body.email}, function (err, found_user) {
+
 			if (err) {
 				var error = 'Failed to login';
 			} // handle
@@ -253,11 +252,6 @@ modelFunctions.prototype.activate = function(token, callback) {
 		}
 		callback(error);
 	});
-};
-
-modelFunctions.prototype.auth = function(req, callback) {
-
-	
 };
 
 // sends e-mail
