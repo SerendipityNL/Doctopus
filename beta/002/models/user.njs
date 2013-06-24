@@ -165,38 +165,32 @@ module.exports = {
 	resetPassword: function(email, callback) {
 		
 	},
-	auth: function(req, res, callback) {
+	auth: function(form, callback) {
 		var username = null;
 
-		User.findOne({'email' : req.body.email}, function (err, found_user) {
+		User.findOne({'email' : form.email}, function (err, user) {
 
 			if (err) {
 				var error = 'Failed to login';
-			} // handle
+			}
 			else {
-				if (found_user) {
-					
-					if (found_user.authenticate(req.body.password)) {  // && found_user.token == 1
-
+				if (user) {					
+					if (user.authenticate(form.password)) {
 						// Generate an authentication token
 						var authtoken = randomstring.generate();
-						
-						// Set the authentication cookie with the token
-						res.cookie('authtoken', authtoken);
 
 						// Save the authentication token to the database
-						found_user.authtoken = authtoken;
-						found_user.save();
+						user.authtoken = authtoken;
+						user.save();
 
 						error = false;
-						username = found_user.username;						
 					}
 					else {
 						var error = 'password does not match, or user not activated';
 					}
 				}
 			}
-			callback(error, username);
+			callback(error, authtoken);
 		});
 	}
 };

@@ -17,8 +17,10 @@ module.exports = {
 	},
 	login: function(req, res) {
 		if (typeof(req.body.email) != 'undefined') {
-			User.auth(req, res, function(err, username) {
+			User.auth(req.body, function(err, authtoken) {
 				if (! err) {
+					// Set the authentication cookie with the token
+					res.cookie('authtoken', authtoken);
 					res.redirect('/dashboard');
 				}
 				else {
@@ -57,10 +59,10 @@ module.exports = {
 				Document.findByOwner(user, function(err, documents) {
 					console.log(documents);
 					var avatarUrl = Gravatar.url(user.email, {s: '230', r: 'x', d: '404'});
+
 					res.render('pages/user/dashboard', {
 						avatar:		avatarUrl,				
 						pageTitle: 	'Dashboard',
-						session: 	req.session,
 						user:		user,
 						documents:	documents
 					});
