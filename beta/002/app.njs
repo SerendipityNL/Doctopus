@@ -10,7 +10,6 @@ var express = require('express'),
 
 	documentModel = require('./models/provider.njs').load('document');
 	
-
 var port = process.env.PORT || 1337;
 
 // Configure the application
@@ -84,14 +83,7 @@ io.sockets.on('connection', function(socket){
 		});
 	});
 	
-	// all document emits go here
-
-	// block content saved
-	socket.on('block.saved', function(block) {
-		//console.log(block);
-			documentModel.saveBlock(block, function(err, block){
-		});
-	});
+/* Document Methods */
 
 	// new collaborator
 	socket.on('collaborator.new', function(collaborator) {
@@ -107,27 +99,68 @@ io.sockets.on('connection', function(socket){
 		});
 	});
 
+	// block content saved
+	socket.on('block.saved', function(block) {
+		console.log(block);
+
+		// documentModel.saveBlock(block, function(err, document, user){
+		// 	if(!err){
+		// 		data = {'block' : document, 'user' : user, 'state' : 'succes'};
+		// 		socket.emit('block.saved', data);
+		// 	}
+		// 	else{
+		// 		data = {'state' : 'error'};
+		// 		socket.emit('block.saved', data);
+		// 	}
+		// }
+	});
+
 	//new block added
 	socket.on('block.added', function(block) {
-		console.log(block);
+		//console.log(block);
+
+		// documentModel.addBlock(block, function(err, document, user){
+		// 	if(!err){
+		// 		data = {'block' : document, 'user' : user, 'state' : 'succes'};
+		// 		socket.emit('block.added', data);
+		// 	}
+		// 	else{
+		// 		data = {'state' : 'error'};
+		// 		socket.emit('block.added', data);
+		// 	}
+		// }
+
 	});
 
-	//new block added
+	//block has been removed
 	socket.on('block.removed', function(block) {
 		console.log(block);
+
+		// documentModel.removeBlock(block, function(err, document, user){
+		// 	if(!err){
+		// 		data = {'block' : document, 'user' : user, 'state' : 'succes'};
+		// 		socket.emit('block.removed', data);
+		// 	}
+		// 	else{
+		// 		data = {'state' : 'error'};
+		// 		socket.emit('block.removed', data);
+		// 	}
+		// }
 	});
 
-	//new block added
+	//new size changed
 	socket.on('block.sizeChange', function(block) {
 		console.log(block);
+		// documentModel.changeBlockSize(block, function(err, document, user){
+		// 	if(!err){
+		// 		data = {'block' : document, 'user' : user, 'state' : 'succes'};
+		// 		socket.emit('block.sizeChange', data);
+		// 	}
+		// 	else{
+		// 		data = {'state' : 'error'};
+		// 		socket.emit('block.sizeChange', data);
+		// 	}
+		// }
 	});
 
-	//new block added
-	socket.on('block.sizeChange', function(block) {
-		console.log(block);
-	});
 });
-
-
-// Set the console message
-console.log('Application accessible at http://localhost:1337');

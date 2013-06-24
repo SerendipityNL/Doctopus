@@ -54,14 +54,17 @@
 					duration : 3000
 				};	
 
-				var testData = {
-					_id 		:  1,
-					col   		:  2,
-					content 	: "content",
+				$block = $('.isBeingEdited');
+				$block_content = $('.isBeingEdited .col-content').text();
+
+				var blockData = {
+					_id 		:  $block.data("id"),
+					col   		:  $block.data("colspan"),
+					content 	:  $block_content,
 					documentId 	: "_1213123123123"
 				}
 
-				socket.emit('block.saved', testData);
+				socket.emit('block.saved', blockData);
 				
 				methods.showNotice(changeNotice);
 			});
@@ -205,27 +208,32 @@
 				}
 	
 				if(add_block == true){
-					
+
+					// get first to last div id and add 1
+					var last_id = jQuery('#blocks > div:last').prev().data("id");
+					var new_id = last_id + 1;
+
+					var $block = jQuery('.selected-block');
+
 					var newBlockData = {
-						_id 		:  1,
+						_id 		:  last_id,
 						col   		:  2,
-						content 	: "content",
 						documentId 	: "_1213123123123",
 						blockType	: ''
 					}		
 
 					if(classes[1] == "block-image"){
-						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(''+ options + form +'');
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(''+ options + form +'').attr("id", new_id);
 						newBlockData.blockType = "block-image";
 						methods.startDropzone();
 					}
 
 					if (classes[1] === 'block-text') {
-						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + textBlock +' ');
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + textBlock +' ').attr("id", new_id);
 						newBlockData.blockType = "block-text";
 					}
 					if(classes[1] == 'block-list'){
-						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + listBlock +' ');
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + listBlock +' ').attr("id", new_id);
 						newBlockData.blockType = "block-list";
 					}
 					else {
@@ -304,24 +312,25 @@
 			$('.option-block').hide();
 		},
 		deleteBlock: function(){
-			jQuery('.selected-block').remove();
+			$block = jQuery('.selected-block');
 
 			var removedBlockData = {
-				_id 		:  1,
-				col   		:  2,
-				content 	: "content",
+				_id 		:  $block.data("id"),
+				col   		:  $block.data("colspan"),
 				documentId 	: "_1213123123123"
 			}
 
-			socket.emit('block.removed', removedBlockData);
+			if(jQuery($block).remove()){
+				socket.emit('block.removed', removedBlockData);
 
-			var addBlockNotice = {
-			  msg       : "Block has been removed",
-			  msgtype   : "error",
-			  duration  : 2000
-			};
+				var removeBlockNotice = {
+				  msg       : "Block has been removed",
+				  msgtype   : "error",
+				  duration  : 2000
+				};
 
-			methods.showNotice(addBlockNotice);
+				methods.showNotice(removeBlockNotice);
+			}
 		},
 		resizeBlock: function() {
 			var $block = jQuery('.selected-block');
@@ -329,7 +338,6 @@
 			var sizeBlockData = {
 				_id 		:  $block.data("id"),
 				col   		:  0,
-				content 	: "content",
 				documentId 	: "_1213123123123"
 			}
 
