@@ -1,8 +1,9 @@
+var Provider = require('../models/provider.njs'),
+	User = Provider.load('user');
+
+
 module.exports = {
 	index: function(req, res) {
-		if (req.session.logged_in) {
-			res.redirect('/dashboard');
-		}
 		res.render('pages/front/index', {'pageTitle': 'Doctopus'});
 	}
 }

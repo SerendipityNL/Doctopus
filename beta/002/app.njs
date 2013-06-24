@@ -5,7 +5,7 @@ var express = require('express'),
 	io = require('socket.io').listen(server, {log: false}),
 	document = require('./routes/document.njs'),
 	front = require('./routes/front.njs'),
-	user = require('./routes/user.njs'),
+	users = require('./routes/users.njs'),
 	files = require('./routes/files.njs');		
 
 	documentModel = require('./models/provider.njs').load('document');
@@ -44,13 +44,13 @@ app.configure(function() {
 // Homepage route
 app.get('/', front.index);
 
-// User routes
-app.get('/register', user.register);
-app.post('/register', user.create);
-app.get('/login', user.login);
-app.post('/login', user.login);
-app.get('/logout', user.logout);
-app.get('/dashboard', user.dashboard);
+// Users routes
+app.get('/register', users.register);
+app.post('/register', users.create);
+app.get('/login', users.login);
+app.post('/login', users.login);
+app.get('/logout', users.logout);
+app.get('/dashboard', users.dashboard);
 
 // Document routes
 app.post('/setstyle', document.setstyle);
