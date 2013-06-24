@@ -57,8 +57,9 @@ module.exports = {
 		}
 		User.findByUsername(req.session.username, function(err, user) {
 			console.log(user.email);
+			var avatarUrl = Gravatar.url(user.email, {s: '230', r: 'x', d: '404'});
+			
 			Document.findByOwner(user, function(err, documents) {
-				var avatarUrl = Gravatar.url(user.email, {s: '230', r: 'x', d: '404'});
 				res.render('pages/user/dashboard', {
 					avatar:		avatarUrl,				
 					pageTitle: 	'Dashboard',

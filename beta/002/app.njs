@@ -3,7 +3,7 @@ var express = require('express'),
 	app = express(),
 	
 	server = require('http').createServer(app),
-	io = require('socket.io').listen(server),
+	io = require('socket.io').listen(server, {log : false}),
 	document = require('./routes/document.njs'),
 	front = require('./routes/front.njs'),
 	user = require('./routes/user.njs'),
@@ -27,7 +27,7 @@ app.configure(function() {
 	app.use(express.cookieSession());
 
 	// Enable the logging
-	app.use(express.logger('dev'));
+	// app.use(express.logger('dev'));
 
 	// Set the path to the public and upload directory
 	app.use(express.static(__dirname + '/public'));
@@ -56,6 +56,7 @@ app.get('/dashboard', user.dashboard);
 // Document routes
 app.post('/setstyle', document.setstyle);
 app.get('/document', document.index);
+app.get('/document/manage/:id', document.manage);
 app.get('/custom.css', document.css);
 
 // Files routes

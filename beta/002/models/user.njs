@@ -23,7 +23,7 @@ module.exports = {
 		}).sort({'username' : '-1'});
 	},
 	findByUsername: function(username, callback) {
-		User.find({'username' : { $regex : new RegExp(username, "i") }}, function (err, user) {
+		User.findOne({'username' : { $regex : new RegExp(username, "i") }}, function (err, user) {
 			callback(err, user);
 		});
 	},
@@ -92,7 +92,6 @@ module.exports = {
 		});
 	},
 	save: function(params, callback) {
-		console.log('save functie!!');
 		Validator.prototype.error = function (msg) {
 		    this._errors.push(msg);
 		    return this;
@@ -123,7 +122,6 @@ module.exports = {
 			admin: 1,
 			token: token
 		});
-		console.log(user);
 		
 /*		if(errors.length == 0) {
 */			user.save(function (err) {
@@ -155,8 +153,6 @@ module.exports = {
 		var username = null;
 	
 		User.findOne({'email' : req.email}, function (err, found_user) {
-			console.log(found_user);
-			console.log(req.email);
 			if (err) {
 				var error = 'Failed to login';
 			} // handle
@@ -228,11 +224,6 @@ modelFunctions.prototype.activate = function(token, callback) {
 		}
 		callback(error);
 	});
-};
-
-modelFunctions.prototype.auth = function(req, callback) {
-
-	
 };
 
 // sends e-mail

@@ -40,7 +40,9 @@ module.exports = {
 		});
 	},
 	findByID: function(id, callback) {
-		Document.findOne({'ObjectId' : id}, function (err, document) {
+		var ObjectId = mongoose.Schema.Types.ObjectId;
+		Document.findOne({"id" : new ObjectId(id)}, function (err, document) {
+			console.log(document);
 			callback(err, document);
 		});
 	},
@@ -76,14 +78,14 @@ module.exports = {
 		});
 	},
 	save: function(params, callback) {
-		User.findByUsername({username: params.username}, function(err, user) {
+		User.findByUsername(params.username, function(err, user) {
 			
 			document = new Document;
 			document.set('title', params.title);
 			document.set('description', params.description);
 			document.set('owner', user._id);
 			document.set('visibility', params.visibility);
-		
+			
 			document.save(function(err){
 				callback(err, document);
 			});
