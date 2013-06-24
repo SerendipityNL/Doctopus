@@ -139,12 +139,7 @@ module.exports = {
 	getInfo: function(authtoken, callback) {
 		if (typeof authtoken !== 'undefined') {
 			User.findOne({'authtoken': authtoken}, function(err, user) {
-				if (err) {
-					callback(err);
-				}
-				else {
-					callback(null, user);
-				}
+				callback(err, user);
 			});
 		}
 		else {
@@ -154,19 +149,14 @@ module.exports = {
 	},
 	isAdmin: function(username, callback) {
 		User.findOne({'username' : username}, function(err, user){
-			if (err) {
-				callback(err);
-			}
-			else {
-				callback(null, user.admin);
-			}
+			callback(err, user);
 		});
 	},
 	resetPassword: function(email, callback) {
 		
 	},
 	auth: function(form, callback) {
-		var username = null;
+		var authtoken = null;
 
 		User.findOne({'email' : form.email}, function (err, user) {
 
@@ -192,6 +182,17 @@ module.exports = {
 			}
 			callback(error, authtoken);
 		});
+	},
+	logout: function(authtoken, callback) {
+		if (typeof authtoken !== 'undefined') {
+			User.findOne({'authtoken': authtoken}, function(err, user) {
+				if (user) {
+					user.authtoken = null;
+					user.save();
+				}	
+			});
+		}
+		callback();
 	}
 };
 
