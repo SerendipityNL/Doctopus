@@ -3,7 +3,7 @@ var express = require('express'),
 	app = express(),
 	
 	server = require('http').createServer(app),
-	io = require('socket.io').listen(server),
+	io = require('socket.io').listen(server, {log: false}),
 	document = require('./routes/document.njs'),
 	front = require('./routes/front.njs'),
 	user = require('./routes/user.njs'),
@@ -27,7 +27,7 @@ app.configure(function() {
 	app.use(express.cookieSession());
 
 	// Enable the logging
-	app.use(express.logger('dev'));
+	//app.use(express.logger('dev'));
 
 	// Set the path to the public and upload directory
 	app.use(express.static(__dirname + '/public'));
@@ -67,7 +67,6 @@ app = app.listen(port);
 server.listen(app);
 
 io.sockets.on('connection', function(socket){
-	console.log('connection made');
 	socket.on('new document', function(data) {
 		console.log('New document created, titled ' + data.title + ' with the visibility setting on ' + data.visibility + ' by ' + data.username);
 		documentModel.save(data, function(err, document) {

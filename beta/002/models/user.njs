@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 	mongoose.connect('mongodb://localhost/doctopus'),
-	Validator = require('validator').Validator;
+	Validator = require('validator').Validator,
+	randomstring = require("randomstring");
 
 var userSchema = new mongoose.Schema({
 	email		: {type: String, required : true, index: {unique: true} },
@@ -8,6 +9,7 @@ var userSchema = new mongoose.Schema({
 	last		: {type: String },
 	admin		: {type: Number, required : true, default: 0},
 	token       : {type: String, required : true},
+	authtoken	: {type: String},
 	username    : {type: String, required : true}
 });
 
@@ -27,7 +29,7 @@ module.exports = {
 			callback(err, user);
 		});
 	},
-	deleteByUsername: function(username, callback){
+	deleteByUsername: function(username, callback) {
 		User.findOne({'username' : { $regex : new RegExp(username, "i") }}, function (err, user){
 			if ( ! err ){
 				User.remove({'username' : user.username}, function(err){
@@ -110,8 +112,6 @@ module.exports = {
 	
 		var errors = validator.getErrors();
 	
-		// random string for email validation
-		var randomstring = require("randomstring");
 		var token = randomstring.generate();
 	
 		var user = new User({
@@ -138,6 +138,22 @@ module.exports = {
 			callback(errors);
 		}
 */	},
+	getInfo: function(authtoken, callback) {
+		if (typeof authtoken !== 'undefined') {
+			User.findOne({'authtoken': authtoken}, function(err, user) {
+				if (err) {
+					callback(err);
+				}
+				else {
+					callback(null, user);
+				}
+			});
+		}
+		else {
+			err = 'authtoken is undefined!';
+			callback(err);
+		}
+	},
 	isAdmin: function(username, callback) {
 		User.findOne({'username' : username}, function(err, user){
 			if (err) {
@@ -151,21 +167,30 @@ module.exports = {
 	resetPassword: function(email, callback) {
 		
 	},
-	auth: function(req, callback) {
+	auth: function(req, res, callback) {
 		var username = null;
-	
-		User.findOne({'email' : req.email}, function (err, found_user) {
-			console.log(found_user);
-			console.log(req.email);
+
+		User.findOne({'email' : req.body.email}, function (err, found_user) {
 			if (err) {
 				var error = 'Failed to login';
 			} // handle
 			else {
 				if (found_user) {
-					if (found_user.authenticate(req.password)) {  // && found_user.token == 1
-						error = false;
-						username = found_user.username;
+					
+					if (found_user.authenticate(req.body.password)) {  // && found_user.token == 1
+
+						// Generate an authentication token
+						var authtoken = randomstring.generate();
 						
+						// Set the authentication cookie with the token
+						res.cookie('authtoken', authtoken);
+
+						// Save the authentication token to the database
+						found_user.authtoken = authtoken;
+						found_user.save();
+
+						error = false;
+						username = found_user.username;						
 					}
 					else {
 						var error = 'password does not match, or user not activated';

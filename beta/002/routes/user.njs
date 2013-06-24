@@ -5,22 +5,20 @@ var Gravatar = require('gravatar'),
 
 module.exports = {
 	register: function(req, res) {
-		if (req.session.logged_in == true){
-			res.redirect('/dashboard');
-		}
-		else {			
+		User.getInfo(req.cookies.authtoken, function(err, user) {
+
+			if (user) res.redirect('/dashboard');
+
 			res.render('pages/user/register', {
 				pageTitle: 'User registration',
 				session: req.session
 			});
-		}
+		});
 	},
 	login: function(req, res) {
 		if (typeof(req.body.email) != 'undefined') {
-			User.auth(req.body, function(err, username) {
+			User.auth(req, res, function(err, username) {
 				if (! err) {
-					req.session.logged_in = true;
-					req.session.username = username;
 					res.redirect('/dashboard');
 				}
 				else {
@@ -35,8 +33,7 @@ module.exports = {
 		}
 	},
 	logout: function(req, res) {
-		req.session.logged_in = false;
-		delete req.session.username;
+		res.clearCookie('authtoken');
 		res.redirect('/');
 	},
 	create: function(req, res) {
@@ -52,21 +49,25 @@ module.exports = {
 		});
 	},
 	dashboard: function(req, res) {
-		if ( ! req.session.logged_in){
-			res.redirect('/');
-		}
-		User.findByUsername(req.session.username, function(err, user) {
-			Document.findByOwner(user, function(err, documents) {
-				console.log(documents);
-				var avatarUrl = Gravatar.url(user.email, {s: '230', r: 'x', d: '404'});
-				res.render('pages/user/dashboard', {
-					avatar:		avatarUrl,				
-					pageTitle: 	'Dashboard',
-					session: 	req.session,
-					user:		user,
-					documents:	documents
+		User.getInfo(req.cookies.authtoken, function(err, user) {
+
+			if ( ! user) res.redirect('/');
+
+			User.findByUsername(req.session.username, function(err, user) {
+				Document.findByOwner(user, function(err, documents) {
+					console.log(documents);
+					var avatarUrl = Gravatar.url(user.email, {s: '230', r: 'x', d: '404'});
+					res.render('pages/user/dashboard', {
+						avatar:		avatarUrl,				
+						pageTitle: 	'Dashboard',
+						session: 	req.session,
+						user:		user,
+						documents:	documents
+					});
 				});
 			});
+			
 		});
+
 	}
 }
