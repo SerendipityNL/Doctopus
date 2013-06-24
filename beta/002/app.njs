@@ -1,9 +1,8 @@
 // Include the required modules
 var express = require('express'),
 	app = express(),
-	
 	server = require('http').createServer(app),
-	io = require('socket.io').listen(server),
+	io = require('socket.io').listen(server, {log: false}),
 	document = require('./routes/document.njs'),
 	front = require('./routes/front.njs'),
 	user = require('./routes/user.njs'),
@@ -27,7 +26,7 @@ app.configure(function() {
 	app.use(express.cookieSession());
 
 	// Enable the logging
-	app.use(express.logger('dev'));
+	//app.use(express.logger('dev'));
 
 	// Set the path to the public and upload directory
 	app.use(express.static(__dirname + '/public'));
@@ -56,6 +55,7 @@ app.get('/dashboard', user.dashboard);
 // Document routes
 app.post('/setstyle', document.setstyle);
 app.get('/document', document.index);
+app.get('/document/manage/:id', document.manage);
 app.get('/custom.css', document.css);
 
 // Files routes
@@ -67,9 +67,7 @@ app = app.listen(port);
 server.listen(app);
 
 io.sockets.on('connection', function(socket){
-	console.log('connection made');
-	socket.on('new document', function(data) {
-		console.log('New document created, titled ' + data.title + ' with the visibility setting on ' + data.visibility + ' by ' + data.username);
+	socket.on('document.new', function(data) {
 		documentModel.save(data, function(err, document) {
 			if (err) {
 				console.log(err);
@@ -81,9 +79,56 @@ io.sockets.on('connection', function(socket){
 					document: document
 				};
 				console.log(document._id);
-				socket.emit('new document', data);
+				socket.emit('document.new', data);
 			}
-		})
+		});
+	});
+	
+	// all document emits go here
+
+	// block content saved
+	socket.on('block.saved', function(block) {
+		//console.log(block);
+			documentModel.saveBlock(block, function(err, block){
+		});
+	});
+<<<<<<< HEAD
+
+	// new collaborator
+=======
+	
+>>>>>>> f40fb72ab733f623eba40331ec1b728dd4369f57
+	socket.on('collaborator.new', function(collaborator) {
+		documentModel.newCollaborator(collaborator, function(err, document, user) {
+			if (!err) {
+				data = {'document' : document, 'user' : user, 'state' : 'success'};
+				socket.emit('collaborator.new', data);
+			}
+			else {
+				data = {'state' : 'error'};
+				socket.emit('collaborator.new', data);
+			};
+		});
+	});
+
+	//new block added
+	socket.on('block.added', function(block) {
+		console.log(block);
+	});
+
+	//new block added
+	socket.on('block.removed', function(block) {
+		console.log(block);
+	});
+
+	//new block added
+	socket.on('block.sizeChange', function(block) {
+		console.log(block);
+	});
+
+	//new block added
+	socket.on('block.sizeChange', function(block) {
+		console.log(block);
 	});
 });
 

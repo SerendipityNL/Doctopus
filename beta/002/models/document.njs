@@ -10,6 +10,7 @@ var blockSchema = new mongoose.Schema({
 
 var documentSchema = new mongoose.Schema({
 	title					: {type: String, required: true},
+	description				: {type: String, required: false},
 	owner					: {type: mongoose.Schema.Types.ObjectId, required: true},
 	collaborators			: {type: Array, required: false},
 	visibility				: {type: Boolean, required: true, default: true},
@@ -30,7 +31,6 @@ module.exports = {
 	},
 	findByOwner: function(user, callback) {
 		Document.find({owner : user._id}, function (err, documents) {
-			console.log(err);
 			callback(err, documents);
 		});
 	},
@@ -40,8 +40,20 @@ module.exports = {
 		});
 	},
 	findByID: function(id, callback) {
-		Document.findOne({'ObjectId' : id}, function (err, document) {
-			callback(err, document);
+		var ObjectId = mongoose.Schema.Types.ObjectId;
+		var collaborators = new Array();
+
+		Document.findById(id, function (err, document) {
+			var length = document.collaborators.length;
+	
+			for (var i = 0; i < length; i++) {
+				User.findByID(document.collaborators[i], function(err, user) {
+					collaborators.push(user);
+				});
+			}
+			
+			console.log(collaborators);
+			callback(err, document, collaborators);
 		});
 	},
 	deleteById: function(id, callback){
@@ -76,13 +88,14 @@ module.exports = {
 		});
 	},
 	save: function(params, callback) {
-		
-		User.findByUsername({username: params.username}, function(err, user) {
+		User.findByUsername(params.username, function(err, user) {
+			
 			document = new Document;
 			document.set('title', params.title);
+			document.set('description', params.description);
 			document.set('owner', user._id);
 			document.set('visibility', params.visibility);
-		
+			
 			document.save(function(err){
 				callback(err, document);
 			});
@@ -90,6 +103,27 @@ module.exports = {
 		});
 		
 	},
+	saveBlock: function(params, callback){
+		console.log(params);
+
+		// Document.find({_id: params.document._id}, function(err, document) {
+		// 	console.log('document: ' + document);
+		// });
+		
+		//Document.find({"blocks" : {$in [params.block.id]}})
+	},
+	newCollaborator: function(params, callback) {
+		console.log(params);
+		User.findByEmail(params.collaboratorEmail, function(err, user) {
+			Document.findById(params.documentId, function(err, document) {
+				document.collaborators.push(user._id);
+				document.save(function(err, document) {
+					console.log(err, document, user);
+					callback(err, document, user);
+				});
+			});
+		});
+	}
 };
 
 /*

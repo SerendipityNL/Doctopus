@@ -1,4 +1,19 @@
-h1 Home
-p bla die bla, informatie enzo
+html(ng-app)
+	head
+		title= pageTitle
+		link(rel="stylesheet", type="text/css", href="/css/page.css")
+		link(rel="stylesheet", type="text/css", href="/css/reset.css")
 
-a(href="/login") Inloggen hiero
+	body
+		div#header
+			div.button
+				a(href="login") Log in
+			div.button
+				a(href="register") Sign up
+
+		div#background
+		div#title Doctopus
+		div#slogan "Creating documents is easy again."
+		div#footer
+			div#gettingstarted
+				a(href="register", id="gettingstartedbutton") Getting started

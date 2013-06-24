@@ -1,8 +1,9 @@
 (function( jQuery ) {
 	var methods = {
+
 		init: function ( that, options ) {
+			socket = io.connect('http://localhost');
 			methods.el = that;
-			
 			methods.settings = jQuery.extend( {
 				  sortable 		: {
 					  selector				: '#blocks'
@@ -43,17 +44,26 @@
 			}, options);
 						
 			methods.startSortable();
-
+			
 			// hey there, this works but this needs a better place, iam sorry though
 			jQuery('body').on('showNotice', function(){
 
-				var noticeData = {
+				var changeNotice = {
 					msg  : "Changes have been saved",
 					msgtype : "succes",
 					duration : 3000
-				};
+				};	
 
-				methods.showNotice(noticeData);
+				var testData = {
+					_id 		:  1,
+					col   		:  2,
+					content 	: "content",
+					documentId 	: "_1213123123123"
+				}
+
+				socket.emit('block.saved', testData);
+				
+				methods.showNotice(changeNotice);
 			});
 
 			methods.activateListeners();
@@ -68,23 +78,27 @@
 
 			jQuery("#file_dropzone").dropzone({
 
-			url: "/file-upload",
+				dictDefaultMessage : "<div class='upload-button'>Click to Upload<div class='icn'></div></div>",
+				url: "/file-upload",
 
-			success: function(succes, data) {
+				success: function(succes, data) {
+					
+					var imageNotice = {
+					  msg       : "Image has been uploaded",
+					  msgtype   : "succes",
+					  duration  : 2000
+					};
 
-				console.log(data);
+					methods.showNotice(imageNotice);
+					jQuery('.preview processing image-preview').remove();
+					jQuery('.upload-button').remove();
+					jQuery('#file_dropzone').remove();
+					jQuery('.selected-block').append("<img src='uploads/"+data+"'>");
+				},
 
-				jQuery('.selected-block').html("<img src='uploads/"+data+"'>");
-
-				//jQuery('.selected-block').html("<img src='localhost:1337/public/uploads/1_c8qo8rm5cdi.jpg'>");
-				jQuery('.success-mark').show();
-				jQuery('.error-mark').hide();
-			},
-
-			error: function() {
-				jQuery('.success-mark').hide();
-				jQuery('.error-mark').show();
-			}
+				error: function() {
+					console.log('error with upload file');
+				}
 
 			}); 
 
@@ -163,6 +177,12 @@
 		},
 		changeBlock: function (el){
 
+			//define static html objects that need to be appended
+			var options 	= '<div class="block-actions"><div class="mainbar-button resize">Resize</div><div class="mainbar-button move">Move</div></div>';
+			var form 		= '<form action="file-upload" class="dropzone" id="file_dropzone"></form>';
+			var textBlock 	= '<p class="col-content">This is a textblock. <br/> Double click to edit me!</p>';
+			var listBlock  	= '<p class="col-content"><ul><li>This is a list</li><li>Another item</li></ul></p>';
+
 			jQuery(el).parent().find('.plus_icon').hide();
 			jQuery(el).parent().append(methods.buildChangeMenu(methods.settings.changeBlock.iconSet));
 			jQuery(el).parent().find('.icon_selector').show();
@@ -183,27 +203,38 @@
 					jQuery(this).parent().hide().parent().find('.normal_icons').show();
 					add_block = false;
 				}
-
-
-				if(classes[1] == "block-image"){
-
-					var form = '<form action="file-upload" class="dropzone" id="file_dropzone"></form>';
-
-					jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(form);
-
-					methods.startDropzone();
-				}
 	
 				if(add_block == true){
-					//no more selected, add class to parent block and hide the menu
+					
+					var newBlockData = {
+						_id 		:  1,
+						col   		:  2,
+						content 	: "content",
+						documentId 	: "_1213123123123",
+						blockType	: ''
+					}		
+
+					if(classes[1] == "block-image"){
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(''+ options + form +'');
+						newBlockData.blockType = "block-image";
+						methods.startDropzone();
+					}
+
 					if (classes[1] === 'block-text') {
-						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html('<p class="col-content">This is a textblock.</p>');
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + textBlock +' ');
+						newBlockData.blockType = "block-text";
+					}
+					if(classes[1] == 'block-list'){
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + listBlock +' ');
+						newBlockData.blockType = "block-list";
 					}
 					else {
 						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]);
+						//newBlockData.blockType = "block-text";
 					}
+
+					socket.emit('block.added', newBlockData);
 					
-					//jQuery(this).parent().parent().parent().text('A textblock has been added');
 					//removes the icon selector
 					jQuery(this).parent().parent().remove();
 				}
@@ -254,7 +285,7 @@
 		},
 		createTexteditor: function(el) {
 			jQuery('#textarea').texteditor('destroyContainer');
-			jQuery('.edit_bar').text('Editing mode - not saved yet');
+			//jQuery('.edit_bar').text('Editing mode - not saved yet');
 			jQuery(el).append('<textarea id="textarea"></textarea>');
 			var text = el.addClass('isBeingEdited').find('p:first').hide().html();
 			
@@ -275,32 +306,52 @@
 		deleteBlock: function(){
 			jQuery('.selected-block').remove();
 
-			var noticeData = [];
+			var removedBlockData = {
+				_id 		:  1,
+				col   		:  2,
+				content 	: "content",
+				documentId 	: "_1213123123123"
+			}
 
-			noticeData = {
+			socket.emit('block.removed', removedBlockData);
+
+			var addBlockNotice = {
 			  msg       : "Block has been removed",
 			  msgtype   : "error",
 			  duration  : 2000
 			};
 
-			methods.showNotice(noticeData);
+			methods.showNotice(addBlockNotice);
 		},
 		resizeBlock: function() {
+			var $block = jQuery('.selected-block');
 
-			var block = jQuery('.selected-block');
+			var sizeBlockData = {
+				_id 		:  $block.data("id"),
+				col   		:  0,
+				content 	: "content",
+				documentId 	: "_1213123123123"
+			}
 
-			if (block.hasClass('col-1')) {
-				block.switchClass('col-1', 'col-2', 250);
+			if ($block.hasClass('col-1')) {	
+				$block.switchClass('col-1', 'col-2', 250);
+
+				sizeBlockData.col = 2;
 			}
-			else if (block.hasClass('col-2')) {
-				block.switchClass('col-2', 'col-3', 250);
+			else if ($block.hasClass('col-2')) {
+				$block.switchClass('col-2', 'col-3', 250);
+				sizeBlockData.col = 3;
 			}
-			else if (block.hasClass('col-3')) {
-				block.switchClass('col-3', 'col-4', 250);
+			else if ($block.hasClass('col-3')) {
+				$block.switchClass('col-3', 'col-4', 250);
+				sizeBlockData.col = 4;
 			}
 			else {
-				block.switchClass('col-4', 'col-1', 250);
+				$block.switchClass('col-4', 'col-1', 250);
+				sizeBlockData.col = 1;
 			}
+
+			socket.emit('block.sizeChange', sizeBlockData);
 		},
 		reactivateListeners: function() {
 			jQuery('.add_more_blocks_button').off('click.addMoreBlocks');
@@ -340,6 +391,10 @@
 				methods.deleteBlock();
 			});
 			  
+			jQuery('.resize').on('click.resize', function (){
+				methods.resizeBlock();
+			});
+
 			jQuery('.resize-block-btn-plus, .resize-block-btn-min').on('click.resizeBlock', function() {
 				if (jQuery(this).hasClass('resize-block-btn-min')) {
 					var step = 'decrease';
@@ -365,23 +420,37 @@
 	};
 	
 	jQuery.fn.selectBlock = function() {
-		
-		methods.hideOptions();
 
+		var textIcon = '<img class="definition-icn-bar" src="img/ui/icons/text-icn.png">';
+		var listIcon = '<img class="definition-icn-bar" src="img/ui/icons/list-icn.png">';
+
+		// hides options
+		methods.hideOptions();
+		jQuery('.block-actions').hide();
 		jQuery(this).addClass('selected-block');
 		$('.option-block').show();
+		jQuery(this).find('.block-actions').show();
 
+		// text block
 		if (jQuery(this).hasClass('block-text')) {			
 			$('.option-text').show();
+			jQuery('#block-definition h2').text('Text block');
+			jQuery('.definition-icn-bar').remove();
+			jQuery(this).find('.block-actions').append(textIcon);
 		}
+		// list block	
 		else if (jQuery(this).hasClass('block-list')) {			
 			$('.option-list').show();
+			jQuery('#block-definition h2').text('List block');
+			jQuery('.definition-icn-bar').remove();
+			jQuery(this).find('.block-actions').append(listIcon);
 		}
 	};
 
 	jQuery.fn.deselect = function(e) {
 		if (e.target.nodeName == 'HTML') {
 			methods.hideOptions();
+			jQuery(this).find('.block-actions').hide();
 		}		
 	}
 

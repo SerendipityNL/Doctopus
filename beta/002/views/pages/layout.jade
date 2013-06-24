@@ -2,6 +2,7 @@ doctype 5
 html(ng-app)
 	head
 		title= pageTitle
+		link(rel="shortcut icon", href="/favicon.png")
 		link(rel="stylesheet", type="text/css", href="/css/reset.css")
 		link(rel="stylesheet", type="text/css", href="/css/bootstrap.css")
 		link(rel="stylesheet", type="text/css", href="/css/bootstrap-responsive.css")
@@ -17,8 +18,8 @@ html(ng-app)
 		div.navbar.navbar-inverse.navbar-fixed-top
 			div.navbar-inner
 				a.brand(href="/")
-					img(src="img/assets/logo.png")
-				if (typeof(session) !== 'undefined' && typeof(session.username) !== 'undefined')
+					img(src="/img/assets/logo.png")
+				if user
 					.login.pull-right
 						a.btn.btn-success(href="/dashboard") Dashboard
 						&nbsp;

@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 	mongoose.connect('mongodb://localhost/doctopus'),
-	Validator = require('validator').Validator;
+	Validator = require('validator').Validator,
+	randomstring = require("randomstring");
 
 var userSchema = new mongoose.Schema({
 	email		: {type: String, required : true, index: {unique: true} },
@@ -8,6 +9,7 @@ var userSchema = new mongoose.Schema({
 	last		: {type: String },
 	admin		: {type: Number, required : true, default: 0},
 	token       : {type: String, required : true},
+	authtoken	: {type: String},
 	username    : {type: String, required : true}
 });
 
@@ -22,12 +24,24 @@ module.exports = {
 			}
 		}).sort({'username' : '-1'});
 	},
+	
+	findByID: function(id, callback) {
+		User.findById(id, function (err, user) {
+			callback(err, user);
+		});
+	},
+	
 	findByUsername: function(username, callback) {
 		User.findOne({'username' : { $regex : new RegExp(username, "i") }}, function (err, user) {
 			callback(err, user);
 		});
 	},
-	deleteByUsername: function(username, callback){
+	findByEmail: function(email, callback) {
+		User.findOne({'email' : { $regex : new RegExp(email, "i") }}, function (err, user) {
+			callback(err, user);
+		});
+	},
+	deleteByUsername: function(username, callback) {
 		User.findOne({'username' : { $regex : new RegExp(username, "i") }}, function (err, user){
 			if ( ! err ){
 				User.remove({'username' : user.username}, function(err){
@@ -92,7 +106,6 @@ module.exports = {
 		});
 	},
 	save: function(params, callback) {
-		console.log('save functie!!');
 		Validator.prototype.error = function (msg) {
 		    this._errors.push(msg);
 		    return this;
@@ -110,8 +123,6 @@ module.exports = {
 	
 		var errors = validator.getErrors();
 	
-		// random string for email validation
-		var randomstring = require("randomstring");
 		var token = randomstring.generate();
 	
 		var user = new User({
@@ -123,7 +134,6 @@ module.exports = {
 			admin: 1,
 			token: token
 		});
-		console.log(user);
 		
 /*		if(errors.length == 0) {
 */			user.save(function (err) {
@@ -138,44 +148,63 @@ module.exports = {
 			callback(errors);
 		}
 */	},
+	getInfo: function(authtoken, callback) {
+		if (typeof authtoken !== 'undefined') {
+			User.findOne({'authtoken': authtoken}, function(err, user) {
+				callback(err, user);
+			});
+		}
+		else {
+			err = 'authtoken is undefined!';
+			callback(err);
+		}
+	},
 	isAdmin: function(username, callback) {
 		User.findOne({'username' : username}, function(err, user){
-			if (err) {
-				callback(err);
-			}
-			else {
-				callback(null, user.admin);
-			}
+			callback(err, user);
 		});
 	},
 	resetPassword: function(email, callback) {
 		
 	},
-	auth: function(req, callback) {
-		var username = null;
-	
-		User.findOne({'email' : req.email}, function (err, found_user) {
-			console.log(found_user);
-			console.log(req.email);
+	auth: function(form, callback) {
+		var authtoken = null;
+
+		User.findOne({'email' : form.email}, function (err, user) {
+
 			if (err) {
 				var error = 'Failed to login';
-			} // handle
+			}
 			else {
-				if (found_user) {
-					if (found_user.authenticate(req.password)) {  // && found_user.token == 1
+				if (user) {					
+					if (user.authenticate(form.password)) {
+						// Generate an authentication token
+						var authtoken = randomstring.generate();
+
+						// Save the authentication token to the database
+						user.authtoken = authtoken;
+						user.save();
+
 						error = false;
-						console.log(found_user);
-						username = found_user.username;
-						
 					}
 					else {
 						var error = 'password does not match, or user not activated';
 					}
 				}
 			}
-			console.log(username);
-			callback(error, username);
+			callback(error, authtoken);
 		});
+	},
+	logout: function(authtoken, callback) {
+		if (typeof authtoken !== 'undefined') {
+			User.findOne({'authtoken': authtoken}, function(err, user) {
+				if (user) {
+					user.authtoken = null;
+					user.save();
+				}	
+			});
+		}
+		callback();
 	}
 };
 
@@ -230,11 +259,6 @@ modelFunctions.prototype.activate = function(token, callback) {
 		}
 		callback(error);
 	});
-};
-
-modelFunctions.prototype.auth = function(req, callback) {
-
-	
 };
 
 // sends e-mail

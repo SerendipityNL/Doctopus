@@ -1,4 +1,5 @@
-var styledb = require('../models/styledb.njs');
+var styledb = require('../models/styledb.njs'),
+	Document = require('../models/document.njs');
 
 /* -------------------------------------------------------------
 Function which formats the JSON data to valid CSS .
@@ -34,6 +35,16 @@ module.exports = {
 			'options': styledb.options,
 			'style': styledb.current,
 			'blocks': styledb.blocks
+		});
+	},
+	manage: function(req, res) {
+		console.log(req.params.id);
+		Document.findByID(req.params.id, function(err, document) {
+			
+			res.render('pages/document/manage', {
+				pageTitle: 'Manage document ' + document.title,
+				document: document
+			});
 		});
 	},
 	css: function(req, res) {
