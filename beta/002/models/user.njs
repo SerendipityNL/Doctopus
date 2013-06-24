@@ -24,6 +24,13 @@ module.exports = {
 			}
 		}).sort({'username' : '-1'});
 	},
+	
+	findByID: function(id, callback) {
+		User.findById(id, function (err, user) {
+			callback(err, user);
+		});
+	},
+	
 	findByUsername: function(username, callback) {
 		User.findOne({'username' : { $regex : new RegExp(username, "i") }}, function (err, user) {
 			callback(err, user);

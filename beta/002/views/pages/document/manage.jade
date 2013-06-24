@@ -1,1 +1,46 @@
 extends ../layout
+
+block content
+	.span3.well
+		h2 #{document.title}
+		p: img(src="holder.js/300x200")
+		
+	.span9.well#manageDocuments
+		table.table.table-striped
+			thead
+				tr
+					th Username
+					th Email
+					th Actions
+					
+			if collaborators
+				each collaborator in collaborators
+					tr
+						td collaborator.username
+						td collaborator.email
+						td
+							a.btn.btn-danger(href="#")
+								i.icon-remove remove
+			else
+				tr
+					td(colspan="3", style="text-align: center;") No collaborators
+					
+		button.btn.btn-success#newCollaboratorButton(href="#") Add user
+		
+		#newCollaboratorModal.modal.hide.fade(tabindex="-1", role="dialog", aria-labbeledby="newCollaboratorModal", aria-hidden="true")
+			.modal-header
+				button.close(type="button", data-dismiss="modal", aria-hidden="true") x
+				h3#newCollaboratorModal New collaborator
+			.modal-body
+				span Collaborator email
+				br
+				input(type="email", name="collaboratorEmail", placeholder="Document Title")
+				br
+				span Collaborator rights
+				br
+				select(name="documentVisibility")
+					option(value="edit", selected="selected") Edit
+					option(value="view") View
+			.modal-footer
+				button.btn(data-dismiss="modal", aria-hidden="true") Close
+				button.btn.btn-success Save Collaborator
