@@ -1,8 +1,9 @@
 (function( jQuery ) {
 	var methods = {
+
 		init: function ( that, options ) {
+			socket = io.connect('http://localhost');
 			methods.el = that;
-			
 			methods.settings = jQuery.extend( {
 				  sortable 		: {
 					  selector				: '#blocks'
@@ -43,8 +44,6 @@
 			}, options);
 						
 			methods.startSortable();
-			
-			var socket = io.connect('http://localhost');
 			
 			// hey there, this works but this needs a better place, iam sorry though
 			jQuery('body').on('showNotice', function(){
@@ -204,23 +203,37 @@
 					jQuery(this).parent().hide().parent().find('.normal_icons').show();
 					add_block = false;
 				}
-
-				if(classes[1] == "block-image"){
-					jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(''+ options + form +'');
-					methods.startDropzone();
-				}
 	
 				if(add_block == true){
-					//no more selected, add class to parent block and hide the menu
+					
+					var newBlockData = {
+						_id 		:  1,
+						col   		:  2,
+						content 	: "content",
+						documentId 	: "_1213123123123",
+						blockType	: ''
+					}		
+
+					if(classes[1] == "block-image"){
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(''+ options + form +'');
+						newBlockData.blockType = "block-image";
+						methods.startDropzone();
+					}
+
 					if (classes[1] === 'block-text') {
 						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + textBlock +' ');
+						newBlockData.blockType = "block-text";
 					}
 					if(classes[1] == 'block-list'){
 						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + listBlock +' ');
+						newBlockData.blockType = "block-list";
 					}
 					else {
 						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]);
+						//newBlockData.blockType = "block-text";
 					}
+
+					socket.emit('block.added', newBlockData);
 					
 					//removes the icon selector
 					jQuery(this).parent().parent().remove();
@@ -293,6 +306,15 @@
 		deleteBlock: function(){
 			jQuery('.selected-block').remove();
 
+			var removedBlockData = {
+				_id 		:  1,
+				col   		:  2,
+				content 	: "content",
+				documentId 	: "_1213123123123"
+			}
+
+			socket.emit('block.removed', removedBlockData);
+
 			var addBlockNotice = {
 			  msg       : "Block has been removed",
 			  msgtype   : "error",
@@ -302,21 +324,34 @@
 			methods.showNotice(addBlockNotice);
 		},
 		resizeBlock: function() {
+			var $block = jQuery('.selected-block');
 
-			var block = jQuery('.selected-block');
+			var sizeBlockData = {
+				_id 		:  $block.data("id"),
+				col   		:  0,
+				content 	: "content",
+				documentId 	: "_1213123123123"
+			}
 
-			if (block.hasClass('col-1')) {
-				block.switchClass('col-1', 'col-2', 250);
+			if ($block.hasClass('col-1')) {	
+				$block.switchClass('col-1', 'col-2', 250);
+
+				sizeBlockData.col = 2;
 			}
-			else if (block.hasClass('col-2')) {
-				block.switchClass('col-2', 'col-3', 250);
+			else if ($block.hasClass('col-2')) {
+				$block.switchClass('col-2', 'col-3', 250);
+				sizeBlockData.col = 3;
 			}
-			else if (block.hasClass('col-3')) {
-				block.switchClass('col-3', 'col-4', 250);
+			else if ($block.hasClass('col-3')) {
+				$block.switchClass('col-3', 'col-4', 250);
+				sizeBlockData.col = 4;
 			}
 			else {
-				block.switchClass('col-4', 'col-1', 250);
+				$block.switchClass('col-4', 'col-1', 250);
+				sizeBlockData.col = 1;
 			}
+
+			socket.emit('block.sizeChange', sizeBlockData);
 		},
 		reactivateListeners: function() {
 			jQuery('.add_more_blocks_button').off('click.addMoreBlocks');

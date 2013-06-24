@@ -85,15 +85,38 @@ io.sockets.on('connection', function(socket){
 		});
 	});
 	
+	// all document emits go here
+
+	// block content saved
 	socket.on('block.saved', function(block) {
 		//console.log(block);
-
-		documentModel.saveBlock(block, function(err, block){
-
+			documentModel.saveBlock(block, function(err, block){
 		});
 	});
+
+	// new collaborator
 	socket.on('collaborator.new', function(collaborator) {
 		console.log(collaborator);
+	});
+
+	//new block added
+	socket.on('block.added', function(block) {
+		console.log(block);
+	});
+
+	//new block added
+	socket.on('block.removed', function(block) {
+		console.log(block);
+	});
+
+	//new block added
+	socket.on('block.sizeChange', function(block) {
+		console.log(block);
+	});
+
+	//new block added
+	socket.on('block.sizeChange', function(block) {
+		console.log(block);
 	});
 });
 
