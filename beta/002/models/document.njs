@@ -94,10 +94,11 @@ module.exports = {
 		
 	},
 	saveBlock: function(params, callback){
-		console.log('params:' + params);
-		Document.find({_id: params.document.id}, function(err, document) {
-			console.log('document: ' + document);
-		});
+		console.log(params);
+
+		// Document.find({_id: params.document._id}, function(err, document) {
+		// 	console.log('document: ' + document);
+		// });
 		
 		//Document.find({"blocks" : {$in [params.block.id]}})
 	},
