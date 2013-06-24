@@ -15,9 +15,10 @@ jQuery(document).ready( function() {
 	
 	jQuery('#newCollaboratorModal .modal-footer .btn-success').on('click', function() {
 		var newCollaborator		= {};
-		newCollaborator.email	= jQuery('#newCollaboratorModal .modal-body input[name="collaboratorEmail"]');
-		newCollaborator.rights	= jQuery('#newCollaboratorModal .modal-body select');
-		
+		documentUrl = window.location.pathname.split('/');
+		newCollaborator.email	= jQuery('#newCollaboratorModal .modal-body input[name="collaboratorEmail"]').val();
+		newCollaborator.rights	= jQuery('#newCollaboratorModal .modal-body select[name="collaboratorRights"]').val();
+		newCollaborator.documentId = documentUrl[3];
 		socket.emit('collaborator.new', newCollaborator);
 		socket.on('collaborator.new', function(data) {
 			console.log(data);

@@ -36,6 +36,11 @@ module.exports = {
 			callback(err, user);
 		});
 	},
+	findByEmail: function(email, callback) {
+		User.findOne({'email' : { $regex : new RegExp(email, "i") }}, function (err, user) {
+			callback(err, user);
+		});
+	},
 	deleteByUsername: function(username, callback) {
 		User.findOne({'username' : { $regex : new RegExp(username, "i") }}, function (err, user){
 			if ( ! err ){
