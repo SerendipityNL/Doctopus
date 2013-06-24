@@ -31,7 +31,6 @@ module.exports = {
 	},
 	findByOwner: function(user, callback) {
 		Document.find({owner : user._id}, function (err, documents) {
-			console.log(err);
 			callback(err, documents);
 		});
 	},
@@ -77,8 +76,8 @@ module.exports = {
 		});
 	},
 	save: function(params, callback) {
-		
 		User.findByUsername({username: params.username}, function(err, user) {
+			
 			document = new Document;
 			document.set('title', params.title);
 			document.set('description', params.description);

@@ -43,7 +43,9 @@
 			}, options);
 						
 			methods.startSortable();
-
+			
+			var socket = io.connect('http://localhost');
+			
 			// hey there, this works but this needs a better place, iam sorry though
 			jQuery('body').on('showNotice', function(){
 
@@ -52,7 +54,9 @@
 					msgtype : "succes",
 					duration : 3000
 				};
-
+				
+				socket.emit('block.changed', 'a block has been changed...');
+				
 				methods.showNotice(changeNotice);
 			});
 

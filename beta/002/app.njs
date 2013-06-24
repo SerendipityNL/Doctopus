@@ -67,7 +67,8 @@ app = app.listen(port);
 server.listen(app);
 
 io.sockets.on('connection', function(socket){
-	console.log('connection made');
+	console.log('dashboard connection made');
+	
 	socket.on('new document', function(data) {
 		console.log('New document created, titled ' + data.title + ' with the visibility setting on ' + data.visibility + ' by ' + data.username);
 		documentModel.save(data, function(err, document) {
@@ -83,7 +84,11 @@ io.sockets.on('connection', function(socket){
 				console.log(document._id);
 				socket.emit('new document', data);
 			}
-		})
+		});
+	});
+	
+	socket.on('block.changed', function() {
+		console.log('block changed bratha!!!');
 	});
 });
 
