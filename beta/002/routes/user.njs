@@ -52,9 +52,10 @@ module.exports = {
 		});
 	},
 	dashboard: function(req, res) {
-		if ( ! req.session.logged_in){
-			res.redirect('/');
-		}
+		// req.session.username = 'Vinze';
+		// if ( ! req.session.logged_in){
+		// 	res.redirect('/');
+		// }
 		User.findByUsername(req.session.username, function(err, user) {
 			Document.findByOwner(user, function(err, documents) {
 				console.log(documents);
