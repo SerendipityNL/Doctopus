@@ -53,9 +53,16 @@
 					msg  : "Changes have been saved",
 					msgtype : "succes",
 					duration : 3000
-				};
-				
-				socket.emit('block.changed', 'a block has been changed...');
+				};	
+
+				var testData = {
+					blockId 	:  1,
+					col   		:  2,
+					content 	: "content",
+					documentId 	: "_1213123123123"
+				}
+
+				socket.emit('block.changed', testData);
 				
 				methods.showNotice(changeNotice);
 			});

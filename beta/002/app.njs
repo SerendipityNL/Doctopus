@@ -87,8 +87,12 @@ io.sockets.on('connection', function(socket){
 		});
 	});
 	
-	socket.on('block.changed', function() {
-		console.log('block changed bratha!!!');
+	socket.on('block.changed', function(block) {
+		console.log(block);
+
+		documentModel.saveBlock(block, function(err, block){
+
+		});
 	});
 });
 
