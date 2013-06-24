@@ -16,6 +16,7 @@ var documentSchema = new mongoose.Schema({
 	visibility				: {type: Boolean, required: true, default: true},
 	deleted					: {type: Boolean, required: true, default: false},
 	styling					: {type: Array, required: false},
+	updated_at				: {type: Date, default: Date.now},
 	blocks					: [blockSchema]
 });
 

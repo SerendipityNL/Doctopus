@@ -92,12 +92,8 @@ io.sockets.on('connection', function(socket){
 			documentModel.saveBlock(block, function(err, block){
 		});
 	});
-<<<<<<< HEAD
 
 	// new collaborator
-=======
-	
->>>>>>> f40fb72ab733f623eba40331ec1b728dd4369f57
 	socket.on('collaborator.new', function(collaborator) {
 		documentModel.newCollaborator(collaborator, function(err, document, user) {
 			if (!err) {
