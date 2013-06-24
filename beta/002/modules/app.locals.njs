@@ -1,6 +1,4 @@
 module.exports = {
 	user: null,
-	hello: function() {
-		return 'hello world';
-	}
+	moment: require('moment')
 }
