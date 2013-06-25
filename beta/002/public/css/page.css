@@ -57,6 +57,7 @@ a:active{
 	}
 
 #background{
+	float:left;
 	margin-top:30px;
 	width:100%;
 	height:86%;
@@ -67,8 +68,7 @@ a:active{
 	background-size: cover;
 }
 #title{
-	position:absolute;
-	top:100px;
+	float:left;
 	width:100%;
 	text-align:center;
 	font-family:'BebasRegular';
@@ -76,10 +76,10 @@ a:active{
 	color:#222;
 	text-shadow: 2px 2px 2px #777;
 	filter: dropshadow(color=#777, offx=2, offy=2); 
+	margin-top:70px;
 }
 #slogan{
-	position:absolute;
-	top:220px;
+	float: left;
 	width:100%;
 	text-align:center;
 	font-family:'RobotoSlabRegular';
@@ -89,6 +89,7 @@ a:active{
 
 #footer{
 	position:relative;
+	float:left;
 	width:100%;
 	height:300px;
 	background:#222;
