@@ -2,7 +2,7 @@
 	var methods = {
 
 		init: function ( that, options ) {
-			socket = io.connect('http://localhost');
+			socket = io.connect(window.location.protocol + "//" + window.location.host);
 			methods.el = that;
 			methods.settings = jQuery.extend( {
 				  sortable 		: {
@@ -336,35 +336,40 @@
 				methods.showNotice(removeBlockNotice);
 			}
 		},
-		resizeBlock: function() {
-			var $block = jQuery('.selected-block');
+		// resizeBlock: function() {
+		// 	var $block = jQuery('.selected-block');
 
-			var sizeBlockData = {
-				_id 		:  $block.data("id"),
-				col   		:  0,
-				documentId 	: "_1213123123123"
-			}
+		// 	var blockData = {
+		// 		_id 		:  $block.data("id"),
+		// 		col   		:  0,
+		// 		documentId 	: "_1213123123123"
+		// 	}
 
-			if ($block.hasClass('col-1')) {	
-				$block.switchClass('col-1', 'col-2', 250);
+		// 	socket.emit('block.resize', blockData);
 
-				sizeBlockData.col = 2;
-			}
-			else if ($block.hasClass('col-2')) {
-				$block.switchClass('col-2', 'col-3', 250);
-				sizeBlockData.col = 3;
-			}
-			else if ($block.hasClass('col-3')) {
-				$block.switchClass('col-3', 'col-4', 250);
-				sizeBlockData.col = 4;
-			}
-			else {
-				$block.switchClass('col-4', 'col-1', 250);
-				sizeBlockData.col = 1;
-			}
+		// 	socket.on('block.resize', function(data) {
+		// 		// resize block
+		// 		console.log(data);
+		// 	});
 
-			socket.emit('block.sizeChange', sizeBlockData);
-		},
+		// 	if ($block.hasClass('col-1')) {	
+		// 		$block.switchClass('col-1', 'col-2', 250);
+		// 		blockData.col = 2;
+		// 	}
+		// 	else if ($block.hasClass('col-2')) {
+		// 		$block.switchClass('col-2', 'col-3', 250);
+		// 		blockData.col = 3;
+		// 	}
+		// 	else if ($block.hasClass('col-3')) {
+		// 		$block.switchClass('col-3', 'col-4', 250);
+		// 		blockData.col = 4;
+		// 	}
+		// 	else {
+		// 		$block.switchClass('col-4', 'col-1', 250);
+		// 		blockData.col = 1;
+		// 	}
+
+		// },
 		reactivateListeners: function() {
 			jQuery('.add_more_blocks_button').off('click.addMoreBlocks');
 			jQuery('.plus_icon').off('click.changeBlock');
@@ -403,9 +408,9 @@
 				methods.deleteBlock();
 			});
 			  
-			jQuery('.resize').on('click.resize', function (){
-				methods.resizeBlock();
-			});
+			// jQuery('.resize').on('click.resize', function (){
+			// 	methods.resizeBlock();
+			// });
 
 			jQuery('.resize-block-btn-plus, .resize-block-btn-min').on('click.resizeBlock', function() {
 				if (jQuery(this).hasClass('resize-block-btn-min')) {
@@ -433,8 +438,8 @@
 	
 	jQuery.fn.selectBlock = function() {
 
-		var textIcon = '<img class="definition-icn-bar" src="img/ui/icons/text-icn.png">';
-		var listIcon = '<img class="definition-icn-bar" src="img/ui/icons/list-icn.png">';
+		var textIcon = '<img class="definition-icn-bar" src="/img/ui/icons/text-icn.png">';
+		var listIcon = '<img class="definition-icn-bar" src="/img/ui/icons/list-icn.png">';
 
 		// hides options
 		methods.hideOptions();

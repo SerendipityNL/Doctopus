@@ -4,7 +4,7 @@ var Document = require('../models/provider.njs').load('document');
 
 
 module.exports.listen = function(server) {
-	var io = socket.listen(server);
+	var io = socket.listen(server, {log: false});
 
 	io.sockets.on('connection', function(socket){
 		socket.on('document.new', function(data) {
@@ -100,18 +100,14 @@ module.exports.listen = function(server) {
 		});
 
 		//new size changed
-		socket.on('block.sizeChange', function(block) {
-			console.log(block);
-			// Document.changeBlockSize(block, function(err, document, user){
-			// 	if(!err){
-			// 		data = {'block' : document, 'user' : user, 'state' : 'succes'};
-			// 		socket.emit('block.sizeChange', data);
-			// 	}
-			// 	else{
-			// 		data = {'state' : 'error'};
-			// 		socket.emit('block.sizeChange', data);
-			// 	}
-			// }
+		socket.on('block.resize', function(blockdata) {
+			// blockdata.id blockdata.oldSize blockdata.newSize
+			if 		(blockdata.oldSize == 1) blockdata.newSize = 2;
+			else if (blockdata.oldSize == 2) blockdata.newSize = 3;
+			else if (blockdata.oldSize == 3) blockdata.newSize = 4;
+			else if (blockdata.oldSize == 4) blockdata.newSize = 1;
+
+			io.sockets.emit('block.resize', blockdata);
 		});
 
 	});

@@ -13,6 +13,7 @@ html(ng-app)
 		script(type="text/javascript", src="/js/yellow_text.js")
 		script(type="text/javascript", src="/js/dropzone.js")
 		script(type="text/javascript", src="/js/doctopus.js")
+		script(type="text/javascript", src="/js/doctopus.socket.js")
 		script(type="text/javascript", src="/js/jscolor/jscolor.js")
 		script(type="text/javascript", src="/js/change-style.js")
 		style(type="text/css", id="styling")
@@ -21,7 +22,7 @@ html(ng-app)
 	div#header 
 		h1.header-title
 			a(href="/")
-				img(src="img/assets/logo.png")
+				img(src="/img/assets/logo.png")
 	div#wrapper
 		div#workfield-container
 			div.notice
@@ -60,14 +61,14 @@ html(ng-app)
 
 				div.option-text
 					p Paragraph styling:
-						img(src="img/ui/icons/text-icn.png", class="definition-icn") 
+						img(src="/img/ui/icons/text-icn.png", class="definition-icn") 
 					mixin setpx('Font size:', 'p', 'font_size', style.p.font_size)
 					mixin color('Color:', 'p', 'color', style.p.color)
 					mixin select('Font family:', 'p', 'font_family', options.fonts, style.p.font_family)
 
 				div.option-list
 					p List styling:
-						img(src="img/ui/icons/list-icn.png", class="definition-icn") 
+						img(src="/img/ui/icons/list-icn.png", class="definition-icn") 
 					mixin setpx('Font size:', 'ul', 'font_size', style.ul.font_size) 
 					mixin color('Color:', 'ul', 'color', style.ul.color)
 					mixin select('Font family:', 'ul', 'font_family', options.fonts, style.ul.font_family)
