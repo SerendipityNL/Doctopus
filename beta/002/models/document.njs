@@ -113,12 +113,10 @@ module.exports = {
 		//Document.find({"blocks" : {$in [params.block.id]}})
 	},
 	newCollaborator: function(params, callback) {
-		console.log(params);
-		User.findByEmail(params.collaboratorEmail, function(err, user) {
+		User.findByEmail(params.email, function(err, user) {
 			Document.findById(params.documentId, function(err, document) {
 				document.collaborators.push(user._id);
 				document.save(function(err, document) {
-					console.log(err, document, user);
 					callback(err, document, user);
 				});
 			});

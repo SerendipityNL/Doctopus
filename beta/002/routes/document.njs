@@ -38,12 +38,11 @@ module.exports = {
 		});
 	},
 	manage: function(req, res) {
-		console.log(req.params.id);
-		Document.findByID(req.params.id, function(err, document) {
-			
+		Document.findByID(req.params.id, function(err, document, collaborators) {
 			res.render('pages/document/manage', {
 				pageTitle: 'Manage document ' + document.title,
-				document: document
+				document: document,
+				'collaborators': collaborators
 			});
 		});
 	},

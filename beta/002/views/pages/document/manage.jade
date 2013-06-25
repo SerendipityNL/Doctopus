@@ -13,11 +13,12 @@ block content
 					th Email
 					th Actions
 					
+			tbody
 			if collaborators
 				each collaborator in collaborators
 					tr
-						td collaborator.username
-						td collaborator.email
+						td #{collaborator.username}
+						td #{collaborator.email}
 						td
 							a.btn.btn-danger(href="#")
 								i.icon-remove remove
