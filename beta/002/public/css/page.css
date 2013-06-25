@@ -17,7 +17,7 @@ a:link{
 	color:#fff;
 	text-decoration:none;
 	font-family:arial;
-	font-size:0.8em;
+	font-size:0.9em;
 }
 a:hover{
 	color:#fff;
@@ -45,15 +45,18 @@ a:active{
 		cursor:pointer;
 		width:120px;
 		background:#444;
-		padding:4px;
+		padding:10px 8px;
 		border-radius:100px;
 		float:right;
 		text-align:center;
 		color:#fff;
-		margin-right:20px;
+		margin-right:26px;
 	}
 	.button:hover, .button:active{
 		background:#96bb49;
+	}
+	#login-dropdown {
+		display: none;
 	}
 
 #background{
