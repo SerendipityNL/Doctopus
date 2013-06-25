@@ -242,6 +242,10 @@
 					}
 
 					socket.emit('block.added', newBlockData);
+
+					//socket.on('block.added', function(data) {
+						// Hier moet ie een block appenden.
+					//});
 					
 					//removes the icon selector
 					jQuery(this).parent().parent().remove();
