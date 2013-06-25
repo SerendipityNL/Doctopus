@@ -145,6 +145,7 @@ module.exports = {
 
 				document.blocks.id(params.blockId , function(err, block){
 					if(! err){
+				Document.find({blocks: params.blockId} , function(err, block) {
 						block.push({ col : params.col});
 
 						document.save(function(err) {

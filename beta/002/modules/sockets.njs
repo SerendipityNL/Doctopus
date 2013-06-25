@@ -1,6 +1,6 @@
 var socket = require('socket.io');
 
-var Document = require('../models/provider.njs').load('document');
+var Document = require('../models/document.njs');
 
 
 module.exports.listen = function(server) {
@@ -113,8 +113,11 @@ module.exports.listen = function(server) {
 				blockId : blockdata.id
 			}
 
+			console.log('hello');
+
 			Document.resizeBlock(block, function(err, document){
 				if(!err){
+					console.log('saved resize to db');
 					io.sockets.emit('block.resize', blockdata);
 				}
 				else{
