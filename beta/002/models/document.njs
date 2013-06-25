@@ -139,6 +139,35 @@ module.exports = {
 	saveBlock: function(params, callback){
 		console.log(params);
 
+		document.blocks.push(
+   		 {name:'task one', priority:1}, 
+    	 {name:'task two', priority:5}
+		);
+
+		document.save(function(err) {
+			if (err) {
+				console.log('error adding new block');
+				console.log(err);
+			} 
+			else {
+				console.log('new list successfully saved'); 
+			}
+		});
+
+		// Document.findOne({'ObjectId' : params.ObjectId}, function (err, document) {
+		// 	if (! err){
+		// 		document.save(function (err) {
+		// 			if (! err) {
+		// 				callback(null);
+		// 			}
+		// 			else {
+		// 				callback(err);
+		// 			}
+		// 		});
+		// 	}
+		// });
+
+
 		// Document.find({_id: params.document._id}, function(err, document) {
 		// 	console.log('document: ' + document);
 		// });
