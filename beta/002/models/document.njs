@@ -135,17 +135,16 @@ module.exports = {
 		
 	},
 	resizeBlock: function(params, callback){
-		
-		console.log(params);
 
 		ObjectId = '51c81a876798a7af43000005';
 
 		Document.findById(ObjectId, function (err, document) {
-			if (! err){
 
-				document.blocks.id(params.blockId , function(err, block){
-					if(! err){
+			if ( ! err) {
+
 				Document.find({blocks: params.blockId} , function(err, block) {
+					console.log(document);
+					if( ! err){
 						block.push({ col : params.col});
 
 						document.save(function(err) {
