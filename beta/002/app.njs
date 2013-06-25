@@ -3,14 +3,15 @@ var express = require('express'),
 	app = express(),
 	server = require('http').createServer(app),
 	io = require('./modules/sockets.njs').listen(server),
-	//io = require('socket.io').listen(server, {log: false}),
 	documents = require('./routes/documents.njs'),
 	front = require('./routes/front.njs'),
 	users = require('./routes/users.njs'),
 	files = require('./routes/files.njs');		
 
+// Set the port
 var port = process.env.PORT || 1337;
 
+// Let the server listen
 server.listen(port);
 
 // Configure the application
