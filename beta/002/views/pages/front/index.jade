@@ -6,10 +6,16 @@ html(ng-app)
 
 	body
 		div#header
-			div.button
-				a(href="login") Log in
-			div.button
-				a(href="register") Sign up
+			if user
+				div.button
+					a(href="/dashboard") Dashboard
+				div.button
+					a(href="/logout") Logout
+			else
+				div.button
+					a(href="login") Login
+				div.button
+					a(href="register") Signup
 
 		div#background
 		div#title Doctopus
