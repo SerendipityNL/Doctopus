@@ -77,9 +77,7 @@ a:active{
 	font-family:'BebasRegular';
 	font-size:6em;
 	color:#222;
-	text-shadow: 2px 2px 2px #777;
-	filter: dropshadow(color=#777, offx=2, offy=2); 
-	margin-top:70px;
+	margin-top:90px;
 }
 #slogan{
 	float: left;
@@ -88,6 +86,7 @@ a:active{
 	font-family:'RobotoSlabRegular';
 	font-size:1.2em;
 	color:#222;
+	opacity:0.6;
 }
 
 #footer{
@@ -114,6 +113,11 @@ a:active{
 	font-family:'RobotoSlabRegular';
 	background:#36f;
 	border-radius:100px;
+	-webkit-box-shadow: inset 0px 0px 20px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0px 0px 20px 20px rgba(0, 0, 0, 0.2);
+}
+#gettingstartedbutton:hover, #gettingstartedbutton:active{
+	background-color:#1952fe; 
 }
 
 @media screen and (max-width: 450px) {

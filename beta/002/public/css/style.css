@@ -42,7 +42,7 @@ header {
 				display: none;
 				position: absolute;
 				right: 20px;
-				top: 40px;
+				top: 60px;
 			}
 #dashboardDocuments ul {
 	margin-top: 40px;
@@ -104,8 +104,11 @@ a:active{
 	color:#fff;
 }
 
-h1{
+#registration h1{
 	color:#96bb49;
+	margin:0px 15px 38px 15px;
+	border-bottom:2px solid #94bb46;
+	padding:15px 0px 8px 0px;
 }
 
 .well{
