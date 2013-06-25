@@ -71,5 +71,19 @@ module.exports = {
 			res.set('Content-Type', 'text/css');
 			res.send(css);
 		});	
+	},
+
+	saveBlock : function (req, res){
+		Document.saveBlock(req.body, function(err, document) {
+			if (! err) {
+				console.log('data has been send to the model');
+				//console.log(document);
+				res.send('succes');
+			}
+			else {
+				console.log('error');
+				res.send('error');
+			}
+		});
 	}
 }

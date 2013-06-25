@@ -61,4 +61,5 @@ app.get('/custom.css', documents.css);
 
 // Files routes
 app.post('/file-upload', files.upload);
+app.post('/block-added', documents.saveBlock);
 

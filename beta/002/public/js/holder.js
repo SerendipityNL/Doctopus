@@ -227,6 +227,12 @@ var settings = {
 			background: "#434A52",
 			foreground: "#C2F200",
 			size: 12
+		},
+		"doctopus": {
+			background: "#434A52",
+			foreground: "#96BB49",
+			size: 12,
+			text: 'Thumbnail of first page'
 		}
 	},
 	stylesheet: ""
