@@ -5,7 +5,7 @@ var blockSchema = new mongoose.Schema({
 	type					: {type: String, required: true},
 	order					: {type: Number, required: true, min: 0},
 	content					: {type: mongoose.Schema.Types.Mixed, any: {}},
-	colls					: {type: Number, required: true, min: 1, max: 4}
+	cols					: {type: Number, required: true, min: 1, max: 4}
 });
 
 var documentSchema = new mongoose.Schema({
@@ -139,9 +139,17 @@ module.exports = {
 	saveBlock: function(params, callback){
 		console.log(params);
 
+		// type						: {type: String, required: true},
+		// order					: {type: Number, required: true, min: 0},
+		// content					: {type: mongoose.Schema.Types.Mixed, any: {}},
+		// colls					: {type: Number, required: true, min: 1, max: 4}
+
+		// pushes values into array
 		document.blocks.push(
-   		 {name:'task one', priority:1}, 
-    	 {name:'task two', priority:5}
+   		 {type 		: 'block-text'}, 
+    	 {order 	: 4},
+    	 {content	: 'test-content'},
+    	 {cols      : 1}
 		);
 
 		document.save(function(err) {
@@ -150,7 +158,7 @@ module.exports = {
 				console.log(err);
 			} 
 			else {
-				console.log('new list successfully saved'); 
+				console.log('new block successfully saved'); 
 			}
 		});
 
