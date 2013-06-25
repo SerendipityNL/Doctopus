@@ -134,7 +134,7 @@ module.exports = {
 		});
 		
 	},
-	saveBlock: function(params, callback){
+	resizeBlock: function(params, callback){
 		
 		console.log(params);
 
@@ -143,26 +143,27 @@ module.exports = {
 		Document.findById(ObjectId, function (err, document) {
 			if (! err){
 
-				// pushes values into array
-				document.blocks.push(
-		   		 {type 		: 'block-text', 
-		    	  order 	: 4,
-		    	  content	: 'test-content Douwe',
-		    	  cols      : 1}
-				);
+				document.blocks.id(params.blockId , function(err, block){
+					if(! err){
+						block.push({ col : params.col});
 
-				document.save(function(err) {
-					if (err) {
-						callback( null, document );
-						console.log('block has been changed');
-					} 
-					else {
+						document.save(function(err) {
+							if ( ! err) {
+								console.log('block has been changed');
+								callback( null, document );
+							} 
+							else {
+								callback(err);
+							}
+						});	
+					}
+					else{
 						callback(err);
 					}
 				});
 			}
 			else{
-				callback(err, document);
+				callback(err);
 			}
 		});
 	},

@@ -107,7 +107,21 @@ module.exports.listen = function(server) {
 			else if (blockdata.oldSize == 3) blockdata.newSize = 4;
 			else if (blockdata.oldSize == 4) blockdata.newSize = 1;
 
-			io.sockets.emit('block.resize', blockdata);
+			var block = {
+				objectId : '51c81a876798a7af43000005',
+				col : blockdata.newSize,
+				blockId : blockdata.id
+			}
+
+			Document.resizeBlock(block, function(err, document){
+				if(!err){
+					io.sockets.emit('block.resize', blockdata);
+				}
+				else{
+					console.log('block resizing fail');
+				}
+			});
+
 		});
 
 	});
