@@ -37,7 +37,7 @@ module.exports = {
 		});
 	},
 	findByEmail: function(email, callback) {
-		User.findOne({'email' : { $regex : new RegExp(email, "i") }}, function (err, user) {
+		User.findOne({email: {$regex : new RegExp(email, "i")}} , function (err, user) {
 			callback(err, user);
 		});
 	},

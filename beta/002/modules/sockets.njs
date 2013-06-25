@@ -32,7 +32,7 @@ module.exports.listen = function(server) {
 					socket.emit('collaborator.new', data);
 				}
 				else {
-					data = {'state' : 'error'};
+					data = {'state' : 'error', 'error' : err};
 					socket.emit('collaborator.new', data);
 				};
 			});

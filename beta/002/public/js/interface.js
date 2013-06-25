@@ -19,12 +19,7 @@ jQuery(document).ready( function() {
 		
 		socket.emit('document.remove', documentId);
 		socket.on('document.remove', function(data) {
-			if (data.state == 'success') {
-				window.location('dashboard');
-			}
-			else {
-				alert(data.error);
-			}
+			window.location('dashboard');
 		});
 	});
 	
@@ -40,7 +35,29 @@ jQuery(document).ready( function() {
 		newCollaborator.documentId = documentUrl[3];
 		socket.emit('collaborator.new', newCollaborator);
 		socket.on('collaborator.new', function(data) {
-			console.log(data);
+			if (data.state == 'success') {
+				jQuery('#newCollaboratorModal').modal('hide');
+				var html = '<tr><td>'+data.user.username+'</td><td>'+data.user.email+'</td><td><a href="#" class="btn"><i class="icon-edit"></i></a>&nbsp;<a href="#" class="btn btn-danger"><i class="icon-white icon-remove"></i></a></td></tr>'
+			}
+			else if (data.state == 'error') {
+				if (data.error == 'ownerEqualsCollab') {
+					error = 'You can\'t add the owner of this document as a collaborator!';
+				}
+				else if (data.error == 'collabNotExists') {
+					error = 'No user with that emailaddress!';
+				}
+				else if (data.error == 'collabAlreadyPresent') {
+					error = 'Collaborator already present!';
+				}
+				else {
+					error = 'Ow nose! Something really bad happened!!!';
+				}
+				html = '<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert">×</button><strong>Warning: </strong>'+error+'</div>';
+				modal = jQuery('#newCollaboratorModal .modal-body').html();
+				newContent = html;
+				newContent += modal;
+				jQuery('#newCollaboratorModal .modal-body').html(newContent);
+			}
 		});
 	});
 	
