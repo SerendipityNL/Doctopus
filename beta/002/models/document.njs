@@ -65,8 +65,6 @@ module.exports = {
 	    var collaborators = new Array();
 	
 	
-	
-	
 	    Document.findById(id, function (err, document) {
 	    	if (document == null) {
 		    	callback('noDocument');
@@ -137,43 +135,36 @@ module.exports = {
 		
 	},
 	saveBlock: function(params, callback){
+		
 		console.log(params);
 
-		// type						: {type: String, required: true},
-		// order					: {type: Number, required: true, min: 0},
-		// content					: {type: mongoose.Schema.Types.Mixed, any: {}},
-		// colls					: {type: Number, required: true, min: 1, max: 4}
+		ObjectId = '51c81a876798a7af43000005';
 
-		// pushes values into array
-		document.blocks.push(
-   		 {type 		: 'block-text'}, 
-    	 {order 	: 4},
-    	 {content	: 'test-content'},
-    	 {cols      : 1}
-		);
+		Document.findById(ObjectId, function (err, document) {
+			if (! err){
 
-		document.save(function(err) {
-			if (err) {
-				console.log('error adding new block');
-				console.log(err);
-			} 
-			else {
-				console.log('new block successfully saved'); 
+				// pushes values into array
+				document.blocks.push(
+		   		 {type 		: 'block-text', 
+		    	  order 	: 4,
+		    	  content	: 'test-content Douwe',
+		    	  cols      : 1}
+				);
+
+				document.save(function(err) {
+					if (err) {
+						callback( null, document );
+						console.log('block has been changed');
+					} 
+					else {
+						callback(err);
+					}
+				});
+			}
+			else{
+				callback(err, document);
 			}
 		});
-
-		// Document.findOne({'ObjectId' : params.ObjectId}, function (err, document) {
-		// 	if (! err){
-		// 		document.save(function (err) {
-		// 			if (! err) {
-		// 				callback(null);
-		// 			}
-		// 			else {
-		// 				callback(err);
-		// 			}
-		// 		});
-		// 	}
-		// });
 
 
 		// Document.find({_id: params.document._id}, function(err, document) {
