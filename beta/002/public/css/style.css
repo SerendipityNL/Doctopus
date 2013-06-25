@@ -242,6 +242,6 @@ select, input[type="file"]{
 	background-color:#333;
 
 }
-.table td, .table thead tr{
+.table td, .table thead tr, .table tbody{
 	border:none;
 }
