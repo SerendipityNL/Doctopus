@@ -21,6 +21,7 @@ var documentSchema = new mongoose.Schema({
 });
 
 var Document = mongoose.model('Document', documentSchema);
+var Block = mongoose.model('Block', blockSchema);
 var User = require('./provider.njs').load('user');
 module.exports = {
 	findAll: function(callback) {
@@ -67,35 +68,39 @@ module.exports = {
 	
 	
 	    Document.findById(id, function (err, document) {
-	        var length = document.collaborators.length, done = 0, count = 1 + length;
-	
-	
-	        var onDone = function() {
-	            done += 1;
-	            if(done === count) {
-	                callback(err, document, collaborators);
-	            }
-	        };
-	        
-	        for (var i = 0; i < length; i++) {
-	            User.findByID(document.collaborators[i], function(err, user) {
-	                collaborators.push(user);
-	                onDone();
-	            });
-	        }
-	        onDone();
+	    	if (document == null) {
+		    	callback('noDocument');
+	    	}
+	    	else {
+		        var length = document.collaborators.length,
+		        	done = 0,
+		        	count = 1 + length;
+		
+		        var onDone = function() {
+		            done += 1;
+		            if(done === count) {
+		                callback(err, document, collaborators);
+		            }
+		        };
+		        
+		        for (var i = 0; i < length; i++) {
+		            User.findByID(document.collaborators[i], function(err, user) {
+		                collaborators.push(user);
+		                onDone();
+		            });
+		        }
+		        onDone();
+	    	}
+
 	    });
 	},
 	deleteById: function(id, callback){
-		Document.findOne({'ObjectId' : id}, function (err, document){
+		Document.findById(id, function (err, document){
+			console.log(err);
 			if ( ! err ){
 				document.remove(function(err){
-					if ( ! err) {
-						callback(null);
-					}
-					else {
-						callback(err);
-					}
+					console.log(err);
+					callback(err);
 				});
 			}
 			else {

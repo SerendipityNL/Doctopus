@@ -29,7 +29,7 @@ Module functions
 ------------------------------------------------------------- */
 
 module.exports = {
-	index: function(req, res) {
+	edit: function(req, res) {
 		res.render('pages/document/document', {
 			'pageTitle': 'Doctopus - Beta 002',
 			'options': styledb.options,
@@ -39,11 +39,16 @@ module.exports = {
 	},
 	manage: function(req, res) {
 		Document.findByID(req.params.id, function(err, document, collaborators) {
-			res.render('pages/document/manage', {
-				pageTitle: 'Manage document ' + document.title,
-				document: document,
-				'collaborators': collaborators
-			});
+			if (err == 'noDocument'){
+				res.redirect('/dashboard');
+			}
+			else {				
+				res.render('pages/document/manage', {
+					pageTitle: 'Manage document ' + document.title,
+					document: document,
+					'collaborators': collaborators
+				});
+			}
 		});
 	},
 	css: function(req, res) {

@@ -53,7 +53,7 @@ app.get('/dashboard', users.dashboard);
 
 // Document routes
 app.post('/setstyle', document.setstyle);
-app.get('/document', document.index);
+app.get('/document/edit/:id', document.edit);
 app.get('/document/manage/:id', document.manage);
 app.get('/custom.css', document.css);
 
@@ -98,7 +98,19 @@ io.sockets.on('connection', function(socket){
 			};
 		});
 	});
-
+	
+	socket.on('document.remove', function(documentId) {
+		documentModel.deleteById(documentId, function(err) {
+			if (! err) {
+				data = {'state' : 'succes'};
+			}
+			else {
+				data = {'state' : 'error', 'error': err}
+			}
+			socket.emit('document.remove', data);
+		})
+	});
+	
 	// block content saved
 	socket.on('block.saved', function(block) {
 		console.log(block);

@@ -9,6 +9,25 @@ jQuery(document).ready( function() {
 		}
 	});
 	
+	jQuery('#removeDocumentButton').on('click', function() {
+		$('#removeDocumentModal').modal('show');
+	});
+	
+	jQuery('#removeDocumentModal .modal-footer .btn-danger').on('click', function() {
+			documentUrl					= window.location.pathname.split('/'),
+			documentId 	= documentUrl[3];
+		
+		socket.emit('document.remove', documentId);
+		socket.on('document.remove', function(data) {
+			if (data.state == 'success') {
+				window.location('dashboard');
+			}
+			else {
+				alert(data.error);
+			}
+		});
+	});
+	
 	jQuery('#newCollaboratorButton').on('click', function() {
 		$('#newCollaboratorModal').modal('show');
 	});
