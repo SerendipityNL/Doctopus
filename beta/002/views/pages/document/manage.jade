@@ -20,8 +20,11 @@ block content
 						td #{collaborator.username}
 						td #{collaborator.email}
 						td
+							a.btn(href="#")
+								i.icon-edit
+							&nbsp;
 							a.btn.btn-danger(href="#")
-								i.icon-remove remove
+								i.icon-remove
 			else
 				tr
 					td(colspan="3", style="text-align: center;") No collaborators

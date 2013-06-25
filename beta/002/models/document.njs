@@ -40,6 +40,7 @@ module.exports = {
 			callback(err, documents);
 		});
 	},
+/*
 	findByID: function(id, callback) {
 		var ObjectId = mongoose.Schema.Types.ObjectId;
 		var collaborators = new Array();
@@ -57,11 +58,7 @@ module.exports = {
 			callback(err, document, collaborators);
 		});
 	},
-	
-/*
- *     Thanks to meaglin
- *
- *
+*/
 	findByID: function(id, callback) {
 	    var ObjectId = mongoose.Schema.Types.ObjectId;
 	    var collaborators = new Array();
@@ -89,7 +86,6 @@ module.exports = {
 	        onDone();
 	    });
 	},
-*/	
 	deleteById: function(id, callback){
 		Document.findOne({'ObjectId' : id}, function (err, document){
 			if ( ! err ){
