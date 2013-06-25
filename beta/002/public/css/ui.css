@@ -363,7 +363,7 @@ div.empty-block {
 
 .block-actions{
 	width: 100%;
-	background: #444;
+	background: #222;
 	display: none;
 	height: 35px;
 	border: 1px solid #444;
@@ -372,7 +372,7 @@ div.empty-block {
 	.mainbar-button{
 		width: 55px;
 		text-shadow: none;
-		background: #777;
+		background: #444;
 		color: #fff;
 		text-transform: capitalize;
 		margin: 5px;
