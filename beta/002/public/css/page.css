@@ -43,9 +43,8 @@ a:active{
 }
 	.button{
 		cursor:pointer;
-		width:120px;
 		background:#444;
-		padding:10px 8px;
+		padding:10px 16px;
 		border-radius:100px;
 		float:right;
 		text-align:center;

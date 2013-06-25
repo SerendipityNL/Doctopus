@@ -91,6 +91,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Bootstrap overrule */
 
+h2{
+	color:#96bb49;
+	border-bottom:2px solid #96bb49;
+}
+
+#actionBar{
+	margin:0px;
+}
+
 a:link{
 	color:#fff;
 }
@@ -133,17 +142,19 @@ form{
 	margin-bottom:10px;
 }
 
-.btn-success{
+.btn, .btn-success{
+	color:#fff;
 	background:#444;
 	border:0px;
 	text-shadow:none;
 	box-shadow:none;
 	border-radius:100px;
-	padding:7px 8px;
-	width:120px;
+	padding:7px 16px;
+	width:auto;
 	font-family:arial;
 }
-.btn-success:hover, .btn-success:active, .btn-succes:focus, .btn-succes.disabled, .btn-succes[disabled]{
+.btn:hover, .btn:active, .btn-success:hover, .btn-success:active, .btn-succes:focus, .btn-succes.disabled, .btn-succes[disabled]{
+	color:#fff;
 	background-color:#96bb49;
 }
 
@@ -193,4 +204,37 @@ input[type]{
 	border-radius:100px;
 	padding-left:14px;
 	width:190px;
+}
+
+.modal-header h3{
+	color:#96bb49;
+	margin-top:10px;
+}
+.modal{
+	font-family:arial;
+	color:#fff;
+	background:#222;
+}
+.modal-header {
+	border:none;
+}
+.modal-body{
+	border:none;
+}
+.modal-footer{
+	box-shadow:none;
+	border:none;
+	background:transparent;
+}
+select, input[type="file"]{
+	width:220px;
+	border-radius:100px;
+	background-color:#ccc !important;
+}
+.thumbnail{
+	border:none;
+	background:#ccc;
+	border-radius:8px;
+	padding:0px;
+	margin-bottom:10px;
 }
