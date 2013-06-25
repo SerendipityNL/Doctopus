@@ -77,7 +77,7 @@ module.exports = {
 		Document.saveBlock(req.body, function(err, document) {
 			if (! err) {
 				console.log('data has been send to the model');
-				console.log(document);
+				//console.log(document);
 				res.send('succes');
 			}
 			else {

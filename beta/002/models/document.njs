@@ -165,13 +165,6 @@ module.exports = {
 				callback(err, document);
 			}
 		});
-
-
-		// Document.find({_id: params.document._id}, function(err, document) {
-		// 	console.log('document: ' + document);
-		// });
-		
-		//Document.find({"blocks" : {$in [params.block.id]}})
 	},
 	newCollaborator: function(params, callback) {
 		User.findByEmail(params.email, function(err, user) {
