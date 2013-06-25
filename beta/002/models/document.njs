@@ -16,6 +16,7 @@ var documentSchema = new mongoose.Schema({
 	visibility				: {type: Boolean, required: true, default: true},
 	deleted					: {type: Boolean, required: true, default: false},
 	styling					: {type: Array, required: false},
+	updated_at				: {type: Date, default: Date.now},
 	blocks					: [blockSchema]
 });
 
@@ -56,6 +57,39 @@ module.exports = {
 			callback(err, document, collaborators);
 		});
 	},
+	
+/*
+ *     Thanks to meaglin
+ *
+ *
+	findByID: function(id, callback) {
+	    var ObjectId = mongoose.Schema.Types.ObjectId;
+	    var collaborators = new Array();
+	
+	
+	
+	
+	    Document.findById(id, function (err, document) {
+	        var length = document.collaborators.length, done = 0, count = 1 + length;
+	
+	
+	        var onDone = function() {
+	            done += 1;
+	            if(done === count) {
+	                callback(err, document, collaborators);
+	            }
+	        };
+	        
+	        for (var i = 0; i < length; i++) {
+	            User.findByID(document.collaborators[i], function(err, user) {
+	                collaborators.push(user);
+	                onDone();
+	            });
+	        }
+	        onDone();
+	    });
+	},
+*/	
 	deleteById: function(id, callback){
 		Document.findOne({'ObjectId' : id}, function (err, document){
 			if ( ! err ){

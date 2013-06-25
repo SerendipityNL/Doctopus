@@ -1,8 +1,9 @@
 (function( jQuery ) {
 	var methods = {
+
 		init: function ( that, options ) {
+			socket = io.connect('http://localhost');
 			methods.el = that;
-			
 			methods.settings = jQuery.extend( {
 				  sortable 		: {
 					  selector				: '#blocks'
@@ -44,8 +45,6 @@
 						
 			methods.startSortable();
 			
-			var socket = io.connect('http://localhost');
-			
 			// hey there, this works but this needs a better place, iam sorry though
 			jQuery('body').on('showNotice', function(){
 
@@ -55,14 +54,17 @@
 					duration : 3000
 				};	
 
-				var testData = {
-					_id 		:  1,
-					col   		:  2,
-					content 	: "content",
+				$block = $('.isBeingEdited');
+				$block_content = $('.isBeingEdited .col-content').text();
+
+				var blockData = {
+					_id 		:  $block.data("id"),
+					col   		:  $block.data("colspan"),
+					content 	:  $block_content,
 					documentId 	: "_1213123123123"
 				}
 
-				socket.emit('block.saved', testData);
+				socket.emit('block.saved', blockData);
 				
 				methods.showNotice(changeNotice);
 			});
@@ -204,23 +206,42 @@
 					jQuery(this).parent().hide().parent().find('.normal_icons').show();
 					add_block = false;
 				}
-
-				if(classes[1] == "block-image"){
-					jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(''+ options + form +'');
-					methods.startDropzone();
-				}
 	
 				if(add_block == true){
-					//no more selected, add class to parent block and hide the menu
+
+					// get first to last div id and add 1
+					var last_id = jQuery('#blocks > div:last').prev().data("id");
+					var new_id = last_id + 1;
+
+					var $block = jQuery('.selected-block');
+
+					var newBlockData = {
+						_id 		:  last_id,
+						col   		:  2,
+						documentId 	: "_1213123123123",
+						blockType	: ''
+					}		
+
+					if(classes[1] == "block-image"){
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(''+ options + form +'').attr("id", new_id);
+						newBlockData.blockType = "block-image";
+						methods.startDropzone();
+					}
+
 					if (classes[1] === 'block-text') {
-						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + textBlock +' ');
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + textBlock +' ').attr("id", new_id);
+						newBlockData.blockType = "block-text";
 					}
 					if(classes[1] == 'block-list'){
-						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + listBlock +' ');
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + listBlock +' ').attr("id", new_id);
+						newBlockData.blockType = "block-list";
 					}
 					else {
 						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]);
+						//newBlockData.blockType = "block-text";
 					}
+
+					socket.emit('block.added', newBlockData);
 					
 					//removes the icon selector
 					jQuery(this).parent().parent().remove();
@@ -291,32 +312,54 @@
 			$('.option-block').hide();
 		},
 		deleteBlock: function(){
-			jQuery('.selected-block').remove();
+			$block = jQuery('.selected-block');
 
-			var addBlockNotice = {
-			  msg       : "Block has been removed",
-			  msgtype   : "error",
-			  duration  : 2000
-			};
+			var removedBlockData = {
+				_id 		:  $block.data("id"),
+				col   		:  $block.data("colspan"),
+				documentId 	: "_1213123123123"
+			}
 
-			methods.showNotice(addBlockNotice);
+			if(jQuery($block).remove()){
+				socket.emit('block.removed', removedBlockData);
+
+				var removeBlockNotice = {
+				  msg       : "Block has been removed",
+				  msgtype   : "error",
+				  duration  : 2000
+				};
+
+				methods.showNotice(removeBlockNotice);
+			}
 		},
 		resizeBlock: function() {
+			var $block = jQuery('.selected-block');
 
-			var block = jQuery('.selected-block');
+			var sizeBlockData = {
+				_id 		:  $block.data("id"),
+				col   		:  0,
+				documentId 	: "_1213123123123"
+			}
 
-			if (block.hasClass('col-1')) {
-				block.switchClass('col-1', 'col-2', 250);
+			if ($block.hasClass('col-1')) {	
+				$block.switchClass('col-1', 'col-2', 250);
+
+				sizeBlockData.col = 2;
 			}
-			else if (block.hasClass('col-2')) {
-				block.switchClass('col-2', 'col-3', 250);
+			else if ($block.hasClass('col-2')) {
+				$block.switchClass('col-2', 'col-3', 250);
+				sizeBlockData.col = 3;
 			}
-			else if (block.hasClass('col-3')) {
-				block.switchClass('col-3', 'col-4', 250);
+			else if ($block.hasClass('col-3')) {
+				$block.switchClass('col-3', 'col-4', 250);
+				sizeBlockData.col = 4;
 			}
 			else {
-				block.switchClass('col-4', 'col-1', 250);
+				$block.switchClass('col-4', 'col-1', 250);
+				sizeBlockData.col = 1;
 			}
+
+			socket.emit('block.sizeChange', sizeBlockData);
 		},
 		reactivateListeners: function() {
 			jQuery('.add_more_blocks_button').off('click.addMoreBlocks');

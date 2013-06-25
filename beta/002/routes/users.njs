@@ -16,23 +16,29 @@ module.exports = {
 		});
 	},
 	login: function(req, res) {
-		if (typeof(req.body.email) != 'undefined') {
-			User.auth(req.body, function(err, authtoken) {
-				if (! err) {
-					// Set the authentication cookie with the token
-					res.cookie('authtoken', authtoken);
-					res.redirect('/dashboard');
-				}
-				else {
-					res.send(err);
-				}
-			});
-		}
-		else {
-			res.render('pages/user/login', {
-				pageTitle: 'Login'
-			})
-		}
+		User.getInfo(req.cookies.authtoken, function(err, user) {
+			if (user) res.redirect('/dashboard');
+
+			if (typeof(req.body.email) != 'undefined') {
+				User.auth(req.body, function(err, authtoken) {
+					if (! err) {
+						// Set the authentication cookie with the token (1000 * 3600 * 24 * 90 milliseconds = 30 days)
+						res.cookie('authtoken', authtoken, {maxAge: 1000 * 3600 * 24 * 30});
+						res.redirect('/dashboard');
+					}
+					else {
+						res.send(err);
+					}
+				});
+			}
+			else {
+				res.render('pages/user/login', {
+					pageTitle: 'Login'
+				})
+			}
+			
+		});
+
 	},
 	logout: function(req, res) {
 		User.logout(req.cookies.authtoken, function() {
@@ -55,7 +61,7 @@ module.exports = {
 	dashboard: function(req, res) {
 		User.getInfo(req.cookies.authtoken, function(err, user) {
 
-			if ( ! user) res.redirect('/');
+			if ( ! user) res.redirect('/login');
 
 			User.findByUsername(req.session.username, function(err, user) {
 				Document.findByOwner(user, function(err, documents) {

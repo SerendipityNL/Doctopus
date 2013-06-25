@@ -5,12 +5,11 @@ var express = require('express'),
 	io = require('socket.io').listen(server, {log: false}),
 	document = require('./routes/document.njs'),
 	front = require('./routes/front.njs'),
-	user = require('./routes/user.njs'),
+	users = require('./routes/users.njs'),
 	files = require('./routes/files.njs');		
 
 	documentModel = require('./models/provider.njs').load('document');
 	
-
 var port = process.env.PORT || 1337;
 
 // Configure the application
@@ -44,13 +43,13 @@ app.configure(function() {
 // Homepage route
 app.get('/', front.index);
 
-// User routes
-app.get('/register', user.register);
-app.post('/register', user.create);
-app.get('/login', user.login);
-app.post('/login', user.login);
-app.get('/logout', user.logout);
-app.get('/dashboard', user.dashboard);
+// Users routes
+app.get('/register', users.register);
+app.post('/register', users.create);
+app.get('/login', users.login);
+app.post('/login', users.login);
+app.get('/logout', users.logout);
+app.get('/dashboard', users.dashboard);
 
 // Document routes
 app.post('/setstyle', document.setstyle);
@@ -84,14 +83,9 @@ io.sockets.on('connection', function(socket){
 		});
 	});
 	
-	socket.on('block.saved', function(block) {
-		//console.log(block);
+/* Document Methods */
 
-		documentModel.saveBlock(block, function(err, block){
-
-		});
-	});
-	
+	// new collaborator
 	socket.on('collaborator.new', function(collaborator) {
 		documentModel.newCollaborator(collaborator, function(err, document, user) {
 			if (!err) {
@@ -104,8 +98,69 @@ io.sockets.on('connection', function(socket){
 			};
 		});
 	});
+
+	// block content saved
+	socket.on('block.saved', function(block) {
+		console.log(block);
+
+		// documentModel.saveBlock(block, function(err, document, user){
+		// 	if(!err){
+		// 		data = {'block' : document, 'user' : user, 'state' : 'succes'};
+		// 		socket.emit('block.saved', data);
+		// 	}
+		// 	else{
+		// 		data = {'state' : 'error'};
+		// 		socket.emit('block.saved', data);
+		// 	}
+		// }
+	});
+
+	//new block added
+	socket.on('block.added', function(block) {
+		//console.log(block);
+
+		// documentModel.addBlock(block, function(err, document, user){
+		// 	if(!err){
+		// 		data = {'block' : document, 'user' : user, 'state' : 'succes'};
+		// 		socket.emit('block.added', data);
+		// 	}
+		// 	else{
+		// 		data = {'state' : 'error'};
+		// 		socket.emit('block.added', data);
+		// 	}
+		// }
+
+	});
+
+	//block has been removed
+	socket.on('block.removed', function(block) {
+		console.log(block);
+
+		// documentModel.removeBlock(block, function(err, document, user){
+		// 	if(!err){
+		// 		data = {'block' : document, 'user' : user, 'state' : 'succes'};
+		// 		socket.emit('block.removed', data);
+		// 	}
+		// 	else{
+		// 		data = {'state' : 'error'};
+		// 		socket.emit('block.removed', data);
+		// 	}
+		// }
+	});
+
+	//new size changed
+	socket.on('block.sizeChange', function(block) {
+		console.log(block);
+		// documentModel.changeBlockSize(block, function(err, document, user){
+		// 	if(!err){
+		// 		data = {'block' : document, 'user' : user, 'state' : 'succes'};
+		// 		socket.emit('block.sizeChange', data);
+		// 	}
+		// 	else{
+		// 		data = {'state' : 'error'};
+		// 		socket.emit('block.sizeChange', data);
+		// 	}
+		// }
+	});
+
 });
-
-
-// Set the console message
-console.log('Application accessible at http://localhost:1337');

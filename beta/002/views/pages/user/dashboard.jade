@@ -21,6 +21,7 @@ block content
 						.caption
 							h3 #{document.get('title')}
 							p #{document.get('description')}
+							p.muted Last modified: #{moment(document.updated_at).fromNow()}
 							p
 								a.btn.btn-success(href="/document/manage/#{document.get('id')}") Manage
 								&nbsp;
