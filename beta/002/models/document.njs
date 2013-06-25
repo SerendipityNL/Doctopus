@@ -96,10 +96,8 @@ module.exports = {
 	},
 	deleteById: function(id, callback){
 		Document.findById(id, function (err, document){
-			console.log(err);
 			if ( ! err ){
 				document.remove(function(err){
-					console.log(err);
 					callback(err);
 				});
 			}
