@@ -38,6 +38,7 @@ jQuery(document).ready( function() {
 			if (data.state == 'success') {
 				jQuery('#newCollaboratorModal').modal('hide');
 				var html = '<tr><td>'+data.user.username+'</td><td>'+data.user.email+'</td><td><a href="#" class="btn"><i class="icon-edit"></i></a>&nbsp;<a href="#" class="btn btn-danger"><i class="icon-white icon-remove"></i></a></td></tr>'
+				jQuery('#manageDocuments .table tbody').append(html);
 			}
 			else if (data.state == 'error') {
 				if (data.error == 'ownerEqualsCollab') {

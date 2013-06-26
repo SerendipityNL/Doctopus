@@ -102,22 +102,18 @@ module.exports.listen = function(server) {
 		//new size changed
 		socket.on('block.resize', function(blockdata) {
 			// blockdata.id blockdata.oldSize blockdata.newSize
-			if 		(blockdata.oldSize == 1) blockdata.newSize = 2;
-			else if (blockdata.oldSize == 2) blockdata.newSize = 3;
-			else if (blockdata.oldSize == 3) blockdata.newSize = 4;
-			else if (blockdata.oldSize == 4) blockdata.newSize = 1;
+			blockdata.newSize = blockdata.oldSize + 1;
+			if (blockdata.newSize == 5){
+				blockdata.newSize = 1;
+			}
 
 			var block = {
-				objectId : '51c81a876798a7af43000005',
 				col : blockdata.newSize,
 				blockId : blockdata.id
 			}
 
-			console.log('hello');
-
 			Document.resizeBlock(block, function(err, document){
 				if(!err){
-					console.log('saved resize to db');
 					io.sockets.emit('block.resize', blockdata);
 				}
 				else{
