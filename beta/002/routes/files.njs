@@ -9,6 +9,7 @@ Module functions
 module.exports = {
 	upload: function(req, res) {
 
+	console.log(req)
    	//settings
     var id  		= 1;
 	var ext 		= req.files.file.name.split('.').pop();
@@ -19,8 +20,8 @@ module.exports = {
 	var max_size    = 5000000; // in bits, its 2mb
 	var upload_dir  = "/../public/uploads/";
 	var resize = false;
-	var final_name = id + "_" + req.session.username + "_" + new_name + "."+ext;
-	var newPath = __dirname + upload_dir + id + "_" + req.session.username + "_" + new_name + "."+ext;
+	var final_name = id + "_" + new_name + "."+ext;
+	var newPath = __dirname + upload_dir + id + "_" + new_name + "."+ext;
 
 	// write the new file
 	fs.readFile(req.files.file.path, function (err, data) {
@@ -52,7 +53,7 @@ module.exports = {
 			}
 
 			if(resize == true){
-				newPath = __dirname + upload_dir + id + "_" + req.session.username + "_" + new_name + "."+ext;
+				newPath = __dirname + upload_dir + id + "_" + new_name + "."+ext;
 
 				easyimg.resize({src:req.files.file.path, dst:newPath, width:800, height:600}, function(err, stdout, stderr) {
 					console.log('Resized to 800x600');
