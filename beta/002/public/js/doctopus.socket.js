@@ -27,17 +27,15 @@ var docsoc = {
 			}
 			socket.emit('block.resize', blockdata);
 		},
-		listener: function() {
-			jQuery('.resize').on('click.resize', function () {
-			 	docsoc.block.updateSize();
-			});
-			if (debug) console.log('Block listener activated.');
-		},
-		blockChanged: function(data) {
-			if (data.action == 'add') {
-				var content = '';
-				content += '<div class="block-actions"><div class="mainbar-button resize">Resize</div><div class="mainbar-button move">Move</div></div>';
-
+		changeBlock: function(data) {
+			if (data.action == 'add') {				
+				var content = [
+					'<div data-colspan="1" data-id="' + data.block.id + '" class="col-1 block-' + data.block.type +'" >',
+						'<div class="block-actions">',
+							'<div class="mainbar-button resize">Resize</div>',
+							'<div class="mainbar-button move">Move</div>',
+						'</div>',
+				].join("\n");
 				
 				if (data.block.type == 'text') {
 					content += '<p class="col-content">'+data.block.content+'</p>';
@@ -48,12 +46,23 @@ var docsoc = {
 				else if (data.block.type == 'list') {
 					content += '<p class="col-content"><ul><li>This is a list</li><li>Another item</li></ul></p>';
 				}
-				
-				jQuery('.selected').html(content).attr('data-id', data.block.id);
+
+				content += '</div>';
+				$('#blocks').append(content);
+
+				if (jQuery('.awaiting-server').length > 0 ) {
+					jQuery('.awaiting-server').remove();
+				}
 			}
 			else if (data.action == 'edit') {
 				
 			} 
+		},
+		listener: function() {
+			jQuery('.resize').on('click.resize', function () {
+			 	docsoc.block.updateSize();
+			});
+			if (debug) console.log('Block listener activated.');
 		}
 	},
 	reactivateListeners: function() {
@@ -70,5 +79,5 @@ var docsoc = {
 jQuery(document).ready(function() {
 	docsoc.activateListeners();
 	socket.on('block.resize', docsoc.block.changeSize);
-	socket.on('block.saved', docsoc.block.blockChanged);
+	socket.on('block.saved', docsoc.block.changeBlock);
 });
