@@ -8,6 +8,7 @@ module.exports.listen = function(server) {
 
 	io.sockets.on('connection', function(socket){
 		socket.on('document.new', function(data) {
+			console.log(data);
 			Document.save(data, function(err, document) {
 				if (err) {
 					console.log(err);

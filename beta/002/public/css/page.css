@@ -96,12 +96,11 @@ a:active{
 #footer{
 	position:relative;
 	float:left;
-	width:60%;
+	width:100%;
 	height:auto;
 	background:#222;
 	-webkit-box-shadow:  0px 0px 3px 3px rgba(0, 0, 0, 0.3); 
     box-shadow:  0px 0px 3px 3px rgba(0, 0, 0, 0.3);
-    padding:0px 20%	;
 }
 #gettingstarted{
 	width:100%;
@@ -124,11 +123,14 @@ a:active{
 #gettingstartedbutton:hover, #gettingstartedbutton:active{
 	background-color:#1952fe; 
 }
-
+.information-block-wrapper{
+	width:80%;
+	margin:0px 10%;
+}
 .information-block{
 	float:left;
-	width:30.3333333333%;
-	margin: 50px 1.5%;
+	width:26.3333333333%;
+	margin: 80px 2.5% 50px 2.5%;
 }
 .information-block h3{
 	font-family:'BebasRegular';
