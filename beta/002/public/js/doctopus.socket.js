@@ -21,10 +21,12 @@ var functions = {
 		},
 		changed: function() {
 			var $block = jQuery('.selected-block');
-
+			documentUrl	= window.location.pathname.split('/'),
+			documentId 	= documentUrl[3];
 			var blockdata = {
 				'id': $block.data('id'),
-				'oldSize': $block.data('colspan')
+				'oldSize': $block.data('colspan'),
+				'documentId': documentId;
 			}
 			socket.emit('block.resize', blockdata);
 		}

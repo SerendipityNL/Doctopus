@@ -23,7 +23,7 @@ var documentSchema = new mongoose.Schema({
 var Document = mongoose.model('Document', documentSchema);
 var Block = mongoose.model('Block', blockSchema);
 var User = require('./provider.njs').load('user');
-var DocumentNotReady = true;
+
 module.exports = {
 	findAll: function(callback) {
 		Document.find(function(err, documents) {
@@ -147,17 +147,9 @@ module.exports = {
 		});
 	},
 	resizeBlock: function(params, callback){
-		if (documentNotReady){
-			ObjectId = '51c99638a154c1cdca000002';
-		}
-
-		Document.findById(ObjectId, function (err, document) {
-
+		Document.findById(params.documentId, function (err, document) {
 			if ( ! err) {
-				if (documentNotReady){
-					blockId = '51cafa84176f0d6508000002';
-				}
-				block = document.blocks.id(blockId);
+				block = document.blocks.id(params.blockId);
 				if( ! err){
 					block.set('cols', params.col);
 					document.save(function(err) {

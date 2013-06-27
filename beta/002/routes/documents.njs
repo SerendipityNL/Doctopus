@@ -30,12 +30,15 @@ Module functions
 
 module.exports = {
 	edit: function(req, res) {
-		res.render('pages/document/document', {
-			'pageTitle': 'Doctopus - Beta 002',
-			'options': styledb.options,
-			'style': styledb.current,
-			'blocks': styledb.blocks
-		});
+
+		Document.findByID(req.params.id, function(err, document, collaborators) {
+			res.render('pages/document/document', {
+				'pageTitle': 'Doctopus - Beta 002',
+				'options': styledb.options,
+				'style': styledb.current,
+				'blocks': document.blocks
+			});
+		})
 	},
 	manage: function(req, res) {
 		Document.findByID(req.params.id, function(err, document, collaborators) {
