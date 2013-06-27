@@ -60,7 +60,7 @@
 				$block_content = $('.isBeingEdited .col-content').text();
 
 				var blockData = {
-					_id 		:  $block.data("id"),
+					id 			:  $block.data("id"),
 					col   		:  $block.data("colspan"),
 					content 	:  $block_content,
 					documentId 	: documentId
@@ -196,7 +196,8 @@
 	
 			// once clicked on a icon, get the classname and add this block
 			jQuery('.icon').click(function() {
-	
+				documentUrl = window.location.pathname.split('/'), documentId = documentUrl[3];
+				
 				var classes = jQuery(this).attr('class').split(/\s/);
 				var add_block = true;
 	
@@ -219,32 +220,30 @@
 					var $block = jQuery('.selected-block');
 
 					var newBlockData = {
-						_id 		:  last_id,
-						col   		:  2,
-						documentId 	: "_1213123123123",
-						blockType	: ''
+						col   		:  1,
+						documentId 	: documentId,
+						type		: ''
 					}		
-
 					if(classes[1] == "block-image"){
 						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(''+ options + form +'').attr("id", new_id);
-						newBlockData.blockType = "block-image";
+						newBlockData.type = "image";
 						methods.startDropzone();
 					}
 
-					if (classes[1] === 'block-text') {
+					else if (classes[1] === 'block-text') {
 						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + textBlock +' ').attr("id", new_id);
-						newBlockData.blockType = "block-text";
+						newBlockData.type = "text";
 					}
-					if(classes[1] == 'block-list'){
+					else if(classes[1] == 'block-list'){
 						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + listBlock +' ').attr("id", new_id);
-						newBlockData.blockType = "block-list";
+						newBlockData.type = "list";
 					}
 					else {
 						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]);
-						//newBlockData.blockType = "block-text";
+						newBlockData.type = "text";
 					}
 
-					socket.emit('block.added', newBlockData);
+					socket.emit('block.saved', newBlockData);
 
 					//socket.on('block.added', function(data) {
 						// Hier moet ie een block appenden.

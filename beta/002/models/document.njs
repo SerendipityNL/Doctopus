@@ -117,27 +117,50 @@ module.exports = {
 		
 	},
 	saveBlock: function(params, callback){
-		
+
+						console.log(params);
 		Document.findById(params.documentId, function (err, document) {
-			if (! err) {				
-				// pushes values into array
-				document.blocks.push({
-					id 		: params.id,
-					type	: 'text', 
-					order	: 4,
-					content	: params.content,
-					cols	: params.col
-				});
-				
-				document.save(function(err) {
-					if (err) {
-						callback( null, document );
-						console.log('block has been changed');
-					} 
-					else {
-						callback(err);
+			if (! err) {
+				if (typeof params.id !== 'undefined') {
+					block = document.blocks.id(params.id);
+					if( ! err){
+						if (typeof params.col !== 'undefined') block.set('cols', params.col);
+						if (typeof params.content !== 'undefined') block.set('content', params.content);
+						if (typeof params.type !== 'undefined') block.set('type', params.type);
+						if (typeof params.order !== 'undefined') block.set('order', params.order);
+						document.save(function(err) {
+							if ( ! err) {
+								callback( null, document );
+							} 
+							else {
+								callback(err);
+							}
+						});	
 					}
-				});
+				}
+				else {					
+					// pushes values into array
+					document.blocks.push({
+						type	: params.type, 
+						order	: 0,
+						content	: params.content,
+						cols	: params.col
+					});
+					
+					document.save(function(err) {
+						if (!err) {
+							document.blocks.forEach(function (block) {
+								if (block.content == params.content){
+									callback( null, block );
+								}		
+							});
+						}
+						else {
+							console.log(err);
+							callback(err);
+						}
+					});
+				}
 			}
 			else{
 				callback(err, document);
