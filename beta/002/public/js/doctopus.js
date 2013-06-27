@@ -214,28 +214,23 @@
 				if(add_block == true){
 
 					// get first to last div id and add 1
-					var last_id = jQuery('#blocks > div:last').prev().data("id");
-					var new_id = last_id + 1;
-
-					var $block = jQuery('.selected-block');
-
 					var newBlockData = {
 						col   		:  1,
 						documentId 	: documentId,
 						type		: ''
 					}		
 					if(classes[1] == "block-image"){
-						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(''+ options + form +'').attr("id", new_id);
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(''+ options + form +'');
 						newBlockData.type = "image";
 						methods.startDropzone();
 					}
 
 					else if (classes[1] === 'block-text') {
-						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + textBlock +' ').attr("id", new_id);
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + textBlock +' ');
 						newBlockData.type = "text";
 					}
 					else if(classes[1] == 'block-list'){
-						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + listBlock +' ').attr("id", new_id);
+						jQuery(this).parent().parent().parent().removeClass('empty-block').addClass(classes[1]).html(' '+ options + listBlock +' ');
 						newBlockData.type = "list";
 					}
 					else {
@@ -244,12 +239,6 @@
 					}
 
 					socket.emit('block.saved', newBlockData);
-
-					//socket.on('block.added', function(data) {
-						// Hier moet ie een block appenden.
-					//});
-					
-					//removes the icon selector
 					jQuery(this).parent().parent().remove();
 				}
 				methods.reactivateListeners();

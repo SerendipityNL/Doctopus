@@ -68,9 +68,9 @@ module.exports.listen = function(server) {
 		// block content saved
 		socket.on('block.saved', function(data) {
 
-			Document.saveBlock(data, function(err, block) {
+			Document.saveBlock(data, function(err, block, action) {
 				if(!err){
-					data = {'block' : block, 'state' : 'succes'};
+					data = {'block' : block, 'state' : 'succes', 'action' : action };
 					socket.emit('block.saved', data);
 				}
 				else{

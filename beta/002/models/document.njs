@@ -130,7 +130,7 @@ module.exports = {
 						if (typeof params.order !== 'undefined') block.set('order', params.order);
 						document.save(function(err) {
 							if ( ! err) {
-								callback( null, document );
+								callback( null, block, 'edit' );
 							} 
 							else {
 								callback(err);
@@ -140,10 +140,16 @@ module.exports = {
 				}
 				else {					
 					// pushes values into array
+					newContent = params.content;
+					
+					if (typeof newContent == 'undefined' && params.type == 'text'){
+						newContent = 'This is a textblock. Double click to edit me!';
+					}
+					
 					document.blocks.push({
 						type	: params.type, 
 						order	: 0,
-						content	: params.content,
+						content	: newContent,
 						cols	: params.col
 					});
 					
@@ -151,7 +157,7 @@ module.exports = {
 						if (!err) {
 							document.blocks.forEach(function (block) {
 								if (block.content == params.content){
-									callback( null, block );
+									callback( null, block, 'add' );
 								}		
 							});
 						}
