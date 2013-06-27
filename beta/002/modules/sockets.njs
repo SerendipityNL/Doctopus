@@ -121,7 +121,7 @@ module.exports.listen = function(server) {
 			if ( blockdata.newSize > 4 ) blockdata.newSize = 1;
 
 			var block = {
-				col : blockdata.newSize,
+				newSize : blockdata.newSize,
 				blockId : blockdata.id
 			}
 			

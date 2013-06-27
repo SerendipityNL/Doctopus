@@ -3,8 +3,8 @@ var debug = false;
 var docsoc = {
 	block: {
 		changeSize: function(blockdata) {
-			if (debug) console.log(blockdata);
-			$block = jQuery('div[data-id="' + blockdata.id + '"]');			
+			$block = jQuery('div[data-id="' + blockdata.blockId + '"]');	
+			//$block = jQuery('.selected-block');
 			$block.data('colspan', blockdata.newSize);
 
 			if ($block.hasClass('col-1')) {
@@ -51,6 +51,5 @@ var docsoc = {
 
 jQuery(document).ready(function() {
 	docsoc.activateListeners();
-
 	socket.on('block.resize', docsoc.block.changeSize);
 });
