@@ -9,7 +9,7 @@ Module functions
 module.exports = {
 	upload: function(req, res) {
 
-	console.log(req)
+	//console.log(req)
    	//settings
     var id  		= 1;
 	var ext 		= req.files.file.name.split('.').pop();
