@@ -38,6 +38,20 @@ module.exports.listen = function(server) {
 			});
 		});
 		
+		// remove collaborator
+		socket.on('collaborator.remove', function(params) {
+			Document.removeCollaborator(params, function (err) {
+				if (!err) {
+					data = {'state' : 'success'};
+					socket.emit('collaborator.remove', data);
+				}
+				else {
+					data = {'state' : 'error', 'error' : err};
+					socket.emit('collaborator.remove', data);
+				};
+			});
+		});
+		
 		socket.on('document.remove', function(documentId) {
 			Document.deleteById(documentId, function(err) {
 				if (! err) {

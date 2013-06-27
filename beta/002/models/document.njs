@@ -184,6 +184,14 @@ module.exports = {
 				});
 			});
 		});
+	},
+	removeCollaborator: function(params, callback) {
+		Document.findById(params.documentId, function(err, document) {
+			document.collaborators.shift(params.userId);
+			document.save(function(err) {
+				callback(err);
+			});
+		});
 	}
 };
 
