@@ -1,9 +1,7 @@
-var functions = {
+var docsoc = {
 	block: {
-		resize: function(blockdata) {
-			
-			$block = jQuery('div[data-id="' + blockdata.id + '"]');
-			
+		changeSize: function(blockdata) {			
+			$block = jQuery('div[data-id="' + blockdata.id + '"]');			
 			$block.data('colspan', blockdata.newSize);
 
 			if ($block.hasClass('col-1')) {
@@ -19,24 +17,41 @@ var functions = {
 				$block.switchClass('col-4', 'col-' + blockdata.newSize, 250);
 			}
 		},
-		changed: function() {
+		updateSize: function() {
 			var $block = jQuery('.selected-block');
+			console.log('Werk nou!!')
 			documentUrl	= window.location.pathname.split('/'),
 			documentId 	= documentUrl[3];
 			var blockdata = {
 				'id': $block.data('id'),
 				'oldSize': $block.data('colspan'),
-				'documentId': documentId;
+				'documentId': documentId
 			}
+			console.log(blockdata);
 			socket.emit('block.resize', blockdata);
+		},
+		listener: function() {
+			jQuery('.resize').on('click.resize', function () {
+				console.log('Resize block');
+			 	docsoc.block.updateSize();
+			});
+			socket.on('block.resize', docsoc.block.changeSize);
+			console.log('Block listener activated.');
 		}
+	},
+	reactivateListeners: function() {
+		console.log('Disabling all listeners.');
+		jQuery('.resize').off('click.resize');
+		docsoc.activateListeners();
+	},
+	activateListeners: function() {
+		console.log('Activating all listeners.');	
+		docsoc.block.listener();
 	}
-
 }
 
 jQuery(document).ready(function() {
-	jQuery('.resize').on('click.resize', function () {
-	 	functions.block.changed();
-	});
-	socket.on('block.resize', functions.block.resize);
+	docsoc.activateListeners();
+	jQuery('.icon .block-text').on('click', docsoc.reactivateListeners);
+	
 });

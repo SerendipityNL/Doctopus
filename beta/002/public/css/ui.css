@@ -387,7 +387,7 @@ div.empty-block {
 		text-align: center;
 	}
 	.mainbar-button.resize{
-		cursor: e-resize;
+		cursor: pointer;
 	}
 	.mainbar-button.move{
 		cursor: move;

@@ -114,7 +114,7 @@ module.exports.listen = function(server) {
 		});
 
 		//new size changed
-		socket.on('block.resize', function(blockdata) {
+		socket.on( 'block.resize', function( blockdata ) {
 			// blockdata.id blockdata.oldSize blockdata.newSize
 			blockdata.newSize = blockdata.oldSize + 1;
 			if ( blockdata.newSize > 4 ) blockdata.newSize = 1;
@@ -124,14 +124,14 @@ module.exports.listen = function(server) {
 				blockId : blockdata.id
 			}
 
-			Document.resizeBlock(block, function(err, document){
-				if(!err){
-					io.sockets.emit('block.resize', blockdata);
-				}
-				else{
-					console.log('block resizing fail');
-				}
-			});
+			//Document.resizeBlock( block, function( err, document ) {
+			//	if ( ! err ) {
+					io.sockets.emit( 'block.resize', blockdata );
+			//	}
+			//	else{
+			//		console.log( 'block resizing fail' );
+			//	}
+			//});
 
 		});
 
