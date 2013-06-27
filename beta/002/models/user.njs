@@ -171,7 +171,6 @@ module.exports = {
 		var authtoken = null;
 
 		User.findOne({'email' : form.email}, function (err, user) {
-
 			if (err) {
 				var error = 'Failed to login';
 			}

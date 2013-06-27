@@ -60,20 +60,14 @@ module.exports = {
 	},
 	dashboard: function(req, res) {
 		User.getInfo(req.cookies.authtoken, function(err, user) {
-
 			if ( ! user) res.redirect('/login');
-
-			User.findByUsername(req.session.username, function(err, user) {
-				Document.findByOwner(user, function(err, documents) {
-					console.log(documents);
-					var avatarUrl = Gravatar.url(user.email, {s: '230', r: 'x', d: '404'});
-
-					res.render('pages/user/dashboard', {
-						avatar:		avatarUrl,				
-						pageTitle: 	'Dashboard',
-						user:		user,
-						documents:	documents
-					});
+			Document.findByOwner(user, function(err, documents) {
+				var avatarUrl = Gravatar.url(user.email, {s: '230', r: 'x', d: '404'});
+				res.render('pages/user/dashboard', {
+					avatar:		avatarUrl,				
+					pageTitle: 	'Dashboard',
+					user:		user,
+					documents:	documents
 				});
 			});
 		});
