@@ -1,5 +1,5 @@
 jQuery(document).ready( function() {
-	var socket = io.connect('http://localhost');
+	var socket = io.connect(window.location.protocol + "//" + window.location.host);
 
 	jQuery('.login a').click(function() {
 		jQuery('#login-dropdown').toggle();

@@ -101,8 +101,8 @@ module.exports = {
 		});
 	},
 	save: function(params, callback) {
+		
 		User.findByUsername(params.username, function(err, user) {
-			
 			document = new Document;
 			document.set('title', params.title);
 			document.set('description', params.description);
@@ -168,7 +168,7 @@ module.exports = {
 	newCollaborator: function(params, callback) {
 		User.findByEmail(params.email, function(err, user) {
 			Document.findById(params.documentId, function(err, document) {
-				document.collaborators.push(user._id);
+				document.collaborators.push(user.id);
 				document.save(function(err, document) {
 					callback(err, document, user);
 				});

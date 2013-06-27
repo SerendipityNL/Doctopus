@@ -49,7 +49,7 @@ module.exports = {
 	create: function(req, res) {
 		User.save(req.body, function(err) {
 			if (! err){
-				res.send('Succesfully registered');
+				res.redirect('/login');
 			} else {				
 				console.log(err);
 				res.render('pages/user/register', {
@@ -62,12 +62,15 @@ module.exports = {
 		User.getInfo(req.cookies.authtoken, function(err, user) {
 			if ( ! user) res.redirect('/login');
 			Document.findByOwner(user, function(err, documents) {
-				var avatarUrl = Gravatar.url(user.email, {s: '230', r: 'x', d: '404'});
-				res.render('pages/user/dashboard', {
-					avatar:		avatarUrl,				
-					pageTitle: 	'Dashboard',
-					user:		user,
-					documents:	documents
+				Document.findByCollaborator(user.id, function(err, shared) {					
+					var avatarUrl = Gravatar.url(user.email, {s: '230', r: 'x', d: '404'});
+					res.render('pages/user/dashboard', {
+						avatar:				avatarUrl,				
+						pageTitle: 			'Dashboard',
+						user:				user,
+						documents:			documents,
+						sharedDocuments:	shared
+					});
 				});
 			});
 		});
