@@ -58,6 +58,10 @@ a:active{
 		display: none;
 	}
 
+	.dashboardbutton{
+		margin-right:9px;
+	}
+
 #background{
 	float:left;
 	margin-top:30px;

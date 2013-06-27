@@ -10,8 +10,8 @@ html(ng-app)
 			a(href="/")
 				img(src="/img/assets/logo.png")
 			if user
-				a(href="/logout", class="button") Logout
-				a(href="/dashboard", class="button") Dashboard
+				a.button(href="/logout") Logout
+				a.button.dashboardbutton(href="/dashboard") Dashboard
 			else
 				a.button(href="register") Register
 				a.button(href="login") Login
