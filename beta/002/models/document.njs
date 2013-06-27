@@ -23,6 +23,7 @@ var documentSchema = new mongoose.Schema({
 var Document = mongoose.model('Document', documentSchema);
 var Block = mongoose.model('Block', blockSchema);
 var User = require('./provider.njs').load('user');
+var DocumentNotReady = true;
 module.exports = {
 	findAll: function(callback) {
 		Document.find(function(err, documents) {
@@ -41,25 +42,6 @@ module.exports = {
 			callback(err, documents);
 		});
 	},
-/*
-	findByID: function(id, callback) {
-		var ObjectId = mongoose.Schema.Types.ObjectId;
-		var collaborators = new Array();
-
-		Document.findById(id, function (err, document) {
-			var length = document.collaborators.length;
-	
-			for (var i = 0; i < length; i++) {
-				User.findByID(document.collaborators[i], function(err, user) {
-					collaborators.push(user);
-				});
-			}
-			
-			console.log(collaborators);
-			callback(err, document, collaborators);
-		});
-	},
-*/
 	findByID: function(id, callback) {
 	    var ObjectId = mongoose.Schema.Types.ObjectId;
 	    var collaborators = new Array();
@@ -134,33 +116,59 @@ module.exports = {
 		});
 		
 	},
-	resizeBlock: function(params, callback){
+	saveBlock: function(params, callback){
 		
-		console.log(params);
-
-		ObjectId = '51c81a876798a7af43000005';
-
+		ObjectId = '51c99638a154c1cdca000002';
+		
 		Document.findById(ObjectId, function (err, document) {
 			if (! err){
-
-				document.blocks.id(params.blockId , function(err, block){
-					if(! err){
-						block.push({ col : params.col});
-
-						document.save(function(err) {
-							if ( ! err) {
-								console.log('block has been changed');
-								callback( null, document );
-							} 
-							else {
-								callback(err);
-							}
-						});	
-					}
-					else{
+				
+				// pushes values into array
+				document.blocks.push({
+					type	: 'block-text', 
+					order	: 4,
+					content	: 'test-content Douwe',
+					cols	: 1}
+				);
+				
+				document.save(function(err) {
+					if (err) {
+						callback( null, document );
+						console.log('block has been changed');
+					} 
+					else {
 						callback(err);
 					}
 				});
+			}
+			else{
+				callback(err, document);
+			}
+		});
+	},
+	resizeBlock: function(params, callback){
+		if (documentNotReady){
+			ObjectId = '51c99638a154c1cdca000002';
+		}
+
+		Document.findById(ObjectId, function (err, document) {
+
+			if ( ! err) {
+				if (documentNotReady){
+					blockId = '51cafa84176f0d6508000002';
+				}
+				block = document.blocks.id(blockId);
+				if( ! err){
+					block.set('cols', params.col);
+					document.save(function(err) {
+						if ( ! err) {
+							callback( null, document );
+						} 
+						else {
+							callback(err);
+						}
+					});	
+				}
 			}
 			else{
 				callback(err);

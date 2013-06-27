@@ -8,12 +8,13 @@ html(ng-app)
 	body
 		div#header
 			a(href="/")
-				img(src="img/assets/logo.png")
+				img(src="/img/assets/logo.png")
 			if user
-				a(href="/dashboard", class="button") Dashboard
 				a(href="/logout", class="button") Logout
+				a(href="/dashboard", class="button") Dashboard
 			else
-				a.button(href="javascript:;") Login
+				a.button(href="register") Register
+				a.button(href="login") Login
 				#login-dropdown.well
 					form#login-form(method="post")
 						label.control-label(for="email") Email
@@ -22,7 +23,6 @@ html(ng-app)
 						input(name="password", type="password", placeholder="password")
 						br
 						button.btn.btn-success(type="submit") Login
-				a.button(href="register") Signup
 
 		div#background
 			p#title Doctopus

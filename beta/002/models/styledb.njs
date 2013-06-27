@@ -5,7 +5,7 @@ module.exports = {
 	// Some dummy data to test without database
 	// --------------------------------------------------
 	blocks: [
-		{ "id": 1, "content": "Welkom bij Doctopus.", "cols": 4, "type": "text" },
+		{ "id": '51c992b0eea60b364f000002', "content": "Welkom bij Doctopus.", "cols": 4, "type": "text" },
 		{ "id": 2, "content": "We hebben een paar kleine opdrachten voor jou. Deze staan hier onder beschreven.", "cols": 1, "type": "text" },
 		{ "id": 3, "content": [
 			"1. Maak een nieuw blok.",

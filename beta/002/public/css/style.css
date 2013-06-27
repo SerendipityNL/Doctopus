@@ -245,3 +245,22 @@ select, input[type="file"]{
 .table td, .table thead tr, .table tbody + tbody{
 	border:none;
 }
+
+button.close {
+	color: #FFF;
+	opacity: 0.5;
+}
+button.close:hover {
+	color: #96bb49;
+	opacity: 1;
+}
+.alert-error {
+	color: #FFFFFF;
+	background: #e32d2d;
+	border: none;
+	text-shadow: none;
+}
+.alert-error h2 {
+	color: #FFFFFF;
+	border-bottom: none; /*2px solid #FFFFFF;*/
+}

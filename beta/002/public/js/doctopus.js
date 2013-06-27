@@ -86,6 +86,7 @@
 
 				success: function(succes, data) {
 					
+					console.log(data);
 					var imageNotice = {
 					  msg       : "Image has been uploaded",
 					  msgtype   : "succes",
@@ -96,7 +97,7 @@
 					jQuery('.preview processing image-preview').remove();
 					jQuery('.upload-button').remove();
 					jQuery('#file_dropzone').remove();
-					jQuery('.selected-block').append("<img src='uploads/"+data+"'>");
+					jQuery('.selected-block').append("<img src='../../uploads/"+data+"'>");
 				},
 
 				error: function() {
