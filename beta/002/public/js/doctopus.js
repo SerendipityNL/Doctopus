@@ -466,6 +466,13 @@
 			jQuery('.definition-icn-bar').remove();
 			jQuery(this).find('.block-actions').append(listIcon);
 		}
+
+		if(!jQuery(this).hasClass('col-1')){
+			jQuery(this).find('.block-actions .definition-icn-bar').show();
+		}
+		else{
+			jQuery(this).find('.block-actions .definition-icn-bar').hide();
+		}
 	};
 
 	jQuery.fn.deselect = function(e) {
