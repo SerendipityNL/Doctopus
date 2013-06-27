@@ -57,7 +57,7 @@ jQuery(document).ready( function() {
 			
 			socket.emit('document.remove', documentId);
 			socket.on('document.remove', function(data) {
-				window.location('dashboard');
+				window.location.replace('dashboard');
 			});
 			reactivateListeners();
 		});
