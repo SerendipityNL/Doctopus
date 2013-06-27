@@ -1,6 +1,9 @@
+var debug = false;
+
 var docsoc = {
 	block: {
-		changeSize: function(blockdata) {			
+		changeSize: function(blockdata) {
+			if (debug) console.log(blockdata);
 			$block = jQuery('div[data-id="' + blockdata.id + '"]');			
 			$block.data('colspan', blockdata.newSize);
 
@@ -19,7 +22,6 @@ var docsoc = {
 		},
 		updateSize: function() {
 			var $block = jQuery('.selected-block');
-			console.log('Werk nou!!')
 			documentUrl	= window.location.pathname.split('/'),
 			documentId 	= documentUrl[3];
 			var blockdata = {
@@ -27,31 +29,28 @@ var docsoc = {
 				'oldSize': $block.data('colspan'),
 				'documentId': documentId
 			}
-			console.log(blockdata);
 			socket.emit('block.resize', blockdata);
 		},
 		listener: function() {
 			jQuery('.resize').on('click.resize', function () {
-				console.log('Resize block');
 			 	docsoc.block.updateSize();
 			});
-			socket.on('block.resize', docsoc.block.changeSize);
-			console.log('Block listener activated.');
+			if (debug) console.log('Block listener activated.');
 		}
 	},
 	reactivateListeners: function() {
-		console.log('Disabling all listeners.');
+		if (debug) console.log('Disabling all listeners.');
 		jQuery('.resize').off('click.resize');
 		docsoc.activateListeners();
 	},
 	activateListeners: function() {
-		console.log('Activating all listeners.');	
+		if (debug) console.log('Activating all listeners.');	
 		docsoc.block.listener();
 	}
 }
 
 jQuery(document).ready(function() {
 	docsoc.activateListeners();
-	jQuery('.icon .block-text').on('click', docsoc.reactivateListeners);
-	
+
+	socket.on('block.resize', docsoc.block.changeSize);
 });

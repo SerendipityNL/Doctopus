@@ -123,10 +123,10 @@ module.exports.listen = function(server) {
 				col : blockdata.newSize,
 				blockId : blockdata.id
 			}
-
+			
 			//Document.resizeBlock( block, function( err, document ) {
 			//	if ( ! err ) {
-					io.sockets.emit( 'block.resize', blockdata );
+					io.sockets.emit( 'block.resize', block );
 			//	}
 			//	else{
 			//		console.log( 'block resizing fail' );

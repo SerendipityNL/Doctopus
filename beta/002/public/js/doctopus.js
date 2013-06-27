@@ -386,6 +386,7 @@
 			jQuery('#trashcan').off('click.deleteBlock')
 
 			methods.activateListeners();
+			docsoc.reactivateListeners();
 		},
 		activateListeners: function () {
 
