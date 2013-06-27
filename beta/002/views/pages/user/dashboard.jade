@@ -26,7 +26,8 @@ block content
 								a.btn.btn-success(href="/document/manage/#{document.get('id')}") Manage
 								&nbsp;
 								a.btn(href="/document/edit/#{document.get('id')}") Edit
-		if sharedDocuments
+	if sharedDocuments
+	.span9.well.pull-right#sharedDocuments
 		h3 Documents shared with you
 		ul.documentList
 			each shared in sharedDocuments
