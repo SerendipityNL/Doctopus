@@ -63,6 +63,7 @@ jQuery(document).ready( function() {
 			else {
 				alert('data is ' + data);
 			}
+		});
 	}
 	
 	function activateListeners() {
@@ -116,8 +117,6 @@ jQuery(document).ready( function() {
 			
 			socket.emit('document.new', newDocument);
 			
-				reactivateListeners();
-			});
 			reactivateListeners();
 		});
 	}

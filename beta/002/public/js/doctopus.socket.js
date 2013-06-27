@@ -7,18 +7,14 @@ var docsoc = {
 			//$block = jQuery('.selected-block');
 			$block.data('colspan', blockdata.newSize);
 
-			if ($block.hasClass('col-1')) {
+			if ($block.hasClass('col-1'))
 				$block.switchClass('col-1', 'col-' + blockdata.newSize, 250);
-			}
-			else if ($block.hasClass('col-2')) {
+			else if ($block.hasClass('col-2'))
 				$block.switchClass('col-2', 'col-' + blockdata.newSize, 250);
-			}
-			else if ($block.hasClass('col-3')) {
+			else if ($block.hasClass('col-3'))
 				$block.switchClass('col-3', 'col-' + blockdata.newSize, 250);
-			}
-			else {
+			else
 				$block.switchClass('col-4', 'col-' + blockdata.newSize, 250);
-			}
 		},
 		updateSize: function() {
 			var $block = jQuery('.selected-block');
