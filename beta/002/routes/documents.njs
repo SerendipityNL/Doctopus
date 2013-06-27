@@ -30,8 +30,8 @@ Module functions
 
 module.exports = {
 	edit: function(req, res) {
-
 		Document.findByID(req.params.id, function(err, document, collaborators) {
+			if ( ! document) res.redirect('/dashboard');
 			res.render('pages/document/document', {
 				'pageTitle': 'Doctopus - Beta 002',
 				'options': styledb.options,

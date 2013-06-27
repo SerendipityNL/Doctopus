@@ -52,7 +52,9 @@
 					msg  : "Changes have been saved",
 					msgtype : "succes",
 					duration : 3000
-				};	
+				};
+
+				documentUrl = window.location.pathname.split('/'), documentId = documentUrl[3];
 
 				$block = $('.isBeingEdited');
 				$block_content = $('.isBeingEdited .col-content').text();
@@ -61,7 +63,7 @@
 					_id 		:  $block.data("id"),
 					col   		:  $block.data("colspan"),
 					content 	:  $block_content,
-					documentId 	: "_1213123123123"
+					documentId 	: documentId
 				}
 
 				socket.emit('block.saved', blockData);

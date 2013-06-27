@@ -118,18 +118,17 @@ module.exports = {
 	},
 	saveBlock: function(params, callback){
 		
-		ObjectId = '51c99638a154c1cdca000002';
+		//ObjectId = '51c99638a154c1cdca000002';
 		
-		Document.findById(ObjectId, function (err, document) {
-			if (! err){
-				
+		Document.findById(params.documentId, function (err, document) {
+			if (! err) {				
 				// pushes values into array
 				document.blocks.push({
 					type	: 'block-text', 
 					order	: 4,
 					content	: 'test-content Douwe',
-					cols	: 1}
-				);
+					cols	: 1
+				});
 				
 				document.save(function(err) {
 					if (err) {

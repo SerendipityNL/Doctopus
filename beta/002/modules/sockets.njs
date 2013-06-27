@@ -65,19 +65,19 @@ module.exports.listen = function(server) {
 		});
 		
 		// block content saved
-		socket.on('block.saved', function(block) {
-			console.log(block);
+		socket.on('block.saved', function(data) {
+			console.log(data);
 
-			// Document.saveBlock(block, function(err, document, user){
-			// 	if(!err){
-			// 		data = {'block' : document, 'user' : user, 'state' : 'succes'};
-			// 		socket.emit('block.saved', data);
-			// 	}
-			// 	else{
-			// 		data = {'state' : 'error'};
-			// 		socket.emit('block.saved', data);
-			// 	}
-			// }
+			Document.saveBlock(data, function(err, block) {
+				if(!err){
+					data = {'block' : block, 'state' : 'succes'};
+					socket.emit('block.saved', data);
+				}
+				else{
+					data = {'state' : 'error'};
+					socket.emit('block.saved', data);
+				}
+			});
 		});
 
 		//new block added
@@ -117,9 +117,7 @@ module.exports.listen = function(server) {
 		socket.on('block.resize', function(blockdata) {
 			// blockdata.id blockdata.oldSize blockdata.newSize
 			blockdata.newSize = blockdata.oldSize + 1;
-			if (blockdata.newSize == 5){
-				blockdata.newSize = 1;
-			}
+			if ( blockdata.newSize > 4 ) blockdata.newSize = 1;
 
 			var block = {
 				col : blockdata.newSize,
