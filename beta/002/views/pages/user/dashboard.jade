@@ -11,7 +11,7 @@ block content
 		h2 Documents
 		#actionBar.pull-right
 			a#newDocumentButton.btn.btn-success(href="#newDocumentModal", data-goggle="modal") New document
-		h3 Own documents
+		
 		ul.documentList
 			each document in documents
 				li.span4
@@ -26,21 +26,7 @@ block content
 								a.btn.btn-success(href="/document/manage/#{document.get('id')}") Manage
 								&nbsp;
 								a.btn(href="/document/edit/#{document.get('id')}") Edit
-	if sharedDocuments
-	.span9.well.pull-right#sharedDocuments
-		h3 Documents shared with you
-		ul.documentList
-			each shared in sharedDocuments
-				li.span4
-					.thumbnail
-						a.thumbnail(href="#")
-							img(width="300px", height="200px", data-src="holder.js/300x200/doctopus")
-						.caption
-							h3 #{shared.get('title')}
-							p #{shared.get('description')}
-							p.muted Last modified: #{moment(shared.updated_at).fromNow()}
-							p
-								a.btn(href="/document/edit/#{shared.get('id')}") Edit
+		
 	#newDocumentModal.modal.hide.fade(tabindex="-1", role="dialog", aria-labbeledby="newDocumentModal", aria-hidden="true")
 		.modal-header
 			button.close(type="button", data-dismiss="modal", aria-hidden="true") x

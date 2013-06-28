@@ -8,13 +8,12 @@ html(ng-app)
 	body
 		div#header
 			a(href="/")
-				img(src="/img/assets/logo.png")
+				img(src="img/assets/logo.png")
 			if user
-				a.button(href="/logout") Logout
-				a.button.dashboardbutton(href="/dashboard") Dashboard
+				a(href="/dashboard", class="button") Dashboard
+				a(href="/logout", class="button") Logout
 			else
-				a.button(href="register") Register
-				a.button(href="login") Login
+				a.button(href="javascript:;") Login
 				#login-dropdown.well
 					form#login-form(method="post")
 						label.control-label(for="email") Email
@@ -23,6 +22,7 @@ html(ng-app)
 						input(name="password", type="password", placeholder="password")
 						br
 						button.btn.btn-success(type="submit") Login
+				a.button(href="register") Signup
 
 		div#background
 			p#title Doctopus
@@ -30,13 +30,3 @@ html(ng-app)
 		div#footer
 			div#gettingstarted
 				a(href="register", id="gettingstartedbutton") Get started
-			div.information-block-wrapper
-				div.information-block
-					h3 Welcome Structure
-					p DOCTOPUS introduces you to a new way of structurizing documents.
-				div.information-block
-					h3 Four column grid
-					p Use the FOUR COLUMN GRID for a basic structure in your documents.
-				div.information-block
-					h3 Style Afterwards
-					p By defining BLOCKS correctly it's possible to adjust the styling of your whole document at any time!
