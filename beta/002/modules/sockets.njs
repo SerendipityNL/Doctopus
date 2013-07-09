@@ -121,22 +121,37 @@ module.exports.listen = function(server) {
 
 			var block = {
 				newSize : blockdata.newSize,
-				blockId : blockdata.id,
-				documentId : '51c4caf96631639b06000002'
+				blockId : blockdata.id
 			}
-			
-			Document.resizeBlock(blockdata, function(err, block, action) {
-				if(!err){
-					data = {'block' : block, 'state' : 'succes', 'action' : action };
-					socket.emit('block.resized', data);
-				}
-				else{
-					data = {'state' : 'error'};
-					socket.emit('block.resized', data);
-				}
-			});
+
+			io.sockets.emit( 'block.resize', block );
 
 		});
+
+		//new size changed
+		// socket.on( 'block.resize', function( blockdata ) {
+		// 	// blockdata.id blockdata.oldSize blockdata.newSize
+		// 	blockdata.newSize = blockdata.oldSize + 1;
+		// 	if ( blockdata.newSize > 4 ) blockdata.newSize = 1;
+
+		// 	var block = {
+		// 		newSize : blockdata.newSize,
+		// 		blockId : blockdata.id,
+		// 		documentId : '51c4caf96631639b06000002'
+		// 	}
+			
+		// 	Document.resizeBlock(blockdata, function(err, block, action) {
+		// 		if(!err){
+		// 			data = {'block' : block, 'state' : 'succes', 'action' : action };
+		// 			socket.emit('block.resized', data);
+		// 		}
+		// 		else{
+		// 			data = {'state' : 'error'};
+		// 			socket.emit('block.resized', data);
+		// 		}
+		// 	});
+
+		// });
 
 	});
 
