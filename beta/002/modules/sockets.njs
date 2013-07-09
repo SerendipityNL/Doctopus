@@ -121,17 +121,20 @@ module.exports.listen = function(server) {
 
 			var block = {
 				newSize : blockdata.newSize,
-				blockId : blockdata.id
+				blockId : blockdata.id,
+				documentId : '51c4caf96631639b06000002'
 			}
 			
-			//Document.resizeBlock( block, function( err, document ) {
-			//	if ( ! err ) {
-					io.sockets.emit( 'block.resize', block );
-			//	}
-			//	else{
-			//		console.log( 'block resizing fail' );
-			//	}
-			//});
+			Document.resizeBlock(blockdata, function(err, block, action) {
+				if(!err){
+					data = {'block' : block, 'state' : 'succes', 'action' : action };
+					socket.emit('block.resized', data);
+				}
+				else{
+					data = {'state' : 'error'};
+					socket.emit('block.resized', data);
+				}
+			});
 
 		});
 

@@ -118,7 +118,7 @@ module.exports = {
 	},
 	saveBlock: function(params, callback){
 
-						console.log(params);
+		console.log(params);
 		Document.findById(params.documentId, function (err, document) {
 			if (! err) {
 				if (typeof params.id !== 'undefined') {
@@ -176,18 +176,21 @@ module.exports = {
 	resizeBlock: function(params, callback){
 		Document.findById(params.documentId, function (err, document) {
 			if ( ! err) {
-				block = document.blocks.id(params.blockId);
-				if( ! err){
-					block.set('cols', params.col);
+				//console.log(document);
+				//console.log(document.blocks.id('51dc6eafbea2569e01000002'));
+
+					block = document.blocks.id('51dc6eafbea2569e01000002');
+					block.set('cols', params.newSize);
+
 					document.save(function(err) {
 						if ( ! err) {
-							callback( null, document );
+							callback( null, document, 'add' );
+							//console.log('succes');
 						} 
 						else {
 							callback(err);
 						}
 					});	
-				}
 			}
 			else{
 				callback(err);
