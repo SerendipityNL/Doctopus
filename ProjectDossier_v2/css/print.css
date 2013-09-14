@@ -1,0 +1,20 @@
+body {
+	margin: 20px;
+}
+
+div#container-left {
+	display: none;
+}
+
+div#container-right {
+	margin: 0;
+}
+
+h1:first-child {
+	page-break-before: auto;
+}
+
+h1 {
+	page-break-before: always;
+	margin-top: 20px;
+}
